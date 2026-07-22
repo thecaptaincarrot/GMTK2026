@@ -1,9 +1,42 @@
 [gd_scene format=3 uid="uid://pc57gtu0imub"]
 
+[ext_resource type="Script" uid="uid://dp2pvmf3uhn63" path="res://UI/credits.gd" id="1_ng644"]
+
 [node name="Credits" type="Control" unique_id=1871724967]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 1352.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ng644")
+scroll_speed = 15.0
+
+[node name="Label" type="Label" parent="." unique_id=727768861]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 63.0
+grow_horizontal = 2
+text = "This is a Test - Test"
+
+[node name="BackButton" type="Button" parent="." unique_id=1975244997]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

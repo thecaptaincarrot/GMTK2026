@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="GMTK2026"
+run/main_scene="uid://c4cau8kc3a3eo"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.svg"
