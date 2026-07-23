@@ -31,8 +31,10 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("mouse_interact") \
 	&& active != null):
 		if active is PlayerPositionOption:
-			active.disable_collision()
+			#active.disable_collision()
 			_player.set_global_position(active.get_position())
+		if active is Door:
+			pass
 	
 	if(active != null):
 		Input.set_custom_mouse_cursor(_up)

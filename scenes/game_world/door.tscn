@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d2ka2s0pcjo4e"]
+
+[ext_resource type="Script" uid="uid://d3dtb85g22kks" path="res://scenes/game_world/door.gd" id="1_f5mn3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_st70h"]
+
+[node name="Door" type="Area3D" unique_id=432625781]
+script = ExtResource("1_f5mn3")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1920683957]
+shape = SubResource("CapsuleShape3D_st70h")
