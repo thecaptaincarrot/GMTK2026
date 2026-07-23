@@ -7,6 +7,10 @@ var command_handlers: Dictionary
 
 var queue: Array[Message] = []
 
+var _player:PlayerController = null
+
+var _active_room:GameRoom = null
+
 func _init(_event_handlers: Dictionary, _command_handlers: Dictionary) -> void:
 	event_handlers = _event_handlers
 	command_handlers = _command_handlers
