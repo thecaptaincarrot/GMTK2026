@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://de6nu0xuiyida"]
+
+[ext_resource type="Script" uid="uid://clj11cr2s2157" path="res://scenes/game_world/game_world.gd" id="1_p46a1"]
+[ext_resource type="Shader" uid="uid://c37h6xp4wuuqf" path="res://scenes/game_world/skybox.gdshader" id="2_qfria"]
+[ext_resource type="PackedScene" uid="uid://ck5lenyq7mwgt" path="res://scenes/entities/player.tscn" id="3_57veo"]
+[ext_resource type="PackedScene" uid="uid://buwj6dfdhyat5" path="res://scenes/game_world/rooms/TestRoom.tscn" id="4_jamdq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b7ym8"]
+shader = ExtResource("2_qfria")
+shader_parameter/sun_color = Color(1.253487, 0.98923135, 0.4558793, 1)
+shader_parameter/sun_size = 0.00999999977648
+shader_parameter/sun_blur = 9.644000457391481
+shader_parameter/star_density = 0.5
+shader_parameter/star_brightness = 0.72800003132012
+
+[sub_resource type="Sky" id="Sky_7522t"]
+sky_material = SubResource("ShaderMaterial_b7ym8")
+
+[sub_resource type="Environment" id="Environment_st70h"]
+background_mode = 2
+sky = SubResource("Sky_7522t")
+
+[node name="GameWorld" type="Node3D" unique_id=773402118]
+script = ExtResource("1_p46a1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1870284894]
+environment = SubResource("Environment_st70h")
+
+[node name="Player" parent="." unique_id=1497548763 instance=ExtResource("3_57veo")]
+
+[node name="TestRoom" parent="." unique_id=419723155 instance=ExtResource("4_jamdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.2113671, -4)
