@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://buwj6dfdhyat5"]
 
-[node name="TestRoom" type="Node3D" unique_id=419723155]
+[ext_resource type="Script" uid="uid://deo534va4hvh1" path="res://scenes/game_world/rooms/game_room.gd" id="1_0adlr"]
+[ext_resource type="PackedScene" uid="uid://b1rw18yn7vlo7" path="res://scenes/game_world/player_position_option.tscn" id="2_rwkeo"]
 
-[node name="Meshes" type="Node3D" parent="." unique_id=917450985]
+[node name="TestRoom" type="Node3D" unique_id=1068165850]
+script = ExtResource("1_0adlr")
+metadata/_custom_type_script = "uid://deo534va4hvh1"
+
+[node name="Meshes" type="Node" parent="." unique_id=275305135]
 
 [node name="Floor" type="CSGBox3D" parent="Meshes" unique_id=1007591430]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
@@ -12,13 +17,27 @@ size = Vector3(8, 0.1, 5)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.95, -1.5500002)
 size = Vector3(8, 0.1, 4)
 
-[node name="Ceiling" type="CSGBox3D" parent="Meshes" unique_id=174742736]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 3.95, 0.4499998)
+[node name="BackWall" type="CSGBox3D" parent="Meshes/BackWall" unique_id=1901410883]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742277e-08, 0, -8.742277e-08, -1, 0, 5.1100945, -0.03929591)
 size = Vector3(8, 0.1, 4)
 
+[node name="Ceiling" type="CSGBox3D" parent="Meshes" unique_id=174742736]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 3.95, 0.9783201)
+size = Vector3(8, 0.1, 5.0566406)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Meshes" unique_id=819918277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8771868, 0.46118164, 0.92117906)
+height = 1.0776367
+
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=832251037]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6623755, 0.19578981)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.409923, 0.9954915)
 light_energy = 2.0
 light_volumetric_fog_energy = 0.0
 
-[node name="PlayerPositions" type="Node3D" parent="." unique_id=1423916037]
+[node name="PlayerPositions" type="Node" parent="." unique_id=773205362]
+
+[node name="1" parent="PlayerPositions" unique_id=840362772 instance=ExtResource("2_rwkeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8850615, 1.0732892, 0.93380594)
+
+[node name="2" parent="PlayerPositions" unique_id=185158097 instance=ExtResource("2_rwkeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7890036, 1.8354406, 0.8575902)

@@ -41,4 +41,5 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Credits"
 
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

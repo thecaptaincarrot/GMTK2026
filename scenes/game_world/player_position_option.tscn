@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b1rw18yn7vlo7"]
+
+[ext_resource type="Script" uid="uid://6xepi6oh4vrk" path="res://scenes/game_world/player_position_option.gd" id="1_mgodr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_st70h"]
+radius = 1.0
+
+[node name="1" type="Area3D" unique_id=840362772]
+script = ExtResource("1_mgodr")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=562937766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2531109, 0)
+shape = SubResource("SphereShape3D_st70h")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
