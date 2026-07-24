@@ -4,8 +4,6 @@ extends Node
 @onready var cursor_up_arrow = preload("res://assets/cursor_up.png")
 
 
-
-
 var message_bus: MessageBus = MessageBus.create()
 
 var _player: PlayerController

@@ -31,7 +31,14 @@ func handle_interaction() -> void:
 		game_room.disable_all_position_colliders()
 		enable_neighbors()
 		
+		#sync the pseudo camera to the player camera
+		#more can be added but I think this is a good starting point
+		
+		player.camera.fov = self.fov
+		
 		if(Globals.should_tween):
-			player.change_position(self.get_position())
+			player.change_position(self.get_position(), Vector2(self.global_rotation.x, self.global_rotation.z))
+			
 		else:
+			player.set_global_rotation(Vector3(self.rotation.x, player.rotation.y, self.rotation.z))
 			player.set_global_position(self.get_position())
