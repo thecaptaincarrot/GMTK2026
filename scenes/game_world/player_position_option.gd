@@ -1,18 +1,17 @@
-extends Area3D
+extends Marker3D
 class_name PlayerPositionOption
 
-@export var can_go_to_positions: Array[PlayerPositionOption]
+@export var collision_area: CollisionShape3D
+
 
 func disable_collision():
-	$Collider.disabled = true
+	collision_area.disabled = true
 
 func enable_collision():
-	$Collider.disabled = false
+	collision_area.disabled = false
 
-
-func _on_mouse_entered() -> void:
-	Globals.set_interactable(self)
-
-
-func _on_mouse_exited() -> void:
-	Globals.clear_interactable(self)
+# each interactable object knows how to handle it's own interaction
+func handle_interaction() -> void:
+	var player = Globals.get_player()
+	if player:
+		player.set_global_position(self.get_position())
