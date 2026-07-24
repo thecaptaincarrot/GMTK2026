@@ -4,8 +4,6 @@ class_name ZoomIn
 
 @export var collision_area: CollisionShape3D
 
-var _zoom_active:bool = false
-
 var _stored_last_yaw = 0.0
 
 #hacky way to avoid a double trigger of the mouse interaction click to zoom back out
@@ -18,7 +16,7 @@ func enable_collision():
 	collision_area.disabled = false
 
 func _process(delta: float) -> void:
-	if(_zoom_active && Input.is_action_just_pressed("mouse_interact")):
+	if(Globals.is_zoomed_in() && Input.is_action_just_pressed("mouse_interact")):
 		if(_frame_delayed):
 			var last_pos = Globals.get_last_position()
 			var player = Globals.get_player()
@@ -28,7 +26,7 @@ func _process(delta: float) -> void:
 				player.set_global_rotation(Vector3(last_pos.global_rotation.x, _stored_last_yaw, last_pos.global_rotation.z))
 				player.set_global_position(last_pos.get_position())
 			Globals.enable_screen_rotation()
-			_zoom_active = false
+			Globals.set_is_zoomed_in(false)
 			_frame_delayed = false
 			_stored_last_yaw = 0.0
 			
@@ -37,7 +35,7 @@ func _process(delta: float) -> void:
 
 
 func handle_interaction() -> void:
-	if(!_zoom_active):
+	if(!Globals.is_zoomed_in()):
 		if(Globals.get_last_position() != null):
 			if(!Globals.get_last_position().valid_neighbors.has(self)):
 				return
@@ -52,4 +50,4 @@ func handle_interaction() -> void:
 			player.set_global_rotation(self.global_rotation)
 			player.set_global_position(self.get_position())
 		
-		_zoom_active = true
+		Globals.set_is_zoomed_in(true)

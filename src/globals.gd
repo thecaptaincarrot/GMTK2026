@@ -1,9 +1,11 @@
 extends Node
 
 @onready var cursor_default_arrow = preload("res://assets/cursor_normal.png")
-@onready var cursor_up_arrow = preload("res://assets/cursor_up.png")
+@onready var cursor_up_arrow = preload("res://assets/cursor_interact.png")
+@onready var cursor_backwards_arrow = preload("res://assets/cursor_back.png")
 
 signal rotation_control_update
+signal zoom_change
 
 
 var message_bus: MessageBus = MessageBus.create()
@@ -16,6 +18,8 @@ var _can_rotate = true
 
 var _last_position_node:PlayerPositionOption
 
+var _zoomed_in:bool = false
+
 
 func _ready():
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
@@ -26,6 +30,13 @@ func set_player(p: PlayerController) -> void:
 func get_player() -> PlayerController:
 	return _player
 
+func set_is_zoomed_in(value:bool):
+	_zoomed_in = false
+	emit_signal("zoom_changed")
+
+func is_zoomed_in():
+	return _zoomed_in
+	
 
 func set_last_position(node:PlayerPositionOption):
 	_last_position_node = node
