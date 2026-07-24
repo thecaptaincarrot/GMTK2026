@@ -32,7 +32,8 @@ func _process(delta: float) -> void:
 	&& active != null):
 		if active is PlayerPositionOption:
 			#active.disable_collision()
-			_player.set_global_position(active.get_position())
+			#_player.set_global_position(active.get_position())
+			_player.change_position(active.get_position())
 		if active is Door:
 			pass
 	
@@ -42,8 +43,9 @@ func _process(delta: float) -> void:
 		Input.set_custom_mouse_cursor(_arrow)
 
 func _on_right_arrow_pressed() -> void:
-	_player.rotate(Vector3(0, 1, 0), deg_to_rad(-90))
-
+	#_player.rotate(Vector3(0, 1, 0), deg_to_rad(-90))
+	_player.rotate_screen(-90)
 
 func _on_left_arrow_pressed() -> void:
-	_player.rotate(Vector3(0, 1, 0), deg_to_rad(90))
+	#_player.rotate(Vector3(0, 1, 0), deg_to_rad(90))
+	_player.rotate_screen(+90)

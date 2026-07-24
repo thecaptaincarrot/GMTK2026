@@ -1,6 +1,8 @@
 extends Area3D
 class_name PlayerPositionOption
 
+@export var can_go_to_positions: Array[PlayerPositionOption]
+
 func disable_collision():
 	$Collider.disabled = true
 
