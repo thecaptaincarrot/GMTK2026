@@ -15,8 +15,8 @@ func _ready():
 	load_room(_test_room_path)
 	_player = _player_scene.instantiate()
 	var pos = _active_room.set_active_position_node(&"1")
-	_player.set_global_position(pos)
 	add_child(_player)
+	_player.set_global_position(pos)
 	Globals.set_player(_player)
 	Globals.rotation_control_update.connect(_rotation_update)
 
