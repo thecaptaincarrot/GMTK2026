@@ -58,6 +58,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.409923, 0.9954915)
 light_energy = 2.0
 light_volumetric_fog_energy = 0.0
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1479560920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.409923, -1.9460484)
+light_color = Color(0.7893675, 0.042274505, 0.18317309, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 0.0
+
 [node name="PlayerPositions" type="Node" parent="." unique_id=773205362]
 
 [node name="1" parent="PlayerPositions" unique_id=840362772 instance=ExtResource("2_rwkeo")]
