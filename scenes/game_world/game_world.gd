@@ -32,11 +32,11 @@ func _on_right_arrow_pressed() -> void:
 		_player.rotate_screen(-90)
 	else:
 		_player.rotate(Vector3(0, 1, 0), deg_to_rad(-90))
-	
+
 
 func _on_left_arrow_pressed() -> void:
 	if(Globals.should_tween):
-		_player.rotate_screen(-90)
+		_player.rotate_screen(90)
 	else:
 		_player.rotate(Vector3(0, 1, 0), deg_to_rad(90))
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://deo534va4hvh1" path="res://scenes/game_world/rooms/game_room.gd" id="1_0adlr"]
 [ext_resource type="PackedScene" uid="uid://b1rw18yn7vlo7" path="res://scenes/game_world/player_position_option.tscn" id="2_rwkeo"]
+[ext_resource type="PackedScene" uid="uid://cb1p35lrk8d8r" path="res://scenes/game_world/zoom_in_area.tscn" id="3_kvspk"]
 
 [node name="TestRoom" type="Node3D" unique_id=1068165850]
 script = ExtResource("1_0adlr")
@@ -68,12 +69,16 @@ light_volumetric_fog_energy = 0.0
 
 [node name="1" parent="PlayerPositions" unique_id=840362772 node_paths=PackedStringArray("valid_neighbors", "game_room") instance=ExtResource("2_rwkeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02093941, 1.6978105, 2.0941176)
-valid_neighbors = [NodePath("../2")]
+valid_neighbors = [NodePath("../2"), NodePath("../corner")]
 game_room = NodePath("../..")
 
 [node name="2" parent="PlayerPositions" unique_id=185158097 node_paths=PackedStringArray("valid_neighbors", "game_room") instance=ExtResource("2_rwkeo")]
 transform = Transform3D(1, 0, 0, 0, 0.9065114, 0.42218134, 0, -0.42218134, 0.9065114, -0.00582774, 2.4869182, -1.5620788)
 valid_neighbors = [NodePath("../1")]
 game_room = NodePath("../..")
+
+[node name="corner" parent="PlayerPositions" unique_id=464256384 instance=ExtResource("3_kvspk")]
+transform = Transform3D(-0.2435076, 0.8289462, -0.50353974, 0, 0.51916724, 0.8546727, 0.969899, 0.20811929, -0.12642115, 1.265491, 1.7363901, 3.3873374)
+fov = 59.897266
 
 [node name="Interactables" type="Node" parent="." unique_id=1008033200]

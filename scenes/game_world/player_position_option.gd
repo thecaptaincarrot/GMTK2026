@@ -20,14 +20,14 @@ func enable_neighbors():
 
 # each interactable object knows how to handle it's own interaction
 func handle_interaction() -> void:
-	if(Globals.last_position_node != null):
-		if(!Globals.last_position_node.valid_neighbors.has(self)):
+	if(Globals.get_last_position() != null):
+		if(!Globals.get_last_position().valid_neighbors.has(self)):
 			return
 	var player = Globals.get_player()
 	if player:
 		
 		#this is here so that we are only clicking on valid neighbors for movement
-		Globals.last_position_node = self
+		Globals.set_last_position(self)
 		game_room.disable_all_position_colliders()
 		enable_neighbors()
 		

@@ -8,10 +8,15 @@ func set_active_position_node(pos_name:StringName):
 	for opt:PlayerPositionOption in _position_container.get_children():
 		if(opt.name == pos_name):
 			disable_all_position_colliders()
+			
 			opt.enable_collision()
+			
 			result = opt.get_global_position()
-			Globals.last_position_node = opt
+			
+			Globals.set_last_position(opt)
+			
 			opt.enable_neighbors()
+			
 			break
 	return result
 
