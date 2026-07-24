@@ -1,20 +1,26 @@
 extends Node
 
-var message_bus:MessageBus = MessageBus.create()
+var message_bus: MessageBus = MessageBus.create()
 
 
+# var _active_interactable: Node
+var _player: PlayerController
 
-var _active_interactable:Node
+func set_player(p: PlayerController) -> void:
+	_player = p
 
-signal interactable_updated
+func get_player() -> PlayerController:
+	return _player
 
-func get_interacable():
-	return _active_interactable
+# signal interactable_updated
 
-func set_interactable(node):
-	_active_interactable = node
-	emit_signal("interactable_updated")
+# func get_interactable():
+# 	return _active_interactable
 
-func clear_interactable(node):
-	emit_signal("interactable_updated")
-	_active_interactable = null
+# func set_interactable(node):
+# 	_active_interactable = node
+# 	emit_signal("interactable_updated")
+
+# func clear_interactable(node):
+# 	emit_signal("interactable_updated")
+# 	_active_interactable = null
