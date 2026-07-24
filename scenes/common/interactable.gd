@@ -4,16 +4,13 @@ class_name Interactable
 
 @export var interactee: Node
 
-# can we pass a reference instead of loading it everytime?
-var _arrow = load("res://assets/cursor_normal.png")
-var _up = load("res://assets/cursor_up.png")
 
 # add interactable to a marker3d to automatically change cursor type
 func _on_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(_up)
+	Input.set_custom_mouse_cursor(Globals.cursor_up_arrow)
 
 func _on_mouse_exited() -> void:
-	Input.set_custom_mouse_cursor(_arrow)
+	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
 
 # each interactable pass the command to the interactee node and let the parent handle the behavior
 # different parents can have different behaviors

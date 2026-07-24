@@ -24,18 +24,6 @@ func load_room(path):
 	_active_room = load(path).instantiate()
 	add_child(_active_room)
 
-# testing removing interaction handling logic from if statements inside gameworld
-
-# func _process(delta: float) -> void:
-# 	var active = Globals.get_interactable()
-# 	if(Input.is_action_just_pressed("mouse_interact") \
-# 	&& active != null):
-# 		if active is PlayerPositionOption:
-# 			#active.disable_collision()
-# 			_player.set_global_position(active.get_position())
-# 		if active is Door:
-# 			pass
-
 func _on_right_arrow_pressed() -> void:
 	_player.rotate(Vector3(0, 1, 0), deg_to_rad(-90))
 
