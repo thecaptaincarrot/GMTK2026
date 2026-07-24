@@ -14,4 +14,7 @@ func enable_collision():
 func handle_interaction() -> void:
 	var player = Globals.get_player()
 	if player:
-		player.set_global_position(self.get_position())
+		if(Globals.should_tween):
+			player.change_position(self.get_position())
+		else:
+			player.set_global_position(self.get_position())
