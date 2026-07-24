@@ -6,7 +6,8 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_st70h"]
 radius = 1.0
 
-[node name="PlayerPos" type="Marker3D" unique_id=950700244 node_paths=PackedStringArray("collision_area")]
+[node name="PlayerPos" type="Camera3D" unique_id=1750914355 node_paths=PackedStringArray("collision_area")]
+current = true
 script = ExtResource("1_mgodr")
 collision_area = NodePath("Interactable/Collider")
 
