@@ -37,7 +37,7 @@ func handle_interaction() -> void:
 		player.camera.fov = self.fov
 		
 		if(Globals.should_tween):
-			player.change_position(self.get_position(), Vector2(self.global_rotation.x, self.global_rotation.z))
+			player.change_position(self.get_position(), Vector3(self.global_rotation.x, player.global_rotation.y, self.global_rotation.z))
 			
 		else:
 			player.set_global_rotation(Vector3(self.rotation.x, player.rotation.y, self.rotation.z))

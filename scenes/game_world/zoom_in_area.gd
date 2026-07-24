@@ -6,6 +6,8 @@ class_name ZoomIn
 
 var _zoom_active:bool = false
 
+var _stored_last_yaw = 0.0
+
 #hacky way to avoid a double trigger of the mouse interaction click to zoom back out
 var _frame_delayed = false
 
@@ -21,13 +23,14 @@ func _process(delta: float) -> void:
 			var last_pos = Globals.get_last_position()
 			var player = Globals.get_player()
 			if(Globals.should_tween):
-				player.change_position(last_pos.get_position(), Vector2(last_pos.global_rotation.x, last_pos.global_rotation.z))
+				player.change_position(last_pos.get_position(), Vector3(last_pos.global_rotation.x, _stored_last_yaw, last_pos.global_rotation.z))
 			else:
-				player.set_global_rotation(Vector3(last_pos.rotation.x, last_pos.rotation.y, last_pos.rotation.z))
+				player.set_global_rotation(Vector3(last_pos.global_rotation.x, _stored_last_yaw, last_pos.global_rotation.z))
 				player.set_global_position(last_pos.get_position())
 			Globals.enable_screen_rotation()
 			_zoom_active = false
 			_frame_delayed = false
+			_stored_last_yaw = 0.0
 			
 		else:
 			_frame_delayed = true
@@ -41,10 +44,12 @@ func handle_interaction() -> void:
 		var player = Globals.get_player()
 		Globals.disable_screen_rotation()
 		
+		_stored_last_yaw = player.global_rotation.y
+		
 		if(Globals.should_tween):
-			player.change_position(self.get_position(), Vector2(self.global_rotation.x, self.global_rotation.z))
+			player.change_position(self.get_position(), self.global_rotation)
 		else:
-			player.set_global_rotation(Vector3(self.rotation.x, player.rotation.y, self.rotation.z))
+			player.set_global_rotation(self.global_rotation)
 			player.set_global_position(self.get_position())
 		
 		_zoom_active = true
