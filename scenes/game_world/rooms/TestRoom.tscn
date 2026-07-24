@@ -66,10 +66,15 @@ light_volumetric_fog_energy = 0.0
 
 [node name="PlayerPositions" type="Node" parent="." unique_id=773205362]
 
-[node name="1" parent="PlayerPositions" unique_id=840362772 instance=ExtResource("2_rwkeo")]
+[node name="1" parent="PlayerPositions" unique_id=840362772 node_paths=PackedStringArray("valid_neighbors", "game_room") instance=ExtResource("2_rwkeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02093941, 1.6978105, 2.0941176)
+fov = 45.1
+valid_neighbors = [NodePath("../2")]
+game_room = NodePath("../..")
 
-[node name="2" parent="PlayerPositions" unique_id=185158097 instance=ExtResource("2_rwkeo")]
+[node name="2" parent="PlayerPositions" unique_id=185158097 node_paths=PackedStringArray("valid_neighbors", "game_room") instance=ExtResource("2_rwkeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00582774, 1.835, -1.8606681)
+valid_neighbors = [NodePath("../1")]
+game_room = NodePath("../..")
 
 [node name="Interactables" type="Node" parent="." unique_id=1008033200]

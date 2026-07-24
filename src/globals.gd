@@ -12,6 +12,8 @@ var _player: PlayerController
 
 var should_tween:bool = true
 
+var last_position_node:PlayerPositionOption
+
 
 func _ready():
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
