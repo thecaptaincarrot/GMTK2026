@@ -10,7 +10,8 @@ var started = false
 
 
 func start(_start_time_ms: int):
-	start_time_ms = _start_time_ms
+	#start_time_ms = _start_time_ms
+	start_time_ms = 0
 	current_time_ms = start_time_ms
 	started = true
 
