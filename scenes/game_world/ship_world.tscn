@@ -3,14 +3,44 @@
 [ext_resource type="Script" uid="uid://deo534va4hvh1" path="res://scenes/game_world/rooms/game_room.gd" id="1_lny2s"]
 [ext_resource type="PackedScene" uid="uid://ba6txm3wvaiaw" path="res://Meshes/ShipParts/chamber_airlock.glb" id="2_4lrmb"]
 [ext_resource type="PackedScene" uid="uid://dca3ymvc3dy2" path="res://Meshes/ShipParts/door_A.glb" id="3_20dbd"]
-[ext_resource type="PackedScene" uid="uid://26ptdxodp7d1" path="res://Meshes/ShipParts/interactive_airvent.glb" id="4_3mtq2"]
+[ext_resource type="PackedScene" uid="uid://bqsb3hn3ir75o" path="res://scenes/entities/Airlock/ShipDoor.tscn" id="3_uulq1"]
 [ext_resource type="PackedScene" uid="uid://bhehb8jwq4iyl" path="res://Meshes/ShipParts/chamber_airlockjoint.glb" id="5_jtk4w"]
+[ext_resource type="PackedScene" uid="uid://cepp3r5t1ivve" path="res://scenes/entities/Airlock/interactive_airvent.tscn" id="5_uulq1"]
 [ext_resource type="PackedScene" uid="uid://n8d0a2uv2jdp" path="res://Meshes/ShipParts/hallway_module.glb" id="6_w6qs7"]
 [ext_resource type="PackedScene" uid="uid://dlgcqfng7krus" path="res://Meshes/ShipParts/hallway_utility.glb" id="7_20dbd"]
+[ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable.gd" id="7_dt02w"]
 [ext_resource type="PackedScene" uid="uid://b1rw18yn7vlo7" path="res://scenes/game_world/player_position_option.tscn" id="7_ppnae"]
+[ext_resource type="Script" uid="uid://bv03vi7evhjd3" path="res://scenes/game_world/internal_button.gd" id="7_uulq1"]
 [ext_resource type="PackedScene" uid="uid://c4688wh68472g" path="res://Meshes/ShipParts/central_hub.glb" id="8_3mtq2"]
+[ext_resource type="Script" uid="uid://djcfv87dgkssf" path="res://scenes/entities/Airlock/airlock_indicator_panel.gd" id="8_4vhwf"]
 [ext_resource type="PackedScene" uid="uid://cj5idmym4b7lo" path="res://Meshes/Interactives/CommandConsole/mainconsole.glb" id="8_jtk4w"]
+[ext_resource type="Material" uid="uid://dqh8mw6q7lyt6" path="res://scenes/entities/Airlock/LightOnMaterial.tres" id="9_kqbjw"]
 [ext_resource type="PackedScene" uid="uid://3alpa3bm4fv6" path="res://Meshes/ShipParts/cockpit.glb" id="9_w6qs7"]
+[ext_resource type="Material" uid="uid://dfwcuortqhv22" path="res://scenes/entities/Airlock/LightOffMaterial.tres" id="10_6vmy0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oow3h"]
+size = Vector3(0.14001465, 0.33898926, 0.20172119)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oow3h"]
+size = Vector3(0.04711914, 0.34527588, 0.21972656)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyywx"]
+albedo_color = Color(0.7228851, 0.6869412, 0.36615142, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oow3h"]
+top_radius = 0.041015625
+bottom_radius = 0.041015625
+height = 0.0680542
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sv2bo"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sv2bo"]
+size = Vector3(0.03723526, 0.32092285, 0.2240982)
+
+[sub_resource type="SphereMesh" id="SphereMesh_oow3h"]
+radius = 0.015
+height = 0.03
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljv0t"]
 
@@ -79,118 +109,378 @@ shadow_mesh = SubResource("ArrayMesh_uj4xn")
 [node name="ShipWorld" type="Node3D" unique_id=792692354]
 script = ExtResource("1_lny2s")
 
-[node name="Meshes" type="Node" parent="." unique_id=2135045770]
+[node name="Rooms" type="Node" parent="." unique_id=1475418970]
 
-[node name="AirLock" type="Node3D" parent="Meshes" unique_id=1399252336]
+[node name="AirLock" type="Node3D" parent="Rooms" unique_id=1399252336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 metadata/_edit_group_ = true
 
-[node name="chamber_airlock" parent="Meshes/AirLock" unique_id=1492551177 instance=ExtResource("2_4lrmb")]
+[node name="Meshes" type="Node3D" parent="Rooms/AirLock" unique_id=1603810998]
+
+[node name="chamber_airlock" parent="Rooms/AirLock/Meshes" unique_id=1492551177 instance=ExtResource("2_4lrmb")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="interior_door" parent="Meshes/AirLock" unique_id=2076482338 instance=ExtResource("3_20dbd")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+[node name="InteriorDoor" parent="Rooms/AirLock/Meshes" unique_id=2076482338 instance=ExtResource("3_uulq1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.19110537, 0, 0)
 
-[node name="exterior_door" parent="Meshes/AirLock" unique_id=416100298 instance=ExtResource("3_20dbd")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 6, 0, 0)
+[node name="ExteriorDoor" parent="Rooms/AirLock/Meshes" unique_id=109211142 instance=ExtResource("3_uulq1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.8541594, 0, 0)
 
-[node name="interactive_airvent" parent="Meshes/AirLock" unique_id=1998989421 instance=ExtResource("4_3mtq2")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 0, 0)
+[node name="PlayerPositions" type="Node3D" parent="Rooms/AirLock" unique_id=378088173]
 
-[node name="ForeHallway" type="Node3D" parent="Meshes" unique_id=1385809275]
+[node name="0" parent="Rooms/AirLock/PlayerPositions" unique_id=1750914355 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, 3, 1, 0)
+fov = 50.0
+valid_neighbors = [NodePath("../../../ForeHallway/PlayerPositions/1")]
+
+[node name="Interactables" type="Node3D" parent="Rooms/AirLock" unique_id=265392305]
+
+[node name="interactive_airvent" parent="Rooms/AirLock/Interactables" unique_id=1342556809 node_paths=PackedStringArray("indicator_panels") instance=ExtResource("5_uulq1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0, 3)
+indicator_panels = [NodePath("../../Props/airlock_indicator_panel"), NodePath("../../Props/airlock_indicator_panel2")]
+
+[node name="InternalButton" type="Node3D" parent="Rooms/AirLock/Interactables" unique_id=1684224825 node_paths=PackedStringArray("air_vent", "indicator_panel", "door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20531082, 1.0169623, -1.3083196)
+script = ExtResource("7_uulq1")
+air_vent = NodePath("../interactive_airvent")
+indicator_panel = NodePath("../../Props/airlock_indicator_panel")
+door = NodePath("../../Meshes/InteriorDoor")
+
+[node name="internal_button" type="Area3D" parent="Rooms/AirLock/Interactables/InternalButton" unique_id=1452788669 node_paths=PackedStringArray("interactee")]
+script = ExtResource("7_dt02w")
+interactee = NodePath("..")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/AirLock/Interactables/InternalButton/internal_button" unique_id=36123723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027770996, 0, 0)
+shape = SubResource("BoxShape3D_oow3h")
+
+[node name="ButtonFrame" type="MeshInstance3D" parent="Rooms/AirLock/Interactables/InternalButton" unique_id=1547798899]
+mesh = SubResource("BoxMesh_oow3h")
+surface_material_override/0 = SubResource("StandardMaterial3D_vyywx")
+
+[node name="ButtonCylinder" type="MeshInstance3D" parent="Rooms/AirLock/Interactables/InternalButton" unique_id=809951020]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_oow3h")
+surface_material_override/0 = SubResource("StandardMaterial3D_sv2bo")
+
+[node name="Props" type="Node3D" parent="Rooms/AirLock" unique_id=127707660]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/AirLock/Props" unique_id=392922191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3597503, 2.3327575, 0)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Rooms/AirLock/Props" unique_id=617566748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6402497, 2.3327575, 0)
+
+[node name="airlock_indicator_panel" type="Node3D" parent="Rooms/AirLock/Props" unique_id=348469676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19772243, 1.0694249, 1.2719636)
+script = ExtResource("8_4vhwf")
+
+[node name="PanelMesh" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel" unique_id=1523304267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012390137, 0.0022087097)
+mesh = SubResource("BoxMesh_sv2bo")
+
+[node name="vent_fail_light" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh" unique_id=606861374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020306587, 0.12225485, 0.07662714)
+mesh = SubResource("SphereMesh_oow3h")
+surface_material_override/0 = ExtResource("9_kqbjw")
+
+[node name="Label3D" type="Label3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh/vent_fail_light" unique_id=2070199163]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.00023126602, 0, -0.034359906)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.54896295, 0.54896253, 0.5489625, 1)
+text = "Ventilation Failure"
+outline_size = 5
+horizontal_alignment = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh/vent_fail_light" unique_id=424912061]
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.235
+light_size = 0.015
+omni_range = 0.05
+
+[node name="mech_block_light" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh" unique_id=1102726013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.052, 0.077)
+mesh = SubResource("SphereMesh_oow3h")
+surface_material_override/0 = ExtResource("10_6vmy0")
+
+[node name="Label3D" type="Label3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh/mech_block_light" unique_id=71830567]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.00023126602, 0, -0.034359906)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.54896295, 0.54896253, 0.5489625, 1)
+text = "Mechanical Block"
+outline_size = 5
+horizontal_alignment = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh/mech_block_light" unique_id=1914922902]
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.235
+light_size = 0.015
+omni_range = 0.05
+
+[node name="elec_fault_light" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh" unique_id=1387412486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.018, 0.077)
+mesh = SubResource("SphereMesh_oow3h")
+surface_material_override/0 = ExtResource("10_6vmy0")
+
+[node name="Label3D" type="Label3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh/elec_fault_light" unique_id=666455021]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.00023126602, 0, -0.034359906)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.54896295, 0.54896253, 0.5489625, 1)
+text = "Electric  Fault"
+outline_size = 5
+horizontal_alignment = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh/elec_fault_light" unique_id=277032076]
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.235
+light_size = 0.015
+omni_range = 0.05
+
+[node name="no_ox_light" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh" unique_id=367762549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.088, 0.077)
+mesh = SubResource("SphereMesh_oow3h")
+surface_material_override/0 = ExtResource("10_6vmy0")
+
+[node name="Label3D" type="Label3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh/no_ox_light" unique_id=770741544]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.00023126602, 0, -0.034359906)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.54896295, 0.54896253, 0.5489625, 1)
+text = "No Oxygen"
+outline_size = 5
+horizontal_alignment = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/AirLock/Props/airlock_indicator_panel/PanelMesh/no_ox_light" unique_id=589052220]
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.235
+light_size = 0.015
+omni_range = 0.05
+
+[node name="airlock_indicator_panel2" type="Node3D" parent="Rooms/AirLock/Props" unique_id=2034671184]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 5.857505, 1.0694249, -1.3114569)
+script = ExtResource("8_4vhwf")
+electrical_fault = true
+
+[node name="PanelMesh" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2" unique_id=1001265155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012390137, 0.0022087097)
+mesh = SubResource("BoxMesh_sv2bo")
+
+[node name="vent_fail_light" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh" unique_id=1950422389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020306587, 0.12225485, 0.07662714)
+mesh = SubResource("SphereMesh_oow3h")
+surface_material_override/0 = ExtResource("9_kqbjw")
+
+[node name="Label3D" type="Label3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh/vent_fail_light" unique_id=725743518]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.00023126602, 0, -0.034359906)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.54896295, 0.54896253, 0.5489625, 1)
+text = "Ventilation Failure"
+outline_size = 5
+horizontal_alignment = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh/vent_fail_light" unique_id=264088919]
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.235
+light_size = 0.015
+omni_range = 0.05
+
+[node name="mech_block_light" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh" unique_id=674820906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.052, 0.077)
+mesh = SubResource("SphereMesh_oow3h")
+surface_material_override/0 = ExtResource("10_6vmy0")
+
+[node name="Label3D" type="Label3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh/mech_block_light" unique_id=2001938010]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.00023126602, 0, -0.034359906)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.54896295, 0.54896253, 0.5489625, 1)
+text = "Mechanical Block"
+outline_size = 5
+horizontal_alignment = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh/mech_block_light" unique_id=1270370632]
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.235
+light_size = 0.015
+omni_range = 0.05
+
+[node name="elec_fault_light" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh" unique_id=875685392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.018, 0.077)
+mesh = SubResource("SphereMesh_oow3h")
+surface_material_override/0 = ExtResource("10_6vmy0")
+
+[node name="Label3D" type="Label3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh/elec_fault_light" unique_id=705643422]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.00023126602, 0, -0.034359906)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.54896295, 0.54896253, 0.5489625, 1)
+text = "Electric  Fault"
+outline_size = 5
+horizontal_alignment = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh/elec_fault_light" unique_id=496191574]
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.235
+light_size = 0.015
+omni_range = 0.05
+
+[node name="no_ox_light" type="MeshInstance3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh" unique_id=1585266480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.088, 0.077)
+mesh = SubResource("SphereMesh_oow3h")
+surface_material_override/0 = ExtResource("10_6vmy0")
+
+[node name="Label3D" type="Label3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh/no_ox_light" unique_id=1547428996]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.00023126602, 0, -0.034359906)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.54896295, 0.54896253, 0.5489625, 1)
+text = "No Oxygen"
+outline_size = 5
+horizontal_alignment = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/AirLock/Props/airlock_indicator_panel2/PanelMesh/no_ox_light" unique_id=1946586250]
+visible = false
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.235
+light_size = 0.015
+omni_range = 0.05
+
+[node name="ForeHallway" type="Node3D" parent="Rooms" unique_id=1385809275]
 metadata/_edit_group_ = true
 
-[node name="hallway_module5" parent="Meshes/ForeHallway" unique_id=43560464 instance=ExtResource("6_w6qs7")]
+[node name="Meshes" type="Node3D" parent="Rooms/ForeHallway" unique_id=23766683]
+
+[node name="hallway_module5" parent="Rooms/ForeHallway/Meshes" unique_id=43560464 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="hallway_module6" parent="Meshes/ForeHallway" unique_id=1076690836 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module6" parent="Rooms/ForeHallway/Meshes" unique_id=1076690836 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
-[node name="chamber_airlockjoint" parent="Meshes/ForeHallway" unique_id=203779890 instance=ExtResource("5_jtk4w")]
+[node name="chamber_airlockjoint" parent="Rooms/ForeHallway/Meshes" unique_id=203779890 instance=ExtResource("5_jtk4w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
-[node name="hallway_module" parent="Meshes/ForeHallway" unique_id=977768459 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module" parent="Rooms/ForeHallway/Meshes" unique_id=977768459 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
-[node name="hallway_module2" parent="Meshes/ForeHallway" unique_id=1300039172 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module2" parent="Rooms/ForeHallway/Meshes" unique_id=1300039172 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
-[node name="hallway_module3" parent="Meshes/ForeHallway" unique_id=1409284719 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module3" parent="Rooms/ForeHallway/Meshes" unique_id=1409284719 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
-[node name="hallway_module4" parent="Meshes/ForeHallway" unique_id=593715180 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module4" parent="Rooms/ForeHallway/Meshes" unique_id=593715180 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
-[node name="hallway_utility" parent="Meshes/ForeHallway" unique_id=880381227 instance=ExtResource("7_20dbd")]
+[node name="hallway_utility" parent="Rooms/ForeHallway/Meshes" unique_id=880381227 instance=ExtResource("7_20dbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
 
-[node name="Cockpit" type="Node3D" parent="Meshes" unique_id=613465786]
+[node name="PlayerPositions" type="Node3D" parent="Rooms/ForeHallway" unique_id=205048127]
+
+[node name="1" parent="Rooms/ForeHallway/PlayerPositions" unique_id=1512854166 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(1, 0, 0, 0, 0.9065114, 0.42218134, 0, -0.42218134, 0.9065114, 0, 1, 0)
+valid_neighbors = [NodePath("../../../AirLock/PlayerPositions/0")]
+
+[node name="Interactables" type="Node3D" parent="Rooms/ForeHallway" unique_id=279417727]
+
+[node name="Props" type="Node3D" parent="Rooms/ForeHallway" unique_id=1064691386]
+
+[node name="Cockpit" type="Node3D" parent="Rooms" unique_id=613465786]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 metadata/_edit_group_ = true
 
-[node name="mainconsole" parent="Meshes/Cockpit" unique_id=1677888457 instance=ExtResource("8_jtk4w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+[node name="Meshes" type="Node3D" parent="Rooms/Cockpit" unique_id=698277263]
 
-[node name="cockpit2" parent="Meshes/Cockpit" unique_id=284199039 instance=ExtResource("9_w6qs7")]
+[node name="cockpit2" parent="Rooms/Cockpit/Meshes" unique_id=284199039 instance=ExtResource("9_w6qs7")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="Hub" type="Node3D" parent="Meshes" unique_id=234284742]
+[node name="PlayerPositions" type="Node3D" parent="Rooms/Cockpit" unique_id=977286672]
+
+[node name="Interactables" type="Node3D" parent="Rooms/Cockpit" unique_id=1033844891]
+
+[node name="Props" type="Node3D" parent="Rooms/Cockpit" unique_id=310254450]
+
+[node name="mainconsole" parent="Rooms/Cockpit/Props" unique_id=1677888457 instance=ExtResource("8_jtk4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Hub" type="Node3D" parent="Rooms" unique_id=234284742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)
 metadata/_edit_group_ = true
 
-[node name="central_hub" parent="Meshes/Hub" unique_id=771426459 instance=ExtResource("8_3mtq2")]
+[node name="Meshes" type="Node3D" parent="Rooms/Hub" unique_id=1116510097]
 
-[node name="reactor_door" parent="Meshes/Hub" unique_id=1113930923 instance=ExtResource("3_20dbd")]
+[node name="central_hub" parent="Rooms/Hub/Meshes" unique_id=771426459 instance=ExtResource("8_3mtq2")]
+
+[node name="reactor_door" parent="Rooms/Hub/Meshes" unique_id=1113930923 instance=ExtResource("3_20dbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
-[node name="starboard_door" parent="Meshes/Hub" unique_id=388864439 instance=ExtResource("3_20dbd")]
+[node name="starboard_door" parent="Rooms/Hub/Meshes" unique_id=388864439 instance=ExtResource("3_20dbd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, 0)
 
-[node name="port_door" parent="Meshes/Hub" unique_id=1522390479 instance=ExtResource("3_20dbd")]
+[node name="port_door" parent="Rooms/Hub/Meshes" unique_id=1522390479 instance=ExtResource("3_20dbd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 0, 0)
 
-[node name="AftHallway" type="Node3D" parent="Meshes" unique_id=1178171097]
+[node name="PlayerPositions" type="Node3D" parent="Rooms/Hub" unique_id=1658700080]
+
+[node name="Interactables" type="Node3D" parent="Rooms/Hub" unique_id=1035373205]
+
+[node name="Props" type="Node3D" parent="Rooms/Hub" unique_id=1695698112]
+
+[node name="AftHallway" type="Node3D" parent="Rooms" unique_id=1178171097]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -35)
 
-[node name="hallway_module5" parent="Meshes/AftHallway" unique_id=443881534 instance=ExtResource("6_w6qs7")]
+[node name="Meshes" type="Node3D" parent="Rooms/AftHallway" unique_id=574080761]
+
+[node name="hallway_module5" parent="Rooms/AftHallway/Meshes" unique_id=443881534 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="hallway_module6" parent="Meshes/AftHallway" unique_id=526671780 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module6" parent="Rooms/AftHallway/Meshes" unique_id=526671780 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
-[node name="hallway_module" parent="Meshes/AftHallway" unique_id=241229692 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module" parent="Rooms/AftHallway/Meshes" unique_id=241229692 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
-[node name="hallway_module2" parent="Meshes/AftHallway" unique_id=2054001068 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module2" parent="Rooms/AftHallway/Meshes" unique_id=2054001068 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
-[node name="hallway_module3" parent="Meshes/AftHallway" unique_id=1433849596 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module3" parent="Rooms/AftHallway/Meshes" unique_id=1433849596 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="hallway_module4" parent="Meshes/AftHallway" unique_id=2145464282 instance=ExtResource("6_w6qs7")]
+[node name="hallway_module4" parent="Rooms/AftHallway/Meshes" unique_id=2145464282 instance=ExtResource("6_w6qs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
-[node name="hallway_utility" parent="Meshes/AftHallway" unique_id=13145829 instance=ExtResource("7_20dbd")]
+[node name="hallway_utility" parent="Rooms/AftHallway/Meshes" unique_id=13145829 instance=ExtResource("7_20dbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
-[node name="PlayerPositions" type="Node" parent="." unique_id=1866517575]
+[node name="PlayerPositions" type="Node3D" parent="Rooms/AftHallway" unique_id=973628982]
 
-[node name="1" parent="PlayerPositions" unique_id=1750914355 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
-transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, 7, 1, 0)
-valid_neighbors = [NodePath("../2")]
+[node name="Interactables" type="Node3D" parent="Rooms/AftHallway" unique_id=804026529]
 
-[node name="2" parent="PlayerPositions" unique_id=1512854166 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
-transform = Transform3D(1, 0, 0, 0, 0.9065114, 0.42218134, 0, -0.42218134, 0.9065114, 0, 1, 0)
-valid_neighbors = [NodePath("../1")]
+[node name="Props" type="Node3D" parent="Rooms/AftHallway" unique_id=1613615225]
 
-[node name="Interactables" type="Node" parent="." unique_id=175961243]
-
-[node name="engine_core" type="Node3D" parent="." unique_id=979140351]
+[node name="engine_core" type="Node3D" parent="Rooms" unique_id=979140351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41)
 
-[node name="engineroom" type="MeshInstance3D" parent="engine_core" unique_id=1199801925]
+[node name="Meshes" type="Node3D" parent="Rooms/engine_core" unique_id=1081458411]
+
+[node name="engineroom" type="MeshInstance3D" parent="Rooms/engine_core/Meshes" unique_id=1199801925]
 mesh = SubResource("ArrayMesh_suwhk")
 
-[node name="Solid" type="MeshInstance3D" parent="engine_core/engineroom" unique_id=1814769165]
+[node name="Solid" type="MeshInstance3D" parent="Rooms/engine_core/Meshes/engineroom" unique_id=1814769165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2255125, -5.708561)
 mesh = SubResource("ArrayMesh_oc6rd")
+
+[node name="PlayerPositions" type="Node3D" parent="Rooms/engine_core" unique_id=907889130]
+
+[node name="Interactables" type="Node3D" parent="Rooms/engine_core" unique_id=534426049]
+
+[node name="Props" type="Node3D" parent="Rooms/engine_core" unique_id=1299089385]

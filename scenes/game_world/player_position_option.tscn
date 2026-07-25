@@ -17,7 +17,3 @@ interactee = NodePath("..")
 [node name="Collider" type="CollisionShape3D" parent="Interactable" unique_id=562937766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2531109, 0)
 shape = SubResource("SphereShape3D_st70h")
-
-[connection signal="input_event" from="Interactable" to="Interactable" method="_on_input_event"]
-[connection signal="mouse_entered" from="Interactable" to="Interactable" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interactable" to="Interactable" method="_on_mouse_exited"]

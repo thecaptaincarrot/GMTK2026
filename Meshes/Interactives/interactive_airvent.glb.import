@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://26ptdxodp7d1"
-path="res://.godot/imported/interactive_airvent.glb-f5800da26a473b464e8b73e244a8409b.scn"
+path="res://.godot/imported/interactive_airvent.glb-ad94da194b293d954edd21d24c956439.scn"
 
 [deps]
 
-source_file="res://Meshes/ShipParts/interactive_airvent.glb"
-dest_files=["res://.godot/imported/interactive_airvent.glb-f5800da26a473b464e8b73e244a8409b.scn"]
+source_file="res://Meshes/Interactives/interactive_airvent.glb"
+dest_files=["res://.godot/imported/interactive_airvent.glb-ad94da194b293d954edd21d24c956439.scn"]
 
 [params]
 

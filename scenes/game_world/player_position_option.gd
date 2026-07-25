@@ -25,7 +25,6 @@ func handle_interaction() -> void:
 			return
 	var player = Globals.get_player()
 	if player:
-		
 		#this is here so that we are only clicking on valid neighbors for movement
 		Globals.last_position_node = self
 		game_room.disable_all_position_colliders()
@@ -37,8 +36,8 @@ func handle_interaction() -> void:
 		player.camera.fov = self.fov
 		
 		if(Globals.should_tween):
-			player.change_position(self.get_position(), Vector2(self.global_rotation.x, self.global_rotation.z))
+			player.change_position(self.get_global_position(), Vector2(self.global_rotation.x, self.global_rotation.z))
 			
 		else:
 			player.set_global_rotation(Vector3(self.rotation.x, player.rotation.y, self.rotation.z))
-			player.set_global_position(self.get_position())
+			player.set_global_position(self.get_global_position())
