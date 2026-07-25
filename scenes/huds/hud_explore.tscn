@@ -1,10 +1,6 @@
 [gd_scene format=3 uid="uid://b0ghq3m0hhkl5"]
 
 [ext_resource type="Script" uid="uid://cmbaw0mebw3o1" path="res://scenes/huds/hud_explore.gd" id="1_df53p"]
-[ext_resource type="Texture2D" uid="uid://lh38k3sgvhng" path="res://assets/right_arrow_light.png" id="2_ccxr0"]
-[ext_resource type="Texture2D" uid="uid://5tcw6b5hdkso" path="res://assets/right_arrow.png" id="3_ua73i"]
-[ext_resource type="Texture2D" uid="uid://bhd4lxweroceh" path="res://assets/left_arrow_light.png" id="4_vud4e"]
-[ext_resource type="Texture2D" uid="uid://jltpubhdykt4" path="res://assets/left_arrow.png" id="5_gbevy"]
 
 [node name="HudExplore" type="CanvasLayer" unique_id=1476096050]
 script = ExtResource("1_df53p")
@@ -19,31 +15,28 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="RightArrow" type="TextureButton" parent="RotationControls" unique_id=928787493]
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -77.0
-offset_right = 1.0
+offset_left = -128.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("2_ccxr0")
-texture_hover = ExtResource("3_ua73i")
-ignore_texture_size = true
-stretch_mode = 3
+stretch_mode = 0
 
 [node name="LeftArrow" type="TextureButton" parent="RotationControls" unique_id=1507823232]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_right = 76.0
+offset_right = 128.0
 grow_vertical = 2
-texture_normal = ExtResource("4_vud4e")
-texture_hover = ExtResource("5_gbevy")
-ignore_texture_size = true
-stretch_mode = 3
+stretch_mode = 0
 
+[connection signal="mouse_entered" from="RotationControls/RightArrow" to="." method="_on_right_arrow_mouse_entered"]
+[connection signal="mouse_exited" from="RotationControls/RightArrow" to="." method="_on_right_arrow_mouse_exited"]
 [connection signal="pressed" from="RotationControls/RightArrow" to="." method="_on_right_arrow_pressed"]
+[connection signal="mouse_entered" from="RotationControls/LeftArrow" to="." method="_on_left_arrow_mouse_entered"]
+[connection signal="mouse_exited" from="RotationControls/LeftArrow" to="." method="_on_left_arrow_mouse_exited"]
 [connection signal="pressed" from="RotationControls/LeftArrow" to="." method="_on_left_arrow_pressed"]

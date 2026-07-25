@@ -17,7 +17,4 @@ metadata/_custom_type_script = "uid://d73lxn1e6cxf"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=926940183]
 shape = SubResource("SphereShape3D_st70h")
-
-[connection signal="input_event" from="Interactable" to="Interactable" method="_on_input_event"]
-[connection signal="mouse_entered" from="Interactable" to="Interactable" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interactable" to="Interactable" method="_on_mouse_exited"]
+debug_color = Color(1, 0.16666669, 0, 1)

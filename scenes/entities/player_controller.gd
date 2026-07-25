@@ -16,14 +16,14 @@ func rotate_screen(deg: float):
 	await tween.finished
 	lock_transform = false
 
-func change_position(pos: Vector3, rot:Vector3):
+func change_position(pos: Vector3, rot:Vector3, fov : float):
 	if lock_transform:
 		return
 	lock_transform = true
 	var tween = create_tween()
-	var tween2 = create_tween()
-	tween2.tween_property(self, "global_rotation", rot, movement_time)
+	tween.set_parallel()
+	tween.tween_property(self, "global_rotation", rot, movement_time)
 	tween.tween_property(self, "global_position", pos, movement_time)
+	tween.tween_property(camera, "fov", fov, movement_time)
 	await tween.finished
-	await  tween2.finished
 	lock_transform = false

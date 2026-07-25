@@ -26,6 +26,15 @@ func set_active_position_node(pos_name:StringName):
 			break
 	return result
 
+
+func get_position_node(pos_name:StringName):
+	var result = null
+	for opt:PlayerPositionOption in get_all_player_positions():
+		if(opt.name == pos_name):
+			result =  opt
+	return result
+
+
 func enable_all_position_colliders():
 	for opt in get_all_player_positions():
 		opt.enable_collision()
@@ -38,6 +47,7 @@ func disable_all_position_colliders():
 func get_all_player_positions() ->  Array[PlayerPositionOption]:
 	var player_positions : Array[PlayerPositionOption]
 	for room_node in _room_container.get_children():
-		for player_position : PlayerPositionOption in room_node.get_node("PlayerPositions").get_children():
-			player_positions.append(player_position)
+		for player_position in room_node.get_node("PlayerPositions").get_children():
+			if player_position is PlayerPositionOption:
+				player_positions.append(player_position)
 	return player_positions

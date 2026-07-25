@@ -17,11 +17,15 @@ var main_scene:MainScene
 func _ready():
 	load_room(_ship_world_path)
 	_player = _player_scene.instantiate()
-	var pos = _active_room.set_active_position_node(&"0")
+	
 	add_child(_player)
-	_player.set_global_position(pos)
-	_player.rotation.y = PI/2.0 #I don't think hard setting this is a good idea, but here we are
+	
 	Globals.set_player(_player)
+	
+	var starting_player_position_option = _active_room.get_position_node(&"Airlock0")
+	starting_player_position_option.move_player_to_position(true)
+	_player.rotation.y = PI/2.0 #I don't think hard setting this is a good idea, but here we are
+	
 	Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
 
 func load_room(path):

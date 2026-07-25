@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bqsb3hn3ir75o"]
 
 [ext_resource type="Script" uid="uid://mkskqqcn4xx" path="res://scenes/entities/Door.gd" id="1_ygosh"]
+[ext_resource type="Material" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K-JPG.tres" id="2_8480c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eedso"]
 
@@ -89,13 +90,16 @@ script = ExtResource("1_ygosh")
 [node name="doorpanelA" type="MeshInstance3D" parent="." unique_id=776641008]
 mesh = SubResource("ArrayMesh_ibgj4")
 blend_shapes/open = 0.0
+surface_material_override/0 = ExtResource("2_8480c")
 
 [node name="doorframe" type="MeshInstance3D" parent="." unique_id=895010264]
 mesh = SubResource("ArrayMesh_e1wx1")
+surface_material_override/0 = ExtResource("2_8480c")
 
 [node name="doorpanelB" type="MeshInstance3D" parent="." unique_id=509589327]
 mesh = SubResource("ArrayMesh_401ht")
 blend_shapes/open = 0.0
+surface_material_override/0 = ExtResource("2_8480c")
 
 [node name="MouseEaterArea" type="Area3D" parent="." unique_id=986433022]
 

@@ -18,4 +18,4 @@ interactee = NodePath("..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2531109, 0)
 shape = SubResource("SphereShape3D_st70h")
 disabled = true
-
+debug_color = Color(0, 0.65, 0.1625, 1)
