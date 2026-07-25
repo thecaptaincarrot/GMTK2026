@@ -20,9 +20,10 @@ func change_position(pos: Vector3, rot:Vector3, fov : float):
 	if lock_transform:
 		return
 	lock_transform = true
+	var target := Quaternion(rot.normalized(), PI / 2)
 	var tween = create_tween()
 	tween.set_parallel()
-	tween.tween_property(self, "global_rotation", rot, movement_time)
+	tween.tween_property(self, "global_rotation", target, movement_time)
 	tween.tween_property(self, "global_position", pos, movement_time)
 	tween.tween_property(camera, "fov", fov, movement_time)
 	await tween.finished
