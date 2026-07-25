@@ -22,10 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://w12lobe4xf4q" path="res://scenes/entities/ReactorCore/core_console.tscn" id="21_r7isu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_df53p"]
-size = Vector3(0.27453613, 0.3317871, 0.16552734)
+size = Vector3(0.33795166, 0.51013184, 0.16552734)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ah6i4"]
-size = Vector3(0.28894043, 0.35510254, 0.06762695)
+size = Vector3(0.3633423, 0.49441528, 0.06762695)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyxqs"]
 
@@ -130,27 +130,27 @@ valid_neighbors = [NodePath("../../../ForeHallway/PlayerPositions/ForeHall1"), N
 reverb_vector = Vector4(0.5, 0, 0, 0.2)
 
 [node name="ExternalZoomIn" parent="Rooms/AirLock/PlayerPositions" unique_id=464256384 instance=ExtResource("6_6vmy0")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.4597034, 1.0849272, -1.2167616)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.221466, 1.0849272, -1.2444259)
 fov = 60.0
 
 [node name="CollisionShape3D" parent="Rooms/AirLock/PlayerPositions/ExternalZoomIn/Interactable" parent_id_path=PackedInt32Array(464256384, 1013888320) index="0" unique_id=926940183]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10601902, 0.0013427734, -0.41723633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13772762, -0.01361084, -0.5938492)
 shape = SubResource("BoxShape3D_df53p")
 debug_color = Color(0.99, 0, 0.23099978, 1)
 
 [node name="InternalZoomIn" parent="Rooms/AirLock/PlayerPositions" unique_id=819035244 instance=ExtResource("6_6vmy0")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5926652, 1.0858054, 1.1368077)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.7729449, 1.0602659, 1.2265302)
 fov = 60.0
 
 [node name="CollisionShape3D" parent="Rooms/AirLock/PlayerPositions/InternalZoomIn/Interactable" parent_id_path=PackedInt32Array(819035244, 1013888320) index="0" unique_id=926940183]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12701392, 0.009216309, -0.36127567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06522179, 0.048416138, -0.54203606)
 shape = SubResource("BoxShape3D_ah6i4")
 
 [node name="Interactables" type="Node3D" parent="Rooms/AirLock" unique_id=265392305]
 
 [node name="interactive_airvent" parent="Rooms/AirLock/Interactables" unique_id=1342556809 node_paths=PackedStringArray("indicator_panels") instance=ExtResource("5_uulq1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0, 3)
-indicator_panels = [null, null]
+indicator_panels = [NodePath("../../Props/airlock_indicator_panel"), NodePath("../../Props/airlock_indicator_panel2")]
 
 [node name="AirlockButton2" parent="Rooms/AirLock/Interactables" unique_id=747472208 instance=ExtResource("9_1gqlr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39852428, 1.0169623, 0.8609401)
@@ -191,6 +191,9 @@ omni_range = 4096.0
 
 [node name="airlock_indicator_panel" parent="Rooms/AirLock/Props" unique_id=579463908 instance=ExtResource("9_ah6i4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19772243, 1.0694249, 1.2719636)
+
+[node name="airlock_indicator_panel2" parent="Rooms/AirLock/Props" unique_id=751295488 instance=ExtResource("9_ah6i4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.8258514, 1.0694249, -1.3461218)
 
 [node name="ForeHallway" type="Node3D" parent="Rooms" unique_id=1385809275]
 metadata/_edit_group_ = true
@@ -322,9 +325,6 @@ fov = 45.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 6)
 
 [node name="Props" type="Node3D" parent="Rooms/Cockpit" unique_id=310254450]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Rooms/Cockpit" unique_id=2084005687]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0900044, 3.767408)
 
 [node name="Hub" type="Node3D" parent="Rooms" unique_id=234284742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)

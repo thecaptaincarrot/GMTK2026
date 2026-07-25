@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://phpwj8xwkjpf"
-path="res://.godot/imported/status_lights.glb-c5de5e525af92e04e00fd7687e6f46ad.scn"
+uid="uid://bjwi7gn6clter"
+path="res://.godot/imported/status_lights(1).glb-f23e4b393e514d6171befdac1ddc4554.scn"
 
 [deps]
 
-source_file="res://Meshes/Props/status_lights.glb"
-dest_files=["res://.godot/imported/status_lights.glb-c5de5e525af92e04e00fd7687e6f46ad.scn"]
+source_file="res://Meshes/Props/status_lights(1).glb"
+dest_files=["res://.godot/imported/status_lights(1).glb-f23e4b393e514d6171befdac1ddc4554.scn"]
 
 [params]
 
