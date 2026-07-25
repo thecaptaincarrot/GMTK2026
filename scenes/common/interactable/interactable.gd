@@ -3,11 +3,14 @@ extends Area3D
 class_name Interactable
 
 @export var interactee: Node
-
+var camera_area = false
 
 # add interactable to a marker3d to automatically change cursor type
 func _on_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(Globals.cursor_up_arrow)
+	if camera_area:
+		Input.set_custom_mouse_cursor(Globals.cursor_up_arrow)
+	else:
+		Input.set_custom_mouse_cursor(Globals.cursor_interact)
 
 func _on_mouse_exited() -> void:
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)

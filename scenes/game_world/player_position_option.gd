@@ -7,6 +7,10 @@ class_name PlayerPositionOption
 
 @export var game_room:GameRoom
 
+@onready var interactable = $Interactable
+
+func _ready():
+	interactable.camera_area = true
 
 func disable_collision():
 	collision_area.disabled = true
