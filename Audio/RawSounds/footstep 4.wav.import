@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b6yja8uj1k3xu"
+path="res://.godot/imported/footstep 4.wav-157bf7fa3e632a910f8fb5b0b1e2976d.sample"
+
+[deps]
+
+source_file="res://Audio/RawSounds/footstep 4.wav"
+dest_files=["res://.godot/imported/footstep 4.wav-157bf7fa3e632a910f8fb5b0b1e2976d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -3,7 +3,7 @@ class_name PlayerController
 
 @export var camera:Camera3D
 
-@export var movement_time := .3
+@export var movement_time := 1.2
 
 var lock_transform := false
 
@@ -30,5 +30,13 @@ func change_position(pos: Vector3, rot:Vector3, fov : float):
 	tween.tween_property(self, "global_rotation", target, movement_time)
 	tween.tween_property(self, "global_position", pos, movement_time)
 	tween.tween_property(camera, "fov", fov, movement_time)
+	
+	var audio_tween = create_tween()
+	audio_tween.tween_callback(AudioManagerNode.create_audio.bind("Footsteps"))
+	audio_tween.tween_interval(0.25)
+	audio_tween.tween_callback(AudioManagerNode.create_audio.bind("Footsteps"))
+	audio_tween.tween_interval(0.25)
+	audio_tween.tween_callback(AudioManagerNode.create_audio.bind("Footsteps"))
+
 	await tween.finished
 	lock_transform = false

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnwtq23525l4n"
+path="res://.godot/imported/light bleep.wav-45aff8df29d6e77325faa1a8535b7eaa.sample"
+
+[deps]
+
+source_file="res://Audio/RawSounds/light bleep.wav"
+dest_files=["res://.godot/imported/light bleep.wav-45aff8df29d6e77325faa1a8535b7eaa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

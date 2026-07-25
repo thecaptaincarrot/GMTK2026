@@ -52,6 +52,7 @@ func move_player_to_position(tween_override = false):
 			player.set_global_rotation(Vector3(self.rotation.x, player.rotation.y, self.rotation.z))
 			player.set_global_position(self.get_global_position())
 			player.camera.fov = self.fov
+			AudioManagerNode.create_audio("Footsteps")
 
 
 func rotate_90():
