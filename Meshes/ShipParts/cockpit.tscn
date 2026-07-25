@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://5aqsg2k302h"]
 
-[ext_resource type="Texture2D" uid="uid://bcsuseynh0l73" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K-JPG_Color.jpg" id="1_dx2q3"]
+[ext_resource type="Material" uid="uid://vjnvigapxhee" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K.tres" id="1_dx2q3"]
 [ext_resource type="Material" uid="uid://dkfaj3e562vn6" path="res://assets/Materials/RedEmission/RedEmissionMaterial.tres" id="2_iosbv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eumj1"]
@@ -57,13 +57,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xw0ux")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs6al"]
-albedo_texture = ExtResource("1_dx2q3")
-
 [node name="Cockpit" type="Node3D" unique_id=599936812]
 
 [node name="cockpit" type="MeshInstance3D" parent="." unique_id=1325109869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 mesh = SubResource("ArrayMesh_b0070")
-surface_material_override/0 = SubResource("StandardMaterial3D_bs6al")
+surface_material_override/0 = ExtResource("1_dx2q3")
 surface_material_override/1 = ExtResource("2_iosbv")
