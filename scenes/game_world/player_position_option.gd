@@ -8,7 +8,7 @@ class_name PlayerPositionOption
 @export var game_room:GameRoom
 
 @export_tool_button("Rotate 90 degrees") var rotate_action = rotate_90
-
+@export var time_dilation_multiplier: float = 1
 
 @onready var interactable = $Interactable
 
@@ -32,6 +32,7 @@ func handle_interaction() -> void:
 	assert(Globals.get_last_position().valid_neighbors.has(self) or Globals.get_last_position() == self, "not a valid neighbor")
 
 	move_player_to_position()
+	Globals.time_controller.set_time_multiplier(self.time_dilation_multiplier)
 
 
 func move_player_to_position(tween_override = false):

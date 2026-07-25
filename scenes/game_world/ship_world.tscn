@@ -1281,6 +1281,7 @@ surface_material_override/0 = ExtResource("2_5o1jx")
 [node name="ForeHall1" parent="Rooms/ForeHallway/PlayerPositions" unique_id=1512854166 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 1.6, 0)
 valid_neighbors = [NodePath("../../../AirLock/PlayerPositions/Airlock1"), NodePath("../ForeHall2"), NodePath("../../../Cockpit/PlayerPositions/Cockpit0")]
+time_dilation_multiplier = 10.0
 
 [node name="ForeHall2" parent="Rooms/ForeHallway/PlayerPositions" unique_id=1385073360 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.9396927, 0.34202015, 0, -0.34202015, 0.9396927, 0, 1.6, -3)
