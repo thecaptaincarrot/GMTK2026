@@ -332,13 +332,14 @@ metadata/_edit_group_ = true
 
 [node name="Meshes" type="Node3D" parent="Rooms/Hub" unique_id=1116510097]
 
-[node name="DoorA" parent="Rooms/Hub/Meshes" unique_id=1169710973 instance=ExtResource("3_uulq1")]
+[node name="ReactorDoor" parent="Rooms/Hub/Meshes" unique_id=1169710973 instance=ExtResource("3_uulq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+start_open = true
 
-[node name="DoorA2" parent="Rooms/Hub/Meshes" unique_id=917489576 instance=ExtResource("3_uulq1")]
+[node name="LabDoor" parent="Rooms/Hub/Meshes" unique_id=917489576 instance=ExtResource("3_uulq1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, 0)
 
-[node name="DoorA3" parent="Rooms/Hub/Meshes" unique_id=631010182 instance=ExtResource("3_uulq1")]
+[node name="HydroDoor" parent="Rooms/Hub/Meshes" unique_id=631010182 instance=ExtResource("3_uulq1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 0, 0)
 
 [node name="CentralHub" parent="Rooms/Hub/Meshes" unique_id=1891809910 instance=ExtResource("20_bp48q")]
@@ -358,24 +359,39 @@ valid_neighbors = [NodePath("../Hub4"), NodePath("../Hub0"), NodePath("../Hub3")
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Hub4" parent="Rooms/Hub/PlayerPositions" unique_id=1155846147 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, -3, 1.6, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.1736482, 0, -0.1736482, 0.9848078, -4, 1.6, 0)
 fov = 70.0
 valid_neighbors = [NodePath("../Hub1")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Hub3" parent="Rooms/Hub/PlayerPositions" unique_id=148395974 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 3, 1.6, 0)
+transform = Transform3D(1.1924881e-08, 0.1736482, -0.9848077, 0, 0.9848077, 0.1736482, 1, -2.070734e-09, 1.17437144e-08, 4, 1.6, 0)
 fov = 70.0
 valid_neighbors = [NodePath("../Hub1")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Hub2" parent="Rooms/Hub/PlayerPositions" unique_id=253986496 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, -3)
+transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.1736482, 0, -0.1736482, 0.9848078, 0, 1.6, -2)
 fov = 70.0
 valid_neighbors = [NodePath("../Hub1"), NodePath("../../../AftHallway/PlayerPositions/Aft0")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Interactables" type="Node3D" parent="Rooms/Hub" unique_id=1035373205]
+
+[node name="ReactorDoorButton" parent="Rooms/Hub/Interactables" unique_id=1050364001 node_paths=PackedStringArray("door") instance=ExtResource("9_1gqlr")]
+transform = Transform3D(-1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, -1, 1.3157854, 1.0680116, -3.7915192)
+door = NodePath("../../Meshes/ReactorDoor")
+needs_power = true
+
+[node name="LabDoorButton" parent="Rooms/Hub/Interactables" unique_id=1899330948 node_paths=PackedStringArray("door") instance=ExtResource("9_1gqlr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.989438, 1.0886685, 1.3397827)
+door = NodePath("../../Meshes/LabDoor")
+needs_power = true
+
+[node name="HydroDoorButton" parent="Rooms/Hub/Interactables" unique_id=701222870 node_paths=PackedStringArray("door") instance=ExtResource("9_1gqlr")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.8053265, 1.0835881, -1.3266106)
+door = NodePath("../../Meshes/HydroDoor")
+needs_power = true
 
 [node name="Props" type="Node3D" parent="Rooms/Hub" unique_id=1695698112]
 

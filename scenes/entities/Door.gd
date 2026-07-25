@@ -8,7 +8,18 @@ class_name Door
 
 var _is_open = false
 
+@export var start_open = false
+
 #TODO: Doors should close when you travel to a new location
+func _ready():
+	if start_open:
+		_is_open = true
+		right_door.position = Vector3(0.8,0.0,0.0)
+		left_door.position = Vector3(-0.8,0.0,0.0)
+		mouse_eater.disabled = true
+		
+		Globals.reactor_started_signal.connect(close_door)
+
 
 func open_door():
 	var new_tween = create_tween()

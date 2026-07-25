@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ibdfv2lfj4br" path="res://scenes/entities/Airlock/interactive_airvent.gd" id="1_ahjfp"]
 [ext_resource type="Material" uid="uid://vjnvigapxhee" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K.tres" id="2_hf7be"]
 [ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="2_x7r0q"]
+[ext_resource type="Material" path="res://assets/Materials/Fabric039_2K-JPG/Fabric039_2K.tres" id="3_vyfop"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xfmk"]
 
@@ -84,6 +85,7 @@ surface_material_override/0 = ExtResource("2_hf7be")
 [node name="jumpsuit_001" type="MeshInstance3D" parent="." unique_id=2020520611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1172137, 0, 4.0184326)
 mesh = SubResource("ArrayMesh_yq6ob")
+surface_material_override/0 = ExtResource("3_vyfop")
 
 [node name="Interactable" type="Area3D" parent="." unique_id=1797830890 node_paths=PackedStringArray("interactee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7276754, 0.23901367, 0)

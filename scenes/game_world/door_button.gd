@@ -7,10 +7,21 @@ class_name DoorButton
 var button_blend_shape_value = -1.0
 var animating = false
 
+@export var needs_power = false
+
+func _ready():
+	if needs_power:
+		button_mesh.set_surface_override_material(1, Globals.inactive_material)
+		Globals.reactor_started_signal.connect(activate_material)
+
+
 func handle_interaction():
 	animate_button()
-	
-	door.toggle_door()
+	if needs_power:
+		if Globals.reactor_started:
+			door.toggle_door()
+	else:
+		door.toggle_door()
 
 
 func animate_button():
@@ -26,3 +37,8 @@ func animate_button():
 func _physics_process(_delta):
 	if animating:
 		button_mesh.set_blend_shape_value(0,button_blend_shape_value)
+
+
+func activate_material():
+	button_mesh.set_surface_override_material(1, Globals.active_material)
+	

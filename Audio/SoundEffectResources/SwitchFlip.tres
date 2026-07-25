@@ -8,4 +8,5 @@ script = ExtResource("1_xjb8x")
 ID = "SwitchFlip"
 limit = 3
 sound_effect = Array[AudioStream]([ExtResource("2_6rk18")])
+volume = -10
 metadata/_custom_type_script = "uid://b7fou07k713y"

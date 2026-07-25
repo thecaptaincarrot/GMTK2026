@@ -8,6 +8,9 @@ extends Node
 @onready var cursor_right_arrow = preload("res://assets/cursor_right.png")
 @onready var cursor_backwards_arrow = preload("res://assets/cursor_back.png")
 
+@onready var active_material = load("res://assets/Materials/RedEmission/RedEmissionMaterial.tres")
+@onready var inactive_material = load("res://assets/Materials/RedEmission/RedOffMaterial.tres")
+
 signal rotation_control_update
 signal zoom_change
 
@@ -25,6 +28,9 @@ var _last_position_node:PlayerPositionOption
 var _active_note_pages: Array[Texture2D]
 
 var _zoomed_in:bool = false
+
+var reactor_started = false
+signal reactor_started_signal
 
 func _ready():
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
