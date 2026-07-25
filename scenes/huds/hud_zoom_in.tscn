@@ -2,15 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bkcwxfhrbv1nr" path="res://scenes/huds/hud_zoom_in.gd" id="1_2u7j4"]
 
-[sub_resource type="Gradient" id="Gradient_2u7j4"]
-offsets = PackedFloat32Array(0.0019120459, 1)
-colors = PackedColorArray(1, 0.9529412, 0.41960785, 0.2509804, 1, 0.9216667, 0.53, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_mjd3n"]
-gradient = SubResource("Gradient_2u7j4")
-fill_from = Vector2(1, 1)
-fill_to = Vector2(1, 0.008547009)
-
 [node name="HudZoomIn" type="CanvasLayer" unique_id=774226997]
 script = ExtResource("1_2u7j4")
 
@@ -33,7 +24,6 @@ offset_top = -129.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_hover = SubResource("GradientTexture2D_mjd3n")
 stretch_mode = 0
 
 [connection signal="mouse_entered" from="ZoomControl/ZoomBack" to="." method="_on_zoom_back_mouse_entered"]
