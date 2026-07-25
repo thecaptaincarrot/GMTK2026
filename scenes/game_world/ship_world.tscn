@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://deo534va4hvh1" path="res://scenes/game_world/rooms/game_room.gd" id="1_lny2s"]
 [ext_resource type="Material" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K-JPG.tres" id="2_5o1jx"]
-[ext_resource type="PackedScene" uid="uid://bqsb3hn3ir75o" path="res://scenes/entities/Airlock/ShipDoor.tscn" id="3_uulq1"]
+[ext_resource type="PackedScene" uid="uid://bqsb3hn3ir75o" path="res://scenes/entities/ShipDoor.tscn" id="3_uulq1"]
 [ext_resource type="PackedScene" uid="uid://cepp3r5t1ivve" path="res://scenes/entities/Airlock/interactive_airvent.tscn" id="5_uulq1"]
 [ext_resource type="PackedScene" uid="uid://cb1p35lrk8d8r" path="res://scenes/common/zoom_in/zoom_in_area.tscn" id="6_6vmy0"]
 [ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="7_dt02w"]
@@ -14,6 +14,10 @@
 [ext_resource type="Material" uid="uid://dqh8mw6q7lyt6" path="res://scenes/entities/Airlock/LightOnMaterial.tres" id="9_kqbjw"]
 [ext_resource type="Material" uid="uid://dfwcuortqhv22" path="res://scenes/entities/Airlock/LightOffMaterial.tres" id="10_6vmy0"]
 [ext_resource type="FontFile" uid="uid://o315yvr8tq7t" path="res://assets/Fonts/Venus Rising Rg.otf" id="12_ah6i4"]
+[ext_resource type="PackedScene" uid="uid://dgv285nxvg4vm" path="res://Meshes/ShipParts/wingmoduleA.glb" id="15_4upwa"]
+[ext_resource type="PackedScene" uid="uid://b7eyxa271i2ve" path="res://Meshes/ShipParts/wingmoduleB.glb" id="16_4vhwf"]
+[ext_resource type="PackedScene" uid="uid://bl2sv8nsprf06" path="res://Meshes/Props/hydroponics_tray.glb" id="17_kqbjw"]
+[ext_resource type="PackedScene" uid="uid://bfkjok8884p2g" path="res://Meshes/Props/hydroponics_tank.glb" id="18_6vmy0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6dmb"]
 
@@ -816,7 +820,7 @@ shadow_mesh = SubResource("ArrayMesh_uj4xn")
 [node name="ShipWorld" type="Node3D" unique_id=792692354]
 script = ExtResource("1_lny2s")
 
-[node name="Rooms" type="Node" parent="." unique_id=1475418970]
+[node name="Rooms" type="Node3D" parent="." unique_id=2070018744]
 
 [node name="AirLock" type="Node3D" parent="Rooms" unique_id=1399252336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
@@ -1365,6 +1369,10 @@ valid_neighbors = [NodePath("../Cockpit0"), NodePath("../CockpitZoomIn")]
 transform = Transform3D(-1, -6.381359e-08, 1.3684866e-07, 0, 0.9063077, 0.4226183, -1.509958e-07, 0.4226183, -0.9063077, 0, 1.9066312, 3.9285212)
 fov = 105.0
 
+[node name="CockpitZoomIn2" parent="Rooms/Cockpit/PlayerPositions" unique_id=356765283 instance=ExtResource("6_6vmy0")]
+transform = Transform3D(-0.8838618, 0.4215957, -0.20259668, -0.046638932, 0.35153982, 0.93501043, 0.46541715, 0.83586895, -0.2910498, 0.8984054, 1.7864654, 4.60923)
+fov = 45.0
+
 [node name="Interactables" type="Node3D" parent="Rooms/Cockpit" unique_id=1033844891]
 
 [node name="Props" type="Node3D" parent="Rooms/Cockpit" unique_id=310254450]
@@ -1628,6 +1636,233 @@ mesh = SubResource("ArrayMesh_oc6rd")
 [node name="Interactables" type="Node3D" parent="Rooms/engine_core" unique_id=534426049]
 
 [node name="Props" type="Node3D" parent="Rooms/engine_core" unique_id=1299089385]
+
+[node name="StarboardLab" type="Node3D" parent="Rooms" unique_id=1530311910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -19)
+
+[node name="Meshes" type="Node3D" parent="Rooms/StarboardLab" unique_id=2042012425]
+
+[node name="wingmoduleA" parent="Rooms/StarboardLab/Meshes" unique_id=392917820 instance=ExtResource("15_4upwa")]
+
+[node name="PlayerPositions" type="Node3D" parent="Rooms/StarboardLab" unique_id=1970730120]
+
+[node name="Interactables" type="Node3D" parent="Rooms/StarboardLab" unique_id=1151965141]
+
+[node name="Props" type="Node3D" parent="Rooms/StarboardLab" unique_id=1963313716]
+
+[node name="door_A" parent="Rooms/StarboardLab/Props" unique_id=1933391462 instance=ExtResource("3_uulq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -8)
+
+[node name="PortHydroponics" type="Node3D" parent="Rooms" unique_id=1177462905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -19)
+
+[node name="Meshes" type="Node3D" parent="Rooms/PortHydroponics" unique_id=375274194]
+
+[node name="wingmoduleB" parent="Rooms/PortHydroponics/Meshes" unique_id=1562799384 instance=ExtResource("16_4vhwf")]
+
+[node name="PlayerPositions" type="Node3D" parent="Rooms/PortHydroponics" unique_id=485719369]
+
+[node name="Interactables" type="Node3D" parent="Rooms/PortHydroponics" unique_id=461452947]
+
+[node name="Props" type="Node3D" parent="Rooms/PortHydroponics" unique_id=1779277288]
+
+[node name="HydroponicsShelf" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1042635478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 2)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf" unique_id=45766847 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf" unique_id=1012162285 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf" unique_id=1568877570 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2)
+
+[node name="hydroponics_tray4" parent="Rooms/PortHydroponics/Props/HydroponicsShelf" unique_id=1245234093 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1)
+
+[node name="hydroponics_tray5" parent="Rooms/PortHydroponics/Props/HydroponicsShelf" unique_id=2025018975 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="hydroponics_tray6" parent="Rooms/PortHydroponics/Props/HydroponicsShelf" unique_id=1431166006 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1)
+
+[node name="hydroponics_tray7" parent="Rooms/PortHydroponics/Props/HydroponicsShelf" unique_id=676410198 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 2)
+
+[node name="hydroponics_tray8" parent="Rooms/PortHydroponics/Props/HydroponicsShelf" unique_id=951088261 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 3)
+
+[node name="HydroponicsShelf7" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=560757071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -7)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf7" unique_id=831223719 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf7" unique_id=333805906 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.7, 0)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf7" unique_id=1250602947 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1.4, 0)
+
+[node name="HydroponicsShelf2" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1833824960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.7, 2)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf2" unique_id=751458701 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf2" unique_id=1175905742 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf2" unique_id=1738252482 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2)
+
+[node name="hydroponics_tray4" parent="Rooms/PortHydroponics/Props/HydroponicsShelf2" unique_id=1142275631 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1)
+
+[node name="hydroponics_tray5" parent="Rooms/PortHydroponics/Props/HydroponicsShelf2" unique_id=1750839726 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="hydroponics_tray6" parent="Rooms/PortHydroponics/Props/HydroponicsShelf2" unique_id=1286677393 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1)
+
+[node name="hydroponics_tray7" parent="Rooms/PortHydroponics/Props/HydroponicsShelf2" unique_id=1258203440 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 2)
+
+[node name="hydroponics_tray8" parent="Rooms/PortHydroponics/Props/HydroponicsShelf2" unique_id=2089226810 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 3)
+
+[node name="HydroponicsShelf3" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1461628929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 1.4, 2)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf3" unique_id=1829952252 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf3" unique_id=333637040 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf3" unique_id=1527117189 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2)
+
+[node name="hydroponics_tray4" parent="Rooms/PortHydroponics/Props/HydroponicsShelf3" unique_id=275373743 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1)
+
+[node name="hydroponics_tray5" parent="Rooms/PortHydroponics/Props/HydroponicsShelf3" unique_id=322804756 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="hydroponics_tray6" parent="Rooms/PortHydroponics/Props/HydroponicsShelf3" unique_id=1603028077 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1)
+
+[node name="hydroponics_tray7" parent="Rooms/PortHydroponics/Props/HydroponicsShelf3" unique_id=541809033 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 2)
+
+[node name="hydroponics_tray8" parent="Rooms/PortHydroponics/Props/HydroponicsShelf3" unique_id=1664433538 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 3)
+
+[node name="HydroponicsShelf4" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1647797598]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.5, 0, 1)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf4" unique_id=1163141658 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf4" unique_id=1053468135 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf4" unique_id=1298776709 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2)
+
+[node name="HydroponicsShelf5" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1448059987]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.5, 0.7, 1)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf5" unique_id=1994072958 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf5" unique_id=463353262 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf5" unique_id=711535299 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2)
+
+[node name="HydroponicsShelf6" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=61245930]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.5, 1.4, 1)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf6" unique_id=602062835 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf6" unique_id=94733668 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf6" unique_id=509584393 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2)
+
+[node name="HydroponicsShelf9" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=703746657]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.5, 1.4, -7)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf9" unique_id=1049371102 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf9" unique_id=926697302 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf9" unique_id=906017568 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2)
+
+[node name="hydroponics_tray4" parent="Rooms/PortHydroponics/Props/HydroponicsShelf9" unique_id=17961663 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1)
+
+[node name="hydroponics_tray5" parent="Rooms/PortHydroponics/Props/HydroponicsShelf9" unique_id=2094069109 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="HydroponicsShelf10" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=396192214]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.5, 0.7, -7)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf10" unique_id=109066590 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf10" unique_id=892219331 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf10" unique_id=1087519183 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2)
+
+[node name="hydroponics_tray4" parent="Rooms/PortHydroponics/Props/HydroponicsShelf10" unique_id=1110046576 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1)
+
+[node name="hydroponics_tray5" parent="Rooms/PortHydroponics/Props/HydroponicsShelf10" unique_id=277265808 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="HydroponicsShelf11" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1467486761]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.5, 0, -7)
+
+[node name="hydroponics_tray" parent="Rooms/PortHydroponics/Props/HydroponicsShelf11" unique_id=483961442 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -4)
+
+[node name="hydroponics_tray2" parent="Rooms/PortHydroponics/Props/HydroponicsShelf11" unique_id=65289354 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -3)
+
+[node name="hydroponics_tray3" parent="Rooms/PortHydroponics/Props/HydroponicsShelf11" unique_id=1843621023 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -2)
+
+[node name="hydroponics_tray4" parent="Rooms/PortHydroponics/Props/HydroponicsShelf11" unique_id=1174155016 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1)
+
+[node name="hydroponics_tray5" parent="Rooms/PortHydroponics/Props/HydroponicsShelf11" unique_id=314574926 instance=ExtResource("17_kqbjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="hydroponics_tank" parent="Rooms/PortHydroponics/Props" unique_id=1087884796 instance=ExtResource("18_6vmy0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -11)
+
+[node name="hydroponics_tank2" parent="Rooms/PortHydroponics/Props" unique_id=1328837639 instance=ExtResource("18_6vmy0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -9)
+
+[node name="hydroponics_tank3" parent="Rooms/PortHydroponics/Props" unique_id=1361210680 instance=ExtResource("18_6vmy0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -11)
+
+[node name="hydroponics_tank4" parent="Rooms/PortHydroponics/Props" unique_id=712368303 instance=ExtResource("18_6vmy0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -9)
+
+[node name="door_A" parent="Rooms/PortHydroponics/Props" unique_id=993415716 instance=ExtResource("3_uulq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -8)
 
 [editable path="Rooms/AirLock/PlayerPositions/ExternalZoomIn"]
 [editable path="Rooms/AirLock/PlayerPositions/InternalZoomIn"]
