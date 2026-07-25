@@ -19,6 +19,8 @@ sky_material = SubResource("ShaderMaterial_b7ym8")
 [sub_resource type="Environment" id="Environment_st70h"]
 background_mode = 2
 sky = SubResource("Sky_7522t")
+ambient_light_source = 2
+ambient_light_color = Color(0.6955032, 0.6955031, 0.6955031, 1)
 adjustment_enabled = true
 adjustment_color_correction = ExtResource("2_57veo")
 

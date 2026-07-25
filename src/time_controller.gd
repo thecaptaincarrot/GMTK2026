@@ -21,8 +21,6 @@ func _physics_process(delta: float) -> void:
 	var ms_delta: float = delta * 1000
 	current_time_ms += ms_delta * time_multiplier
 
-	print(self.formatted_time_24_h(), "  ", self.formatted_time_12_h(), "  ", Time.get_time_string_from_system())
-
 func set_time_multiplier(value) -> void:
 	self.time_multiplier = value
 

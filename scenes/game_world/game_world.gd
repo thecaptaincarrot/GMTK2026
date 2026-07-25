@@ -16,7 +16,7 @@ var _player:PlayerController
 var main_scene:MainScene
 
 func _ready():
-	AudioManagerNode.game_node  = self
+	AudioPlayer.game_node  = self
 	
 	load_room(_ship_world_path)
 	_player = _player_scene.instantiate()

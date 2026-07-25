@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var REVERB_SETUP_VECTOR = Vector4(0, 0, 0, 0) # room size, damping, spread, dry/wet
 var QUEUED_SETUP_VECTOR = Vector4(0, 0, 0, 0)

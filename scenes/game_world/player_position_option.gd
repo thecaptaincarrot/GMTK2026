@@ -38,22 +38,18 @@ func handle_interaction() -> void:
 func move_player_to_position(tween_override = false):
 	var player = Globals.get_player()
 	if player:
-		#this is here so that we are only clicking on valid neighbors for movement
-		Globals.set_last_position(self)
 		game_room.disable_all_position_colliders()
-		enable_neighbors()
-		
 		#sync the pseudo camera to the player camera
 		#more can be added but I think this is a good starting point
-		
-		
 		if(Globals.should_tween and tween_override == false):
 			player.change_position(self.get_global_position(), Vector3(self.global_rotation.x, player.global_rotation.y, self.global_rotation.z), self.fov)
+			await player.movement_finished
 		else:
-			player.set_global_rotation(Vector3(self.rotation.x, player.rotation.y, self.rotation.z))
-			player.set_global_position(self.get_global_position())
-			player.camera.fov = self.fov
-			AudioManagerNode.create_audio("Footsteps")
+			player.change_position_instant(self.get_global_position(), Vector3(self.global_rotation.x, player.global_rotation.y, self.global_rotation.z), self.fov)
+		#this is here so that we are only clicking on valid neighbors for movement
+		Globals.set_last_position(self)
+		enable_neighbors()
+		
 
 
 func rotate_90():

@@ -4,7 +4,7 @@ extends DoorButton
 @export var indicator_panel : Node3D
 
 func handle_interaction():
-	AudioManagerNode.create_audio("Button")
+	AudioPlayer.create_audio("Button")
 	if air_vent.jumpsuit_removed:
 		door.toggle_door()
 	else:
