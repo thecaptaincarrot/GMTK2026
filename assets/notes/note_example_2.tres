@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NoteData" format=3 uid="uid://chu3hj175askp"]
+
+[ext_resource type="Texture2D" uid="uid://dgg01svgynasy" path="res://assets/notes/note_2.png" id="1_pa02f"]
+[ext_resource type="Script" uid="uid://b4qbjafwyu1x1" path="res://assets/notes/note_data.gd" id="1_ysuea"]
+
+[resource]
+script = ExtResource("1_ysuea")
+note_texture = ExtResource("1_pa02f")
+pages = Array[String](["this one only has this page :)"])
+metadata/_custom_type_script = "uid://b4qbjafwyu1x1"

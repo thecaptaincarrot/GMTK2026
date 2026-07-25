@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://buwj6dfdhyat5"]
 
 [ext_resource type="Script" uid="uid://deo534va4hvh1" path="res://scenes/game_world/rooms/game_room.gd" id="1_0adlr"]
+[ext_resource type="PackedScene" uid="uid://dpaypwcbpf3mo" path="res://scenes/note_object.tscn" id="2_hvllm"]
 [ext_resource type="PackedScene" uid="uid://b1rw18yn7vlo7" path="res://scenes/game_world/player_position_option.tscn" id="2_rwkeo"]
+[ext_resource type="Texture2D" uid="uid://4dqq2375aaof" path="res://assets/notes/note_1.png" id="3_juoe2"]
+[ext_resource type="PackedScene" uid="uid://cb1p35lrk8d8r" path="res://scenes/common/zoom_in/zoom_in_area.tscn" id="3_kvspk"]
+[ext_resource type="Texture2D" uid="uid://dgg01svgynasy" path="res://assets/notes/note_2.png" id="5_jd215"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34ky4"]
+albedo_texture = ExtResource("3_juoe2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vbd4"]
+albedo_texture = ExtResource("5_jd215")
 
 [node name="TestRoom" type="Node3D" unique_id=1068165850]
 script = ExtResource("1_0adlr")
@@ -20,6 +30,16 @@ size = Vector3(8, 0.1, 4)
 [node name="Wall2" type="CSGBox3D" parent="Meshes/Floor/Wall" unique_id=1901410883]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742277e-08, 0, -8.742277e-08, -1, 0, 5.1100945, -0.03929591)
 size = Vector3(8, 0.1, 4)
+
+[node name="NoteExample" parent="Meshes/Floor/Wall/Wall2" unique_id=527123681 instance=ExtResource("2_hvllm")]
+transform = Transform3D(0.5, 0, 1.6940659e-21, 0, 1, -1.7538934e-22, 0, -2.5055613e-22, 0.7, 1.3820883, 0.22164655, -1.1920929e-07)
+surface_material_override/0 = SubResource("StandardMaterial3D_34ky4")
+note_pages = Array[Texture2D]([ExtResource("3_juoe2")])
+
+[node name="NoteObject" parent="Meshes/Floor/Wall/Wall2" unique_id=1908685886 instance=ExtResource("2_hvllm")]
+transform = Transform3D(0.5, 0, 1.2705494e-21, 0, 1, -1.7538933e-22, 0, -2.5055613e-22, 0.7, 4.656613e-09, 0.11870813, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_5vbd4")
+note_pages = Array[Texture2D]([ExtResource("3_juoe2"), ExtResource("5_jd215")])
 
 [node name="Ceiling" type="CSGBox3D" parent="Meshes/Floor/Wall/Wall2" unique_id=174742736]
 transform = Transform3D(1, 0, 0, 0, -4.371138e-08, 1, 0, -1, -4.371138e-08, 0, 2.5817745, 1.9607041)
@@ -68,12 +88,16 @@ light_volumetric_fog_energy = 0.0
 
 [node name="1" parent="PlayerPositions" unique_id=840362772 node_paths=PackedStringArray("valid_neighbors", "game_room") instance=ExtResource("2_rwkeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02093941, 1.6978105, 2.0941176)
-valid_neighbors = [NodePath("../2")]
+valid_neighbors = [NodePath("../2"), NodePath("../corner"), NodePath("../../Meshes/Floor/Wall/Wall2/NoteObject"), NodePath("../../Meshes/Floor/Wall/Wall2/NoteExample")]
 game_room = NodePath("../..")
 
 [node name="2" parent="PlayerPositions" unique_id=185158097 node_paths=PackedStringArray("valid_neighbors", "game_room") instance=ExtResource("2_rwkeo")]
 transform = Transform3D(1, 0, 0, 0, 0.9065114, 0.42218134, 0, -0.42218134, 0.9065114, -0.00582774, 2.4869182, -1.5620788)
 valid_neighbors = [NodePath("../1")]
 game_room = NodePath("../..")
+
+[node name="corner" parent="PlayerPositions" unique_id=464256384 instance=ExtResource("3_kvspk")]
+transform = Transform3D(-0.2435076, 0.8289462, -0.50353974, 0, 0.51916724, 0.8546727, 0.969899, 0.20811929, -0.12642115, 1.265491, 1.7363901, 3.3873374)
+fov = 59.897266
 
 [node name="Interactables" type="Node" parent="." unique_id=1008033200]

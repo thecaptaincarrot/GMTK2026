@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2ka2s0pcjo4e"]
 
 [ext_resource type="Script" uid="uid://d3dtb85g22kks" path="res://scenes/game_world/door.gd" id="1_f5mn3"]
-[ext_resource type="PackedScene" uid="uid://ddmxb74gcrt5d" path="res://scenes/common/interactable.tscn" id="2_w2o5j"]
+[ext_resource type="PackedScene" uid="uid://ddmxb74gcrt5d" path="res://scenes/common/interactable/Interactable.tscn" id="2_w2o5j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_st70h"]
 
@@ -11,5 +11,4 @@ script = ExtResource("1_f5mn3")
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=1920683957]
 shape = SubResource("CapsuleShape3D_st70h")
 
-[node name="Interactable" parent="." unique_id=244929429 node_paths=PackedStringArray("area") instance=ExtResource("2_w2o5j")]
-area = NodePath("..")
+[node name="Interactable" parent="." unique_id=244929429 instance=ExtResource("2_w2o5j")]

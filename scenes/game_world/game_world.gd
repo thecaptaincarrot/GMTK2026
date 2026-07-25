@@ -6,6 +6,8 @@ var _ship_world_path = "res://scenes/game_world/ship_world.tscn"
 
 @export var screen_rotation_controller := NodePath("HUD/RotationControls")
 
+@export var zoom_controller := NodePath("HUD/ZoomControl")
+
 var _active_room:GameRoom
 
 var _player:PlayerController
@@ -20,7 +22,7 @@ func _ready():
 	_player.set_global_position(pos)
 	_player.rotation.y = PI/2.0 #I don't think hard setting this is a good idea, but here we are
 	Globals.set_player(_player)
-	Globals.rotation_control_update.connect(_rotation_update)
+	Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
 
 func load_room(path):
 	if(_active_room != null):
@@ -29,21 +31,16 @@ func load_room(path):
 	_active_room = load(path).instantiate()
 	add_child(_active_room)
 
-func _on_right_arrow_pressed() -> void:
-	if(Globals.should_tween):
-		_player.rotate_screen(-90)
-	else:
-		_player.rotate(Vector3(0, 1, 0), deg_to_rad(-90))
-	
 
-func _on_left_arrow_pressed() -> void:
-	if(Globals.should_tween):
-		_player.rotate_screen(90)
-	else:
-		_player.rotate(Vector3(0, 1, 0), deg_to_rad(90))
+func back_mouse_entered() -> void:
+	Input.set_custom_mouse_cursor(Globals.cursor_backwards_arrow)
 
-func _rotation_update():
-	if(Globals.can_rotate_screen()):
-		get_node(screen_rotation_controller).visible = true
-	else:
-		get_node(screen_rotation_controller).visible = false
+func _back_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
+
+
+func _on_back_mouse_entered() -> void:
+	Input.set_custom_mouse_cursor(Globals.cursor_backwards_arrow)
+
+func _on_back_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)

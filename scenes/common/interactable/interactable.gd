@@ -3,14 +3,20 @@ class_name Interactable
 
 @export var interactee: Node
 
+var camera_area = false
+
 func _ready():
 	input_event.connect(_on_input_event)
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 
+
 # add interactable to a marker3d to automatically change cursor type
 func _on_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(Globals.cursor_up_arrow)
+	if camera_area:
+		Input.set_custom_mouse_cursor(Globals.cursor_up_arrow)
+	else:
+		Input.set_custom_mouse_cursor(Globals.cursor_interact)
 
 func _on_mouse_exited() -> void:
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
