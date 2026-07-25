@@ -2,6 +2,7 @@ extends Node3D
 
 var _player_scene = load("res://scenes/entities/player.tscn")
 var _test_room_path ="res://scenes/game_world/rooms/TestRoom.tscn"
+var _ship_world_path = "res://scenes/game_world/ship_world.tscn"
 
 @export var screen_rotation_controller := NodePath("HUD/RotationControls")
 
@@ -14,11 +15,12 @@ var _player:PlayerController
 var main_scene:MainScene
 
 func _ready():
-	load_room(_test_room_path)
+	load_room(_ship_world_path)
 	_player = _player_scene.instantiate()
-	var pos = _active_room.set_active_position_node(&"1")
-	_player.set_global_position(pos)
+	var pos = _active_room.set_active_position_node(&"0")
 	add_child(_player)
+	_player.set_global_position(pos)
+	_player.rotation.y = PI/2.0 #I don't think hard setting this is a good idea, but here we are
 	Globals.set_player(_player)
 	Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
 
@@ -32,7 +34,6 @@ func load_room(path):
 
 func back_mouse_entered() -> void:
 	Input.set_custom_mouse_cursor(Globals.cursor_backwards_arrow)
-
 
 func _back_mouse_exited() -> void:
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)

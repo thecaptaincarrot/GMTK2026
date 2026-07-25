@@ -21,6 +21,20 @@ sky = SubResource("Sky_7522t")
 adjustment_enabled = true
 adjustment_color_correction = ExtResource("2_27b26")
 
+[sub_resource type="Gradient" id="Gradient_f3jsn"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 0.95166665, 0.42000002, 0.2509804)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4vhwf"]
+gradient = SubResource("Gradient_f3jsn")
+width = 128
+
+[sub_resource type="Gradient" id="Gradient_57veo"]
+colors = PackedColorArray(1, 0.9529412, 0.41960785, 0.2509804, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f3jsn"]
+gradient = SubResource("Gradient_57veo")
+width = 128
+
 [node name="GameWorld" type="Node3D" unique_id=773402118]
 script = ExtResource("1_p46a1")
 screen_rotation_controller = NodePath("")
