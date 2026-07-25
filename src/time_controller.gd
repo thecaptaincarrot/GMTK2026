@@ -2,21 +2,25 @@ extends Node
 
 class_name TimeController
 
-var time_multiplier: float = 1_000_000
+var time_multiplier: float = 1
 var start_time_ms: int
-var current_time_ms: int 
-
+var current_time_ms: float 
 var default_time_pattern: String = "%04d-%02d-%02d %02d:%02d:%02d"
+var started = false
 
-func _init() -> void:
-	start_time_ms = int(Time.get_unix_time_from_system() * 1000)
+
+func start(_start_time_ms: int):
+	start_time_ms = _start_time_ms
 	current_time_ms = start_time_ms
+	started = true
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	if not started:
+		return
 	var ms_delta: float = delta * 1000
-	current_time_ms += int(ms_delta * time_multiplier)
+	current_time_ms += ms_delta * time_multiplier
 
-	print(self.formatted_time_24_h(), "  ", self.formatted_time_12_h())
+	print(self.formatted_time_24_h(), "  ", self.formatted_time_12_h(), "  ", Time.get_time_string_from_system())
 
 func set_time_multiplier(value) -> void:
 	self.time_multiplier = value

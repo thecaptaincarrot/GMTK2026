@@ -868,6 +868,7 @@ valid_neighbors = [NodePath("../Airlock1"), NodePath("../ExternalZoomIn"), NodeP
 [node name="Airlock1" parent="Rooms/AirLock/PlayerPositions" unique_id=1545806533 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364818, -0.9848077, 0, 0.9848077, 0.17364818, 1, -2.0707338e-09, 1.17437144e-08, -1.4999995, 1.6, -3.233012e-07)
 valid_neighbors = [NodePath("../../../ForeHallway/PlayerPositions/ForeHall1"), NodePath("../Airlock0")]
+time_dilation_multiplier = 10.0
 
 [node name="ExternalZoomIn" parent="Rooms/AirLock/PlayerPositions" unique_id=464256384 instance=ExtResource("6_6vmy0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.4597034, 1.0849272, -1.2167616)
