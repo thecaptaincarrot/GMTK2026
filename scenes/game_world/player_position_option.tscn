@@ -10,7 +10,6 @@ radius = 1.0
 current = true
 script = ExtResource("1_mgodr")
 collision_area = NodePath("Interactable/Collider")
-reverb_vector = null
 
 [node name="Interactable" parent="." unique_id=1909100594 node_paths=PackedStringArray("interactee") instance=ExtResource("2_qiy0b")]
 interactee = NodePath("..")

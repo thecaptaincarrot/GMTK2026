@@ -2,7 +2,7 @@ extends Node
 
 var REVERB_SETUP_VECTOR = Vector4(0, 0, 0, 0) # room size, damping, spread, dry/wet
 var QUEUED_SETUP_VECTOR = Vector4(0, 0, 0, 0)
-var TRANSITION_SPEED = 3
+var TRANSITION_SPEED = 1
 
 func getReverb() -> AudioEffectReverb:
 	return AudioServer.get_bus_effect(2, 0)
@@ -20,7 +20,6 @@ func _ready() -> void:
 	pass 
 
 func _process(delta: float) -> void:
-	if (QUEUED_SETUP_VECTOR != REVERB_SETUP_VECTOR):
-		print("queued:", QUEUED_SETUP_VECTOR, " current:", REVERB_SETUP_VECTOR)
+	if (QUEUED_SETUP_VECTOR.distance_to(REVERB_SETUP_VECTOR) > 0.01):
 		REVERB_SETUP_VECTOR = REVERB_SETUP_VECTOR.lerp(QUEUED_SETUP_VECTOR, delta * TRANSITION_SPEED)
 		setReverb()
