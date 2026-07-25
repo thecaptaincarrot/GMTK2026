@@ -22,10 +22,8 @@ func _on_note_next_pressed() -> void:
 
 
 func _on_note_exit_pressed() -> void:
-	# Todo sometimes the previous hud might be a zoomed in HUD instead of an explore HUD?
-	# Need to account for that
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
-	Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
+	Globals.hud_controller.revert_hud_state()
 
 func _on_note_previous_pressed() -> void:
 	_current_page = max(0, _current_page - 1)

@@ -14,6 +14,7 @@ var huds_state: Dictionary[HudState, PackedScene]
 var current_hud_state: HudState = HudState.HUDLESS
 var current_hud_scene: HudBase = null
 
+var previous_hud_state : HudState = HudState.HUDLESS
 
 func _init(_huds_state: Dictionary[HudState, PackedScene] = DEFAULT_HUDS) -> void:
 	self.huds_state = _huds_state
@@ -26,5 +27,10 @@ func set_hud(state: HudState):
 		current_hud_scene = null
 	var instance := huds_state[state].instantiate() as HudBase
 	add_child(instance)
+	previous_hud_state = current_hud_state
 	current_hud_scene = instance
 	current_hud_state = state
+
+
+func revert_hud_state():
+	set_hud(previous_hud_state)
