@@ -21,10 +21,10 @@ func _process(delta: float) -> void:
 			var last_pos = Globals.get_last_position()
 			var player = Globals.get_player()
 			if(Globals.should_tween):
-				player.change_position(last_pos.get_position(), Vector3(last_pos.global_rotation.x, _stored_last_yaw, last_pos.global_rotation.z))
+				player.change_position(last_pos.get_global_position(), Vector3(last_pos.global_rotation.x, _stored_last_yaw, last_pos.global_rotation.z), last_pos.fov)
 			else:
 				player.set_global_rotation(Vector3(last_pos.global_rotation.x, _stored_last_yaw, last_pos.global_rotation.z))
-				player.set_global_position(last_pos.get_position())
+				player.set_global_position(last_pos.get_global_position())
 			Globals.enable_screen_rotation()
 			Globals.set_is_zoomed_in(false)
 			_frame_delayed = false
@@ -44,7 +44,8 @@ func handle_interaction() -> void:
 	_stored_last_yaw = player.global_rotation.y
 	
 	if(Globals.should_tween):
-		player.change_position(self.get_position(), self.global_rotation)
+		player.change_position(self.get_global_position(), self.global_rotation, self.fov)
 	else:
 		player.set_global_rotation(self.global_rotation)
-		player.set_global_position(self.get_position())
+		player.set_global_position(self.get_global_position())
+		player.camera.fov  = self.fov

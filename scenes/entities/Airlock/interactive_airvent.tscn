@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cepp3r5t1ivve"]
 
 [ext_resource type="Script" uid="uid://ibdfv2lfj4br" path="res://scenes/entities/Airlock/interactive_airvent.gd" id="1_ahjfp"]
-[ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable.gd" id="2_x7r0q"]
+[ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="2_x7r0q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8xfmk"]
 
