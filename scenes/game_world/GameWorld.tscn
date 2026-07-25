@@ -4,6 +4,7 @@
 [ext_resource type="CompressedTexture3D" uid="uid://c22udi712rbfc" path="res://assets/lut2.png" id="2_57veo"]
 [ext_resource type="Shader" uid="uid://c37h6xp4wuuqf" path="res://scenes/game_world/skybox.gdshader" id="2_qfria"]
 [ext_resource type="PackedScene" uid="uid://bh67ed4x1sdlx" path="res://Meshes/World/blackhole.tscn" id="4_jamdq"]
+[ext_resource type="Script" uid="uid://lyhhpvmokkgv" path="res://scenes/huds/debug_info.gd" id="4_jamdq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7ym8"]
 shader = ExtResource("2_qfria")
@@ -19,6 +20,8 @@ sky_material = SubResource("ShaderMaterial_b7ym8")
 [sub_resource type="Environment" id="Environment_st70h"]
 background_mode = 2
 sky = SubResource("Sky_7522t")
+ambient_light_source = 2
+ambient_light_color = Color(0.6955032, 0.6955031, 0.6955031, 1)
 adjustment_enabled = true
 adjustment_color_correction = ExtResource("2_57veo")
 
@@ -32,3 +35,21 @@ environment = SubResource("Environment_st70h")
 
 [node name="Blackhole" parent="." unique_id=600056617 instance=ExtResource("4_jamdq")]
 transform = Transform3D(10, 0, 0, 0, 9.8462305, 1.7469265, 0, -1.7469265, 9.8462305, 0, 0, 65.22218)
+[node name="DebugInfo" type="CanvasLayer" parent="." unique_id=2111856261]
+script = ExtResource("4_jamdq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugInfo" unique_id=413240870]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeDilation" type="Label" parent="DebugInfo/VBoxContainer" unique_id=1945721676]
+layout_mode = 2
+
+[node name="EuroTime" type="Label" parent="DebugInfo/VBoxContainer" unique_id=723846200]
+layout_mode = 2
+
+[node name="AmericanTime" type="Label" parent="DebugInfo/VBoxContainer" unique_id=763907619]
+layout_mode = 2
+
+[node name="Ticks" type="Label" parent="DebugInfo/VBoxContainer" unique_id=253582767]
+layout_mode = 2
