@@ -6,6 +6,7 @@ class_name PlayerController
 @export var movement_time := 1.0
 @export var rotation_time := 0.6
 
+
 var lock_transform := false
 
 signal movement_finished
