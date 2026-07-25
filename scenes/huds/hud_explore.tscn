@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b0ghq3m0hhkl5"]
+
+[ext_resource type="Script" uid="uid://cmbaw0mebw3o1" path="res://scenes/huds/hud_explore.gd" id="1_df53p"]
+
+[node name="HudExplore" type="CanvasLayer" unique_id=1476096050]
+script = ExtResource("1_df53p")
+
+[node name="RotationControls" type="Control" parent="." unique_id=1473898205]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RightArrow" type="TextureButton" parent="RotationControls" unique_id=928787493]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+grow_horizontal = 0
+grow_vertical = 2
+stretch_mode = 0
+
+[node name="LeftArrow" type="TextureButton" parent="RotationControls" unique_id=1507823232]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 128.0
+grow_vertical = 2
+stretch_mode = 0
+
+[connection signal="mouse_entered" from="RotationControls/RightArrow" to="." method="_on_right_arrow_mouse_entered"]
+[connection signal="mouse_exited" from="RotationControls/RightArrow" to="." method="_on_right_arrow_mouse_exited"]
+[connection signal="pressed" from="RotationControls/RightArrow" to="." method="_on_right_arrow_pressed"]
+[connection signal="mouse_entered" from="RotationControls/LeftArrow" to="." method="_on_left_arrow_mouse_entered"]
+[connection signal="mouse_exited" from="RotationControls/LeftArrow" to="." method="_on_left_arrow_mouse_exited"]
+[connection signal="pressed" from="RotationControls/LeftArrow" to="." method="_on_left_arrow_pressed"]

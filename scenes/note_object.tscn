@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dpaypwcbpf3mo"]
+
+[ext_resource type="Script" uid="uid://d4i08ejwxc84c" path="res://scenes/note_object.gd" id="1_wxw2t"]
+[ext_resource type="PackedScene" uid="uid://ddmxb74gcrt5d" path="res://scenes/common/interactable/Interactable.tscn" id="2_owo4t"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ndr5x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vrmjk"]
+size = Vector3(2.4033203, 0.16503906, 2.2561035)
+
+[node name="NoteObject" type="MeshInstance3D" unique_id=527123681 node_paths=PackedStringArray("collision_area")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ndr5x")
+script = ExtResource("1_wxw2t")
+collision_area = NodePath("Interactable/CollisionShape3D")
+
+[node name="Interactable" parent="." unique_id=1909100594 node_paths=PackedStringArray("interactee") instance=ExtResource("2_owo4t")]
+interactee = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1395558326]
+shape = SubResource("BoxShape3D_vrmjk")
+disabled = true

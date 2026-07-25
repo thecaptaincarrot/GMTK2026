@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1rw18yn7vlo7"]
 
 [ext_resource type="Script" uid="uid://6xepi6oh4vrk" path="res://scenes/game_world/player_position_option.gd" id="1_mgodr"]
-[ext_resource type="PackedScene" uid="uid://ddmxb74gcrt5d" path="res://scenes/common/Interactable.tscn" id="2_qiy0b"]
+[ext_resource type="PackedScene" uid="uid://ddmxb74gcrt5d" path="res://scenes/common/interactable/Interactable.tscn" id="2_qiy0b"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_st70h"]
 radius = 1.0
@@ -17,3 +17,5 @@ interactee = NodePath("..")
 [node name="Collider" type="CollisionShape3D" parent="Interactable" unique_id=562937766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2531109, 0)
 shape = SubResource("SphereShape3D_st70h")
+disabled = true
+debug_color = Color(0, 0.65, 0.1625, 1)

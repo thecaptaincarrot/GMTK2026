@@ -21,57 +21,10 @@ sky = SubResource("Sky_7522t")
 adjustment_enabled = true
 adjustment_color_correction = ExtResource("2_27b26")
 
-[sub_resource type="Gradient" id="Gradient_f3jsn"]
-colors = PackedColorArray(0, 0, 0, 0, 1, 0.95166665, 0.42000002, 0.2509804)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4vhwf"]
-gradient = SubResource("Gradient_f3jsn")
-width = 128
-
-[sub_resource type="Gradient" id="Gradient_57veo"]
-colors = PackedColorArray(1, 0.9529412, 0.41960785, 0.2509804, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_f3jsn"]
-gradient = SubResource("Gradient_57veo")
-width = 128
-
 [node name="GameWorld" type="Node3D" unique_id=773402118]
 script = ExtResource("1_p46a1")
+screen_rotation_controller = NodePath("")
+zoom_controller = NodePath("")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1870284894]
 environment = SubResource("Environment_st70h")
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1709348986]
-
-[node name="RotationControls" type="Control" parent="HUD" unique_id=1527959204]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="RightArrow" type="TextureButton" parent="HUD/RotationControls" unique_id=839981035]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -128.0
-grow_horizontal = 0
-grow_vertical = 2
-texture_hover = SubResource("GradientTexture1D_4vhwf")
-stretch_mode = 0
-
-[node name="LeftArrow" type="TextureButton" parent="HUD/RotationControls" unique_id=463513099]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 128.0
-grow_vertical = 2
-texture_hover = SubResource("GradientTexture1D_f3jsn")
-stretch_mode = 0
-
-[connection signal="pressed" from="HUD/RotationControls/RightArrow" to="." method="_on_right_arrow_pressed"]
-[connection signal="pressed" from="HUD/RotationControls/LeftArrow" to="." method="_on_left_arrow_pressed"]
