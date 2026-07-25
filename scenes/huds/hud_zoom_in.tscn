@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dfkfp2fhdbejr"]
+
+[ext_resource type="Script" uid="uid://bkcwxfhrbv1nr" path="res://scenes/huds/hud_zoom_in.gd" id="1_2u7j4"]
+[ext_resource type="Texture2D" uid="uid://dbdr3g7p5hii5" path="res://assets/cursor_back.png" id="2_mjd3n"]
+
+[node name="HudZoomIn" type="CanvasLayer" unique_id=774226997]
+script = ExtResource("1_2u7j4")
+
+[node name="ZoomControl" type="Control" parent="." unique_id=1960759338]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ZoomBack" type="TextureButton" parent="ZoomControl" unique_id=2033356122]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1280.0
+offset_top = 832.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("2_mjd3n")
+stretch_mode = 3
+
+[connection signal="pressed" from="ZoomControl/ZoomBack" to="." method="_on_zoom_back_pressed"]

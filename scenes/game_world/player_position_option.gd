@@ -20,9 +20,9 @@ func enable_neighbors():
 
 # each interactable object knows how to handle it's own interaction
 func handle_interaction() -> void:
-	if(Globals.get_last_position() != null):
-		if(!Globals.get_last_position().valid_neighbors.has(self)):
-			return
+	assert(Globals.get_last_position(), "player should arrive from somewhere")
+	assert(Globals.get_last_position().valid_neighbors.has(self) or Globals.get_last_position() == self, "not a valid neighbor")
+
 	var player = Globals.get_player()
 	if player:
 		

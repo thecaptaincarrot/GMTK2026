@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ddmxb74gcrt5d"]
+
+[ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="1_yl6jd"]
+
+[node name="Interactable" type="Area3D" unique_id=1909100594]
+script = ExtResource("1_yl6jd")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

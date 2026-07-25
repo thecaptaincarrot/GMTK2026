@@ -11,18 +11,21 @@ signal zoom_change
 var message_bus: MessageBus = MessageBus.create()
 
 var _player: PlayerController
+var hud_controller: HudController
 
 var should_tween:bool = true
 
 var _can_rotate = true
 
 var _last_position_node:PlayerPositionOption
+var _active_note: NoteData
 
 var _zoomed_in:bool = false
 
-
 func _ready():
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
+	hud_controller = HudController.new()
+	add_child(hud_controller)
 
 func set_player(p: PlayerController) -> void:
 	_player = p
@@ -54,3 +57,10 @@ func enable_screen_rotation():
 
 func can_rotate_screen():
 	return _can_rotate
+
+# Notes
+func set_active_note(note: NoteData) -> void:
+	_active_note = note
+
+func get_active_note() -> NoteData:
+	return _active_note

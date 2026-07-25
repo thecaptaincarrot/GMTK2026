@@ -35,19 +35,16 @@ func _process(delta: float) -> void:
 
 
 func handle_interaction() -> void:
-	if(!Globals.is_zoomed_in()):
-		if(Globals.get_last_position() != null):
-			if(!Globals.get_last_position().valid_neighbors.has(self)):
-				return
-		var player = Globals.get_player()
-		Globals.disable_screen_rotation()
-		
-		_stored_last_yaw = player.global_rotation.y
-		
-		if(Globals.should_tween):
-			player.change_position(self.get_position(), self.global_rotation)
-		else:
-			player.set_global_rotation(self.global_rotation)
-			player.set_global_position(self.get_position())
-		
-		Globals.set_is_zoomed_in(true)
+	assert(Globals.get_last_position() != null, "zoom in menu needs a position to return to")
+	assert(Globals.get_last_position().valid_neighbors.has(self), "last position must be one that gives access to current zoom menu")
+
+	var player = Globals.get_player()
+	Globals.hud_controller.set_hud(HudController.HudState.ZOOMED_IN)
+	
+	_stored_last_yaw = player.global_rotation.y
+	
+	if(Globals.should_tween):
+		player.change_position(self.get_position(), self.global_rotation)
+	else:
+		player.set_global_rotation(self.global_rotation)
+		player.set_global_position(self.get_position())

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b3s6u87y43fnb"]
+
+[ext_resource type="Texture2D" uid="uid://dq733mdqwuwau" path="res://icon.svg" id="1_ic67i"]
+
+[node name="ZoomInHud" type="CanvasLayer" unique_id=456922298]
+
+[node name="ZoomControl" type="Control" parent="." unique_id=1466206163]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ZoomBack" type="TextureButton" parent="ZoomControl" unique_id=638693843]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1280.0
+offset_top = 832.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("1_ic67i")
+stretch_mode = 3

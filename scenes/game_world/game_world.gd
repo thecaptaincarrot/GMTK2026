@@ -20,9 +20,7 @@ func _ready():
 	_player.set_global_position(pos)
 	add_child(_player)
 	Globals.set_player(_player)
-	Globals.rotation_control_update.connect(_rotation_update)
-	
-	Globals.zoom_change.connect(_zoom_change)
+	Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
 
 func load_room(path):
 	if(_active_room != null):
@@ -30,35 +28,6 @@ func load_room(path):
 	#TODO this should be moved into a single loader to optimize later
 	_active_room = load(path).instantiate()
 	add_child(_active_room)
-
-func _on_right_arrow_pressed() -> void:
-	if(Globals.should_tween):
-		_player.rotate_screen(-90)
-	else:
-		_player.rotate(Vector3(0, 1, 0), deg_to_rad(-90))
-
-func _on_left_arrow_pressed() -> void:
-	if(Globals.should_tween):
-		_player.rotate_screen(90)
-	else:
-		_player.rotate(Vector3(0, 1, 0), deg_to_rad(90))
-
-func _rotation_update():
-	if(Globals.can_rotate_screen()):
-		get_node(screen_rotation_controller).visible = true
-	else:
-		get_node(screen_rotation_controller).visible = false
-
-
-func _zoom_change():
-	if(Globals.is_zoomed_in()):
-		get_node(zoom_controller).visible = true
-	else:
-		get_node(zoom_controller).visible = false
-
-
-func _on_zoom_back_pressed() -> void:
-	pass
 
 
 func back_mouse_entered() -> void:
