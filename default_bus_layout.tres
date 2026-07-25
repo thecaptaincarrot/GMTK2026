@@ -2,12 +2,10 @@
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
-
-[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_j3pel"]
-resource_name = "Phaser"
-
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
-resource_name = "Compressor"
+room_size = 0.5
+spread = 0.65
+dry = 0.0
+wet = 1.0
 
 [resource]
 bus/1/name = &"guiSfx"
@@ -20,11 +18,7 @@ bus/2/name = &"gameSfx"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = 0.0
+bus/2/volume_db = 0.06726074
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
 bus/2/effect/0/enabled = true
-bus/2/effect/1/effect = SubResource("AudioEffectPhaser_j3pel")
-bus/2/effect/1/enabled = true
-bus/2/effect/2/effect = SubResource("AudioEffectCompressor_j3pel")
-bus/2/effect/2/enabled = true

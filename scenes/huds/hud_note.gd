@@ -23,6 +23,7 @@ func _on_note_next_pressed() -> void:
 
 func _on_note_exit_pressed() -> void:
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
+	AudioPlayer.create_audio("Paper")
 	Globals.hud_controller.revert_hud_state()
 
 func _on_note_previous_pressed() -> void:
@@ -31,6 +32,7 @@ func _on_note_previous_pressed() -> void:
 
 func render_current_page():
 	note_display.texture = _note_pages[_current_page]
+	AudioPlayer.create_audio("Paper")
 	if _current_page == 0:
 		previous_button.disabled = true
 		previous_button.mouse_filter = Control.MOUSE_FILTER_IGNORE

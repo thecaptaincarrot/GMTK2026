@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cxn8sxql1hqno"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_7s3l8"]
+[ext_resource type="AudioStream" uid="uid://bf7dy81g4uxqg" path="res://Audio/RawSounds/computer power up.wav" id="2_hf4g2"]
+
+[resource]
+script = ExtResource("1_7s3l8")
+ID = "ComputerOn"
+limit = 1
+sound_effect = Array[AudioStream]([ExtResource("2_hf4g2")])
+metadata/_custom_type_script = "uid://b7fou07k713y"

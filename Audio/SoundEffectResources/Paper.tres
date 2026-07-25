@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://tjepdl27jfij"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_mxaul"]
+[ext_resource type="AudioStream" uid="uid://billjs2iyqnwk" path="res://Audio/RawSounds/paper (shorter).wav" id="2_riu0o"]
+
+[resource]
+script = ExtResource("1_mxaul")
+ID = "Paper"
+limit = 3
+sound_effect = Array[AudioStream]([ExtResource("2_riu0o")])
+metadata/_custom_type_script = "uid://b7fou07k713y"

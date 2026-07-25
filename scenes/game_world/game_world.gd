@@ -1,4 +1,5 @@
 extends Node3D
+class_name GameWorld
 
 var _player_scene = load("res://scenes/entities/player.tscn")
 var _test_room_path ="res://scenes/game_world/rooms/TestRoom.tscn"
@@ -15,6 +16,8 @@ var _player:PlayerController
 var main_scene:MainScene
 
 func _ready():
+	AudioPlayer.game_node  = self
+	
 	load_room(_ship_world_path)
 	_player = _player_scene.instantiate()
 	

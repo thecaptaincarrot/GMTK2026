@@ -15,6 +15,7 @@ var message_bus: MessageBus = MessageBus.create()
 
 var _player: PlayerController
 var hud_controller: HudController
+var time_controller: TimeController
 
 var should_tween:bool = true
 
@@ -27,8 +28,15 @@ var _zoomed_in:bool = false
 
 func _ready():
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
+
+	# Hud Controller
 	hud_controller = HudController.new()
 	add_child(hud_controller)
+
+	# Time Controller
+	time_controller = TimeController.new()
+	add_child(time_controller)
+
 
 func set_player(p: PlayerController) -> void:
 	_player = p
@@ -67,3 +75,5 @@ func set_active_note(note_pages: Array[Texture2D]) -> void:
 
 func get_active_note() -> Array[Texture2D]:
 	return _active_note_pages
+
+# Time

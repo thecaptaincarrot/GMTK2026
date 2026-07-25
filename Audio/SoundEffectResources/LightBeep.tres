@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://bs6wqmelxxkip"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_0qy3r"]
+[ext_resource type="AudioStream" uid="uid://dnwtq23525l4n" path="res://Audio/RawSounds/light bleep.wav" id="2_5rvla"]
+
+[resource]
+script = ExtResource("1_0qy3r")
+ID = "LightBeep"
+limit = 3
+sound_effect = Array[AudioStream]([ExtResource("2_5rvla")])
+metadata/_custom_type_script = "uid://b7fou07k713y"

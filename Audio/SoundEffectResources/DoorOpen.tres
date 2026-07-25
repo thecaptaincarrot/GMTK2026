@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://ns2ntwq17shu"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_mftms"]
+[ext_resource type="AudioStream" uid="uid://c7sfmuuneb6qx" path="res://Audio/RawSounds/Door open v2.wav" id="2_y34k8"]
+
+[resource]
+script = ExtResource("1_mftms")
+ID = "DoorOpen"
+sound_effect = Array[AudioStream]([ExtResource("2_y34k8")])
+metadata/_custom_type_script = "uid://b7fou07k713y"
