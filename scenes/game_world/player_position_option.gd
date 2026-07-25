@@ -7,6 +7,10 @@ class_name PlayerPositionOption
 
 @export var game_room:GameRoom
 
+@onready var interactable = $Interactable
+
+func _ready():
+	interactable.camera_area = true
 
 func disable_collision():
 	collision_area.disabled = true
@@ -20,14 +24,14 @@ func enable_neighbors():
 
 # each interactable object knows how to handle it's own interaction
 func handle_interaction() -> void:
-	if(Globals.last_position_node != null):
-		if(!Globals.last_position_node.valid_neighbors.has(self)):
-			return
+	assert(Globals.get_last_position(), "player should arrive from somewhere")
+	assert(Globals.get_last_position().valid_neighbors.has(self) or Globals.get_last_position() == self, "not a valid neighbor")
+
 	var player = Globals.get_player()
 	if player:
 		
 		#this is here so that we are only clicking on valid neighbors for movement
-		Globals.last_position_node = self
+		Globals.set_last_position(self)
 		game_room.disable_all_position_colliders()
 		enable_neighbors()
 		
@@ -37,7 +41,7 @@ func handle_interaction() -> void:
 		player.camera.fov = self.fov
 		
 		if(Globals.should_tween):
-			player.change_position(self.get_position(), Vector2(self.global_rotation.x, self.global_rotation.z))
+			player.change_position(self.get_position(), Vector3(self.global_rotation.x, player.global_rotation.y, self.global_rotation.z))
 			
 		else:
 			player.set_global_rotation(Vector3(self.rotation.x, player.rotation.y, self.rotation.z))

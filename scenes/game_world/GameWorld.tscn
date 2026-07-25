@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://clj11cr2s2157" path="res://scenes/game_world/game_world.gd" id="1_p46a1"]
 [ext_resource type="CompressedTexture3D" uid="uid://duv5h73xp634w" path="res://assets/LUT.png" id="2_27b26"]
 [ext_resource type="Shader" uid="uid://c37h6xp4wuuqf" path="res://scenes/game_world/skybox.gdshader" id="2_qfria"]
-[ext_resource type="Texture2D" uid="uid://lh38k3sgvhng" path="res://assets/right_arrow_light.png" id="3_e12oq"]
-[ext_resource type="Texture2D" uid="uid://5tcw6b5hdkso" path="res://assets/right_arrow.png" id="4_27b26"]
-[ext_resource type="Texture2D" uid="uid://bhd4lxweroceh" path="res://assets/left_arrow_light.png" id="5_lp5si"]
-[ext_resource type="Texture2D" uid="uid://jltpubhdykt4" path="res://assets/left_arrow.png" id="6_atykj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7ym8"]
 shader = ExtResource("2_qfria")
@@ -27,49 +23,8 @@ adjustment_color_correction = ExtResource("2_27b26")
 
 [node name="GameWorld" type="Node3D" unique_id=773402118]
 script = ExtResource("1_p46a1")
+screen_rotation_controller = NodePath("")
+zoom_controller = NodePath("")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1870284894]
 environment = SubResource("Environment_st70h")
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1709348986]
-
-[node name="RotationControls" type="Control" parent="HUD" unique_id=1527959204]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="RightArrow" type="TextureButton" parent="HUD/RotationControls" unique_id=839981035]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -96.0
-offset_top = -32.0
-offset_right = -32.0
-offset_bottom = 32.0
-grow_horizontal = 0
-grow_vertical = 2
-texture_normal = ExtResource("3_e12oq")
-texture_hover = ExtResource("4_27b26")
-
-[node name="LeftArrow" type="TextureButton" parent="HUD/RotationControls" unique_id=463513099]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 19.0
-offset_top = -32.0
-offset_right = 83.0
-offset_bottom = 32.0
-grow_vertical = 2
-texture_normal = ExtResource("5_lp5si")
-texture_hover = ExtResource("6_atykj")
-
-[connection signal="pressed" from="HUD/RotationControls/RightArrow" to="." method="_on_right_arrow_pressed"]
-[connection signal="pressed" from="HUD/RotationControls/LeftArrow" to="." method="_on_left_arrow_pressed"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cb1p35lrk8d8r"]
+
+[ext_resource type="Script" uid="uid://by14yg12dlg1t" path="res://scenes/common/zoom_in/zoom_in_area.gd" id="1_pvktk"]
+[ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="2_eb4pp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_st70h"]
+radius = 1.0
+
+[node name="ZoomIn" type="Camera3D" unique_id=464256384 node_paths=PackedStringArray("collision_area")]
+script = ExtResource("1_pvktk")
+collision_area = NodePath("Interactable/CollisionShape3D")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=1013888320 node_paths=PackedStringArray("interactee")]
+script = ExtResource("2_eb4pp")
+interactee = NodePath("..")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=926940183]
+shape = SubResource("SphereShape3D_st70h")
+
+[connection signal="input_event" from="Interactable" to="Interactable" method="_on_input_event"]
+[connection signal="mouse_entered" from="Interactable" to="Interactable" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interactable" to="Interactable" method="_on_mouse_exited"]
