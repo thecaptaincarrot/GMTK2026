@@ -5,9 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1rw18yn7vlo7" path="res://scenes/game_world/player_position_option.tscn" id="2_rwkeo"]
 [ext_resource type="Texture2D" uid="uid://4dqq2375aaof" path="res://assets/notes/note_1.png" id="3_juoe2"]
 [ext_resource type="PackedScene" uid="uid://cb1p35lrk8d8r" path="res://scenes/common/zoom_in/zoom_in_area.tscn" id="3_kvspk"]
-[ext_resource type="Resource" uid="uid://bq8kfctnn5wsk" path="res://assets/notes/note_example.tres" id="4_vt68a"]
 [ext_resource type="Texture2D" uid="uid://dgg01svgynasy" path="res://assets/notes/note_2.png" id="5_jd215"]
-[ext_resource type="Resource" uid="uid://chu3hj175askp" path="res://assets/notes/note_example_2.tres" id="6_8ikys"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34ky4"]
 albedo_texture = ExtResource("3_juoe2")
@@ -36,12 +34,12 @@ size = Vector3(8, 0.1, 4)
 [node name="NoteExample" parent="Meshes/Floor/Wall/Wall2" unique_id=527123681 instance=ExtResource("2_hvllm")]
 transform = Transform3D(0.5, 0, 1.6940659e-21, 0, 1, -1.7538934e-22, 0, -2.5055613e-22, 0.7, 1.3820883, 0.22164655, -1.1920929e-07)
 surface_material_override/0 = SubResource("StandardMaterial3D_34ky4")
-note_data = ExtResource("4_vt68a")
+note_pages = Array[Texture2D]([ExtResource("3_juoe2")])
 
 [node name="NoteObject" parent="Meshes/Floor/Wall/Wall2" unique_id=1908685886 instance=ExtResource("2_hvllm")]
 transform = Transform3D(0.5, 0, 1.2705494e-21, 0, 1, -1.7538933e-22, 0, -2.5055613e-22, 0.7, 4.656613e-09, 0.11870813, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_5vbd4")
-note_data = ExtResource("6_8ikys")
+note_pages = Array[Texture2D]([ExtResource("3_juoe2"), ExtResource("5_jd215")])
 
 [node name="Ceiling" type="CSGBox3D" parent="Meshes/Floor/Wall/Wall2" unique_id=174742736]
 transform = Transform3D(1, 0, 0, 0, -4.371138e-08, 1, 0, -1, -4.371138e-08, 0, 2.5817745, 1.9607041)

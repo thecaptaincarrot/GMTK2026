@@ -1,7 +1,5 @@
 extends MeshInstance3D
-
-
-@export var note_data: NoteData
+@export var note_pages : Array[Texture2D]
 @export var collision_area: CollisionShape3D
 
 
@@ -13,5 +11,5 @@ func enable_collision():
 
 
 func handle_interaction() -> void:
-	Globals.set_active_note(note_data)
+	Globals.set_active_note(note_pages)
 	Globals.hud_controller.set_hud(HudController.HudState.READING_NOTE)

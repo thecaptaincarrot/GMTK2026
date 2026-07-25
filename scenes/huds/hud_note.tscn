@@ -14,35 +14,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NoteControl" unique_id=1783538913]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="NoteExit" type="TextureButton" parent="NoteControl" unique_id=859817210]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 3
 
-[node name="TextureRect" type="TextureRect" parent="NoteControl/VBoxContainer" unique_id=185286771]
-custom_minimum_size = Vector2(500, 700)
-layout_mode = 2
+[node name="NoteDisplay" type="TextureRect" parent="NoteControl" unique_id=185286771]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -350.0
+offset_right = 250.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("2_070o3")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NoteControl/VBoxContainer" unique_id=1656155690]
-layout_mode = 2
-
-[node name="NotePrevious" type="TextureButton" parent="NoteControl/VBoxContainer/HBoxContainer" unique_id=1957279003]
-layout_mode = 2
-texture_normal = ExtResource("2_070o3")
+[node name="NoteNext" type="TextureButton" parent="NoteControl/NoteDisplay" unique_id=745021628]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_right = 45.999634
+grow_horizontal = 0
+grow_vertical = 2
 stretch_mode = 3
 
-[node name="NoteExit" type="TextureButton" parent="NoteControl/VBoxContainer/HBoxContainer" unique_id=859817210]
-layout_mode = 2
-texture_normal = ExtResource("2_070o3")
+[node name="NotePrevious" type="TextureButton" parent="NoteControl/NoteDisplay" unique_id=1957279003]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_right = 63.0
+grow_vertical = 2
 stretch_mode = 3
 
-[node name="NoteNext" type="TextureButton" parent="NoteControl/VBoxContainer/HBoxContainer" unique_id=745021628]
-layout_mode = 2
-texture_normal = ExtResource("2_070o3")
-stretch_mode = 3
-
-[connection signal="pressed" from="NoteControl/VBoxContainer/HBoxContainer/NotePrevious" to="." method="_on_note_previous_pressed"]
-[connection signal="pressed" from="NoteControl/VBoxContainer/HBoxContainer/NoteExit" to="." method="_on_note_exit_pressed"]
-[connection signal="pressed" from="NoteControl/VBoxContainer/HBoxContainer/NoteNext" to="." method="_on_note_next_pressed"]
+[connection signal="mouse_entered" from="NoteControl/NoteExit" to="." method="_on_note_exit_mouse_entered"]
+[connection signal="pressed" from="NoteControl/NoteExit" to="." method="_on_note_exit_pressed"]
+[connection signal="mouse_entered" from="NoteControl/NoteDisplay" to="." method="_on_note_display_mouse_entered"]
+[connection signal="mouse_entered" from="NoteControl/NoteDisplay/NoteNext" to="." method="_on_note_next_mouse_entered"]
+[connection signal="pressed" from="NoteControl/NoteDisplay/NoteNext" to="." method="_on_note_next_pressed"]
+[connection signal="mouse_entered" from="NoteControl/NoteDisplay/NotePrevious" to="." method="_on_note_previous_mouse_entered"]
+[connection signal="pressed" from="NoteControl/NoteDisplay/NotePrevious" to="." method="_on_note_previous_pressed"]
