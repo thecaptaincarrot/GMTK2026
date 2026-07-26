@@ -190,32 +190,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.83
 
 [node name="Props" type="Node3D" parent="Rooms/AirLock" unique_id=127707660]
 
-[node name="Emergency_Lights" type="Node3D" parent="Rooms/AirLock/Props" unique_id=834685311]
-
-[node name="DoorLight" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=104896496]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30777836, 2.3173556, -0.020104527)
-light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 2.681
-shadow_enabled = true
-shadow_blur = 0.853
-omni_range = 4096.0
-
-[node name="FloorLight1" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=104174124]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.765481, -0.25098002, 0)
-light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.066
-shadow_enabled = true
-shadow_blur = 0.853
-omni_range = 4096.0
-
-[node name="FloorLight2" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=1523575057]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5743675, -0.29814684, 0)
-light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.02
-shadow_enabled = true
-shadow_blur = 0.853
-omni_range = 4096.0
-
 [node name="airlock_indicator_panel" parent="Rooms/AirLock/Props" unique_id=579463908 instance=ExtResource("9_ah6i4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19772243, 1.0694249, 1.2719636)
 
@@ -228,6 +202,83 @@ transform = Transform3D(0.5, 0, 0, 0, -4.3711385e-08, -0.7, 0, 0.99999994, -3.05
 mesh = SubResource("PlaneMesh_24u40")
 surface_material_override/0 = ExtResource("13_o5cya")
 note_pages = Array[Texture2D]([ExtResource("14_o75v3")])
+
+[node name="Reactor_Lights" type="Node3D" parent="Rooms/AirLock/Props" unique_id=62394747]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/AirLock/Props/Reactor_Lights" unique_id=903583249]
+transform = Transform3D(0.9996379, 0.001849785, 0.026844842, -0.026908496, 0.068718635, 0.99727315, 0, -0.99763435, 0.068743534, 3.0200553, 2.3022661, 0.14914513)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.305
+spot_attenuation = -5.05
+spot_angle = 69.87
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/AirLock/Props/Reactor_Lights" unique_id=759873551]
+transform = Transform3D(0.9996379, 0.001849785, 0.026844842, -0.026908496, 0.068718635, 0.99727315, 0, -0.99763435, 0.068743534, 0.82913303, 2.3022661, 0.14914513)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.305
+spot_attenuation = -5.05
+spot_angle = 69.87
+
+[node name="Emergency_Lights" type="Node3D" parent="Rooms/AirLock/Props" unique_id=270027912]
+
+[node name="DoorLight" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=1983252461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30777836, 2.3173556, -0.020104527)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+omni_attenuation = 2.045
+
+[node name="FloorLight1" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=268463668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3883677, -0.25098002, 1.2133837)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.56
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight2" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=507289635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4199305, 1.1643976, 3.5883567)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight3" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=131331942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4133625, -0.29814684, -1.6822808)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight4" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=510094281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7240372, 2.270162, -3.3830047)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight5" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=1843279875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5686836, -0.29814684, -0.11174035)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight6" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=208899045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.580369, -0.29814684, -0.16237235)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
 
 [node name="ForeHallway" type="Node3D" parent="Rooms" unique_id=1385809275]
 metadata/_edit_group_ = true
@@ -288,36 +339,63 @@ reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Props" type="Node3D" parent="Rooms/ForeHallway" unique_id=1064691386]
 
-[node name="Emergency_Lights" type="Node3D" parent="Rooms/ForeHallway/Props" unique_id=2045727249]
+[node name="Reactor_Lights" type="Node3D" parent="Rooms/ForeHallway/Props" unique_id=1806060177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="FloorLight3" type="OmniLight3D" parent="Rooms/ForeHallway/Props/Emergency_Lights" unique_id=506109304]
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/ForeHallway/Props/Reactor_Lights" unique_id=1675733232]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, 0)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/ForeHallway/Props/Reactor_Lights" unique_id=1279445603]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, -3.8025613)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/ForeHallway/Props/Reactor_Lights" unique_id=934409915]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, -7.2957773)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/ForeHallway/Props/Reactor_Lights" unique_id=823693910]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, 3.4560404)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="Emergency_Lights" type="Node3D" parent="Rooms/ForeHallway/Props" unique_id=1079729653]
+
+[node name="FloorLight3" type="OmniLight3D" parent="Rooms/ForeHallway/Props/Emergency_Lights" unique_id=1767485029]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016805887, -0.25098002, 1.9864881)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.066
+light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
-[node name="FloorLight4" type="OmniLight3D" parent="Rooms/ForeHallway/Props/Emergency_Lights" unique_id=1630731481]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016771555, -0.25098002, 6.0439253)
-light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.066
-shadow_enabled = true
-shadow_blur = 0.853
-omni_range = 4096.0
-
-[node name="FloorLight5" type="OmniLight3D" parent="Rooms/ForeHallway/Props/Emergency_Lights" unique_id=173298407]
+[node name="FloorLight5" type="OmniLight3D" parent="Rooms/ForeHallway/Props/Emergency_Lights" unique_id=1156708967]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019978523, -0.25098002, -1.9317617)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.066
+light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
-[node name="FloorLight6" type="OmniLight3D" parent="Rooms/ForeHallway/Props/Emergency_Lights" unique_id=1020387489]
+[node name="FloorLight6" type="OmniLight3D" parent="Rooms/ForeHallway/Props/Emergency_Lights" unique_id=1209746872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018628597, -0.25098002, -5.9141693)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.066
+light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
@@ -359,6 +437,35 @@ fov = 45.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 6)
 
 [node name="Props" type="Node3D" parent="Rooms/Cockpit" unique_id=310254450]
+
+[node name="Reactor_Lights" type="Node3D" parent="Rooms/Cockpit/Props" unique_id=1514497719]
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/Cockpit/Props/Reactor_Lights" unique_id=1281773962]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -0.24126911, 2.373774, 3.7291212)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.681
+spot_attenuation = -4.14
+spot_angle = 73.89
+
+[node name="Emergency_Lights" type="Node3D" parent="Rooms/Cockpit/Props" unique_id=1122771598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18279552, 3.2033234)
+
+[node name="FloorLight4" type="OmniLight3D" parent="Rooms/Cockpit/Props/Emergency_Lights" unique_id=1139469500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7840166, -0.25098002, 1.631258)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight5" type="OmniLight3D" parent="Rooms/Cockpit/Props/Emergency_Lights" unique_id=517259206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9564245, -0.25098002, 1.6206799)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
 
 [node name="Hub" type="Node3D" parent="Rooms" unique_id=234284742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)
@@ -429,6 +536,148 @@ needs_power = true
 
 [node name="Props" type="Node3D" parent="Rooms/Hub" unique_id=1695698112]
 
+[node name="Reactor_Lights" type="Node3D" parent="Rooms/Hub/Props" unique_id=868289137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 19)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/Hub/Props/Reactor_Lights" unique_id=1982842884]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.032486, 2.373774, -12.14256)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Rooms/Hub/Props/Reactor_Lights" unique_id=1301608226]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.032486, 2.373774, -14.8562565)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Rooms/Hub/Props/Reactor_Lights" unique_id=1391133713]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.032486, 2.373774, -22.777939)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/Hub/Props/Reactor_Lights" unique_id=2049993704]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, -19.009987)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/Hub/Props/Reactor_Lights" unique_id=1147517019]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -3.9435236, 2.373774, -26.066492)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/Hub/Props/Reactor_Lights" unique_id=345762241]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -8.466278, 2.373774, -18.98718)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/Hub/Props/Reactor_Lights" unique_id=391422514]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 0.39036083, 2.373774, -18.89243)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="Emergency_Lights" type="Node3D" parent="Rooms/Hub/Props" unique_id=1643120169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+
+[node name="FloorLight3" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=1855711397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3254805, -0.25098002, -12.059807)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight4" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=357736152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8816743, -0.25098002, -12.059807)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight5" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=663370066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7876244, -0.25098002, -16.423443)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight6" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=1637685138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7759047, -0.25098002, -21.654335)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight7" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=1575899934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2131214, -0.25098002, -16.429794)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight8" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=1960771310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9692216, -0.25098002, -21.48556)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight9" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=749721888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3608584, -0.25098002, -20.230112)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight10" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=375909307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3608584, -0.25098002, -17.095633)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight11" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=1771395297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.12415, -0.25098002, -17.095633)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight12" type="OmniLight3D" parent="Rooms/Hub/Props/Emergency_Lights" unique_id=1780191844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.12415, -0.25098002, -20.309593)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
 [node name="AftHallway" type="Node3D" parent="Rooms" unique_id=1178171097]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -35)
 
@@ -490,6 +739,84 @@ reverb_vector = Vector4(0.3, 0, 0, 0.4)
 [node name="Interactables" type="Node3D" parent="Rooms/AftHallway" unique_id=804026529]
 
 [node name="Props" type="Node3D" parent="Rooms/AftHallway" unique_id=1613615225]
+
+[node name="Reactor_Lights" type="Node3D" parent="Rooms/AftHallway/Props" unique_id=326106586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 35)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/AftHallway/Props/Reactor_Lights" unique_id=1882711568]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, -29.830828)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/AftHallway/Props/Reactor_Lights" unique_id=155913934]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, -33.243057)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/AftHallway/Props/Reactor_Lights" unique_id=1418999408]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, -36.714104)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/AftHallway/Props/Reactor_Lights" unique_id=564267654]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, -40.521137)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="Emergency_Lights" type="Node3D" parent="Rooms/AftHallway/Props" unique_id=210095411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35)
+
+[node name="FloorLight3" type="OmniLight3D" parent="Rooms/AftHallway/Props/Emergency_Lights" unique_id=1030746015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04379344, -0.25098002, -30.899)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight4" type="OmniLight3D" parent="Rooms/AftHallway/Props/Emergency_Lights" unique_id=196019714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04379344, -0.25098002, -35.035286)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight7" type="OmniLight3D" parent="Rooms/AftHallway/Props/Emergency_Lights" unique_id=1720720183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04379344, -0.25098002, -39.12768)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight5" type="OmniLight3D" parent="Rooms/AftHallway/Props/Emergency_Lights" unique_id=1338942767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8812065, -0.25098002, -25.6358)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight6" type="OmniLight3D" parent="Rooms/AftHallway/Props/Emergency_Lights" unique_id=1758483559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1498716, -0.25098002, -25.630527)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
 
 [node name="engine_core" type="Node3D" parent="Rooms" unique_id=979140351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41)
