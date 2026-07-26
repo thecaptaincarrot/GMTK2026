@@ -26,8 +26,20 @@ func enable_collision():
 		knob.enable_collision()
 
 
-func update_knob_label():
+func get_knob_value():
 	var total_value = 0
 	for knob in knobs:
 		total_value += knob.get_knob_value()
-	knob_value_label.text = str(total_value)
+	return total_value
+
+
+func update_knob_label():
+
+	knob_value_label.text = str(get_knob_value())
+
+
+func check_solution():
+	if get_knob_value() == Globals.time_controller.get_minutes_since_midnight():
+		return true
+	else:
+		return false

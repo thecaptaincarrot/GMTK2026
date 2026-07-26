@@ -15,6 +15,12 @@ var _player:PlayerController
 
 var main_scene:MainScene
 
+@onready var black_hole_rotator = $BlackHoleRotator
+var black_hole_target_rotation = 0.0
+@export var black_hole_rotation_speed = PI/8
+signal rotation_complete
+var rotation_in_progress = false
+
 func _ready():
 	AudioPlayer.game_node  = self
 	
@@ -32,12 +38,24 @@ func _ready():
 	
 	Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
 
+func _physics_process(delta):
+	if abs(black_hole_target_rotation - black_hole_rotator.rotation.z) > PI/256:
+		print("target: ", black_hole_target_rotation, " Current: ", black_hole_rotator.rotation.z)
+		if black_hole_rotator.rotation.z > black_hole_target_rotation:
+			black_hole_rotator.rotation.z -= delta * black_hole_rotation_speed
+		else:
+			black_hole_rotator.rotation.z += delta * black_hole_rotation_speed
+	else:
+		if rotation_in_progress:
+			rotation_complete.emit()
+			rotation_in_progress = false
 
 func load_room(path):
 	if(_active_room != null):
 		_active_room.queue_free()
 	#TODO this should be moved into a single loader to optimize later
 	_active_room = load(path).instantiate()
+	_active_room.game_world = self
 	if _player:
 		_player.game_room = _active_room
 	add_child(_active_room)
@@ -55,3 +73,9 @@ func _on_back_mouse_entered() -> void:
 
 func _on_back_mouse_exited() -> void:
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
+
+
+func rotate_black_hole(new_target):
+	print("new black hole rotation target")
+	black_hole_target_rotation = new_target
+	rotation_in_progress = true

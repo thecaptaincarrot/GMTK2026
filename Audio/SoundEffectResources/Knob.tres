@@ -8,4 +8,7 @@ script = ExtResource("1_gl20i")
 ID = "Knob"
 limit = 2
 sound_effect = Array[AudioStream]([ExtResource("2_gyp1n")])
+volume = -25
+pitch_scale = 2.0
+pitch_randomness = 1.0
 metadata/_custom_type_script = "uid://b7fou07k713y"

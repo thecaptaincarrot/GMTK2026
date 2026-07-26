@@ -23,7 +23,7 @@ func enable_collision():
 
 
 func knob_turned_up():
-	print("Yo?")
+	AudioPlayer.create_audio("Knob")
 	knob_position += 1
 	if knob_position >= 9:
 		knob_position = 9
@@ -32,8 +32,8 @@ func knob_turned_up():
 
 
 func knob_turned_down():
+	AudioPlayer.create_audio("Knob")
 	knob_position -= 1
-	print("uh?")
 	if knob_position <= 0:
 		knob_position = 0
 	

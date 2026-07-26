@@ -9,12 +9,15 @@
 [ext_resource type="Material" uid="uid://bqd1yy60g8px2" path="res://scenes/entities/Cockpit/ConsoleOffMaterial.tres" id="5_s1py1"]
 [ext_resource type="Script" uid="uid://bx6v3lj8wesxe" path="res://scenes/common/Interactee.gd" id="6_yt6yg"]
 [ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="7_fsrjn"]
+[ext_resource type="Script" uid="uid://c1fvbcxcygpxp" path="res://scenes/entities/Cockpit/console_control_wheel.gd" id="7_wxrap"]
 [ext_resource type="FontFile" uid="uid://ciyvlsca5ecik" path="res://assets/Fonts/digital display tfb.ttf" id="8_t3dph"]
 [ext_resource type="Material" uid="uid://b8llcq5liyyvq" path="res://scenes/entities/Cockpit/Clock/ClockOnMaterial.tres" id="9_fsrjn"]
 [ext_resource type="Script" uid="uid://d0fwn5w7gs6bn" path="res://scenes/entities/Cockpit/crash_timer.gd" id="9_iy3lj"]
 [ext_resource type="Script" uid="uid://dsb65o8f6fvp0" path="res://scenes/entities/Cockpit/knob_board.gd" id="11_w6ft8"]
 [ext_resource type="Script" uid="uid://cw6uwsk2rjafy" path="res://scenes/entities/Cockpit/console_knob_object.gd" id="13_s66tk"]
 [ext_resource type="Script" uid="uid://swrm1sfv2jq2" path="res://scenes/entities/Cockpit/throttle_interactee.gd" id="15_s66tk"]
+[ext_resource type="Script" uid="uid://cq7cfi7bb28ap" path="res://scenes/entities/Cockpit/console_switch_board.gd" id="16_5e3yl"]
+[ext_resource type="Script" uid="uid://cpa8ew042ddwl" path="res://scenes/entities/Cockpit/switches.gd" id="17_gwe3i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kuu2o"]
 
@@ -853,9 +856,6 @@ metadata/extras = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_oow3h"]
 size = Vector3(0.45, 0.70410156, 0.6417871)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8fnnm"]
-size = Vector3(0.12109375, 0.15222168, 0.19198608)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5img"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c62fd"]
@@ -909,6 +909,9 @@ blend_shape_mode = 0
 metadata/extras = {
 "targetNames": ["switch1", "switch2"]
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fnnm"]
+size = Vector3(0.12109375, 0.15222168, 0.19198608)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_asr40"]
 
@@ -1077,7 +1080,7 @@ mesh = SubResource("ArrayMesh_vipgs")
 surface_material_override/0 = ExtResource("1_85v5r")
 surface_material_override/1 = SubResource("StandardMaterial3D_iy3lj")
 script = ExtResource("2_yt6yg")
-interactees = [NodePath("console_control/left_control"), NodePath("console_control/right_control"), NodePath("throttle_interactee"), NodePath("knob_board/knobwidget/Knob1/KnobUpInteractee"), NodePath("knob_board/knobwidget/Knob1/KnobDownInteractee"), NodePath("knob_board/knobwidget/Knob2/KnobUpInteractee"), NodePath("knob_board/knobwidget/Knob2/KnobDownInteractee"), NodePath("knob_board/knobwidget/Knob3/KnobUpInteractee"), NodePath("knob_board/knobwidget/Knob3/KnobDownInteractee"), NodePath("knob_board/knobwidget/Knob4/KnobUpInteractee"), NodePath("knob_board/knobwidget/Knob4/KnobDownInteractee")]
+interactees = [NodePath("console_control/left_control"), NodePath("console_control/right_control"), NodePath("throttle_interactee"), NodePath("knob_board/knobwidget/Knob1/KnobUpInteractee"), NodePath("knob_board/knobwidget/Knob1/KnobDownInteractee"), NodePath("knob_board/knobwidget/Knob2/KnobUpInteractee"), NodePath("knob_board/knobwidget/Knob2/KnobDownInteractee"), NodePath("knob_board/knobwidget/Knob3/KnobUpInteractee"), NodePath("knob_board/knobwidget/Knob3/KnobDownInteractee"), NodePath("knob_board/knobwidget/Knob4/KnobUpInteractee"), NodePath("knob_board/knobwidget/Knob4/KnobDownInteractee"), NodePath("switch_board/switches/LeftSwitchInteractee"), NodePath("switch_board/switches/RightSwitchInteractee"), NodePath("switch_board/switches2/LeftSwitchInteractee"), NodePath("switch_board/switches2/RightSwitchInteractee"), NodePath("switch_board/switches3/LeftSwitchInteractee"), NodePath("switch_board/switches3/RightSwitchInteractee"), NodePath("switch_board/switches4/LeftSwitchInteractee"), NodePath("switch_board/switches4/RightSwitchInteractee")]
 
 [node name="console_clock" type="Node3D" parent="." unique_id=2080659860]
 script = ExtResource("3_fsrjn")
@@ -1110,6 +1113,7 @@ font_size = 22
 
 [node name="console_control" type="Node3D" parent="." unique_id=1700813627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0014948703, 1.1546876, -0.4871484)
+script = ExtResource("7_wxrap")
 
 [node name="control_mesh" type="MeshInstance3D" parent="console_control" unique_id=1897538274]
 mesh = SubResource("ArrayMesh_ga3hg")
@@ -1138,6 +1142,8 @@ metadata/_custom_type_script = "uid://d73lxn1e6cxf"
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="console_control/right_control/Interactable" unique_id=456875273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20099993, -0.19750977, 0.009155273)
 shape = SubResource("BoxShape3D_sv2bo")
+
+[node name="RCSjetsstream" type="AudioStreamPlayer3D" parent="console_control" unique_id=1360238467]
 
 [node name="CrashTimer" type="Node3D" parent="." unique_id=1702524440]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4309117, 1.7031531, 0.008236527)
@@ -1355,9 +1361,20 @@ shape = SubResource("BoxShape3D_oow3h")
 
 [node name="switch_board" type="Node3D" parent="." unique_id=1019403691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2478005, 1.050087, -0.41967136)
+script = ExtResource("16_5e3yl")
 
 [node name="switches" type="Node3D" parent="switch_board" unique_id=153401481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37133145, 0, -0.14870119)
+script = ExtResource("17_gwe3i")
+
+[node name="switchboard" type="MeshInstance3D" parent="switch_board/switches" unique_id=39148821]
+transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, 0.015675902, 0.009203196, -0.019690096)
+mesh = SubResource("ArrayMesh_r154r")
+blend_shapes/switch1 = 0.0
+blend_shapes/switch2 = 0.0
+surface_material_override/0 = ExtResource("1_85v5r")
+surface_material_override/1 = ExtResource("2_07xtq")
+surface_material_override/2 = ExtResource("2_07xtq")
 
 [node name="LeftSwitchInteractee" type="Node3D" parent="switch_board/switches" unique_id=651194132]
 script = ExtResource("6_yt6yg")
@@ -1371,29 +1388,24 @@ metadata/_custom_type_script = "uid://d73lxn1e6cxf"
 transform = Transform3D(0.9052385, 0, 0.42490378, 0, 1, 0, -0.42490378, 0, 0.9052385, 0.07354188, -0.0178833, -0.066470325)
 shape = SubResource("BoxShape3D_8fnnm")
 
-[node name="LeftSwitchInteractee2" type="Node3D" parent="switch_board/switches" unique_id=582593634]
+[node name="RightSwitchInteractee" type="Node3D" parent="switch_board/switches" unique_id=582593634]
 script = ExtResource("6_yt6yg")
 metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
 
-[node name="Interactable" type="Area3D" parent="switch_board/switches/LeftSwitchInteractee2" unique_id=871106002]
+[node name="Interactable" type="Area3D" parent="switch_board/switches/RightSwitchInteractee" unique_id=871106002]
 script = ExtResource("7_fsrjn")
 metadata/_custom_type_script = "uid://d73lxn1e6cxf"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="switch_board/switches/LeftSwitchInteractee2/Interactable" unique_id=1740305305]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="switch_board/switches/RightSwitchInteractee/Interactable" unique_id=1740305305]
 transform = Transform3D(0.9052385, 0, 0.42490378, 0, 1, 0, -0.42490378, 0, 0.9052385, -0.05238056, -0.0178833, -0.014679253)
 shape = SubResource("BoxShape3D_8fnnm")
 
-[node name="switchboard1" type="MeshInstance3D" parent="switch_board" unique_id=39148821]
-transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, 0.38700736, 0.009203196, -0.16839129)
-mesh = SubResource("ArrayMesh_r154r")
-blend_shapes/switch1 = 0.0
-blend_shapes/switch2 = 0.0
-surface_material_override/0 = ExtResource("1_85v5r")
-surface_material_override/1 = ExtResource("2_07xtq")
-surface_material_override/2 = ExtResource("2_07xtq")
+[node name="switches2" type="Node3D" parent="switch_board" unique_id=1034547602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13164198, 0, -0.031027228)
+script = ExtResource("17_gwe3i")
 
-[node name="switchboard2" type="MeshInstance3D" parent="switch_board" unique_id=1509135742]
-transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, 0.13678658, 0, -0.04391861)
+[node name="switchboard" type="MeshInstance3D" parent="switch_board/switches2" unique_id=1509135742]
+transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, 0.005144596, 0, -0.012891382)
 mesh = SubResource("ArrayMesh_cmg8p")
 blend_shapes/switch1 = 0.0
 blend_shapes/switch2 = 0.0
@@ -1401,8 +1413,36 @@ surface_material_override/0 = ExtResource("1_85v5r")
 surface_material_override/1 = ExtResource("2_07xtq")
 surface_material_override/2 = ExtResource("2_07xtq")
 
-[node name="switchboard3" type="MeshInstance3D" parent="switch_board" unique_id=1529326809]
-transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, -0.11968565, -0.009433031, 0.08366394)
+[node name="LeftSwitchInteractee" type="Node3D" parent="switch_board/switches2" unique_id=1742024807]
+script = ExtResource("6_yt6yg")
+metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
+
+[node name="Interactable" type="Area3D" parent="switch_board/switches2/LeftSwitchInteractee" unique_id=262660150]
+script = ExtResource("7_fsrjn")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="switch_board/switches2/LeftSwitchInteractee/Interactable" unique_id=257786195]
+transform = Transform3D(0.9052385, 0, 0.42490378, 0, 1, 0, -0.42490378, 0, 0.9052385, 0.07354188, -0.0178833, -0.066470325)
+shape = SubResource("BoxShape3D_8fnnm")
+
+[node name="RightSwitchInteractee" type="Node3D" parent="switch_board/switches2" unique_id=383369355]
+script = ExtResource("6_yt6yg")
+metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
+
+[node name="Interactable" type="Area3D" parent="switch_board/switches2/RightSwitchInteractee" unique_id=1602273220]
+script = ExtResource("7_fsrjn")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="switch_board/switches2/RightSwitchInteractee/Interactable" unique_id=432161807]
+transform = Transform3D(0.9052385, 0, 0.42490378, 0, 1, 0, -0.42490378, 0, 0.9052385, -0.05238056, -0.0178833, -0.014679253)
+shape = SubResource("BoxShape3D_8fnnm")
+
+[node name="switches3" type="Node3D" parent="switch_board" unique_id=171717939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1438241, 0, 0.08982411)
+script = ExtResource("17_gwe3i")
+
+[node name="switchboard" type="MeshInstance3D" parent="switch_board/switches3" unique_id=1529326809]
+transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, 0.02413845, -0.009433031, -0.00616017)
 mesh = SubResource("ArrayMesh_8bf3k")
 blend_shapes/switch1 = 0.0
 blend_shapes/switch2 = 0.0
@@ -1410,11 +1450,74 @@ surface_material_override/0 = ExtResource("1_85v5r")
 surface_material_override/1 = ExtResource("2_07xtq")
 surface_material_override/2 = ExtResource("2_07xtq")
 
-[node name="switchboard4" type="MeshInstance3D" parent="switch_board" unique_id=59224430]
-transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, -0.36990643, -0.018636227, 0.20813662)
+[node name="LeftSwitchInteractee" type="Node3D" parent="switch_board/switches3" unique_id=2115705870]
+script = ExtResource("6_yt6yg")
+metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
+
+[node name="Interactable" type="Area3D" parent="switch_board/switches3/LeftSwitchInteractee" unique_id=1976619141]
+script = ExtResource("7_fsrjn")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="switch_board/switches3/LeftSwitchInteractee/Interactable" unique_id=494626978]
+transform = Transform3D(0.9052385, 0, 0.42490378, 0, 1, 0, -0.42490378, 0, 0.9052385, 0.07354188, -0.0178833, -0.066470325)
+shape = SubResource("BoxShape3D_8fnnm")
+
+[node name="RightSwitchInteractee" type="Node3D" parent="switch_board/switches3" unique_id=1295248852]
+script = ExtResource("6_yt6yg")
+metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
+
+[node name="Interactable" type="Area3D" parent="switch_board/switches3/RightSwitchInteractee" unique_id=189749126]
+script = ExtResource("7_fsrjn")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="switch_board/switches3/RightSwitchInteractee/Interactable" unique_id=515208528]
+transform = Transform3D(0.9052385, 0, 0.42490378, 0, 1, 0, -0.42490378, 0, 0.9052385, -0.05238056, -0.0178833, -0.014679253)
+shape = SubResource("BoxShape3D_8fnnm")
+
+[node name="switches4" type="Node3D" parent="switch_board" unique_id=1912267390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41201025, 0, 0.20059618)
+script = ExtResource("17_gwe3i")
+
+[node name="switchboard" type="MeshInstance3D" parent="switch_board/switches4" unique_id=59224430]
+transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, 0.042103827, -0.018636227, 0.0075404346)
 mesh = SubResource("ArrayMesh_bfetb")
 blend_shapes/switch1 = 0.0
 blend_shapes/switch2 = 0.0
 surface_material_override/0 = ExtResource("1_85v5r")
 surface_material_override/1 = ExtResource("2_07xtq")
 surface_material_override/2 = ExtResource("2_07xtq")
+
+[node name="LeftSwitchInteractee" type="Node3D" parent="switch_board/switches4" unique_id=83178759]
+script = ExtResource("6_yt6yg")
+metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
+
+[node name="Interactable" type="Area3D" parent="switch_board/switches4/LeftSwitchInteractee" unique_id=545065693]
+script = ExtResource("7_fsrjn")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="switch_board/switches4/LeftSwitchInteractee/Interactable" unique_id=78844461]
+transform = Transform3D(0.9052385, 0, 0.42490378, 0, 1, 0, -0.42490378, 0, 0.9052385, 0.07354188, -0.0178833, -0.066470325)
+shape = SubResource("BoxShape3D_8fnnm")
+
+[node name="RightSwitchInteractee" type="Node3D" parent="switch_board/switches4" unique_id=472183134]
+script = ExtResource("6_yt6yg")
+metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
+
+[node name="Interactable" type="Area3D" parent="switch_board/switches4/RightSwitchInteractee" unique_id=981277265]
+script = ExtResource("7_fsrjn")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="switch_board/switches4/RightSwitchInteractee/Interactable" unique_id=578116805]
+transform = Transform3D(0.9052385, 0, 0.42490378, 0, 1, 0, -0.42490378, 0, 0.9052385, -0.05238056, -0.0178833, -0.014679253)
+shape = SubResource("BoxShape3D_8fnnm")
+
+[connection signal="interacted_with" from="console_control/left_control" to="console_control" method="_on_left_control_interacted_with"]
+[connection signal="interacted_with" from="console_control/right_control" to="console_control" method="_on_right_control_interacted_with"]
+[connection signal="interacted_with" from="switch_board/switches/LeftSwitchInteractee" to="switch_board/switches" method="_on_left_switch_interactee_interacted_with"]
+[connection signal="interacted_with" from="switch_board/switches/RightSwitchInteractee" to="switch_board/switches" method="_on_right_switch_interactee_interacted_with"]
+[connection signal="interacted_with" from="switch_board/switches2/LeftSwitchInteractee" to="switch_board/switches2" method="_on_left_switch_interactee_interacted_with"]
+[connection signal="interacted_with" from="switch_board/switches2/RightSwitchInteractee" to="switch_board/switches2" method="_on_right_switch_interactee_interacted_with"]
+[connection signal="interacted_with" from="switch_board/switches3/LeftSwitchInteractee" to="switch_board/switches3" method="_on_left_switch_interactee_interacted_with"]
+[connection signal="interacted_with" from="switch_board/switches3/RightSwitchInteractee" to="switch_board/switches3" method="_on_right_switch_interactee_interacted_with"]
+[connection signal="interacted_with" from="switch_board/switches4/LeftSwitchInteractee" to="switch_board/switches4" method="_on_left_switch_interactee_interacted_with"]
+[connection signal="interacted_with" from="switch_board/switches4/RightSwitchInteractee" to="switch_board/switches4" method="_on_right_switch_interactee_interacted_with"]

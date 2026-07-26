@@ -5,12 +5,21 @@ class_name GameRoom
 
 signal disable_cockpit
 
+signal rotate_black_hole
+
+var game_world : GameWorld
+
+@export var control_wheel : Node3D
+
 func _ready():
 	for player_position: PlayerPositionOption in get_all_player_positions():
 		player_position.game_room  = self
 	
 	for zoom_in : ZoomIn in get_all_zoom_in():
 		zoom_in.game_room = self
+	
+	game_world.rotation_complete.connect(control_wheel.rotation_complete)
+	control_wheel.new_black_hole_rotation.connect(game_world.rotate_black_hole)
 
 
 func set_active_position_node(pos_name:StringName):

@@ -48,3 +48,9 @@ func format_current_time(is_american = false, pattern: String = hour_only_time_p
 	var hour: int = time_dict["hour"] % 12 if is_american else time_dict["hour"]
 
 	return pattern % [hour, time_dict["minute"], time_dict["second"]]
+
+
+func get_minutes_since_midnight():
+	var unix_time: int  = int(current_time_ms / 1000.0)
+	var time_dict = Time.get_datetime_dict_from_unix_time(unix_time)
+	return time_dict["minute"] + time_dict["hour"] * 60.0

@@ -37,11 +37,13 @@ script = ExtResource("1_p46a1")
 screen_rotation_controller = NodePath("")
 zoom_controller = NodePath("")
 
+[node name="BlackHoleRotator" type="Node3D" parent="." unique_id=648423589]
+
+[node name="Blackhole" parent="BlackHoleRotator" unique_id=118774140 instance=ExtResource("4_f3jsn")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 882.0199, -124.41113, 52.198433)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1870284894]
 environment = SubResource("Environment_st70h")
-
-[node name="Blackhole" parent="WorldEnvironment" unique_id=118774140 instance=ExtResource("4_f3jsn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.61914, 0, 0)
 
 [node name="DebugInfo" type="CanvasLayer" parent="." unique_id=2111856261]
 script = ExtResource("4_jamdq")
