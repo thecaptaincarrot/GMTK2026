@@ -1062,33 +1062,28 @@ transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1
 fov = 70.0
 valid_neighbors = [NodePath("../../../Hub/PlayerPositions/Hub4"), NodePath("../LabPlayerPos2")]
 valid_clickables = [NodePath("../../Interactables/DoorButton")]
-reverb_vector = Vector4(0.2, 0, 0, 0.2)
 
 [node name="LabPlayerPos2" parent="Rooms/StarboardLab/PlayerPositions" unique_id=212241533 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, 0)
 fov = 70.0
 valid_neighbors = [NodePath("../LabPlayerPos4"), NodePath("../LabPlayerPos3")]
-reverb_vector = Vector4(0.2, 0, 0, 0.2)
 
 [node name="LabPlayerPos4" parent="Rooms/StarboardLab/PlayerPositions" unique_id=469992334 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -4.5)
 fov = 70.0
 valid_neighbors = [NodePath("../LabPlayerPos5"), NodePath("../LabPlayerPos2")]
 valid_clickables = [NodePath("../../Interactables/BinderPage3")]
-reverb_vector = Vector4(0.2, 0, 0, 0.2)
 
 [node name="LabPlayerPos5" parent="Rooms/StarboardLab/PlayerPositions" unique_id=1669920877 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -9.5)
 fov = 70.0
 valid_neighbors = [NodePath("../LabPlayerPos4")]
-reverb_vector = Vector4(0.2, 0, 0, 0.2)
 
 [node name="LabPlayerPos3" parent="Rooms/StarboardLab/PlayerPositions" unique_id=1168150553 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, 4)
 fov = 70.0
 valid_neighbors = [NodePath("../LabPlayerPos2")]
 valid_clickables = [NodePath("../CardTableZoomIn")]
-reverb_vector = Vector4(0.2, 0, 0, 0.2)
 
 [node name="CardTableZoomIn" parent="Rooms/StarboardLab/PlayerPositions" unique_id=781937246 node_paths=PackedStringArray("valid_clickables") instance=ExtResource("6_6vmy0")]
 transform = Transform3D(-4.371139e-08, 0.81915206, -0.57357645, 0, 0.57357645, 0.81915206, 1, 3.5806274e-08, -2.5071824e-08, -3.9380074, 1.7638736, 4.034218)
@@ -1349,31 +1344,26 @@ transform = Transform3D(1.1924881e-08, 0.1736482, -0.9848077, 0, 0.9848077, 0.17
 fov = 70.0
 valid_neighbors = [NodePath("../../../Hub/PlayerPositions/Hub3"), NodePath("../HydroPlayerPos1")]
 valid_clickables = [NodePath("../../Interactables/DoorButton")]
-reverb_vector = Vector4(0.3, 0, 0.3, 0.2)
 
 [node name="HydroPlayerPos1" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=1864292003 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, 0)
 fov = 70.0
 valid_neighbors = [NodePath("../HydroPlayerPos0"), NodePath("."), NodePath("../HydroPlayerPos3")]
-reverb_vector = Vector4(0.3, 0, 0.3, 0.2)
 
 [node name="HydroPlayerPos3" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=359925413 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, -4.5)
 fov = 70.0
 valid_neighbors = [NodePath("."), NodePath("../HydroPlayerPos2")]
-reverb_vector = Vector4(0.3, 0, 0.3, 0.2)
 
 [node name="HydroPlayerPos4" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=905902517 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, -9.5)
 fov = 70.0
 valid_neighbors = [NodePath("../HydroPlayerPos3")]
-reverb_vector = Vector4(0.3, 0, 0.3, 0.3)
 
 [node name="HydroPlayerPos2" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=1114109077 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, 4)
 fov = 70.0
 valid_neighbors = [NodePath("../HydroPlayerPos1")]
-reverb_vector = Vector4(0.3, 0, 0.3, 0.3)
 
 [node name="Interactables" type="Node3D" parent="Rooms/PortHydroponics" unique_id=461452947]
 
@@ -1671,7 +1661,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 [node name="PlayerPositions" type="Node3D" parent="Rooms/AftHallway" unique_id=973628982]
 
 [node name="Aft5" parent="Rooms/AftHallway/PlayerPositions" unique_id=1609693990 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
-transform = Transform3D(-1, 1.5180808e-08, -8.609463e-08, 0, 0.9848078, 0.1736482, 8.742278e-08, 0.1736482, -0.9848078, 0, 1.6, 12.5)
+transform = Transform3D(-1, 1.5180808e-08, -8.609463e-08, 0, 0.9848078, 0.1736482, 8.742278e-08, 0.1736482, -0.9848078, 0, 1.6, 12.16)
 fov = 70.0
 valid_neighbors = [NodePath("../../../Hub/PlayerPositions/Hub2"), NodePath("../Aft0")]
 valid_clickables = [NodePath("../../Interactables/AftReactorDoorButton")]
