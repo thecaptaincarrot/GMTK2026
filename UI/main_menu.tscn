@@ -67,6 +67,128 @@ font_size = 64
 shadow_size = 24
 shadow_color = Color(0.27, 0.15750001, 0, 0.6745098)
 
+[sub_resource type="Animation" id="Animation_ev3b6"]
+resource_name = "EnterGame"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/CameraOrbit/Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 23.926155, 58.204155)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Play:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CheckButton:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k0a0m"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/CameraOrbit/Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 23.926155, 58.204155)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Play:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CheckButton:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2mudq"]
+_data = {
+&"EnterGame": SubResource("Animation_ev3b6"),
+&"RESET": SubResource("Animation_k0a0m")
+}
+
 [node name="MainMenu" type="Control" unique_id=279005205]
 layout_mode = 3
 anchors_preset = 15
@@ -121,14 +243,15 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.07039261, 0, 0)
 [node name="CameraOrbit" type="Node3D" parent="Node3D" unique_id=222519856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6156006, 18.82248, 1.131073)
 script = ExtResource("5_f40uw")
+rotation_speed = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="Node3D/CameraOrbit" unique_id=801551267]
-transform = Transform3D(1, -6.608408e-07, -3.2820233e-14, 5.085048e-07, 0.76948154, 0.6386691, -4.2205855e-07, -0.6386691, 0.76948154, 0, 32.6172, 62.773247)
+transform = Transform3D(1, -6.608408e-07, -3.2820233e-14, 5.085048e-07, 0.76948154, 0.6386691, -4.2205855e-07, -0.6386691, 0.76948154, 0, 23.926155, 58.204155)
 
 [node name="ShipOrbit" type="Node3D" parent="Node3D" unique_id=600800173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6156006, 18.82248, 1.131073)
 script = ExtResource("5_f40uw")
-rotation_speed = 0.024
+rotation_speed = 0.0
 
 [node name="shipmini" type="MeshInstance3D" parent="Node3D/ShipOrbit" unique_id=693608672]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 0, -7.253105, 45.62805)
@@ -148,5 +271,23 @@ grow_horizontal = 2
 text = "ADVENT HORIZON"
 label_settings = SubResource("LabelSettings_oow3h")
 
+[node name="CheckButton" type="CheckButton" parent="." unique_id=418218202]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.0203125
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 549.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_8ctay")
+button_pressed = true
+text = "Animated Camera  Transitions Enabled"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=197538626]
+libraries/ = SubResource("AnimationLibrary_2mudq")
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

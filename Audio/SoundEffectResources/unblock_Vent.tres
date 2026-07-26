@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cr7p6epq0yibk"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_vlvel"]
+[ext_resource type="AudioStream" uid="uid://bqa7c7pj3acq" path="res://Audio/RawSounds/vent unblock.wav" id="2_yqx0k"]
+
+[resource]
+script = ExtResource("1_vlvel")
+ID = "VentUnblock"
+limit = 1
+sound_effect = Array[AudioStream]([ExtResource("2_yqx0k")])
+volume = 0
+metadata/_custom_type_script = "uid://b7fou07k713y"

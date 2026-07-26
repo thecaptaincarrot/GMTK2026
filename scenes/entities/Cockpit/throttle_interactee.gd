@@ -22,7 +22,7 @@ func _ready():
 
 func handle_interaction():
 	print("Checking throttle. Switches: ", switches.check_solution(), " knobs:", knobs.check_solution(), " rotation: ", indicator.check_solution())
-	if (switches.check_solution() and knobs.check_solution() and indicator.check_solution()) or true:
+	if (switches.check_solution() and knobs.check_solution() and indicator.check_solution()):
 		game_end_lockout.emit()
 		cover_rect.mouse_filter = Control.MOUSE_FILTER_STOP 
 		var new_tween = create_tween()

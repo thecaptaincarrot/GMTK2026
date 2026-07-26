@@ -14,8 +14,8 @@ var game_world : GameWorld
 @export var indicator : position_indicator
 
 func _ready():
-	Globals.reactor_started_signal.emit()
-	Globals.reactor_started = true
+	#Globals.reactor_started_signal.emit()
+	#Globals.reactor_started = true
 	
 	for player_position: PlayerPositionOption in get_all_player_positions():
 		player_position.game_room  = self

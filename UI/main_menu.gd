@@ -17,3 +17,11 @@ func _on_play_pressed() -> void:
 	MusicManager.setSong("TRACK1")
 	main_scene.show_game_scene()
 	Globals.time_controller.start(int(Time.get_unix_time_from_system() * 1000))
+
+
+func _on_check_button_toggled(toggled_on):
+	Globals.should_tween = toggled_on
+	if toggled_on:
+		$CheckButton.text = "Animated Camera Transitions Enabled"
+	else:
+		$CheckButton.text = "Animated Camera Transitions Disabled"

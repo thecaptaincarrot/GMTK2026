@@ -12,9 +12,9 @@ func handle_interaction():
 		jumpsuit_removed = true
 		#Make this a tween showing it get removed?
 		#Particles?
-		
+		interacted_with.emit()
 		#TODO: Play air rushing sound effect
-		
+		AudioPlayer.create_audio("VentUnblock")
 		#hide mesh
 		jumpsuit_mesh.hide()
 		interactable_shape.disabled = true

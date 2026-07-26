@@ -93,12 +93,12 @@ surface_material_override/0 = ExtResource("1_3ysqb")
 [node name="demoncore_002" type="MeshInstance3D" parent="engineroom" unique_id=352188706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2255125, -5.708561)
 mesh = SubResource("ArrayMesh_egu0f")
-blend_shapes/rods1 = 0.0
-blend_shapes/rods2 = 0.0
-blend_shapes/rods3 = 0.0
-blend_shapes/rods4 = 0.0
-blend_shapes/rods5 = 0.0
-"blend_shapes/Key 6" = 0.0
+blend_shapes/rods1 = 1.0
+blend_shapes/rods2 = 1.0
+blend_shapes/rods3 = 1.0
+blend_shapes/rods4 = 1.0
+blend_shapes/rods5 = 1.0
+"blend_shapes/Key 6" = 1.0
 surface_material_override/0 = SubResource("StandardMaterial3D_2m5b4")
 surface_material_override/1 = ExtResource("4_m7213")
 

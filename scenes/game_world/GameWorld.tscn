@@ -46,6 +46,7 @@ transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 898.717, 0, 228.713)
 environment = SubResource("Environment_st70h")
 
 [node name="DebugInfo" type="CanvasLayer" parent="." unique_id=2111856261]
+visible = false
 script = ExtResource("4_jamdq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DebugInfo" unique_id=413240870]
