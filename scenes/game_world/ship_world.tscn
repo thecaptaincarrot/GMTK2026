@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dptho542qh3qn" path="res://Meshes/ShipParts/chamber_airlockjoint.tscn" id="14_b7tif"]
 [ext_resource type="Texture2D" uid="uid://dpasao0xl4dc4" path="res://assets/notes/AirlockNote.png" id="14_o75v3"]
 [ext_resource type="PackedScene" uid="uid://on7g27w2aa26" path="res://Meshes/ShipParts/hallway_module.tscn" id="15_o75v3"]
+[ext_resource type="Script" uid="uid://dolak7auur2ya" path="res://scenes/game_world/reactor_lights.gd" id="15_r7isu"]
 [ext_resource type="PackedScene" uid="uid://b37pfhfxkwjm6" path="res://Meshes/ShipParts/hallway_utility.tscn" id="16_24u40"]
 [ext_resource type="PackedScene" uid="uid://5aqsg2k302h" path="res://Meshes/ShipParts/cockpit.tscn" id="17_fhuqd"]
 [ext_resource type="PackedScene" uid="uid://bl2sv8nsprf06" path="res://Meshes/Props/hydroponics_tray.glb" id="17_kqbjw"]
@@ -204,6 +205,7 @@ surface_material_override/0 = ExtResource("13_o5cya")
 note_pages = Array[Texture2D]([ExtResource("14_o75v3")])
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/AirLock/Props" unique_id=62394747]
+script = ExtResource("15_r7isu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/AirLock/Props/Reactor_Lights" unique_id=903583249]
 transform = Transform3D(0.9996379, 0.001849785, 0.026844842, -0.026908496, 0.068718635, 0.99727315, 0, -0.99763435, 0.068743534, 3.0200553, 2.3022661, 0.14914513)
@@ -341,6 +343,7 @@ reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/ForeHallway/Props" unique_id=1806060177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+script = ExtResource("15_r7isu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/ForeHallway/Props/Reactor_Lights" unique_id=1675733232]
 transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, 0)
@@ -439,6 +442,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 6)
 [node name="Props" type="Node3D" parent="Rooms/Cockpit" unique_id=310254450]
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/Cockpit/Props" unique_id=1514497719]
+script = ExtResource("15_r7isu")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/Cockpit/Props/Reactor_Lights" unique_id=1281773962]
 transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -0.24126911, 2.373774, 3.7291212)
@@ -538,6 +542,7 @@ needs_power = true
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/Hub/Props" unique_id=868289137]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 19)
+script = ExtResource("15_r7isu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/Hub/Props/Reactor_Lights" unique_id=1982842884]
 transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.032486, 2.373774, -12.14256)
@@ -742,6 +747,7 @@ reverb_vector = Vector4(0.3, 0, 0, 0.4)
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/AftHallway/Props" unique_id=326106586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 35)
+script = ExtResource("15_r7isu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/AftHallway/Props/Reactor_Lights" unique_id=1882711568]
 transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -4.3105536, 2.373774, -29.830828)

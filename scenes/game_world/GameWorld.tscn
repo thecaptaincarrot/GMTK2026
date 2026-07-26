@@ -31,6 +31,8 @@ adjustment_color_correction = ExtResource("2_57veo")
 font = ExtResource("7_lp5si")
 font_size = 64
 font_color = Color(1, 0, 0, 1)
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)
 
 [node name="GameWorld" type="Node3D" unique_id=773402118]
 script = ExtResource("1_p46a1")
