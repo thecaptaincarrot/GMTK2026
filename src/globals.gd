@@ -11,6 +11,8 @@ extends Node
 @onready var active_material = load("res://assets/Materials/RedEmission/RedEmissionMaterial.tres")
 @onready var half_active_material = load("res://assets/Materials/RedEmission/HalfEmissionMaterial.tres")
 @onready var inactive_material = load("res://assets/Materials/RedEmission/RedOffMaterial.tres")
+@onready var console_off_material = load("res://scenes/entities/Cockpit/ConsoleOffMaterial.tres")
+@onready var console_on_material = load("res://scenes/entities/Cockpit/ConsoleOnMaterial.tres")
 
 signal rotation_control_update
 signal zoom_change
@@ -26,12 +28,19 @@ var should_tween:bool = true
 var _can_rotate = true
 
 var _last_position_node:PlayerPositionOption
+
+var _last_zoom_in_node : ZoomIn
+var _sub_zoom_in = false
+
 var _active_note_pages: Array[Texture2D]
 
 var _zoomed_in:bool = false
 
 var reactor_started = false
 signal reactor_started_signal
+
+signal disable_HUD_buttons
+signal enable_HUD_buttons
 
 func _ready():
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
@@ -52,12 +61,15 @@ func get_player() -> PlayerController:
 	return _player
 
 func set_is_zoomed_in(value:bool):
-	_zoomed_in = false
-	emit_signal("zoom_changed")
+	_zoomed_in = value
 
 func is_zoomed_in():
 	return _zoomed_in
-	
+
+
+func is_sub_zoomed_in():
+	return _sub_zoom_in
+
 
 func set_last_position(node:PlayerPositionOption):
 	_last_position_node = node

@@ -21,6 +21,7 @@ func _ready():
 	load_room(_ship_world_path)
 	_player = _player_scene.instantiate()
 	
+	_player.game_room = _active_room
 	add_child(_player)
 	
 	Globals.set_player(_player)
@@ -31,11 +32,14 @@ func _ready():
 	
 	Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
 
+
 func load_room(path):
 	if(_active_room != null):
 		_active_room.queue_free()
 	#TODO this should be moved into a single loader to optimize later
 	_active_room = load(path).instantiate()
+	if _player:
+		_player.game_room = _active_room
 	add_child(_active_room)
 
 

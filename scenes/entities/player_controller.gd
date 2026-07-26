@@ -6,6 +6,7 @@ class_name PlayerController
 @export var movement_time := 1.0
 @export var rotation_time := 0.6
 
+var game_room : GameRoom
 
 var lock_transform := false
 
@@ -14,6 +15,8 @@ signal movement_finished
 func rotate_screen(deg: float):
 	if lock_transform:
 		return
+	game_room.disable_all_clickables()
+	Globals.disable_HUD_buttons.emit()
 	lock_transform = true
 	var tween = create_tween()
 	tween.tween_property(self, "rotation_degrees", Vector3(rotation_degrees.x, rotation_degrees.y + deg, rotation_degrees.z), rotation_time)
@@ -25,6 +28,8 @@ func rotate_screen(deg: float):
 
 	await tween.finished
 	lock_transform = false
+	Globals.get_last_position().enable_neighbors()
+	Globals.enable_HUD_buttons.emit()
 
 func change_position(pos: Vector3, rot:Vector3, fov : float):
 	if lock_transform:

@@ -1,9 +1,13 @@
 extends Node3D
 class_name Interactee
 
+signal interacted_with
+
+func _ready():
+	get_interactable().interactee = self
 
 func handle_interaction():
-	push_warning("No interaction set for interactee ", name)
+	interacted_with.emit()
 
 
 func get_interactable() -> Interactable:
