@@ -866,6 +866,65 @@ note_pages = Array[Texture2D]([ExtResource("24_o5cya")])
 
 [node name="Props" type="Node3D" parent="Rooms/engine_core" unique_id=1299089385]
 
+[node name="Emergency_Lights" type="Node3D" parent="Rooms/engine_core/Props" unique_id=1447816762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41)
+
+[node name="FloorLight3" type="OmniLight3D" parent="Rooms/engine_core/Props/Emergency_Lights" unique_id=85526111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6783693, -3.2280002, -44.13961)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight4" type="OmniLight3D" parent="Rooms/engine_core/Props/Emergency_Lights" unique_id=2068534492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6366343, -3.2784789, -44.093567)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight7" type="OmniLight3D" parent="Rooms/engine_core/Props/Emergency_Lights" unique_id=1784809490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04379344, 1.259267, -48.57098)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight5" type="OmniLight3D" parent="Rooms/engine_core/Props/Emergency_Lights" unique_id=513542762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4526224, 3.7122695, -45.213097)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight6" type="OmniLight3D" parent="Rooms/engine_core/Props/Emergency_Lights" unique_id=937106905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.374189, 3.7921567, -45.20928)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight8" type="OmniLight3D" parent="Rooms/engine_core/Props/Emergency_Lights" unique_id=1851600359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.093768, 1.0585213, -42.72175)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
+[node name="FloorLight9" type="OmniLight3D" parent="Rooms/engine_core/Props/Emergency_Lights" unique_id=433679166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3952513, 1.0585213, -42.72175)
+light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
+light_energy = 3.5
+shadow_enabled = true
+shadow_blur = 0.853
+omni_range = 4096.0
+
 [node name="StarboardLab" type="Node3D" parent="Rooms" unique_id=1530311910]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -19)
 
@@ -882,6 +941,50 @@ surface_material_override/0 = ExtResource("2_uobhj")
 [node name="Interactables" type="Node3D" parent="Rooms/StarboardLab" unique_id=1151965141]
 
 [node name="Props" type="Node3D" parent="Rooms/StarboardLab" unique_id=1963313716]
+
+[node name="Reactor_Lights" type="Node3D" parent="Rooms/StarboardLab/Props" unique_id=962278810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 19)
+script = ExtResource("15_r7isu")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1512239739]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 8.015912, 2.373774, -29.830828)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1947924268]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.942526, 2.2478442, -25.870441)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1306471990]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 3.1003237, 2.373774, -19.076632)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=2019167836]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -15.980834)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1646768745]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -20.787998)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
 
 [node name="door_A" parent="Rooms/StarboardLab/Props" unique_id=1933391462 instance=ExtResource("3_uulq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -8)
@@ -902,6 +1005,50 @@ surface_material_override/0 = ExtResource("2_uobhj")
 [node name="Interactables" type="Node3D" parent="Rooms/PortHydroponics" unique_id=461452947]
 
 [node name="Props" type="Node3D" parent="Rooms/PortHydroponics" unique_id=1779277288]
+
+[node name="Reactor_Lights" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1455590230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 19)
+script = ExtResource("15_r7isu")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=1042367334]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.014503, 2.373774, -29.830828)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=406736533]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -15.987767, 2.373774, -26.339571)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=1011832005]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.006256, 2.373774, -21.251364)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=1813011361]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -11.701576, 2.373774, -19.15516)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=511153399]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.14726, 2.373774, -15.8153305)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
 
 [node name="HydroponicsShelf" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1042635478]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 2)
