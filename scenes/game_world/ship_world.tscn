@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://5aqsg2k302h" path="res://Meshes/ShipParts/cockpit.tscn" id="17_fhuqd"]
 [ext_resource type="PackedScene" uid="uid://bl2sv8nsprf06" path="res://Meshes/Props/Hydroponics/hydroponics_tray.glb" id="17_kqbjw"]
 [ext_resource type="PackedScene" uid="uid://bfkjok8884p2g" path="res://Meshes/Props/Hydroponics/hydroponics_tank.glb" id="18_6vmy0"]
+[ext_resource type="PackedScene" uid="uid://c488oipl28x0m" path="res://scenes/entities/Clutter/tablet.tscn" id="20_2sfaj"]
 [ext_resource type="PackedScene" uid="uid://cs8idy4maehak" path="res://scenes/entities/Cockpit/main_console.tscn" id="20_b7tif"]
 [ext_resource type="PackedScene" uid="uid://rd05fycqtby3" path="res://Meshes/ShipParts/central_hub.tscn" id="20_bp48q"]
 [ext_resource type="PackedScene" uid="uid://cugp0ssk0r5pi" path="res://Meshes/ShipParts/engine_core.tscn" id="21_6oo1f"]
@@ -28,15 +29,21 @@
 [ext_resource type="PackedScene" uid="uid://b30vlcroetgce" path="res://Meshes/ShipParts/starboard_wing.tscn" id="22_b7tif"]
 [ext_resource type="PackedScene" uid="uid://cpadakbffbg81" path="res://Meshes/ShipParts/port_wing.tscn" id="23_o75v3"]
 [ext_resource type="Texture2D" uid="uid://buv21gweja60m" path="res://assets/notes/storynotereactor.png" id="24_o5cya"]
+[ext_resource type="PackedScene" uid="uid://bduicx8frd4mw" path="res://scenes/entities/Clutter/prop_coffeepot.tscn" id="25_6r80u"]
 [ext_resource type="PackedScene" uid="uid://dmtmoqimb00jw" path="res://scenes/entities/Furniture/wall_shelf.tscn" id="26_kja7b"]
+[ext_resource type="PackedScene" uid="uid://cmfce3rjfub6p" path="res://scenes/entities/Clutter/cigarbox.tscn" id="27_cjrt4"]
 [ext_resource type="PackedScene" uid="uid://d75m20hpxcpm" path="res://scenes/entities/Furniture/workstation.tscn" id="27_d5xf3"]
 [ext_resource type="PackedScene" uid="uid://bfrq0gdkf3eqo" path="res://scenes/entities/Furniture/prop_chair.tscn" id="28_253k1"]
+[ext_resource type="PackedScene" uid="uid://cajvk2b88odvq" path="res://scenes/entities/Clutter/prop_pilljar.tscn" id="28_tp8qv"]
 [ext_resource type="PackedScene" uid="uid://bhwqb602vj3et" path="res://scenes/entities/Furniture/prop_tablesmall.tscn" id="29_b4dks"]
 [ext_resource type="PackedScene" uid="uid://bkdefx80r5oca" path="res://scenes/entities/Lab/beaker_full.tscn" id="30_hwmm2"]
 [ext_resource type="PackedScene" uid="uid://cjiafkciub2jx" path="res://scenes/entities/Lab/empty_beaker.tscn" id="31_e6hj8"]
 [ext_resource type="PackedScene" uid="uid://ctxrxokl88yxs" path="res://scenes/entities/Lab/test_tube_empty.tscn" id="32_ahd3r"]
+[ext_resource type="PackedScene" uid="uid://d1g5lbay06lw5" path="res://scenes/entities/Clutter/cigar_3.tscn" id="32_l53td"]
 [ext_resource type="PackedScene" uid="uid://cq3dxtqrkl6ha" path="res://scenes/entities/Lab/test_tubes.tscn" id="33_1vxfc"]
+[ext_resource type="PackedScene" uid="uid://cs7qbohit614m" path="res://scenes/entities/Clutter/book.tscn" id="33_d26aw"]
 [ext_resource type="PackedScene" uid="uid://be16gt551kc57" path="res://scenes/entities/Clutter/notebook.tscn" id="34_2sfaj"]
+[ext_resource type="PackedScene" uid="uid://4uey8qkq160u" path="res://scenes/entities/Clutter/pill.tscn" id="34_pdwea"]
 [ext_resource type="PackedScene" uid="uid://cbimq4byutr5f" path="res://scenes/entities/Clutter/papercrumbled.tscn" id="35_6r80u"]
 [ext_resource type="PackedScene" uid="uid://cn34mny4mpguh" path="res://scenes/entities/Clutter/pencil.tscn" id="36_cjrt4"]
 [ext_resource type="PackedScene" uid="uid://b6g64dhhyts7f" path="res://scenes/entities/Clutter/radio.tscn" id="37_tp8qv"]
@@ -372,6 +379,141 @@ light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
+
+[node name="WorkstationPort" type="Node3D" parent="Rooms/ForeHallway/Props" unique_id=1340296055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="workstation" parent="Rooms/ForeHallway/Props/WorkstationPort" unique_id=322691207 instance=ExtResource("27_d5xf3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5, -0.4, 0)
+
+[node name="Tablet" parent="Rooms/ForeHallway/Props/WorkstationPort" unique_id=1790096732 instance=ExtResource("20_2sfaj")]
+transform = Transform3D(-0.94195235, 0, 0.3357466, 0, 1, 0, -0.3357466, 0, -0.94195235, 1.4465073, 1.1635468, 0.365304)
+
+[node name="Pencil" parent="Rooms/ForeHallway/Props/WorkstationPort" unique_id=1012271906 instance=ExtResource("36_cjrt4")]
+transform = Transform3D(-0.5578759, 0, 0.8299244, 0, 1, 0, -0.8299244, 0, -0.5578759, 1.4367564, 1.1710107, -0.5532913)
+
+[node name="notebook" parent="Rooms/ForeHallway/Props/WorkstationPort" unique_id=313965852 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(-0.35252827, 0, 0.93580115, 0, 1, 0, -0.93580115, 0, -0.35252827, 1.3602387, 1.1642416, -0.67018604)
+
+[node name="papercrumbled" parent="Rooms/ForeHallway/Props/WorkstationPort" unique_id=511872503 instance=ExtResource("35_6r80u")]
+transform = Transform3D(0.45082593, 0.801719, 0.39243165, 0, -0.43964422, 0.898172, 0.89261186, -0.40491924, -0.19820301, 1.6704755, 1.2214189, -0.3340168)
+
+[node name="papercrumbled2" parent="Rooms/ForeHallway/Props/WorkstationPort" unique_id=38899029 instance=ExtResource("35_6r80u")]
+transform = Transform3D(-0.8732225, 0.48732203, 0, -0.14798337, -0.2651684, 0.9527784, 0.4643099, 0.8319875, 0.3036665, 1.3819497, 1.231356, -0.23671913)
+
+[node name="drinking_glass" parent="Rooms/ForeHallway/Props/WorkstationPort" unique_id=770053207 instance=ExtResource("38_l53td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3051317, 1.1683329, 0.644351)
+
+[node name="WorkstationStarboard" type="Node3D" parent="Rooms/ForeHallway/Props" unique_id=1130605598]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -12)
+
+[node name="workstation" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1103518259 instance=ExtResource("27_d5xf3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5, -0.4, 0)
+
+[node name="prop_coffeepot" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1663159457 instance=ExtResource("25_6r80u")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.6096531, 1.1597911, 0.67712116)
+
+[node name="coffee_mug" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1040897181 instance=ExtResource("39_d26aw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2586529, 1.1645209, 0.6313019)
+
+[node name="coffee_mug2" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=853875489 instance=ExtResource("39_d26aw")]
+transform = Transform3D(0.45495912, 0, -0.8905123, 0, 1, 0, 0.8905123, 0, 0.45495912, 1.4942654, 1.164521, 0.84830284)
+
+[node name="cigarbox" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1868022749 instance=ExtResource("27_cjrt4")]
+transform = Transform3D(-0.54435086, 0, -0.83885765, 0, 1, 0, 0.83885765, 0, -0.54435086, 1.2606102, 0.80606115, -0.23258877)
+
+[node name="prop_pilljar" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=780406960 instance=ExtResource("28_tp8qv")]
+transform = Transform3D(-0.19322015, 0, -0.9811554, 0, 1, 0, 0.9811554, 0, -0.19322015, 1.2238308, 0.7832308, 0.30431175)
+
+[node name="Ashtray" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=892344806 instance=ExtResource("40_pdwea")]
+transform = Transform3D(-0.53768814, 0, 0.8431439, 0, 1, 0, -0.8431439, 0, -0.53768814, 1.3187836, 1.1652681, 0.39278126)
+
+[node name="Cigar1" parent="Rooms/ForeHallway/Props/WorkstationStarboard/Ashtray" unique_id=1206607937 instance=ExtResource("41_joow5")]
+transform = Transform3D(0.9084193, -0.10732157, 0.40404984, 0.11732501, 0.99309355, 1.1175871e-08, -0.4012593, 0.047405176, 0.91473687, 0.03114891, 0.047024846, -0.020174026)
+
+[node name="cigar_2" parent="Rooms/ForeHallway/Props/WorkstationStarboard/Ashtray" unique_id=692067866 instance=ExtResource("42_va6hq")]
+transform = Transform3D(0.63079727, -0.66244894, 0.40404993, 0.72419596, 0.68959415, 0, -0.27863044, 0.2926114, 0.914737, -0.06346655, 0.035399914, -0.039417267)
+
+[node name="cigar3" parent="Rooms/ForeHallway/Props/WorkstationStarboard/Ashtray" unique_id=852112403 instance=ExtResource("32_l53td")]
+transform = Transform3D(0.9975735, 0.011134006, -0.068725765, -2.0286716e-08, 0.9871298, 0.15992123, 0.06962162, -0.15953316, 0.98473436, 0.006559372, 0.048198223, -0.047756195)
+
+[node name="cigar4" parent="Rooms/ForeHallway/Props/WorkstationStarboard/Ashtray" unique_id=281283958 instance=ExtResource("32_l53td")]
+transform = Transform3D(0.5956557, -0.80280644, -0.026373565, 0.74022955, 0.5358858, 0.4060625, -0.31185675, -0.26139578, 0.9134646, -0.011620045, 0.036845803, -0.02098465)
+
+[node name="cigar5" parent="Rooms/ForeHallway/Props/WorkstationStarboard/Ashtray" unique_id=1339190647 instance=ExtResource("32_l53td")]
+transform = Transform3D(-0.46663737, 0.48049825, -0.7425432, 0.65629333, 0.7509193, 0.07348304, 0.59289867, -0.45303595, -0.6657549, 0.03341484, 0.036845803, -2.7656555e-05)
+
+[node name="notebook" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=157051205 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(-0.11098236, 0, 0.99382246, 0, 1, 0, -0.99382246, 0, -0.11098236, 1.7717726, 1.1664153, -0.73084545)
+
+[node name="notebook2" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook" unique_id=979763596 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.98067296, 0, 0.19565412, 0, 1, 0, -0.19565412, 0, 0.98067296, 0, 0.026081085, 0)
+
+[node name="notebook3" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook" unique_id=113269000 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.9953177, 0, 0.09665782, 0, 1, 0, -0.09665782, 0, 0.9953177, 0, 0.04954791, 0)
+
+[node name="notebook4" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook" unique_id=1539988154 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.9817342, 0, -0.19025727, 0, 1, 0, 0.19025727, 0, 0.9817342, 0.001199007, 0.07358956, -0.0032758713)
+
+[node name="notebook2" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1954988914 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.13957708, 0, 0.99021125, 0, 1, 0, -0.99021125, 0, 0.13957708, 1.7681135, 1.1664153, -0.49416924)
+
+[node name="notebook2" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook2" unique_id=663597126 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.97956693, 0, -0.20111817, 0, 1, 0, 0.20111817, 0, 0.97956693, -0.0053071976, 0.026081085, -0.0050115585)
+
+[node name="notebook3" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook2" unique_id=1732318275 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.985209, 0, 0.17135674, 0, 1, 0, -0.17135674, 0, 0.985209, 0, 0.04954791, 0)
+
+[node name="notebook4" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook2" unique_id=118319368 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.99809057, 0, 0.061766505, 0, 1, 0, -0.061766505, 0, 0.99809057, -0.006737709, 0.07358956, 0.003607273)
+
+[node name="notebook3" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1093298145 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.11281735, 0, 0.9936158, 0, 1, 0, -0.9936158, 0, 0.11281735, 1.4776856, 1.1664153, -0.5420923)
+
+[node name="notebook2" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook3" unique_id=1669881232 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.9179314, 0, 0.396739, 0, 1, 0, -0.396739, 0, 0.9179314, 0.036330223, 0.026081085, -0.019569874)
+
+[node name="notebook3" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook3" unique_id=1163298865 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.985209, 0, 0.17135674, 0, 1, 0, -0.17135674, 0, 0.985209, 0.031492233, 0.04954791, -0.017743587)
+
+[node name="notebook4" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook3" unique_id=1581051973 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.9980906, 0, 0.061766513, 0, 1, 0, -0.061766513, 0, 0.9980906, 0.10997963, 0.07358956, -0.02284789)
+
+[node name="notebook4" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1357908941 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.11281735, 0, 0.9936158, 0, 1, 0, -0.9936158, 0, 0.11281735, 1.4776856, 1.1664153, -0.77733326)
+
+[node name="notebook2" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook4" unique_id=687133375 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.99421847, 0, -0.10737569, 0, 1, 0, 0.10737569, 0, 0.99421847, -0.007850647, 0.026081085, -0.0039703846)
+
+[node name="notebook3" parent="Rooms/ForeHallway/Props/WorkstationStarboard/notebook4" unique_id=2048709778 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.9454092, 0, -0.32588547, 0, 1, 0, 0.32588547, 0, 0.9454092, -0.03238201, 0.04954791, -0.008354425)
+
+[node name="Book" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=800572530 instance=ExtResource("33_d26aw")]
+transform = Transform3D(-0.9405705, 0, -0.33959872, 0, 1, 0, 0.33959872, 0, -0.9405705, 1.7814385, 1.1665621, 0.008070946)
+
+[node name="Book2" parent="Rooms/ForeHallway/Props/WorkstationStarboard/Book" unique_id=1174083333 instance=ExtResource("33_d26aw")]
+transform = Transform3D(0.9723573, 0, -0.2334982, 0, 1, 0, 0.2334982, 0, 0.9723573, 0.008213997, 0.054317117, 0.011412621)
+
+[node name="Book2" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1721112724 instance=ExtResource("33_d26aw")]
+transform = Transform3D(0.22233152, 0, 0.97497106, 0, 1, 0, -0.97497106, 0, 0.22233152, 1.7027249, 1.1633418, -0.2685938)
+
+[node name="Pencil" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1565583801 instance=ExtResource("36_cjrt4")]
+transform = Transform3D(-0.9560118, 0, -0.2933284, 0, 1, 0, 0.2933284, 0, -0.9560118, 1.3021456, 1.1736469, -0.469038)
+
+[node name="papercrumbled" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=608505215 instance=ExtResource("35_6r80u")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.4310181, 1.2055798, -0.31427002)
+
+[node name="papercrumbled2" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1486472095 instance=ExtResource("35_6r80u")]
+transform = Transform3D(0.96511537, 0, 0.26182514, 0, 1, 0, -0.26182514, 0, 0.96511537, 1.4841279, 1.2055798, -0.32687473)
+
+[node name="papercrumbled3" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1187161681 instance=ExtResource("35_6r80u")]
+transform = Transform3D(0.65560615, 0.4213616, -0.6266059, 0.54066724, -0.84123653, 0, -0.5271238, -0.3387853, -0.7793363, 1.2818958, 1.1885135, -0.7630987)
+
+[node name="Pill" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=2139253121 instance=ExtResource("34_pdwea")]
+transform = Transform3D(-0.99791825, 0.064490914, -2.8189928e-09, 0, -4.371139e-08, -1, -0.064490914, -0.99791825, 4.3620386e-08, 1.4585385, 1.1783105, 0.3624344)
+
+[node name="Pill2" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1808504058 instance=ExtResource("34_pdwea")]
+transform = Transform3D(-0.45332977, -0.8913428, 3.896182e-08, -2.2158236e-16, -4.371139e-08, -1, 0.8913428, -0.45332977, 1.9815676e-08, 1.5108337, 1.1783105, 0.37486458)
 
 [node name="Cockpit" type="Node3D" parent="Rooms" unique_id=613465786]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
@@ -763,7 +905,7 @@ transform = Transform3D(-0.9952124, -0.050065923, -0.012439061, -0.0499013, 0.99
 [node name="wall_shelf4" parent="Rooms/StarboardLab/Props" unique_id=335753847 instance=ExtResource("26_kja7b")]
 transform = Transform3D(-0.99589586, -0.05006764, -0.01167304, -0.049935568, 0.9986045, 4.0987205e-09, 0.008615799, 0.00043315816, -1.349282, -8.860558, 1.7541319, 1.841219)
 
-[node name="workstation" parent="Rooms/StarboardLab/Props" unique_id=322691207 instance=ExtResource("27_d5xf3")]
+[node name="workstation" parent="Rooms/StarboardLab/Props" unique_id=1263169012 instance=ExtResource("27_d5xf3")]
 transform = Transform3D(0.016370095, 0, 0.7498213, 0, 0.75000024, 0, -0.7498213, 0, 0.016370095, -3.4081392, 0, -3.2678814)
 
 [node name="workstation3" parent="Rooms/StarboardLab/Props" unique_id=2123760910 instance=ExtResource("27_d5xf3")]
@@ -826,10 +968,10 @@ transform = Transform3D(0.97808176, 0, 0.20822114, 0, 1, 0, -0.20822114, 0, 0.97
 [node name="test_tube_empty2" parent="Rooms/StarboardLab/Props" unique_id=2002667190 instance=ExtResource("32_ahd3r")]
 transform = Transform3D(0.013240523, 0.63118196, 0.77552176, -0.9998026, 0.019849587, 0.00091448426, -0.0148165785, -0.77538073, 0.63132024, -8.39342, 0.8418525, 1.7673435)
 
-[node name="notebook" parent="Rooms/StarboardLab/Props" unique_id=313965852 instance=ExtResource("34_2sfaj")]
+[node name="notebook" parent="Rooms/StarboardLab/Props" unique_id=1191176006 instance=ExtResource("34_2sfaj")]
 transform = Transform3D(0.42658132, 0, -0.9044492, 0, 1, 0, 0.9044492, 0, 0.42658132, -8.534092, 0.804181, 0.5978451)
 
-[node name="papercrumbled" parent="Rooms/StarboardLab/Props" unique_id=511872503 instance=ExtResource("35_6r80u")]
+[node name="papercrumbled" parent="Rooms/StarboardLab/Props" unique_id=1111222729 instance=ExtResource("35_6r80u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.647461, 0.85249543, 1.4852543)
 
 [node name="papercrumbled3" parent="Rooms/StarboardLab/Props" unique_id=1437460314 instance=ExtResource("35_6r80u")]
@@ -847,7 +989,7 @@ transform = Transform3D(1, 0, 0, 0, -0.76951164, 0.63863283, 0, -0.63863283, -0.
 [node name="papercrumbled4" parent="Rooms/StarboardLab/Props" unique_id=2056615253 instance=ExtResource("35_6r80u")]
 transform = Transform3D(1, 0, 0, 0, -0.7169333, 0.69714177, 0, -0.69714177, -0.7169333, -8.544452, 0.86194134, -1.3362656)
 
-[node name="Pencil" parent="Rooms/StarboardLab/Props" unique_id=1012271906 instance=ExtResource("36_cjrt4")]
+[node name="Pencil" parent="Rooms/StarboardLab/Props" unique_id=962824502 instance=ExtResource("36_cjrt4")]
 transform = Transform3D(0.17397621, 0, 0.98474985, 0, 1, 0, -0.98474985, 0, 0.17397621, -8.624695, 0.8050822, 0.32011223)
 
 [node name="Pencil2" parent="Rooms/StarboardLab/Props" unique_id=1341922159 instance=ExtResource("36_cjrt4")]
@@ -859,19 +1001,19 @@ transform = Transform3D(0.42687085, 0, -0.90431273, 0, 1, 0, 0.90431273, 0, 0.42
 [node name="Radio" parent="Rooms/StarboardLab/Props" unique_id=120593892 instance=ExtResource("37_tp8qv")]
 transform = Transform3D(0.47222912, 0, -0.88147587, 0, 1, 0, 0.88147587, 0, 0.47222912, -3.155612, 1.1761823, -6.1165485)
 
-[node name="drinking_glass" parent="Rooms/StarboardLab/Props" unique_id=770053207 instance=ExtResource("38_l53td")]
+[node name="drinking_glass" parent="Rooms/StarboardLab/Props" unique_id=64756956 instance=ExtResource("38_l53td")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2198915, 1.1756616, -2.7658367)
 
-[node name="coffee_mug" parent="Rooms/StarboardLab/Props" unique_id=1040897181 instance=ExtResource("39_d26aw")]
+[node name="coffee_mug" parent="Rooms/StarboardLab/Props" unique_id=1341714037 instance=ExtResource("39_d26aw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2547884, 1.175634, -5.5678005)
 
-[node name="Ashtray" parent="Rooms/StarboardLab/Props" unique_id=892344806 instance=ExtResource("40_pdwea")]
+[node name="Ashtray" parent="Rooms/StarboardLab/Props" unique_id=128538705 instance=ExtResource("40_pdwea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.599141, 0.7826352, -1.9935379)
 
-[node name="Cigar1" parent="Rooms/StarboardLab/Props" unique_id=1206607937 instance=ExtResource("41_joow5")]
+[node name="Cigar1" parent="Rooms/StarboardLab/Props" unique_id=1703135683 instance=ExtResource("41_joow5")]
 transform = Transform3D(0.93991303, -0.34141394, 0, 0.3409961, 0.9387627, 0.049459856, -0.016886285, -0.046487965, 0.99877614, -8.554832, 0.8354525, -2.0253716)
 
-[node name="cigar_2" parent="Rooms/StarboardLab/Props" unique_id=692067866 instance=ExtResource("42_va6hq")]
+[node name="cigar_2" parent="Rooms/StarboardLab/Props" unique_id=90689346 instance=ExtResource("42_va6hq")]
 transform = Transform3D(0.8840911, -0.3704872, -0.2848197, -0.2472126, -0.8880017, 0.38773614, -0.39657152, -0.27238297, -0.87666345, -8.503251, 0.8068305, -1.889288)
 
 [node name="door_A" parent="Rooms/StarboardLab/Props" unique_id=1933391462 instance=ExtResource("3_uulq1")]
