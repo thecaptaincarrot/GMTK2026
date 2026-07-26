@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0f36mbyrpgki"]
 
 [ext_resource type="Script" uid="uid://cppkdc7cc5qq0" path="res://scenes/huds/hud_note.gd" id="1_8c1lr"]
-[ext_resource type="Texture2D" uid="uid://dq733mdqwuwau" path="res://icon.svg" id="2_070o3"]
+[ext_resource type="Texture2D" uid="uid://cdoymew7vtcle" path="res://assets/notes/BinderPages/binder03.png" id="2_8c1lr"]
 
 [node name="HudNote" type="CanvasLayer" unique_id=677290432]
 script = ExtResource("1_8c1lr")
@@ -39,7 +39,7 @@ offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
-texture = ExtResource("2_070o3")
+texture = ExtResource("2_8c1lr")
 
 [node name="NoteNext" type="TextureButton" parent="NoteControl/NoteDisplay" unique_id=745021628]
 layout_mode = 1
@@ -47,7 +47,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -50.0
+offset_left = -398.5
 offset_right = 45.999634
 grow_horizontal = 0
 grow_vertical = 2
@@ -58,7 +58,7 @@ layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = -65.0
-offset_right = 63.0
+offset_right = 385.5
 grow_vertical = 2
 stretch_mode = 3
 

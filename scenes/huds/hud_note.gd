@@ -20,6 +20,15 @@ func _ready() -> void:
 	_text_pages_back = Globals.get_active_text_pages_back()
 	_current_page = 0
 	render_current_page()
+	if _text_pages_front != []:
+		#it's a  binder
+		next_button.size = Vector2(444.5, 700)
+		next_button.position = Vector2(402.5,0)
+		
+		previous_button.size = Vector2(444.5, 700)
+		previous_button.position = Vector2(-65.0,0)
+		
+		
 
 
 func _on_note_next_pressed() -> void:

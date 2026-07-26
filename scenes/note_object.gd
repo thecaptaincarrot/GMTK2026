@@ -10,8 +10,8 @@ class_name Note
 @export var collision_area: CollisionShape3D
 
 func _ready():
-	collision_shape.shape.size.x = mesh.size.x * 1.05
-	collision_shape.shape.size.z = mesh.size.y * 1.05
+	collision_shape.shape.size.x = mesh.size.x * 1.15
+	collision_shape.shape.size.z = mesh.size.y * 1.15
 
 
 func disable_collision():
