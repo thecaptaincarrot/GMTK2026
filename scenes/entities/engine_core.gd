@@ -22,7 +22,7 @@ var seconds_to_ms = 1000
 var start_time = 0.0
 var first_startup =  1.0 #Minutes  after  game start that the reactor will try to turn on
 
-@export var cooldown_interval = 43 # Minutes the engine needs to cool
+@export var cooldown_interval = 22 # Minutes the engine needs to cool
 @export var startup_interval = 0.5 #minutes the player has to press the button
 
 var next_startup_interval

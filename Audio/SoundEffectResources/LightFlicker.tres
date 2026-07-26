@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://kchqqmfn4x1y"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_2vvwe"]
+[ext_resource type="AudioStream" uid="uid://b4yxcdqx30lwm" path="res://Audio/RawSounds/fail sparks.wav" id="2_tndhp"]
+
+[resource]
+script = ExtResource("1_2vvwe")
+ID = "Flicker"
+limit = 1
+sound_effect = Array[AudioStream]([ExtResource("2_tndhp")])
+pitch_scale = 10.0
+pitch_randomness = 1.0
+metadata/_custom_type_script = "uid://b7fou07k713y"

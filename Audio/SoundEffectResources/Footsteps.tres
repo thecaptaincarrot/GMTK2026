@@ -15,5 +15,5 @@ script = ExtResource("1_rsthc")
 ID = "Footsteps"
 limit = 4
 sound_effect = Array[AudioStream]([ExtResource("2_wjee1"), ExtResource("3_mmpxg"), ExtResource("4_4vcol"), ExtResource("5_tly4c"), ExtResource("6_vukp3"), ExtResource("7_65p4y"), ExtResource("8_co4av"), ExtResource("9_bg1bc")])
-volume = -10
+pitch_randomness = 0.5
 metadata/_custom_type_script = "uid://b7fou07k713y"

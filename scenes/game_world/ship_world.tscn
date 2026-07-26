@@ -507,13 +507,13 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 0
 [node name="PlayerPositions" type="Node3D" parent="Rooms/Hub" unique_id=1658700080]
 
 [node name="Hub0" parent="Rooms/Hub/PlayerPositions" unique_id=115475546 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, 3)
+transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.1736482, 0, -0.1736482, 0.9848078, 0, 1.6, 3.5)
 fov = 70.0
 valid_neighbors = [NodePath("../../../ForeHallway/PlayerPositions/ForeHall5"), NodePath("../Hub1")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Hub1" parent="Rooms/Hub/PlayerPositions" unique_id=560741690 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.1736482, 0, -0.1736482, 0.9848078, 0, 1.6, 0.5)
 fov = 70.0
 valid_neighbors = [NodePath("../Hub4"), NodePath("../Hub0"), NodePath("../Hub3"), NodePath("../Hub2")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
@@ -737,26 +737,35 @@ transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.984
 fov = 70.0
 valid_neighbors = [NodePath("../Aft0"), NodePath("../Aft2")]
 reverb_vector = Vector4(0.3, 0, 0, 0.5)
+time_dilation_multiplier = 5.0
 
 [node name="Aft2" parent="Rooms/AftHallway/PlayerPositions" unique_id=1340009913 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, 3)
 fov = 70.0
 valid_neighbors = [NodePath("../Aft1"), NodePath("../Aft3")]
 reverb_vector = Vector4(0.3, 0, 0, 0.4)
+time_dilation_multiplier = 100.0
 
 [node name="Aft3" parent="Rooms/AftHallway/PlayerPositions" unique_id=955282902 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, 0)
 fov = 70.0
 valid_neighbors = [NodePath("../Aft2"), NodePath("../Aft4")]
 reverb_vector = Vector4(0.3, 0, 0, 0.4)
+time_dilation_multiplier = 50.0
 
 [node name="Aft4" parent="Rooms/AftHallway/PlayerPositions" unique_id=18470095 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, -3)
 fov = 70.0
 valid_neighbors = [NodePath("../Aft3"), NodePath("../../../engine_core/PlayerPositions/Reactor0")]
 reverb_vector = Vector4(0.3, 0, 0, 0.4)
+time_dilation_multiplier = 10.0
 
 [node name="Interactables" type="Node3D" parent="Rooms/AftHallway" unique_id=804026529]
+
+[node name="DoorButton" parent="Rooms/AftHallway/Interactables" unique_id=1664514850 node_paths=PackedStringArray("door") instance=ExtResource("9_1gqlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2751324, 1.0298835, 12.013891)
+door = NodePath("../../../Hub/Meshes/ReactorDoor")
+needs_power = true
 
 [node name="Props" type="Node3D" parent="Rooms/AftHallway" unique_id=1613615225]
 
