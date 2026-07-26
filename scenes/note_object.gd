@@ -1,4 +1,6 @@
 extends MeshInstance3D
+class_name Note
+
 @onready var collision_shape = $Interactable/CollisionShape3D
 
 @export var note_pages : Array[Texture2D]

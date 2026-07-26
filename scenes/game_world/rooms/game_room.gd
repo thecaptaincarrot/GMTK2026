@@ -35,6 +35,15 @@ func get_position_node(pos_name:StringName):
 	return result
 
 
+func disable_all_clickables():
+	for opt in get_all_player_positions():
+		opt.disable_collision()
+	for opt in get_all_interactables():
+		opt.disable_collision()
+	for opt in get_all_notes():
+		opt.disable_collision()
+
+
 func enable_all_position_colliders():
 	for opt in get_all_player_positions():
 		opt.enable_collision()
@@ -51,3 +60,31 @@ func get_all_player_positions() ->  Array[PlayerPositionOption]:
 			if player_position is PlayerPositionOption:
 				player_positions.append(player_position)
 	return player_positions
+
+
+func get_all_interactables() -> Array[Interactable]: 
+	var interactables : Array[Interactable]
+	for room_node in _room_container.get_children():
+		for interactee in room_node.get_node("Interactables").get_children():
+			if interactee is Interactee:
+				if interactee.get_interactable() is Interactable:
+					interactables.append(interactee.get_interactable())
+	return interactables
+
+
+func get_all_notes() -> Array[Note]:
+	var notes : Array[Note]
+	for room_node in _room_container.get_children():
+		for interactee in room_node.get_node("Interactables").get_children():
+			if interactee is Note:
+				notes.append(interactee)
+	return notes
+
+
+func get_all_zoom_in() -> Array[ZoomIn]:
+	var zoom_ins : Array[ZoomIn]
+	for room_node in _room_container.get_children():
+		for zoom_in in room_node.get_node("PlayerPositions").get_children():
+			if zoom_in is ZoomIn:
+				zoom_ins.append(zoom_in)
+	return zoom_ins

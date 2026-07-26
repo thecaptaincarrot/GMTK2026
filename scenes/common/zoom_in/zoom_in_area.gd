@@ -1,5 +1,4 @@
 extends Camera3D
-
 class_name ZoomIn
 
 @export var collision_area: CollisionShape3D
@@ -36,7 +35,7 @@ func _process(delta: float) -> void:
 
 func handle_interaction() -> void:
 	assert(Globals.get_last_position() != null, "zoom in menu needs a position to return to")
-	assert(Globals.get_last_position().valid_neighbors.has(self), "last position must be one that gives access to current zoom menu")
+	assert(Globals.get_last_position().valid_clickables.has(self), "last position must be one that gives access to current zoom menu")
 
 	var player: PlayerController = Globals.get_player()
 	Globals.hud_controller.set_hud(HudController.HudState.ZOOMED_IN)

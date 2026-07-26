@@ -3,7 +3,8 @@ extends Camera3D
 class_name PlayerPositionOption
 
 @export var collision_area: CollisionShape3D
-@export var valid_neighbors:Array[Node]
+@export var valid_neighbors:Array[PlayerPositionOption]
+@export var valid_clickables: Array[Node3D]
 @export var reverb_vector := Vector4(0, 0, 0, 0)
 
 @export var game_room:GameRoom
@@ -25,6 +26,8 @@ func enable_collision():
 
 func enable_neighbors():
 	for n in valid_neighbors:
+		n.enable_collision()
+	for n  in valid_clickables:
 		n.enable_collision()
 
 # each interactable object knows how to handle it's own interaction

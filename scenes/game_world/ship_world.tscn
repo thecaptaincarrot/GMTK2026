@@ -148,16 +148,18 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.85
 
 [node name="PlayerPositions" type="Node3D" parent="Rooms/AirLock" unique_id=378088173]
 
-[node name="Airlock0" parent="Rooms/AirLock/PlayerPositions" unique_id=1750914355 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+[node name="Airlock0" parent="Rooms/AirLock/PlayerPositions" unique_id=1750914355 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.371139e-08, -0.17364816, 0.98480767, 0, 0.98480767, 0.17364816, -1, 7.590402e-09, -4.3047308e-08, 3, 1.6, 0)
 fov = 70.0
-valid_neighbors = [NodePath("../Airlock1"), NodePath("../ExternalZoomIn"), NodePath("../InternalZoomIn"), NodePath("../../Props/AirlockNote")]
+valid_neighbors = [NodePath("../Airlock1")]
+valid_clickables = [NodePath("../../Interactables/AirlockButton"), NodePath("../../Interactables/BrokenButton"), NodePath("../ExternalZoomIn"), NodePath("../InternalZoomIn"), NodePath("../../Interactables/AirlockNote"), NodePath("../../Interactables/interactive_airvent")]
 reverb_vector = Vector4(0.5, 0, 0, 0.1)
 
-[node name="Airlock1" parent="Rooms/AirLock/PlayerPositions" unique_id=1545806533 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+[node name="Airlock1" parent="Rooms/AirLock/PlayerPositions" unique_id=1545806533 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364818, -0.98480767, 0, 0.98480767, 0.17364818, 1, -2.0707338e-09, 1.1743714e-08, -1.4999995, 1.6, -3.233012e-07)
 fov = 70.0
 valid_neighbors = [NodePath("../../../ForeHallway/PlayerPositions/ForeHall1"), NodePath("../Airlock0")]
+valid_clickables = [NodePath("../../Interactables/AirlockButton2")]
 reverb_vector = Vector4(0.5, 0, 0, 0.2)
 
 [node name="ExternalZoomIn" parent="Rooms/AirLock/PlayerPositions" unique_id=464256384 instance=ExtResource("6_6vmy0")]
@@ -178,6 +180,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06522179, 0.048416138, -0.
 shape = SubResource("BoxShape3D_ah6i4")
 
 [node name="Interactables" type="Node3D" parent="Rooms/AirLock" unique_id=265392305]
+
+[node name="AirlockNote" parent="Rooms/AirLock/Interactables" unique_id=527123681 instance=ExtResource("12_r7isu")]
+transform = Transform3D(0.5, 0, 0, 0, -4.3711385e-08, -0.7, 0, 0.99999994, -3.059797e-08, 1.939353, 0.86798555, -1.97697)
+mesh = SubResource("PlaneMesh_24u40")
+surface_material_override/0 = ExtResource("13_o5cya")
+note_pages = Array[Texture2D]([ExtResource("14_o75v3")])
 
 [node name="interactive_airvent" parent="Rooms/AirLock/Interactables" unique_id=1342556809 node_paths=PackedStringArray("indicator_panels") instance=ExtResource("5_uulq1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 0, 3)
@@ -204,12 +212,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19772243, 1.0694249, 1.2719
 [node name="airlock_indicator_panel2" parent="Rooms/AirLock/Props" unique_id=751295488 instance=ExtResource("9_ah6i4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.8258514, 1.0694249, -1.3461218)
 electrical_fault = true
-
-[node name="AirlockNote" parent="Rooms/AirLock/Props" unique_id=527123681 instance=ExtResource("12_r7isu")]
-transform = Transform3D(0.5, 0, 0, 0, -4.3711385e-08, -0.7, 0, 0.99999994, -3.059797e-08, 1.939353, 0.86798555, -1.97697)
-mesh = SubResource("PlaneMesh_24u40")
-surface_material_override/0 = ExtResource("13_o5cya")
-note_pages = Array[Texture2D]([ExtResource("14_o75v3")])
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/AirLock/Props" unique_id=62394747]
 script = ExtResource("15_r7isu")
@@ -438,7 +440,7 @@ reverb_vector = Vector4(0.5, 0, 0, 0.1)
 [node name="Cockpit1" parent="Rooms/Cockpit/PlayerPositions" unique_id=883846201 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-1, -1.5180806e-08, 8.609462e-08, 0, 0.9848077, 0.17364818, -8.742278e-08, 0.17364818, -0.9848077, 0, 1.6, 2)
 fov = 70.0
-valid_neighbors = [NodePath("../Cockpit0"), NodePath("../CockpitZoomIn")]
+valid_neighbors = [NodePath("../Cockpit0"), null]
 reverb_vector = Vector4(0.3, 0, 0, 0.1)
 
 [node name="CockpitZoomIn" parent="Rooms/Cockpit/PlayerPositions" unique_id=146520815 instance=ExtResource("6_6vmy0")]
@@ -498,9 +500,11 @@ start_open = true
 
 [node name="LabDoor" parent="Rooms/Hub/Meshes" unique_id=917489576 instance=ExtResource("3_uulq1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6, 0, 0)
+start_open = true
 
 [node name="HydroDoor" parent="Rooms/Hub/Meshes" unique_id=631010182 instance=ExtResource("3_uulq1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 0, 0)
+start_open = true
 
 [node name="CentralHub" parent="Rooms/Hub/Meshes" unique_id=1891809910 instance=ExtResource("20_bp48q")]
 
@@ -860,7 +864,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41)
 [node name="Reactor0" parent="Rooms/engine_core/PlayerPositions" unique_id=1206691797 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.96592575, 0.258819, 0, -0.258819, 0.96592575, 0, 1.6, 0)
 fov = 70.0
-valid_neighbors = [NodePath("../../Interactables/NoteObject"), NodePath("../../../AftHallway/PlayerPositions/Aft4")]
+valid_neighbors = [NodePath("../../../AftHallway/PlayerPositions/Aft4")]
 
 [node name="Interactables" type="Node3D" parent="Rooms/engine_core" unique_id=534426049]
 
