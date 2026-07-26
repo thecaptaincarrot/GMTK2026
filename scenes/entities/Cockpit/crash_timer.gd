@@ -10,7 +10,7 @@ var rapid_scalar = 0.0
 func _physics_process(delta):
 	var ticks_to_crash =  start_ticks_to_crash - Globals.time_controller.current_ticks_ms
 	if rapid:
-		rapid_scalar += delta * 10000000000
+		rapid_scalar += delta * 5000000000
 		ticks_to_crash -= rapid_scalar
 	var days = floor(ticks_to_crash / (24 * 60 * 60 * 1000))
 	

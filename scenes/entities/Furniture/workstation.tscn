@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://d75m20hpxcpm"]
 
+[ext_resource type="Material" uid="uid://dyabxsxmcpnda" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K_light.tres" id="1_vrgr7"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klnnh"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ceade"]
@@ -38,3 +40,4 @@ shadow_mesh = SubResource("ArrayMesh_ceade")
 
 [node name="Plane" type="MeshInstance3D" parent="." unique_id=417871347]
 mesh = SubResource("ArrayMesh_kimc0")
+surface_material_override/0 = ExtResource("1_vrgr7")
