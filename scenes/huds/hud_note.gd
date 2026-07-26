@@ -2,16 +2,22 @@ extends HudBase
 
 class_name HudNote
 
+@onready var text_display_front = $NoteControl/TextDisplayFront
+@onready var text_display_back = $NoteControl/TextDisplayBack
 @onready var note_display = $NoteControl/NoteDisplay
 
 @onready var previous_button = $NoteControl/NoteDisplay/NotePrevious
 @onready var next_button = $NoteControl/NoteDisplay/NoteNext
 
 var _note_pages: Array[Texture2D]
+var _text_pages_front: Array[Texture2D]
+var _text_pages_back: Array[Texture2D]
 var _current_page: int = 0
 
 func _ready() -> void:
 	_note_pages = Globals.get_active_note()
+	_text_pages_front = Globals.get_active_text_pages_front()
+	_text_pages_back = Globals.get_active_text_pages_back()
 	_current_page = 0
 	render_current_page()
 
@@ -32,6 +38,15 @@ func _on_note_previous_pressed() -> void:
 
 func render_current_page():
 	note_display.texture = _note_pages[_current_page]
+	if _text_pages_front != [] and _current_page - 1 >= 0  and _current_page - 1 <  _text_pages_front.size():
+		text_display_front.texture = _text_pages_front[_current_page - 1]
+	else:
+		text_display_front.texture = null
+	if _text_pages_back != [] and _current_page - 2 >= 0 and _current_page - 2 <  _text_pages_back.size():
+		text_display_back.texture = _text_pages_back[_current_page - 2]
+	else:
+		text_display_back.texture = null
+	print(text_display_back.texture)
 	AudioPlayer.create_audio("Paper")
 	if _current_page == 0:
 		previous_button.disabled = true

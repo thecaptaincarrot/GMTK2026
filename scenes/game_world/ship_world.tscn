@@ -18,15 +18,20 @@
 [ext_resource type="PackedScene" uid="uid://on7g27w2aa26" path="res://Meshes/ShipParts/hallway_module.tscn" id="15_o75v3"]
 [ext_resource type="Script" uid="uid://dolak7auur2ya" path="res://scenes/game_world/reactor_lights.gd" id="15_r7isu"]
 [ext_resource type="PackedScene" uid="uid://b37pfhfxkwjm6" path="res://Meshes/ShipParts/hallway_utility.tscn" id="16_24u40"]
+[ext_resource type="Texture2D" uid="uid://drx0jl3fw1258" path="res://assets/notes/BinderPages/LooseBinder4.png" id="16_yfyu3"]
+[ext_resource type="Texture2D" uid="uid://btcwx1nv53vo5" path="res://assets/notes/BinderPages/LooseBinder4_back.png" id="17_35otp"]
 [ext_resource type="PackedScene" uid="uid://5aqsg2k302h" path="res://Meshes/ShipParts/cockpit.tscn" id="17_fhuqd"]
 [ext_resource type="PackedScene" uid="uid://bl2sv8nsprf06" path="res://Meshes/Props/Hydroponics/hydroponics_tray.glb" id="17_kqbjw"]
 [ext_resource type="PackedScene" uid="uid://bfkjok8884p2g" path="res://Meshes/Props/Hydroponics/hydroponics_tank.glb" id="18_6vmy0"]
+[ext_resource type="Script" uid="uid://d3guemyj4b2y4" path="res://scenes/game_world/research_binder.gd" id="19_va6hq"]
 [ext_resource type="PackedScene" uid="uid://c488oipl28x0m" path="res://scenes/entities/Clutter/tablet.tscn" id="20_2sfaj"]
 [ext_resource type="PackedScene" uid="uid://cs8idy4maehak" path="res://scenes/entities/Cockpit/main_console.tscn" id="20_b7tif"]
 [ext_resource type="PackedScene" uid="uid://rd05fycqtby3" path="res://Meshes/ShipParts/central_hub.tscn" id="20_bp48q"]
 [ext_resource type="PackedScene" uid="uid://cugp0ssk0r5pi" path="res://Meshes/ShipParts/engine_core.tscn" id="21_6oo1f"]
+[ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="21_55vra"]
 [ext_resource type="Material" uid="uid://dkfaj3e562vn6" path="res://assets/Materials/RedEmission/RedEmissionMaterial.tres" id="21_o75v3"]
 [ext_resource type="PackedScene" uid="uid://w12lobe4xf4q" path="res://scenes/entities/ReactorCore/core_console.tscn" id="21_r7isu"]
+[ext_resource type="FontFile" uid="uid://du4hox3ojhk4e" path="res://assets/Fonts/Kishi.ttf" id="22_55vra"]
 [ext_resource type="Script" uid="uid://c3670su8mhy77" path="res://scenes/entities/Cockpit/special_computer_light.gd" id="22_b4dks"]
 [ext_resource type="PackedScene" uid="uid://b30vlcroetgce" path="res://Meshes/ShipParts/starboard_wing.tscn" id="22_b7tif"]
 [ext_resource type="PackedScene" uid="uid://cpadakbffbg81" path="res://Meshes/ShipParts/port_wing.tscn" id="23_o75v3"]
@@ -54,9 +59,19 @@
 [ext_resource type="PackedScene" uid="uid://20uwtroqnet6" path="res://scenes/entities/Clutter/coffee_mug.tscn" id="39_d26aw"]
 [ext_resource type="PackedScene" uid="uid://co52jofjxxq5g" path="res://scenes/entities/Clutter/ashtray.tscn" id="40_pdwea"]
 [ext_resource type="PackedScene" uid="uid://c15wjcwstsfd7" path="res://scenes/entities/Clutter/cigar_1.tscn" id="41_joow5"]
+[ext_resource type="Texture2D" uid="uid://b15nehwogaw24" path="res://assets/notes/BinderPages/LooseBinder1.png" id="42_nymwn"]
 [ext_resource type="PackedScene" uid="uid://dhetqem4mcofx" path="res://scenes/entities/Clutter/cigar_2.tscn" id="42_va6hq"]
+[ext_resource type="Script" uid="uid://ex00mng14vhc" path="res://scenes/BinderPage.gd" id="43_e5r3p"]
+[ext_resource type="Texture2D" uid="uid://6yyys4qe5v5b" path="res://assets/notes/BinderPages/LooseBinder1_back.png" id="43_ku064"]
+[ext_resource type="Texture2D" uid="uid://wvr7nbw3spmj" path="res://assets/notes/BinderPages/LooseBinder3.png" id="48_kupxs"]
+[ext_resource type="Texture2D" uid="uid://cinl250f7k8ck" path="res://assets/notes/BinderPages/LooseBinder3_back.png" id="49_n0u37"]
 [ext_resource type="PackedScene" uid="uid://bkqmiy1gnpt1s" path="res://scenes/entities/Clutter/foodtube_a.tscn" id="51_tp8qv"]
 [ext_resource type="PackedScene" uid="uid://cwd3asxq482t7" path="res://scenes/entities/Clutter/foodtube_empty.tscn" id="52_l53td"]
+[ext_resource type="Script" uid="uid://dcmy0730yllst" path="res://scenes/entities/binder_button.gd" id="58_pdwea"]
+[ext_resource type="Texture2D" uid="uid://cricourvwuv8m" path="res://assets/notes/BinderPages/LooseBinder2.png" id="59_yfyu3"]
+[ext_resource type="Texture2D" uid="uid://wtjoyt5ef7eo" path="res://assets/notes/BinderPages/LooseBinder2_back.png" id="60_35otp"]
+[ext_resource type="Texture2D" uid="uid://bbs1mys4qolie" path="res://assets/notes/BinderButton.png" id="61_ifwx0"]
+[ext_resource type="Texture2D" uid="uid://cpiug48e1eel2" path="res://assets/notes/BinderButtonHover.png" id="62_35jja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_df53p"]
 size = Vector3(0.33795166, 0.51013184, 0.16552734)
@@ -66,6 +81,18 @@ size = Vector3(0.3633423, 0.49441528, 0.06762695)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_24u40"]
 size = Vector2(0.3, 0.25)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e5r3p"]
+size = Vector2(0.39, 0.55)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ym0q"]
+albedo_texture = ExtResource("42_nymwn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ifwx0"]
+size = Vector3(1.7744141, 1, 0.37695313)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oow3h"]
+size = Vector3(0.3260498, 0.21450806, 0.2397461)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j3pel"]
 size = Vector3(1, 0.4880371, 0.15820313)
@@ -125,7 +152,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.85
 transform = Transform3D(-4.371139e-08, -0.17364816, 0.98480767, 0, 0.98480767, 0.17364816, -1, 7.590402e-09, -4.3047308e-08, 3, 1.6, 0)
 fov = 70.0
 valid_neighbors = [NodePath("../Airlock1")]
-valid_clickables = [NodePath("../../Interactables/AirlockButton"), NodePath("../../Interactables/BrokenButton"), NodePath("../ExternalZoomIn"), NodePath("../InternalZoomIn"), NodePath("../../Interactables/AirlockNote"), NodePath("../../Interactables/interactive_airvent")]
+valid_clickables = [NodePath("../../Interactables/AirlockButton"), NodePath("../../Interactables/BrokenButton"), NodePath("../ExternalZoomIn"), NodePath("../InternalZoomIn"), NodePath("../../Interactables/AirlockNote"), NodePath("../../Interactables/interactive_airvent"), NodePath("../../Interactables/BinderPage4")]
 reverb_vector = Vector4(0.5, 0, 0, 0.1)
 
 [node name="Airlock1" parent="Rooms/AirLock/PlayerPositions" unique_id=1545806533 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
@@ -176,6 +203,15 @@ door = NodePath("../../Meshes/InteriorDoor")
 
 [node name="BrokenButton" parent="Rooms/AirLock/Interactables" unique_id=1463098793 instance=ExtResource("9_5o1jx")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.8369656, 1.055372, 1.3056929)
+
+[node name="BinderPage4" parent="Rooms/AirLock/Interactables" unique_id=973595616 instance=ExtResource("12_r7isu")]
+transform = Transform3D(0.0058243703, 0.999983, 2.1664853e-10, -0.51340497, 0.002990311, 0.85814124, 0.85812664, -0.0049981326, 0.51341367, 0.6035695, 0.6413177, -1.9692302)
+mesh = SubResource("PlaneMesh_e5r3p")
+surface_material_override/0 = SubResource("StandardMaterial3D_5ym0q")
+script = ExtResource("43_e5r3p")
+binder_page = 4
+requires_reactor = true
+note_pages = Array[Texture2D]([ExtResource("16_yfyu3"), ExtResource("17_35otp")])
 
 [node name="Props" type="Node3D" parent="Rooms/AirLock" unique_id=127707660]
 
@@ -273,9 +309,11 @@ spot_attenuation = -5.05
 spot_angle = 69.87
 
 [node name="ForeHallway" type="Node3D" parent="Rooms" unique_id=1385809275]
-metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Meshes" type="Node3D" parent="Rooms/ForeHallway" unique_id=23766683]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="ChamberAirlockjoint" parent="Rooms/ForeHallway/Meshes" unique_id=1538830764 instance=ExtResource("14_b7tif")]
 
@@ -321,19 +359,53 @@ fov = 70.0
 valid_neighbors = [NodePath("../ForeHall3"), NodePath("../ForeHall5")]
 reverb_vector = Vector4(0.5, 0, 0, 0.3)
 
-[node name="ForeHall5" parent="Rooms/ForeHallway/PlayerPositions" unique_id=1494924605 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+[node name="ForeHall5" parent="Rooms/ForeHallway/PlayerPositions" unique_id=1494924605 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, -12)
 fov = 70.0
 valid_neighbors = [NodePath("../ForeHall4"), NodePath("../../../Hub/PlayerPositions/Hub0")]
+valid_clickables = [NodePath("../KishiDeskzoom")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
+[node name="KishiDeskzoom" parent="Rooms/ForeHallway/PlayerPositions" unique_id=216966526 node_paths=PackedStringArray("valid_clickables") instance=ExtResource("6_6vmy0")]
+transform = Transform3D(-4.371139e-08, -0.95105654, 0.30901697, 0, 0.30901697, 0.95105654, -1, 4.1572e-08, -1.3507561e-08, -1.413192, 1.6385632, -11.931399)
+fov = 115.0
+valid_clickables = [NodePath("../../Interactables/research_binder")]
+
+[node name="CollisionShape3D" parent="Rooms/ForeHallway/PlayerPositions/KishiDeskzoom/Interactable" parent_id_path=PackedInt32Array(216966526, 1013888320) index="0" unique_id=926940183]
+transform = Transform3D(1, 0, -1.154632e-13, 0, 1, -5.615316e-16, 0, -5.6153636e-16, 1, 0.067871094, 1.1920929e-07, -0.31152314)
+shape = SubResource("BoxShape3D_ifwx0")
+
 [node name="Interactables" type="Node3D" parent="Rooms/ForeHallway" unique_id=279417727]
+
+[node name="research_binder" type="Node3D" parent="Rooms/ForeHallway/Interactables" unique_id=595367595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3699924, 1.1562188, -12.05317)
+script = ExtResource("19_va6hq")
+metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
+
+[node name="Binder" parent="Rooms/ForeHallway/Interactables/research_binder" unique_id=2130429766 instance=ExtResource("35_cjrt4")]
+transform = Transform3D(-0.033418, 0, 0.99944144, 0, 1, 0, -0.99944144, 0, -0.033418, 0.020091295, 0.0076078176, 0.023625374)
+
+[node name="Interactable" type="Area3D" parent="Rooms/ForeHallway/Interactables/research_binder" unique_id=1811841355]
+script = ExtResource("21_55vra")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/ForeHallway/Interactables/research_binder/Interactable" unique_id=1327538580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020935059, -0.037857056, 0.008056641)
+shape = SubResource("BoxShape3D_oow3h")
+
+[node name="Label3D" type="Label3D" parent="Rooms/ForeHallway/Interactables/research_binder" unique_id=369021513]
+transform = Transform3D(-5.9010374e-09, -0.135, 0, -5.9010374e-09, 2.5794255e-16, 0.135, -0.135, 5.9010374e-09, -5.9010374e-09, 0.016859055, 0.034356594, -0.0024051666)
+modulate = Color(0, 0, 0, 1)
+text = "Research
+Notes"
+font = ExtResource("22_55vra")
+font_size = 64
+outline_size = 4
 
 [node name="Props" type="Node3D" parent="Rooms/ForeHallway" unique_id=1064691386]
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/ForeHallway/Props" unique_id=1806060177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-visible = false
 script = ExtResource("15_r7isu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/ForeHallway/Props/Reactor_Lights" unique_id=1675733232]
@@ -529,9 +601,6 @@ transform = Transform3D(-0.99791825, 0.064490914, -2.8189928e-09, 0, -4.371139e-
 [node name="Pill2" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1808504058 instance=ExtResource("34_pdwea")]
 transform = Transform3D(-0.45332977, -0.8913428, 3.896182e-08, -2.2158236e-16, -4.371139e-08, -1, 0.8913428, -0.45332977, 1.9815676e-08, 1.5108337, 1.1783105, 0.37486458)
 
-[node name="Binder" parent="Rooms/ForeHallway/Props" unique_id=2130429766 instance=ExtResource("35_cjrt4")]
-transform = Transform3D(-0.033418, 0, 0.99944144, 0, 1, 0, -0.99944144, 0, -0.033418, -1.3499011, 1.1638266, -12.029545)
-
 [node name="Cockpit" type="Node3D" parent="Rooms" unique_id=613465786]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 metadata/_edit_group_ = true
@@ -559,7 +628,7 @@ reverb_vector = Vector4(0.3, 0, 0, 0.1)
 [node name="CockpitZoomIn" parent="Rooms/Cockpit/PlayerPositions" unique_id=146520815 node_paths=PackedStringArray("valid_clickables", "valid_neighbors") instance=ExtResource("6_6vmy0")]
 transform = Transform3D(-1, -6.3813594e-08, 1.3684867e-07, 3.495671e-08, 0.7838467, 0.6209544, -1.4689371e-07, 0.6209544, -0.7838467, 0, 1.9066312, 4.033926)
 fov = 100.0
-valid_clickables = [NodePath("../../Interactables/console/console_control/left_control"), NodePath("../../Interactables/console/console_control/right_control"), NodePath("../../Interactables/console/throttle_interactee")]
+valid_clickables = [NodePath("../../Interactables/console/console_control/left_control"), NodePath("../../Interactables/console/console_control/right_control"), NodePath("../../Interactables/console/throttle_interactee"), NodePath("../../Interactables/BinderPage1")]
 valid_neighbors = [NodePath("../KnobZoomIn"), NodePath("../SwitchZoomIn"), NodePath("../ClockZoomIn")]
 
 [node name="KnobZoomIn" parent="Rooms/Cockpit/PlayerPositions" unique_id=356765283 node_paths=PackedStringArray("valid_clickables") instance=ExtResource("6_6vmy0")]
@@ -593,6 +662,15 @@ shape = SubResource("BoxShape3D_gyp1n")
 [node name="console" parent="Rooms/Cockpit/Interactables" unique_id=1216315534 instance=ExtResource("20_b7tif")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11201298, 5.5877457)
 surface_material_override/1 = ExtResource("21_o75v3")
+
+[node name="BinderPage1" parent="Rooms/Cockpit/Interactables" unique_id=570141077 instance=ExtResource("12_r7isu")]
+transform = Transform3D(-0.89861405, 0.09097962, 0.42920336, 0.0032482015, 0.9796163, -0.20085174, -0.438728, -0.17909406, -0.88059247, -0.90466624, 0.98943496, 5.7464495)
+mesh = SubResource("PlaneMesh_e5r3p")
+surface_material_override/0 = SubResource("StandardMaterial3D_5ym0q")
+script = ExtResource("43_e5r3p")
+binder_page = 1
+requires_reactor = true
+note_pages = Array[Texture2D]([ExtResource("42_nymwn"), ExtResource("43_ku064")])
 
 [node name="Props" type="Node3D" parent="Rooms/Cockpit" unique_id=310254450]
 
@@ -873,10 +951,11 @@ transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1
 fov = 70.0
 valid_neighbors = [NodePath("../LabPlayerPos4"), NodePath("../LabPlayerPos3")]
 
-[node name="LabPlayerPos4" parent="Rooms/StarboardLab/PlayerPositions" unique_id=469992334 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+[node name="LabPlayerPos4" parent="Rooms/StarboardLab/PlayerPositions" unique_id=469992334 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -4.5)
 fov = 70.0
 valid_neighbors = [NodePath("../LabPlayerPos5"), NodePath("../LabPlayerPos2")]
+valid_clickables = [NodePath("")]
 
 [node name="LabPlayerPos5" parent="Rooms/StarboardLab/PlayerPositions" unique_id=1669920877 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -9.5)
@@ -889,6 +968,15 @@ fov = 70.0
 valid_neighbors = [NodePath("../LabPlayerPos2")]
 
 [node name="Interactables" type="Node3D" parent="Rooms/StarboardLab" unique_id=1151965141]
+
+[node name="BinderPage3" parent="Rooms/StarboardLab/Interactables" unique_id=1669462560 instance=ExtResource("12_r7isu")]
+transform = Transform3D(0.63607824, 0, 0.77162457, 0, 1, 0, -0.77162457, 0, 0.63607824, -8.446741, 0.021215439, -3.5339603)
+mesh = SubResource("PlaneMesh_e5r3p")
+surface_material_override/0 = SubResource("StandardMaterial3D_5ym0q")
+script = ExtResource("43_e5r3p")
+binder_page = 3
+requires_reactor = true
+note_pages = Array[Texture2D]([ExtResource("48_kupxs"), ExtResource("49_n0u37")])
 
 [node name="Props" type="Node3D" parent="Rooms/StarboardLab" unique_id=1963313716]
 
@@ -1102,6 +1190,15 @@ fov = 70.0
 valid_neighbors = [NodePath("../HydroPlayerPos1")]
 
 [node name="Interactables" type="Node3D" parent="Rooms/PortHydroponics" unique_id=461452947]
+
+[node name="BinderPage2" parent="Rooms/PortHydroponics/Interactables" unique_id=1262218826 instance=ExtResource("12_r7isu")]
+transform = Transform3D(-9.9899104e-08, -1, -4.6645045e-08, -0.30891618, -1.3503155e-08, 0.95108926, -0.95108926, 1.0942237e-07, -0.30891618, 9.3709345, 1.015818, -5.2407)
+mesh = SubResource("PlaneMesh_e5r3p")
+surface_material_override/0 = SubResource("StandardMaterial3D_5ym0q")
+script = ExtResource("43_e5r3p")
+binder_page = 2
+requires_reactor = true
+note_pages = Array[Texture2D]([ExtResource("59_yfyu3"), ExtResource("60_35otp")])
 
 [node name="Props" type="Node3D" parent="Rooms/PortHydroponics" unique_id=1779277288]
 
@@ -1663,11 +1760,39 @@ shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1519510321]
+
+[node name="BinderButton" type="TextureButton" parent="CanvasLayer" unique_id=778099098]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -90.0
+offset_right = 32.0
+offset_bottom = -11.518982
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("61_ifwx0")
+texture_hover = ExtResource("62_35jja")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("58_pdwea")
+
 [connection signal="disable_cockpit" from="." to="Rooms/Cockpit/Interactables/console" method="_on_ship_world_disable_cockpit"]
+[connection signal="interacted_with" from="Rooms/ForeHallway/Interactables/research_binder" to="CanvasLayer/BinderButton" method="_on_research_binder_interacted_with"]
+[connection signal="pressed" from="CanvasLayer/BinderButton" to="CanvasLayer/BinderButton" method="_on_pressed"]
 
 [editable path="Rooms/AirLock/PlayerPositions/ExternalZoomIn"]
 [editable path="Rooms/AirLock/PlayerPositions/InternalZoomIn"]
+[editable path="Rooms/AirLock/Interactables/BinderPage4"]
+[editable path="Rooms/ForeHallway/PlayerPositions/KishiDeskzoom"]
 [editable path="Rooms/Cockpit/PlayerPositions/KnobZoomIn"]
 [editable path="Rooms/Cockpit/PlayerPositions/SwitchZoomIn"]
 [editable path="Rooms/Cockpit/PlayerPositions/ClockZoomIn"]
 [editable path="Rooms/Cockpit/Interactables/console"]
+[editable path="Rooms/Cockpit/Interactables/BinderPage1"]
+[editable path="Rooms/StarboardLab/Interactables/BinderPage3"]
+[editable path="Rooms/PortHydroponics/Interactables/BinderPage2"]

@@ -62,6 +62,36 @@ offset_right = 63.0
 grow_vertical = 2
 stretch_mode = 3
 
+[node name="TextDisplayFront" type="TextureRect" parent="NoteControl" unique_id=27126536]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -350.0
+offset_right = 250.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextDisplayBack" type="TextureRect" parent="NoteControl" unique_id=1855398684]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -350.0
+offset_right = 250.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [connection signal="mouse_entered" from="NoteControl/NoteExit" to="." method="_on_note_exit_mouse_entered"]
 [connection signal="pressed" from="NoteControl/NoteExit" to="." method="_on_note_exit_pressed"]
 [connection signal="mouse_entered" from="NoteControl/NoteDisplay" to="." method="_on_note_display_mouse_entered"]
@@ -69,3 +99,5 @@ stretch_mode = 3
 [connection signal="pressed" from="NoteControl/NoteDisplay/NoteNext" to="." method="_on_note_next_pressed"]
 [connection signal="mouse_entered" from="NoteControl/NoteDisplay/NotePrevious" to="." method="_on_note_previous_mouse_entered"]
 [connection signal="pressed" from="NoteControl/NoteDisplay/NotePrevious" to="." method="_on_note_previous_pressed"]
+[connection signal="mouse_entered" from="NoteControl/TextDisplayFront" to="." method="_on_note_display_mouse_entered"]
+[connection signal="mouse_entered" from="NoteControl/TextDisplayBack" to="." method="_on_note_display_mouse_entered"]

@@ -32,6 +32,8 @@ var _last_position_node:PlayerPositionOption
 var _last_zoom_in_node : ZoomIn
 var _sub_zoom_in = false
 
+var _active_text_pages_front: Array[Texture2D]
+var _active_text_pages_back: Array[Texture2D]
 var _active_note_pages: Array[Texture2D]
 
 var _zoomed_in:bool = false
@@ -89,10 +91,85 @@ func can_rotate_screen():
 	return _can_rotate
 
 # Notes
-func set_active_note(note_pages: Array[Texture2D]) -> void:
+func set_active_note(note_pages: Array[Texture2D], text_pages_front : Array[Texture2D] = [], text_pages_back : Array[Texture2D] = []) -> void:
 	_active_note_pages = note_pages
+	_active_text_pages_front = text_pages_front
+	_active_text_pages_back = text_pages_back
 
 func get_active_note() -> Array[Texture2D]:
 	return _active_note_pages
 
-# Time
+func get_active_text_pages_front() -> Array[Texture2D]:
+	return _active_text_pages_front
+
+func get_active_text_pages_back() -> Array[Texture2D]:
+	return _active_text_pages_back
+
+var notes_collected = []
+var  binder_collected = false
+
+@onready var binder_cover = load("res://assets/notes/BinderPages/binder0.png")
+@onready var binder_empty = load("res://assets/notes/BinderPages/binder01.png")
+@onready var binder_first = load("res://assets/notes/BinderPages/binder02.png")
+@onready var binder_middle = load("res://assets/notes/BinderPages/binder03.png")
+@onready var binder_last = load("res://assets/notes/BinderPages/binder04.png")
+
+@onready var one_front = load("res://assets/notes/BinderPages/01first.png")
+@onready var one_back = load("res://assets/notes/BinderPages/01second.png")
+@onready var two_front = load("res://assets/notes/BinderPages/02first.png")
+@onready var two_back = load("res://assets/notes/BinderPages/02second.png")
+@onready var three_front = load("res://assets/notes/BinderPages/03first.png")
+@onready var three_back = load("res://assets/notes/BinderPages/03second.png")
+@onready var four_front = load("res://assets/notes/BinderPages/04first.png")
+@onready var four_back = load("res://assets/notes/BinderPages/04second.png")
+
+func open_binder():
+	set_active_note(get_binder_pages(), get_binder_text_front(), get_binder_text_back())
+	hud_controller.set_hud(HudController.HudState.READING_NOTE)
+
+
+func get_binder_text_front():
+	var page_textures : Array[Texture2D]
+	
+	if notes_collected.has(1):
+		page_textures.append(one_front)
+	if notes_collected.has(2):
+		page_textures.append(two_front)
+	if notes_collected.has(3):
+		page_textures.append(three_front)
+	if notes_collected.has(4):
+		page_textures.append(four_front)
+	
+	return page_textures
+
+
+func get_binder_text_back():
+	var page_textures : Array[Texture2D]
+	
+	if notes_collected.has(1):
+		page_textures.append(one_back)
+	if notes_collected.has(2):
+		page_textures.append(two_back)
+	if notes_collected.has(3):
+		page_textures.append(three_back)
+	if notes_collected.has(4):
+		page_textures.append(four_back)
+	
+	return page_textures
+
+
+func get_binder_pages():
+	var binder_textures : Array[Texture2D]
+	binder_textures.append(binder_cover)
+	if notes_collected.size() == 0:
+		binder_textures.append(binder_empty)
+	else:
+		binder_textures.append(binder_first)
+		if notes_collected.size() >= 2:
+			binder_textures.append(binder_middle)
+		if notes_collected.size() >= 3:
+			binder_textures.append(binder_middle)
+		if notes_collected.size() >= 4:
+			binder_textures.append(binder_middle)
+		binder_textures.append(binder_last)
+	return binder_textures

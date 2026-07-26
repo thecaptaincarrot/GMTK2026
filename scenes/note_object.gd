@@ -1,7 +1,10 @@
 extends MeshInstance3D
 class_name Note
 
+
 @onready var collision_shape = $Interactable/CollisionShape3D
+
+@export var requires_reactor = false
 
 @export var note_pages : Array[Texture2D]
 @export var collision_area: CollisionShape3D
@@ -19,5 +22,10 @@ func enable_collision():
 
 
 func handle_interaction() -> void:
-	Globals.set_active_note(note_pages)
-	Globals.hud_controller.set_hud(HudController.HudState.READING_NOTE)
+	if requires_reactor:
+		if Globals.reactor_started:
+			Globals.set_active_note(note_pages)
+			Globals.hud_controller.set_hud(HudController.HudState.READING_NOTE)
+	else:
+		Globals.set_active_note(note_pages)
+		Globals.hud_controller.set_hud(HudController.HudState.READING_NOTE)
