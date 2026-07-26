@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://bdok41wrnb826"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_3hkar"]
+[ext_resource type="AudioStream" uid="uid://cg5wrlk50ha4s" path="res://Audio/RawSounds/time_dilation.wav" id="2_k5dky"]
+
+[resource]
+script = ExtResource("1_3hkar")
+ID = "TimeDilation"
+limit = 3
+sound_effect = Array[AudioStream]([ExtResource("2_k5dky")])
+volume = -40
+metadata/_custom_type_script = "uid://b7fou07k713y"

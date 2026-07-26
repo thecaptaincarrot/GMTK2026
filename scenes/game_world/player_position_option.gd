@@ -38,13 +38,16 @@ func handle_interaction() -> void:
 	
 	move_player_to_position()
 	Globals.time_controller.set_time_multiplier(self.time_dilation_multiplier)
-
+	if time_dilation_multiplier > 1:
+		AudioPlayer.create_3D_audio_at_location(global_position,"TimeDilation","TimeDilation")
+	else:
+		AudioPlayer.stop_3d_audio("TimeDilation")
 
 func move_player_to_position(tween_override = false):
 	var player = Globals.get_player()
 	if player:
 		game_room.disable_all_clickables()
-		
+
 		#sync the pseudo camera to the player camera
 		#more can be added but I think this is a good starting point
 		if(Globals.should_tween and tween_override == false):
@@ -61,7 +64,6 @@ func move_player_to_position(tween_override = false):
 		Globals.set_last_position(self)
 		print("Neighbours should enable now")
 		enable_neighbors()
-		
 
 
 func rotate_90():

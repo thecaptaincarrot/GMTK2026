@@ -5,6 +5,8 @@ var game_node : GameWorld
 
 const AUDIO_PATH = "res://Audio/"
 
+var active_tracked_audio: Dictionary = {}
+
 func _ready():
 	#go  through all files in the Items folder (including subfolders) to find any Items
 	#Register those items in the item_registry
@@ -36,9 +38,10 @@ func _ready():
 					sound_effect_dict[resource.ID] = resource
 
 
-func create_3D_audio_at_location(sound_posiition : Vector3, effect_id):
+func create_3D_audio_at_location(sound_posiition : Vector3, effect_id, track_key = null):
 	if sound_effect_dict.has(effect_id):
 		var sound_effect_settings = sound_effect_dict[effect_id]
+		print("has open limit", sound_effect_settings.has_open_limit())
 		if sound_effect_settings.has_open_limit() and game_node:
 			sound_effect_settings.increment_audio_count(1)
 			var new_3d_player = AudioStreamPlayer3D.new()
@@ -53,10 +56,29 @@ func create_3D_audio_at_location(sound_posiition : Vector3, effect_id):
 			new_3d_player.pitch_scale += randf_range(-sound_effect_settings.pitch_randomness, sound_effect_settings.pitch_randomness)
 			new_3d_player.finished.connect(sound_effect_settings.on_audio_finished)
 			new_3d_player.finished.connect(new_3d_player.queue_free)
-			
+
+			# use track for audios that loop infinitely
+			if track_key != null:
+				print("playing %s" % track_key)
+				stop_3d_audio(track_key)
+				active_tracked_audio[track_key] = new_3d_player
+
 			new_3d_player.play()
 	else:
 		push_error("NO SUCH SOUND EFFECT AS ", effect_id)
+
+
+func stop_3d_audio(track_key):
+	var sound_effect_settings = sound_effect_dict[track_key]
+	sound_effect_settings.on_audio_finished()
+	print("stopping sound %s" % track_key)
+	if active_tracked_audio.has(track_key):
+		var audio_player = active_tracked_audio[track_key]
+		if is_instance_valid(audio_player):
+			audio_player.stop()
+			audio_player.queue_free()
+		active_tracked_audio.erase(track_key)
+
 
 func create_audio(effect_id):
 	if sound_effect_dict.has(effect_id):
