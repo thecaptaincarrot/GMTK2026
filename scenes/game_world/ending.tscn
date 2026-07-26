@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://bpkdh32k7a46o"]
+
+[sub_resource type="Animation" id="Animation_icrnl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeToBlack:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutsceneText:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.19]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FadeToWhite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_txs12"]
+resource_name = "ending_cutscene"
+length = 41.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeToBlack:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutsceneText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.0000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutsceneText:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.0000002, 5.0000005, 7, 8, 9, 11, 13, 14.566667, 16, 18, 20, 26.033333, 28, 30.033333, 32.033333, 34.033333, 36.033333, 38.033333, 40.033333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.195, 0.195, 0.237, 0.237, 0.341, 0.341, 0.421, 0.421, 0.547, 0.547, 0.818, 0.818, 0.92, 0.92, 0.963, 0.963, 1.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FadeToWhite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(38.033333, 41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_icrnl"]
+_data = {
+&"RESET": SubResource("Animation_icrnl"),
+&"ending_cutscene": SubResource("Animation_txs12")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5o7s4"]
+blend_mode = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_wm4do"]
+font_size = 18
+
+[node name="Ending" type="Node" unique_id=1926195409]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=48994430]
+libraries/ = SubResource("AnimationLibrary_icrnl")
+
+[node name="FadeToBlack" type="ColorRect" parent="." unique_id=952208917]
+material = SubResource("CanvasItemMaterial_5o7s4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CutsceneText" type="Label" parent="." unique_id=97700415]
+offset_left = 111.0
+offset_top = 314.0
+offset_right = 1217.0
+offset_bottom = 601.0
+text = "\"What is the point of rewinding the clock if my dearest is not there to spend eternity with?\"
+\"Why call you here?\"
+\"Should I have faced death knowing I did my worst?\"
+
+\"This I know: It is human to regret.\"
+\"Captain Argo and the others are only lying to themselves.\"
+\"I don't have monetary problems like Fairuz. Nor personal struggles like Deniz or Emi. William's case is beyond my lifetime still.\"
+\"Family. It is a crime how I have mistreated kin.\"
+\"I regret it all.\"
+\"Let me try again.\""
+label_settings = SubResource("LabelSettings_wm4do")
+visible_characters = 92
+visible_ratio = 0.19
+
+[node name="FadeToWhite" type="ColorRect" parent="." unique_id=1353595686]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
