@@ -332,7 +332,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3883677, -0.25098002, 1.213
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
 shadow_enabled = true
-shadow_blur = 0.853
 omni_range = 4096.0
 
 [node name="FloorLight2" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=507289635]

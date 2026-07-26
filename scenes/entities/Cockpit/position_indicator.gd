@@ -28,12 +28,15 @@ func rotation_updated(new_rotation):
 	black_hole_rotation = -new_rotation
 
 func check_solution():
+	
 	var limited_rotation = black_hole_rotation
+	print(limited_rotation)
 	while limited_rotation < -2 * PI or limited_rotation > 2 * PI:
 		if limited_rotation < -2 * PI:
 			limited_rotation += 2 * PI
 		else:
 			limited_rotation -= 2 * PI
-	if abs(limited_rotation - 4*PI/3) < PI/8 or abs(limited_rotation + 4*PI/3) < PI/8:
+	print(limited_rotation)
+	if abs(limited_rotation + 4*PI/3) < PI/8 or abs(limited_rotation - 2*PI/3) < PI/8:
 		return true
 	return false
