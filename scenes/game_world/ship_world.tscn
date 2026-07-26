@@ -330,7 +330,7 @@ omni_attenuation = 2.045
 [node name="FloorLight1" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=268463668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3883677, -0.25098002, 1.2133837)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 5.0
+light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
@@ -338,7 +338,8 @@ omni_range = 4096.0
 [node name="FloorLight2" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=507289635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4199305, 1.1643976, 3.5883567)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.6
+light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -354,6 +355,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7240372, 2.270162, -3.3830047)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -369,6 +371,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.580369, -0.29814684, -0.16237235)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -538,6 +541,7 @@ spot_angle = 61.67
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016805887, -0.25098002, 1.9864881)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -545,6 +549,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019978523, -0.25098002, -1.9317617)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -552,6 +557,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018628597, -0.25098002, -5.9141693)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -794,6 +800,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18279552, 3.2033234)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7840166, -0.25098002, 1.631258)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -801,6 +808,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9564245, -0.25098002, 1.6206799)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -964,6 +972,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3254805, -0.25098002, -12.059807)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -971,6 +980,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8816743, -0.25098002, -12.059807)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -978,6 +988,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7876244, -0.25098002, -16.423443)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -985,6 +996,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7759047, -0.25098002, -21.654335)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -992,6 +1004,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2131214, -0.25098002, -16.429794)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -999,6 +1012,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9692216, -0.25098002, -21.48556)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1006,6 +1020,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3608584, -0.25098002, -20.230112)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1013,6 +1028,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3608584, -0.25098002, -17.095633)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1020,6 +1036,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.12415, -0.25098002, -17.095633)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1027,6 +1044,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.12415, -0.25098002, -20.309593)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1744,6 +1762,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04379344, -0.25098002, -30.899)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1751,6 +1770,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04379344, -0.25098002, -35.035286)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1758,6 +1778,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04379344, -0.25098002, -39.12768)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1765,6 +1786,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8812065, -0.25098002, -25.6358)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1772,6 +1794,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1498716, -0.25098002, -25.630527)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1880,6 +1903,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 41)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6783693, -3.2280002, -44.13961)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1887,6 +1911,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6366343, -3.2784789, -44.093567)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1894,6 +1919,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04379344, 1.259267, -48.57098)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1901,6 +1927,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4526224, 3.7122695, -45.213097)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1908,6 +1935,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.374189, 3.7921567, -45.20928)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1915,6 +1943,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.093768, 1.0585213, -42.72175)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -1922,6 +1951,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3952513, 1.0585213, -42.72175)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 

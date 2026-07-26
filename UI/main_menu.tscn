@@ -282,12 +282,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -74.0
-offset_top = 938.0
-offset_right = 764.0
-offset_bottom = 1015.0
+offset_left = -68.0
+offset_top = 915.0
+offset_right = 770.0
+offset_bottom = 992.0
 grow_horizontal = 2
-text = "May take a little extra time to load  in browser"
+text = "May take a little extra time to load  in browser
+Download and run for  best experience"
 label_settings = SubResource("LabelSettings_ev3b6")
 horizontal_alignment = 1
 
