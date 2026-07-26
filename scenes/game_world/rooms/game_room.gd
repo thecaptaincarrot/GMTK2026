@@ -3,7 +3,6 @@ class_name GameRoom
 
 @onready var _room_container = $Rooms
 
-
 func _ready():
 	for player_position: PlayerPositionOption in get_all_player_positions():
 		player_position.game_room  = self
@@ -39,11 +38,14 @@ func get_position_node(pos_name:StringName):
 
 
 func disable_all_clickables():
+	Globals.disable_HUD_buttons.emit()
 	for opt in get_all_player_positions():
 		opt.disable_collision()
 	for opt in get_all_interactables():
 		opt.disable_collision()
 	for opt in get_all_notes():
+		opt.disable_collision()
+	for opt in get_all_zoom_in():
 		opt.disable_collision()
 
 

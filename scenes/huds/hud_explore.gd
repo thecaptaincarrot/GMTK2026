@@ -1,6 +1,14 @@
 extends HudBase
-
 class_name HudExplore
+
+@onready var RightArrowButton = $RotationControls/RightArrow
+@onready var LeftArrowButton = $RotationControls/LeftArrow
+
+func _ready():
+	Globals.disable_HUD_buttons.connect(RightArrowButton.set_disabled.bind(true))
+	Globals.enable_HUD_buttons.connect(RightArrowButton.set_disabled.bind(false))
+	Globals.disable_HUD_buttons.connect(LeftArrowButton.set_disabled.bind(true))
+	Globals.enable_HUD_buttons.connect(LeftArrowButton.set_disabled.bind(false))
 
 func _on_right_arrow_pressed() -> void:
 	var player = Globals.get_player()

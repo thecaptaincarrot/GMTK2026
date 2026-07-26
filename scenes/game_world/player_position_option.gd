@@ -29,6 +29,7 @@ func enable_neighbors():
 		n.enable_collision()
 	for n  in valid_clickables:
 		n.enable_collision()
+	Globals.enable_HUD_buttons.emit()
 
 # each interactable object knows how to handle it's own interaction
 func handle_interaction() -> void:
@@ -42,7 +43,7 @@ func handle_interaction() -> void:
 func move_player_to_position(tween_override = false):
 	var player = Globals.get_player()
 	if player:
-		game_room.disable_all_position_colliders()
+		game_room.disable_all_clickables()
 		
 		#sync the pseudo camera to the player camera
 		#more can be added but I think this is a good starting point
@@ -56,7 +57,9 @@ func move_player_to_position(tween_override = false):
 			AudioManager.REVERB_SETUP_VECTOR = reverb_vector # audio manager
 		#this is here so that we are only clicking on valid neighbors for movement
 		
+		Globals.set_is_zoomed_in(false)
 		Globals.set_last_position(self)
+		print("Neighbours should enable now")
 		enable_neighbors()
 		
 

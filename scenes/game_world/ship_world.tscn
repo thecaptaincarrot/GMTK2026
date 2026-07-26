@@ -38,6 +38,9 @@ size = Vector3(0.3633423, 0.49441528, 0.06762695)
 [sub_resource type="PlaneMesh" id="PlaneMesh_24u40"]
 size = Vector2(0.3, 0.25)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_j3pel"]
+size = Vector3(1, 0.4880371, 0.15820313)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_r7isu"]
 size = Vector2(0.3, 0.25)
 
@@ -370,19 +373,25 @@ fov = 70.0
 valid_neighbors = [NodePath("../../../ForeHallway/PlayerPositions/ForeHall1"), NodePath("../Cockpit1")]
 reverb_vector = Vector4(0.5, 0, 0, 0.1)
 
-[node name="Cockpit1" parent="Rooms/Cockpit/PlayerPositions" unique_id=883846201 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+[node name="Cockpit1" parent="Rooms/Cockpit/PlayerPositions" unique_id=883846201 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-1, -1.5180806e-08, 8.609462e-08, 0, 0.9848077, 0.17364818, -8.742278e-08, 0.17364818, -0.9848077, 0, 1.6, 2)
 fov = 70.0
-valid_neighbors = [NodePath("../Cockpit0"), null]
+valid_neighbors = [NodePath("../Cockpit0")]
+valid_clickables = [NodePath("../CockpitZoomIn")]
 reverb_vector = Vector4(0.3, 0, 0, 0.1)
 
-[node name="CockpitZoomIn" parent="Rooms/Cockpit/PlayerPositions" unique_id=146520815 instance=ExtResource("6_6vmy0")]
+[node name="CockpitZoomIn" parent="Rooms/Cockpit/PlayerPositions" unique_id=146520815 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("6_6vmy0")]
 transform = Transform3D(-1, -6.381359e-08, 1.3684866e-07, 0, 0.9063077, 0.4226183, -1.509958e-07, 0.4226183, -0.9063077, 0, 1.9066312, 3.9285212)
 fov = 105.0
+valid_neighbors = [NodePath("../KnobZoomIn")]
 
-[node name="CockpitZoomIn2" parent="Rooms/Cockpit/PlayerPositions" unique_id=356765283 instance=ExtResource("6_6vmy0")]
+[node name="KnobZoomIn" parent="Rooms/Cockpit/PlayerPositions" unique_id=356765283 instance=ExtResource("6_6vmy0")]
 transform = Transform3D(-0.8838618, 0.4215957, -0.20259668, -0.046638932, 0.35153982, 0.93501043, 0.46541715, 0.83586895, -0.2910498, 0.8984054, 1.7864654, 4.60923)
 fov = 45.0
+
+[node name="CollisionShape3D" parent="Rooms/Cockpit/PlayerPositions/KnobZoomIn/Interactable" parent_id_path=PackedInt32Array(356765283, 1013888320) index="0" unique_id=926940183]
+transform = Transform3D(1, 0, -2.682209e-07, -1.1920929e-07, 1, 3.7252903e-07, 1.4901161e-08, -1.4901161e-08, 1, 1.1920929e-06, -0.050169945, -1.0781268)
+shape = SubResource("BoxShape3D_j3pel")
 
 [node name="Interactables" type="Node3D" parent="Rooms/Cockpit" unique_id=1033844891]
 
@@ -1259,3 +1268,4 @@ omni_range = 4096.0
 
 [editable path="Rooms/AirLock/PlayerPositions/ExternalZoomIn"]
 [editable path="Rooms/AirLock/PlayerPositions/InternalZoomIn"]
+[editable path="Rooms/Cockpit/PlayerPositions/KnobZoomIn"]
