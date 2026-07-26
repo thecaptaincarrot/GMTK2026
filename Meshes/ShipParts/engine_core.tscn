@@ -1,7 +1,12 @@
 [gd_scene format=4 uid="uid://cugp0ssk0r5pi"]
 
 [ext_resource type="Material" uid="uid://vjnvigapxhee" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K.tres" id="1_3ysqb"]
-[ext_resource type="Material" uid="uid://dkfaj3e562vn6" path="res://assets/Materials/RedEmission/RedEmissionMaterial.tres" id="2_ddfnu"]
+[ext_resource type="Script" uid="uid://er57xobuiai0" path="res://scenes/entities/engine_core.gd" id="1_ddfnu"]
+[ext_resource type="Material" uid="uid://dfk1u61vcc1ir" path="res://assets/Materials/RedEmission/HalfEmissionMaterial.tres" id="2_3ysqb"]
+[ext_resource type="AudioStream" uid="uid://bejo77vn402rd" path="res://Audio/ReactorSounds/reactor loop.wav" id="4_dnhk2"]
+[ext_resource type="AudioStream" uid="uid://c35v2sqv5ufts" path="res://Audio/ReactorSounds/reactor startup.wav" id="5_7sj2v"]
+[ext_resource type="AudioStream" uid="uid://dqo06vque3xui" path="res://Audio/ReactorSounds/reactor turnover loop.wav" id="6_inj6g"]
+[ext_resource type="AudioStream" uid="uid://22s6hbjt3sv7" path="res://Audio/ReactorSounds/reactor failure v2.wav" id="7_m7213"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljv0t"]
 
@@ -18,7 +23,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_suwhk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_y35ul"]
 resource_name = "engine_core_Cube_021"
 _surfaces = [{
 "aabb": AABB(-5.0961456, -3.7259018, -8.573753, 10.192292, 9.350062, 8.573755),
@@ -61,7 +66,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cp1yl"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_rwqu8"]
 resource_name = "engine_core_Solid"
 _surfaces = [{
 "aabb": AABB(-8.813926, -10.603677, -9.88942, 17.627851, 21.207354, 16.459476),
@@ -89,16 +94,31 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_oc6rd")
 
-[node name="EngineCore" type="Node3D" unique_id=190562707]
+[node name="EngineCore" type="Node3D" unique_id=1677393632]
+script = ExtResource("1_ddfnu")
 
-[node name="engineroom" type="MeshInstance3D" parent="." unique_id=719464830]
-mesh = SubResource("ArrayMesh_suwhk")
+[node name="engineroom" type="MeshInstance3D" parent="." unique_id=673842454]
+mesh = SubResource("ArrayMesh_y35ul")
 surface_material_override/0 = ExtResource("1_3ysqb")
 
-[node name="Solid" type="MeshInstance3D" parent="engineroom" unique_id=1167037927]
+[node name="Solid" type="MeshInstance3D" parent="engineroom" unique_id=1388195411]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2255125, -5.708561)
-mesh = SubResource("ArrayMesh_cp1yl")
+mesh = SubResource("ArrayMesh_rwqu8")
 surface_material_override/0 = ExtResource("1_3ysqb")
-surface_material_override/1 = ExtResource("2_ddfnu")
+surface_material_override/1 = ExtResource("2_3ysqb")
 
-[node name="engine_core" type="Node3D" parent="." unique_id=157450289]
+[node name="ReactorLoop" type="AudioStreamPlayer3D" parent="." unique_id=206951204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3156321, -5.5308967)
+stream = ExtResource("4_dnhk2")
+
+[node name="ReactorStartup" type="AudioStreamPlayer3D" parent="." unique_id=786810001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3156321, -5.5308967)
+stream = ExtResource("5_7sj2v")
+
+[node name="ReactorTurnoverLoop" type="AudioStreamPlayer3D" parent="." unique_id=1914742838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3156321, -5.5308967)
+stream = ExtResource("6_inj6g")
+
+[node name="ReactorFailure" type="AudioStreamPlayer3D" parent="." unique_id=1294422388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3156321, -5.5308967)
+stream = ExtResource("7_m7213")

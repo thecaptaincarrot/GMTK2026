@@ -10,6 +10,7 @@ var hour_only_time_pattern: String = "%02d:%02d:%02d"
 var started = false
 
 
+
 func start(_start_time_ms: int):
 	start_time_ms = _start_time_ms
 	current_time_ms = start_time_ms

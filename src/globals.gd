@@ -9,6 +9,7 @@ extends Node
 @onready var cursor_backwards_arrow = preload("res://assets/cursor_back.png")
 
 @onready var active_material = load("res://assets/Materials/RedEmission/RedEmissionMaterial.tres")
+@onready var half_active_material = load("res://assets/Materials/RedEmission/HalfEmissionMaterial.tres")
 @onready var inactive_material = load("res://assets/Materials/RedEmission/RedOffMaterial.tres")
 
 signal rotation_control_update

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b1313ru36j6av"]
 
+[ext_resource type="Script" uid="uid://blangpl4apajd" path="res://Meshes/ShipParts/ShipHull.gd" id="1_6vi5i"]
 [ext_resource type="Material" uid="uid://vjnvigapxhee" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K.tres" id="1_qv4xs"]
 [ext_resource type="Material" uid="uid://dkfaj3e562vn6" path="res://assets/Materials/RedEmission/RedEmissionMaterial.tres" id="2_6vi5i"]
 
@@ -207,7 +208,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jofma")
 
-[node name="ChamberAirlock" type="Node3D" unique_id=1066609667]
+[node name="ChamberAirlock" type="Node3D" unique_id=1066609667 node_paths=PackedStringArray("lit_parts")]
+script = ExtResource("1_6vi5i")
+lit_parts = [NodePath("airlockback"), NodePath("airlockfront")]
 
 [node name="airlockback" type="MeshInstance3D" parent="." unique_id=1885255191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)

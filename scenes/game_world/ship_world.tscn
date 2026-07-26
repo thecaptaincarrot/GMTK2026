@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://rd05fycqtby3" path="res://Meshes/ShipParts/central_hub.tscn" id="20_bp48q"]
 [ext_resource type="PackedScene" uid="uid://cugp0ssk0r5pi" path="res://Meshes/ShipParts/engine_core.tscn" id="21_6oo1f"]
 [ext_resource type="PackedScene" uid="uid://w12lobe4xf4q" path="res://scenes/entities/ReactorCore/core_console.tscn" id="21_r7isu"]
+[ext_resource type="Texture2D" uid="uid://buv21gweja60m" path="res://assets/notes/storynotereactor.png" id="24_o5cya"]
+[ext_resource type="AudioStream" uid="uid://bejo77vn402rd" path="res://Audio/ReactorSounds/reactor loop.wav" id="28_b7tif"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_df53p"]
 size = Vector3(0.33795166, 0.51013184, 0.16552734)
@@ -35,6 +37,12 @@ size = Vector3(0.3633423, 0.49441528, 0.06762695)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_24u40"]
 size = Vector2(0.3, 0.25)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r7isu"]
+size = Vector2(0.3, 0.25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m51dx"]
+albedo_texture = ExtResource("24_o5cya")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyxqs"]
 
@@ -173,7 +181,7 @@ shape = SubResource("BoxShape3D_ah6i4")
 [node name="Interactables" type="Node3D" parent="Rooms/AirLock" unique_id=265392305]
 
 [node name="interactive_airvent" parent="Rooms/AirLock/Interactables" unique_id=1342556809 node_paths=PackedStringArray("indicator_panels") instance=ExtResource("5_uulq1")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0, 3)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 0, 3)
 indicator_panels = [NodePath("../../Props/airlock_indicator_panel"), NodePath("../../Props/airlock_indicator_panel2")]
 
 [node name="AirlockButton2" parent="Rooms/AirLock/Interactables" unique_id=747472208 instance=ExtResource("9_1gqlr")]
@@ -210,8 +218,8 @@ script = ExtResource("15_r7isu")
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/AirLock/Props/Reactor_Lights" unique_id=903583249]
 transform = Transform3D(0.9996379, 0.001849785, 0.026844842, -0.026908496, 0.068718635, 0.99727315, 0, -0.99763435, 0.068743534, 3.0200553, 2.3022661, 0.14914513)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
-light_energy = 0.75
-spot_range = 3.305
+light_energy = 0.1
+spot_range = 3.0
 spot_attenuation = -5.05
 spot_angle = 69.87
 
@@ -219,7 +227,7 @@ spot_angle = 69.87
 transform = Transform3D(0.9996379, 0.001849785, 0.026844842, -0.026908496, 0.068718635, 0.99727315, 0, -0.99763435, 0.068743534, 0.82913303, 2.3022661, 0.14914513)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
-spot_range = 3.305
+spot_range = 3.0
 spot_attenuation = -5.05
 spot_angle = 69.87
 
@@ -237,7 +245,7 @@ omni_attenuation = 2.045
 [node name="FloorLight1" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=268463668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3883677, -0.25098002, 1.2133837)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.56
+light_energy = 5.0
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
@@ -245,7 +253,7 @@ omni_range = 4096.0
 [node name="FloorLight2" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=507289635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4199305, 1.1643976, 3.5883567)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.5
+light_energy = 3.6
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
@@ -281,6 +289,14 @@ light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=1207750661]
+transform = Transform3D(0.9996379, 0.001849785, 0.026844842, -0.026908496, 0.068718635, 0.99727315, 0, -0.99763435, 0.068743534, 3.0200553, 2.3022661, 0.14914513)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.1
+spot_range = 3.0
+spot_attenuation = -5.05
+spot_angle = 69.87
 
 [node name="ForeHallway" type="Node3D" parent="Rooms" unique_id=1385809275]
 metadata/_edit_group_ = true
@@ -738,7 +754,7 @@ reverb_vector = Vector4(0.3, 0, 0, 0.4)
 [node name="Aft4" parent="Rooms/AftHallway/PlayerPositions" unique_id=18470095 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, -3)
 fov = 70.0
-valid_neighbors = [NodePath("../Aft3")]
+valid_neighbors = [NodePath("../Aft3"), NodePath("../../../engine_core/PlayerPositions/Reactor0")]
 reverb_vector = Vector4(0.3, 0, 0, 0.4)
 
 [node name="Interactables" type="Node3D" parent="Rooms/AftHallway" unique_id=804026529]
@@ -829,17 +845,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41)
 
 [node name="Meshes" type="Node3D" parent="Rooms/engine_core" unique_id=1081458411]
 
-[node name="EngineCore" parent="Rooms/engine_core/Meshes" unique_id=190562707 instance=ExtResource("21_6oo1f")]
+[node name="EngineCore" parent="Rooms/engine_core/Meshes" unique_id=1677393632 instance=ExtResource("21_6oo1f")]
 
 [node name="PlayerPositions" type="Node3D" parent="Rooms/engine_core" unique_id=907889130]
 
-[node name="PlayerPos" parent="Rooms/engine_core/PlayerPositions" unique_id=1206691797 instance=ExtResource("7_ppnae")]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, 0)
+[node name="Reactor0" parent="Rooms/engine_core/PlayerPositions" unique_id=1206691797 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(1, 0, 0, 0, 0.96592575, 0.258819, 0, -0.258819, 0.96592575, 0, 1.6, 0)
 fov = 70.0
+valid_neighbors = [NodePath("../../Interactables/NoteObject"), NodePath("../../../AftHallway/PlayerPositions/Aft4")]
 
 [node name="Interactables" type="Node3D" parent="Rooms/engine_core" unique_id=534426049]
 
 [node name="CoreConsole" parent="Rooms/engine_core/Interactables" unique_id=1228444558 instance=ExtResource("21_r7isu")]
+
+[node name="NoteObject" parent="Rooms/engine_core/Interactables" unique_id=2100061089 instance=ExtResource("12_r7isu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.25881907, -0.67614806, 0, 0.9659258, 0.18117335, -0.3357846, 1, -0.903286)
+mesh = SubResource("PlaneMesh_r7isu")
+surface_material_override/0 = SubResource("StandardMaterial3D_m51dx")
+note_pages = Array[Texture2D]([ExtResource("24_o5cya")])
 
 [node name="Props" type="Node3D" parent="Rooms/engine_core" unique_id=1299089385]
 
@@ -1077,6 +1100,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -9)
 
 [node name="door_A" parent="Rooms/PortHydroponics/Props" unique_id=993415716 instance=ExtResource("3_uulq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -8)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=237612160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46.327015)
+stream = ExtResource("28_b7tif")
+attenuation_model = 1
+autoplay = true
 
 [editable path="Rooms/AirLock/PlayerPositions/ExternalZoomIn"]
 [editable path="Rooms/AirLock/PlayerPositions/InternalZoomIn"]

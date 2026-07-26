@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cepp3r5t1ivve"]
 
 [ext_resource type="Script" uid="uid://ibdfv2lfj4br" path="res://scenes/entities/Airlock/interactive_airvent.gd" id="1_ahjfp"]
-[ext_resource type="Material" uid="uid://vjnvigapxhee" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K.tres" id="2_hf7be"]
+[ext_resource type="Material" uid="uid://dyabxsxmcpnda" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K_light.tres" id="2_vyfop"]
 [ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="2_x7r0q"]
 [ext_resource type="Material" path="res://assets/Materials/Fabric039_2K-JPG/Fabric039_2K.tres" id="3_vyfop"]
 
@@ -80,7 +80,7 @@ script = ExtResource("1_ahjfp")
 [node name="airlockvent" type="MeshInstance3D" parent="." unique_id=949945031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1172137, 0, 4.0184326)
 mesh = SubResource("ArrayMesh_jxay3")
-surface_material_override/0 = ExtResource("2_hf7be")
+surface_material_override/0 = ExtResource("2_vyfop")
 
 [node name="jumpsuit_001" type="MeshInstance3D" parent="." unique_id=2020520611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1172137, 0, 4.0184326)

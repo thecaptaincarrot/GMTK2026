@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://rd05fycqtby3"]
 
+[ext_resource type="Script" uid="uid://blangpl4apajd" path="res://Meshes/ShipParts/ShipHull.gd" id="1_aljrr"]
 [ext_resource type="Material" uid="uid://vjnvigapxhee" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K.tres" id="1_rxis5"]
 [ext_resource type="Material" uid="uid://dkfaj3e562vn6" path="res://assets/Materials/RedEmission/RedEmissionMaterial.tres" id="2_aljrr"]
 
@@ -91,7 +92,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kmf5r")
 
-[node name="CentralHub" type="Node3D" unique_id=1891809910]
+[node name="CentralHub" type="Node3D" unique_id=1891809910 node_paths=PackedStringArray("lit_parts")]
+script = ExtResource("1_aljrr")
+lit_parts = [NodePath("hub_003")]
 
 [node name="hubwalk" type="MeshInstance3D" parent="." unique_id=1201370379]
 mesh = SubResource("ArrayMesh_a1dfa")

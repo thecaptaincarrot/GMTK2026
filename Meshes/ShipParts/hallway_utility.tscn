@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b37pfhfxkwjm6"]
 
+[ext_resource type="Script" uid="uid://blangpl4apajd" path="res://Meshes/ShipParts/ShipHull.gd" id="1_1dsm0"]
 [ext_resource type="Material" uid="uid://vjnvigapxhee" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K.tres" id="1_typsp"]
 [ext_resource type="Material" uid="uid://dkfaj3e562vn6" path="res://assets/Materials/RedEmission/RedEmissionMaterial.tres" id="2_1dsm0"]
 
@@ -179,7 +180,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1aai8")
 
-[node name="HallwayUtility" type="Node3D" unique_id=52641596]
+[node name="HallwayUtility" type="Node3D" unique_id=52641596 node_paths=PackedStringArray("lit_parts")]
+script = ExtResource("1_1dsm0")
+lit_parts = [NodePath("widehallway_008"), NodePath("widehallway_009")]
 
 [node name="widerail_002" type="MeshInstance3D" parent="." unique_id=581137162]
 mesh = SubResource("ArrayMesh_cyb0i")

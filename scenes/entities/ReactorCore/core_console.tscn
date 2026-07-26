@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://w12lobe4xf4q"]
 
 [ext_resource type="Material" uid="uid://vjnvigapxhee" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K.tres" id="1_j2y6g"]
+[ext_resource type="Script" uid="uid://dwjl8wjctumvv" path="res://scenes/entities/ReactorCore/core_console.gd" id="1_ynvyl"]
 [ext_resource type="Material" uid="uid://dkfaj3e562vn6" path="res://assets/Materials/RedEmission/RedEmissionMaterial.tres" id="2_o13u5"]
+[ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="4_hp2kf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr5ix"]
 
@@ -42,7 +44,11 @@ metadata/extras = {
 "targetNames": ["button"]
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oow3h"]
+size = Vector3(0.3713379, 0.20794678, 0.3536377)
+
 [node name="CoreConsole" type="Node3D" unique_id=1228444558]
+script = ExtResource("1_ynvyl")
 
 [node name="coreconsole_001" type="MeshInstance3D" parent="." unique_id=1174892679]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
@@ -50,3 +56,11 @@ mesh = SubResource("ArrayMesh_ni0fk")
 blend_shapes/button = 0.0
 surface_material_override/0 = ExtResource("1_j2y6g")
 surface_material_override/1 = ExtResource("2_o13u5")
+
+[node name="Interactable" type="Area3D" parent="." unique_id=1862438333]
+script = ExtResource("4_hp2kf")
+metadata/_custom_type_script = "uid://d73lxn1e6cxf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1939826683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007446289, 0.89785767, -0.835022)
+shape = SubResource("BoxShape3D_oow3h")
