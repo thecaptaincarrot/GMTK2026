@@ -525,13 +525,13 @@ reverb_vector = Vector4(0.7, 0, 0, 0.4)
 [node name="Hub4" parent="Rooms/Hub/PlayerPositions" unique_id=1155846147 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.1736482, 0, -0.1736482, 0.9848078, -4, 1.6, 0)
 fov = 70.0
-valid_neighbors = [NodePath("../Hub1")]
+valid_neighbors = [NodePath("../Hub1"), NodePath("../../../StarboardLab/PlayerPositions/LabPlayerPos")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Hub3" parent="Rooms/Hub/PlayerPositions" unique_id=148395974 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.1736482, -0.9848077, 0, 0.9848077, 0.1736482, 1, -2.070734e-09, 1.17437144e-08, 4, 1.6, 0)
 fov = 70.0
-valid_neighbors = [NodePath("../Hub1")]
+valid_neighbors = [NodePath("../Hub1"), NodePath("../../../PortHydroponics/PlayerPositions/HydroPlayerPos0")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Hub2" parent="Rooms/Hub/PlayerPositions" unique_id=253986496 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
@@ -951,6 +951,31 @@ surface_material_override/0 = ExtResource("2_uobhj")
 
 [node name="PlayerPositions" type="Node3D" parent="Rooms/StarboardLab" unique_id=1970730120]
 
+[node name="LabPlayerPos" parent="Rooms/StarboardLab/PlayerPositions" unique_id=60866739 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -2, 1.6, 0)
+fov = 70.0
+valid_neighbors = [NodePath("../../../Hub/PlayerPositions/Hub4"), NodePath("../LabPlayerPos2")]
+
+[node name="LabPlayerPos2" parent="Rooms/StarboardLab/PlayerPositions" unique_id=212241533 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, 0)
+fov = 70.0
+valid_neighbors = [NodePath("../LabPlayerPos4"), NodePath("../LabPlayerPos3")]
+
+[node name="LabPlayerPos4" parent="Rooms/StarboardLab/PlayerPositions" unique_id=469992334 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -4.5)
+fov = 70.0
+valid_neighbors = [NodePath("../LabPlayerPos5"), NodePath("../LabPlayerPos2")]
+
+[node name="LabPlayerPos5" parent="Rooms/StarboardLab/PlayerPositions" unique_id=1669920877 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -9.5)
+fov = 70.0
+valid_neighbors = [NodePath("../LabPlayerPos4")]
+
+[node name="LabPlayerPos3" parent="Rooms/StarboardLab/PlayerPositions" unique_id=1168150553 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, 4)
+fov = 70.0
+valid_neighbors = [NodePath("../LabPlayerPos2")]
+
 [node name="Interactables" type="Node3D" parent="Rooms/StarboardLab" unique_id=1151965141]
 
 [node name="Props" type="Node3D" parent="Rooms/StarboardLab" unique_id=1963313716]
@@ -1022,6 +1047,31 @@ mesh = SubResource("ArrayMesh_p73ix")
 surface_material_override/0 = ExtResource("2_uobhj")
 
 [node name="PlayerPositions" type="Node3D" parent="Rooms/PortHydroponics" unique_id=485719369]
+
+[node name="HydroPlayerPos0" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=1651397258 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(1.1924881e-08, 0.1736482, -0.9848077, 0, 0.9848077, 0.1736482, 1, -2.070734e-09, 1.17437144e-08, 2, 1.6, 0)
+fov = 70.0
+valid_neighbors = [NodePath("../../../Hub/PlayerPositions/Hub3"), NodePath("../HydroPlayerPos1")]
+
+[node name="HydroPlayerPos1" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=1864292003 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, 0)
+fov = 70.0
+valid_neighbors = [NodePath("../HydroPlayerPos0"), NodePath("."), NodePath("../HydroPlayerPos3")]
+
+[node name="HydroPlayerPos3" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=359925413 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, -4.5)
+fov = 70.0
+valid_neighbors = [NodePath("."), NodePath("../HydroPlayerPos2")]
+
+[node name="HydroPlayerPos4" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=905902517 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, -9.5)
+fov = 70.0
+valid_neighbors = [NodePath("../HydroPlayerPos3")]
+
+[node name="HydroPlayerPos2" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=1114109077 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
+transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, 4)
+fov = 70.0
+valid_neighbors = [NodePath("../HydroPlayerPos1")]
 
 [node name="Interactables" type="Node3D" parent="Rooms/PortHydroponics" unique_id=461452947]
 
