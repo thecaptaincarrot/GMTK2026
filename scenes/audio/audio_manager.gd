@@ -5,7 +5,7 @@ var QUEUED_SETUP_VECTOR = Vector4(0, 0, 0, 0)
 var TRANSITION_SPEED = 1
 
 func getReverb() -> AudioEffectReverb:
-	return AudioServer.get_bus_effect(2, 0)
+	return AudioServer.get_bus_effect(0, 0)
 
 func setReverb() -> void:
 	var reverb : AudioEffectReverb = getReverb()

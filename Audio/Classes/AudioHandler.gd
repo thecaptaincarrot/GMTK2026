@@ -48,7 +48,6 @@ func create_3D_audio_at_location(sound_posiition : Vector3, effect_id):
 			#TODO: Check if the sound is close enough to the player to matter
 			new_3d_player.position = sound_posiition
 			new_3d_player.stream = sound_effect_settings.sound_effect.pick_random()
-			new_3d_player.bus = "gameSfx"
 			new_3d_player.volume_db = sound_effect_settings.volume
 			new_3d_player.pitch_scale = sound_effect_settings.pitch_scale
 			new_3d_player.pitch_scale += randf_range(-sound_effect_settings.pitch_randomness, sound_effect_settings.pitch_randomness)
@@ -68,7 +67,6 @@ func create_audio(effect_id):
 			game_node.add_child(new_3d_player)
 			
 			#TODO: Check if the sound is close enough to the player to matter
-			new_3d_player.bus = "gameSfx"
 			new_3d_player.stream = sound_effect_settings.sound_effect.pick_random()
 			new_3d_player.volume_db = sound_effect_settings.volume
 			new_3d_player.pitch_scale = sound_effect_settings.pitch_scale
