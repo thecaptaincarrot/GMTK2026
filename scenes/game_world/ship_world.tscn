@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://be16gt551kc57" path="res://scenes/entities/Clutter/notebook.tscn" id="34_2sfaj"]
 [ext_resource type="PackedScene" uid="uid://4uey8qkq160u" path="res://scenes/entities/Clutter/pill.tscn" id="34_pdwea"]
 [ext_resource type="PackedScene" uid="uid://cbimq4byutr5f" path="res://scenes/entities/Clutter/papercrumbled.tscn" id="35_6r80u"]
+[ext_resource type="PackedScene" uid="uid://b48wrlof16tcd" path="res://scenes/entities/Clutter/binder.tscn" id="35_cjrt4"]
 [ext_resource type="PackedScene" uid="uid://cn34mny4mpguh" path="res://scenes/entities/Clutter/pencil.tscn" id="36_cjrt4"]
 [ext_resource type="PackedScene" uid="uid://b6g64dhhyts7f" path="res://scenes/entities/Clutter/radio.tscn" id="37_tp8qv"]
 [ext_resource type="PackedScene" uid="uid://chmeq0d8l8uxf" path="res://scenes/entities/Clutter/drinking_glass.tscn" id="38_l53td"]
@@ -514,6 +515,9 @@ transform = Transform3D(-0.99791825, 0.064490914, -2.8189928e-09, 0, -4.371139e-
 
 [node name="Pill2" parent="Rooms/ForeHallway/Props/WorkstationStarboard" unique_id=1808504058 instance=ExtResource("34_pdwea")]
 transform = Transform3D(-0.45332977, -0.8913428, 3.896182e-08, -2.2158236e-16, -4.371139e-08, -1, 0.8913428, -0.45332977, 1.9815676e-08, 1.5108337, 1.1783105, 0.37486458)
+
+[node name="Binder" parent="Rooms/ForeHallway/Props" unique_id=2130429766 instance=ExtResource("35_cjrt4")]
+transform = Transform3D(-0.033418, 0, 0.99944144, 0, 1, 0, -0.99944144, 0, -0.033418, -1.3499011, 1.1638266, -12.029545)
 
 [node name="Cockpit" type="Node3D" parent="Rooms" unique_id=613465786]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
