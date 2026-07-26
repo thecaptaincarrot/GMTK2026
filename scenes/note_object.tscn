@@ -6,10 +6,9 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_ndr5x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vrmjk"]
-size = Vector3(2.4033203, 0.16503906, 2.2561035)
+size = Vector3(2.403, 0.05, 2.256)
 
 [node name="NoteObject" type="MeshInstance3D" unique_id=527123681 node_paths=PackedStringArray("collision_area")]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, 0, 0)
 mesh = SubResource("PlaneMesh_ndr5x")
 script = ExtResource("1_wxw2t")
 collision_area = NodePath("Interactable/CollisionShape3D")

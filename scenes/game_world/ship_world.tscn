@@ -96,10 +96,10 @@ size = Vector3(0.33795166, 0.51013184, 0.16552734)
 size = Vector3(0.3633423, 0.49441528, 0.06762695)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_24u40"]
-size = Vector2(0.3, 0.25)
+size = Vector2(0.225, 0.25)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_e5r3p"]
-size = Vector2(0.39, 0.55)
+size = Vector2(0.45, 0.6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ym0q"]
 albedo_texture = ExtResource("42_nymwn")
@@ -111,10 +111,13 @@ size = Vector3(1.7744141, 1, 0.37695313)
 size = Vector3(0.3260498, 0.21450806, 0.2397461)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vlq3c"]
-size = Vector2(0.16, 0.18)
+size = Vector2(0.2, 0.215)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_adu1a"]
 albedo_texture = ExtResource("29_4n3uc")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4n3uc"]
+size = Vector2(0.26, 0.285)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbpnf"]
 albedo_texture = ExtResource("30_84ug1")
@@ -143,7 +146,7 @@ size = Vector2(0.4, 0.3)
 albedo_texture = ExtResource("29_tqfy2")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jdrh6"]
-size = Vector2(0.175, 0.2)
+size = Vector2(0.15, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykaxd"]
 albedo_texture = ExtResource("51_gbesj")
@@ -176,7 +179,7 @@ size = Vector2(0.27, 0.255)
 albedo_texture = ExtResource("77_vlq3c")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_r7isu"]
-size = Vector2(0.3, 0.25)
+size = Vector2(0.235, 0.21)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m51dx"]
 albedo_texture = ExtResource("24_o5cya")
@@ -256,7 +259,7 @@ shape = SubResource("BoxShape3D_ah6i4")
 [node name="Interactables" type="Node3D" parent="Rooms/AirLock" unique_id=265392305]
 
 [node name="AirlockNote" parent="Rooms/AirLock/Interactables" unique_id=527123681 instance=ExtResource("12_r7isu")]
-transform = Transform3D(0.5, 0, 0, 0, -4.3711385e-08, -0.7, 0, 0.99999994, -3.059797e-08, 1.939353, 0.86798555, -1.97697)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.939353, 0.86798555, -1.97697)
 mesh = SubResource("PlaneMesh_24u40")
 surface_material_override/0 = ExtResource("13_o5cya")
 note_pages = Array[Texture2D]([ExtResource("14_o75v3")])
@@ -280,7 +283,7 @@ door = NodePath("../../Meshes/InteriorDoor")
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.8369656, 1.055372, 1.3056929)
 
 [node name="BinderPage4" parent="Rooms/AirLock/Interactables" unique_id=973595616 instance=ExtResource("12_r7isu")]
-transform = Transform3D(0.0058243703, 0.999983, 2.1664853e-10, -0.51340497, 0.002990311, 0.85814124, 0.85812664, -0.0049981326, 0.51341367, 0.6035695, 0.6413177, -1.9692302)
+transform = Transform3D(0.005824371, 0.999983, 6.23055e-10, -0.51340497, 0.002990311, 0.85814124, 0.85812664, -0.0049981335, 0.51341367, 0.6035695, 0.6413177, -1.9692302)
 mesh = SubResource("PlaneMesh_e5r3p")
 surface_material_override/0 = SubResource("StandardMaterial3D_5ym0q")
 script = ExtResource("43_e5r3p")
@@ -491,8 +494,8 @@ requires_reactor = true
 note_pages = Array[Texture2D]([ExtResource("29_4n3uc")])
 
 [node name="NoteObject2" parent="Rooms/ForeHallway/Interactables" unique_id=1156171119 instance=ExtResource("12_r7isu")]
-transform = Transform3D(0.577761, 0, -0.81620604, 0, 1, 0, 0.81620604, 0, 0.577761, 1.2397133, 0.81048834, -11.670037)
-mesh = SubResource("PlaneMesh_vlq3c")
+transform = Transform3D(0.577761, 0, -0.81620604, 0, 1, 0, 0.81620604, 0, 0.577761, 1.2397133, 0.81048834, -11.747899)
+mesh = SubResource("PlaneMesh_4n3uc")
 surface_material_override/0 = SubResource("StandardMaterial3D_vbpnf")
 requires_reactor = true
 note_pages = Array[Texture2D]([ExtResource("30_84ug1")])
@@ -767,7 +770,7 @@ requires_reactor = true
 note_pages = Array[Texture2D]([ExtResource("42_nymwn"), ExtResource("43_ku064")])
 
 [node name="InitiaConsolelNote" parent="Rooms/Cockpit/Interactables" unique_id=1414651717 instance=ExtResource("12_r7isu")]
-transform = Transform3D(-1, -6.181724e-08, -6.181724e-08, 0, 0.70710677, -0.70710677, 8.742278e-08, -0.70710677, -0.70710677, 0, 1.2049671, 5.8595495)
+transform = Transform3D(-1, -1.06770166e-07, -1.06770145e-07, 0, 0.7071067, -0.7071068, 1.509958e-07, -0.7071068, -0.7071067, 0, 1.2049671, 5.8595495)
 mesh = SubResource("PlaneMesh_kygca")
 surface_material_override/0 = SubResource("StandardMaterial3D_0jorh")
 script = ExtResource("49_kygca")
@@ -1102,49 +1105,49 @@ requires_reactor = true
 note_pages = Array[Texture2D]([ExtResource("48_kupxs"), ExtResource("49_n0u37")])
 
 [node name="Card1" parent="Rooms/StarboardLab/Interactables" unique_id=745611370 instance=ExtResource("12_r7isu")]
-transform = Transform3D(-0.5242602, 0, -0.6788703, 0, 1.429, 0, 0.48471344, 0, -0.7342581, -3.2790375, 1.1980457, 3.5326376)
+transform = Transform3D(-0.7342581, 0, -0.6788704, 0, 1, 0, 0.6788704, 0, -0.7342581, -3.2790375, 1.1980457, 3.5326376)
 mesh = SubResource("PlaneMesh_jdrh6")
 surface_material_override/0 = SubResource("StandardMaterial3D_ykaxd")
 note_pages = Array[Texture2D]([ExtResource("51_gbesj")])
 
 [node name="Card2" parent="Rooms/StarboardLab/Interactables" unique_id=454455068 instance=ExtResource("12_r7isu")]
-transform = Transform3D(-0.2596346, 0, 0.9315418, 0, 1.429, 0, -0.6651209, 0, -0.3636339, -3.278738, 1.1980457, 3.7867212)
+transform = Transform3D(-0.36363387, 0, 0.931542, 0, 1, 0, -0.931542, 0, -0.36363387, -3.278738, 1.1980457, 3.7867212)
 mesh = SubResource("PlaneMesh_jdrh6")
 surface_material_override/0 = SubResource("StandardMaterial3D_4n3uc")
 note_pages = Array[Texture2D]([ExtResource("52_odxhr")])
 
 [node name="Card3" parent="Rooms/StarboardLab/Interactables" unique_id=974977030 instance=ExtResource("12_r7isu")]
-transform = Transform3D(-0.45858806, 0, 0.76646984, 0, 1.429, 0, -0.5472594, 0, -0.6422803, -3.2396278, 1.1980457, 3.9980679)
+transform = Transform3D(-0.6422803, 0, 0.76646984, 0, 1, 0, -0.76646984, 0, -0.6422803, -3.2396278, 1.1980457, 3.9980679)
 mesh = SubResource("PlaneMesh_jdrh6")
 surface_material_override/0 = SubResource("StandardMaterial3D_84ug1")
 note_pages = Array[Texture2D]([ExtResource("53_2e3r0")])
 
 [node name="Card4" parent="Rooms/StarboardLab/Interactables" unique_id=621308847 instance=ExtResource("12_r7isu")]
-transform = Transform3D(-0.703641, 0, 0.16972402, 0, 1.4290001, 0, -0.12118304, 0, -0.98549175, -3.235858, 1.1980457, 4.314247)
+transform = Transform3D(-0.98549163, 0, 0.16972418, 0, 1, 0, -0.16972418, 0, -0.98549163, -3.235858, 1.1980457, 4.314247)
 mesh = SubResource("PlaneMesh_jdrh6")
 surface_material_override/0 = SubResource("StandardMaterial3D_einr3")
 note_pages = Array[Texture2D]([ExtResource("54_4yj26")])
 
 [node name="Card5" parent="Rooms/StarboardLab/Interactables" unique_id=1392679940 instance=ExtResource("12_r7isu")]
-transform = Transform3D(-0.19027868, 0, -0.96383566, 0, 1.429, 0, 0.6881787, 0, -0.26649675, -3.3684177, 1.1980457, 4.529951)
+transform = Transform3D(-0.26649672, 0, -0.96383584, 0, 1, 0, 0.96383584, 0, -0.26649672, -3.3684177, 1.1980457, 4.529951)
 mesh = SubResource("PlaneMesh_jdrh6")
 surface_material_override/0 = SubResource("StandardMaterial3D_x87tr")
 note_pages = Array[Texture2D]([ExtResource("55_kygca")])
 
 [node name="Card6" parent="Rooms/StarboardLab/Interactables" unique_id=1098326159 instance=ExtResource("12_r7isu")]
-transform = Transform3D(0.15716895, 0, -0.9754716, 0, 1.429, 0, 0.6964868, 0, 0.22012459, -3.4778547, 1.1980457, 4.3218765)
+transform = Transform3D(0.22012454, 0, -0.9754718, 0, 1, 0, 0.9754718, 0, 0.22012454, -3.4778547, 1.1980457, 4.3218765)
 mesh = SubResource("PlaneMesh_jdrh6")
 surface_material_override/0 = SubResource("StandardMaterial3D_qs6eg")
 note_pages = Array[Texture2D]([ExtResource("56_0jorh")])
 
 [node name="Card7" parent="Rooms/StarboardLab/Interactables" unique_id=236030120 instance=ExtResource("12_r7isu")]
-transform = Transform3D(0.67493236, 0, 0.3262497, 0, 1.429, 0, -0.23294227, 0, 0.94528365, -3.4778547, 1.1980457, 4.0313377)
+transform = Transform3D(0.9452836, 0, 0.32624975, 0, 1, 0, -0.32624975, 0, 0.9452836, -3.4778547, 1.1980457, 4.0313377)
 mesh = SubResource("PlaneMesh_jdrh6")
 surface_material_override/0 = SubResource("StandardMaterial3D_wdvmb")
 note_pages = Array[Texture2D]([ExtResource("57_vlq3c")])
 
 [node name="Card8" parent="Rooms/StarboardLab/Interactables" unique_id=478745552 instance=ExtResource("12_r7isu")]
-transform = Transform3D(-0.4913275, 0, -0.7255837, 0, 1.429, 0, 0.51806676, 0, -0.68813384, -3.4778547, 1.1980457, 3.6498013)
+transform = Transform3D(-0.68813384, 0, -0.7255838, 0, 1, 0, 0.7255838, 0, -0.68813384, -3.4778547, 1.1980457, 3.6498013)
 mesh = SubResource("PlaneMesh_jdrh6")
 surface_material_override/0 = SubResource("StandardMaterial3D_pw7vy")
 note_pages = Array[Texture2D]([ExtResource("58_tqfy2")])
@@ -1369,7 +1372,7 @@ valid_neighbors = [NodePath("../HydroPlayerPos1")]
 [node name="Interactables" type="Node3D" parent="Rooms/PortHydroponics" unique_id=461452947]
 
 [node name="BinderPage2" parent="Rooms/PortHydroponics/Interactables" unique_id=1262218826 instance=ExtResource("12_r7isu")]
-transform = Transform3D(-9.9899104e-08, -1, -4.6645045e-08, -0.30891618, -1.3503155e-08, 0.95108926, -0.95108926, 1.0942237e-07, -0.30891618, 9.3709345, 1.015818, -5.2407)
+transform = Transform3D(-9.9899104e-08, -1, -4.6645027e-08, -0.30891606, -1.350315e-08, 0.9510893, -0.9510893, 1.09422366e-07, -0.30891606, 9.3709345, 1.015818, -5.2407)
 mesh = SubResource("PlaneMesh_e5r3p")
 surface_material_override/0 = SubResource("StandardMaterial3D_5ym0q")
 script = ExtResource("43_e5r3p")
@@ -1889,7 +1892,7 @@ valid_clickables = [NodePath("../../Interactables/CoreConsole"), NodePath("../..
 engine_core = NodePath("../../Meshes/EngineCore")
 
 [node name="NoteObject" parent="Rooms/engine_core/Interactables" unique_id=2100061089 instance=ExtResource("12_r7isu")]
-transform = Transform3D(0.5, 0, 0, 0, 0.25881907, -0.67614806, 0, 0.9659258, 0.18117335, -0.3357846, 1, -0.903286)
+transform = Transform3D(1, 0, 0, 0, 0.25881907, -0.9659258, 0, 0.9659258, 0.25881907, -0.3357846, 0.9561418, -0.903286)
 mesh = SubResource("PlaneMesh_r7isu")
 surface_material_override/0 = SubResource("StandardMaterial3D_m51dx")
 note_pages = Array[Texture2D]([ExtResource("24_o5cya")])
