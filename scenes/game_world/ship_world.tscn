@@ -1066,7 +1066,7 @@ valid_clickables = [NodePath("../../Interactables/DoorButton")]
 [node name="LabPlayerPos2" parent="Rooms/StarboardLab/PlayerPositions" unique_id=212241533 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, 0)
 fov = 70.0
-valid_neighbors = [NodePath("../LabPlayerPos4"), NodePath("../LabPlayerPos3")]
+valid_neighbors = [NodePath("../LabPlayerPos4"), NodePath("../LabPlayerPos3"), NodePath("../LabPlayerPos")]
 
 [node name="LabPlayerPos4" parent="Rooms/StarboardLab/PlayerPositions" unique_id=469992334 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -4.5)
@@ -1348,12 +1348,12 @@ valid_clickables = [NodePath("../../Interactables/DoorButton")]
 [node name="HydroPlayerPos1" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=1864292003 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, 0)
 fov = 70.0
-valid_neighbors = [NodePath("../HydroPlayerPos0"), NodePath("."), NodePath("../HydroPlayerPos3")]
+valid_neighbors = [NodePath("../HydroPlayerPos0"), NodePath("../HydroPlayerPos2"), NodePath("../HydroPlayerPos3")]
 
 [node name="HydroPlayerPos3" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=359925413 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, -4.5)
 fov = 70.0
-valid_neighbors = [NodePath("."), NodePath("../HydroPlayerPos2")]
+valid_neighbors = [NodePath("../HydroPlayerPos4"), NodePath("../HydroPlayerPos1")]
 
 [node name="HydroPlayerPos4" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=905902517 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, -9.5)
