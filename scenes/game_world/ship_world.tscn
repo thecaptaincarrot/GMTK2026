@@ -365,7 +365,6 @@ omni_range = 4096.0
 [node name="FloorLight5" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=1843279875]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5686836, -0.29814684, -0.11174035)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
-light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
@@ -1224,6 +1223,7 @@ transform = Transform3D(0.016370095, 0, 0.7498213, 0, 0.75000024, 0, -0.7498213,
 
 [node name="Cardworkstation" parent="Rooms/StarboardLab/Props" unique_id=2123760910 instance=ExtResource("27_d5xf3")]
 transform = Transform3D(0.016370095, 0, 0.7498213, 0, 0.75000024, 0, -0.7498213, 0, 0.016370095, -3.4081392, 0, 4.077009)
+metadata/_edit_group_ = true
 
 [node name="workstation2" parent="Rooms/StarboardLab/Props" unique_id=196383629 instance=ExtResource("27_d5xf3")]
 transform = Transform3D(-0.00128497, 0, 0.7499989, 0, 0.7500003, 0, -0.7499989, 0, -0.00128497, -3.3997478, 0, -5.624256)

@@ -20,5 +20,5 @@ func handle_interaction() -> void:
 
 
 func enable_collision():
-	if !Globals.notes_collected.has(binder_page):
+	if !Globals.notes_collected.has(binder_page) and Globals.reactor_started:
 		collision_area.disabled = false
