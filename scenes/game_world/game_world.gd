@@ -61,6 +61,7 @@ func load_room(path):
 	_active_room.game_world = self
 	if _player:
 		_player.game_room = _active_room
+	_active_room.game_ended.connect(main_scene.show_ending)
 	add_child(_active_room)
 
 
