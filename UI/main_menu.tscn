@@ -67,6 +67,12 @@ font_size = 64
 shadow_size = 24
 shadow_color = Color(0.27, 0.15750001, 0, 0.6745098)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ev3b6"]
+font = ExtResource("6_8ctay")
+font_size = 14
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_ev3b6"]
 resource_name = "EnterGame"
 tracks/0/type = "position_3d"
@@ -270,6 +276,20 @@ offset_bottom = 186.0
 grow_horizontal = 2
 text = "ADVENT HORIZON"
 label_settings = SubResource("LabelSettings_oow3h")
+
+[node name="Label2" type="Label" parent="." unique_id=693785542]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_top = 938.0
+offset_right = 764.0
+offset_bottom = 1015.0
+grow_horizontal = 2
+text = "May take a little extra time to load  in browser"
+label_settings = SubResource("LabelSettings_ev3b6")
+horizontal_alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="." unique_id=418218202]
 layout_mode = 1

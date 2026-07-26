@@ -1045,7 +1045,7 @@ valid_clickables = [NodePath("../../Interactables/DoorButton")]
 [node name="LabPlayerPos2" parent="Rooms/StarboardLab/PlayerPositions" unique_id=212241533 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, 0)
 fov = 70.0
-valid_neighbors = [NodePath("../LabPlayerPos4"), NodePath("../LabPlayerPos3")]
+valid_neighbors = [NodePath("../LabPlayerPos4"), NodePath("../LabPlayerPos3"), NodePath("../LabPlayerPos")]
 
 [node name="LabPlayerPos4" parent="Rooms/StarboardLab/PlayerPositions" unique_id=469992334 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -4.5)
@@ -1315,6 +1315,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -19)
 [node name="Meshes" type="Node3D" parent="Rooms/PortHydroponics" unique_id=375274194]
 
 [node name="PortWing" parent="Rooms/PortHydroponics/Meshes" unique_id=1706417176 instance=ExtResource("23_o75v3")]
+visible = false
 
 [node name="PlayerPositions" type="Node3D" parent="Rooms/PortHydroponics" unique_id=485719369]
 
@@ -1327,12 +1328,13 @@ valid_clickables = [NodePath("../../Interactables/DoorButton")]
 [node name="HydroPlayerPos1" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=1864292003 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, 0)
 fov = 70.0
-valid_neighbors = [NodePath("../HydroPlayerPos0"), NodePath("."), NodePath("../HydroPlayerPos3")]
+valid_neighbors = [NodePath("../HydroPlayerPos0"), NodePath("../HydroPlayerPos2"), NodePath("../HydroPlayerPos3")]
 
-[node name="HydroPlayerPos3" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=359925413 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
-transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, -4.5)
+[node name="HydroPlayerPos3" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=359925413 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
+transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 5.9906425, 1.6, -4.5)
 fov = 70.0
-valid_neighbors = [NodePath("."), NodePath("../HydroPlayerPos2")]
+valid_neighbors = [NodePath("../HydroPlayerPos4"), NodePath("../HydroPlayerPos1")]
+valid_clickables = [NodePath("../../Interactables/BinderPage2")]
 
 [node name="HydroPlayerPos4" parent="Rooms/PortHydroponics/PlayerPositions" unique_id=905902517 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1.1924881e-08, 0.17364821, -0.9848078, 0, 0.9848078, 0.17364821, 1, -2.0707343e-09, 1.1743715e-08, 6, 1.6, -9.5)
@@ -1930,7 +1932,6 @@ omni_range = 2.0
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1519510321]
 
 [node name="BinderButton" type="TextureButton" parent="CanvasLayer" unique_id=778099098]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
