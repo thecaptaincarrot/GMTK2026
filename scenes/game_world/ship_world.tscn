@@ -1959,7 +1959,7 @@ shadow_blur = 0.853
 omni_range = 4096.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Rooms/engine_core/Props/Emergency_Lights" unique_id=1425713751]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8622166, -41.781425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2956226, 0.9507842, -41.781425)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.2
 omni_range = 2.0
