@@ -27,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://cugp0ssk0r5pi" path="res://Meshes/ShipParts/engine_core.tscn" id="21_6oo1f"]
 [ext_resource type="PackedScene" uid="uid://w12lobe4xf4q" path="res://scenes/entities/ReactorCore/core_console.tscn" id="21_r7isu"]
 [ext_resource type="Texture2D" uid="uid://buv21gweja60m" path="res://assets/notes/storynotereactor.png" id="24_o5cya"]
-[ext_resource type="AudioStream" uid="uid://bejo77vn402rd" path="res://Audio/ReactorSounds/reactor loop.wav" id="28_b7tif"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_df53p"]
 size = Vector3(0.33795166, 0.51013184, 0.16552734)
@@ -856,7 +855,8 @@ valid_neighbors = [NodePath("../../Interactables/NoteObject"), NodePath("../../.
 
 [node name="Interactables" type="Node3D" parent="Rooms/engine_core" unique_id=534426049]
 
-[node name="CoreConsole" parent="Rooms/engine_core/Interactables" unique_id=1228444558 instance=ExtResource("21_r7isu")]
+[node name="CoreConsole" parent="Rooms/engine_core/Interactables" unique_id=1228444558 node_paths=PackedStringArray("engine_core") instance=ExtResource("21_r7isu")]
+engine_core = NodePath("../../Meshes/EngineCore")
 
 [node name="NoteObject" parent="Rooms/engine_core/Interactables" unique_id=2100061089 instance=ExtResource("12_r7isu")]
 transform = Transform3D(0.5, 0, 0, 0, 0.25881907, -0.67614806, 0, 0.9659258, 0.18117335, -0.3357846, 1, -0.903286)
@@ -1100,12 +1100,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -9)
 
 [node name="door_A" parent="Rooms/PortHydroponics/Props" unique_id=993415716 instance=ExtResource("3_uulq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -8)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=237612160]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46.327015)
-stream = ExtResource("28_b7tif")
-attenuation_model = 1
-autoplay = true
 
 [editable path="Rooms/AirLock/PlayerPositions/ExternalZoomIn"]
 [editable path="Rooms/AirLock/PlayerPositions/InternalZoomIn"]

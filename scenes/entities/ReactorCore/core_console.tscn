@@ -57,8 +57,9 @@ blend_shapes/button = 0.0
 surface_material_override/0 = ExtResource("1_j2y6g")
 surface_material_override/1 = ExtResource("2_o13u5")
 
-[node name="Interactable" type="Area3D" parent="." unique_id=1862438333]
+[node name="Interactable" type="Area3D" parent="." unique_id=1862438333 node_paths=PackedStringArray("interactee")]
 script = ExtResource("4_hp2kf")
+interactee = NodePath("..")
 metadata/_custom_type_script = "uid://d73lxn1e6cxf"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1939826683]

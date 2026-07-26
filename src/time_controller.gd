@@ -5,6 +5,7 @@ class_name TimeController
 var time_multiplier: float = 1
 var start_time_ms: int
 var current_time_ms: float 
+var current_ticks_ms: float
 var default_time_pattern: String = "%04d-%02d-%02d %02d:%02d:%02d"
 var hour_only_time_pattern: String = "%02d:%02d:%02d"
 var started = false
@@ -21,6 +22,8 @@ func _physics_process(delta: float) -> void:
 		return
 	var ms_delta: float = delta * 1000
 	current_time_ms += ms_delta * time_multiplier
+	current_ticks_ms += ms_delta * time_multiplier
+	
 
 func set_time_multiplier(value) -> void:
 	self.time_multiplier = value
