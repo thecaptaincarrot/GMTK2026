@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://bxmq374dm7fd6"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_mkbmu"]
+[ext_resource type="AudioStream" uid="uid://5cscr4ah1rqk" path="res://Audio/RawSounds/computer power down.wav" id="2_3vfbd"]
+
+[resource]
+script = ExtResource("1_mkbmu")
+ID = "ComputerOff"
+limit = 1
+sound_effect = Array[AudioStream]([ExtResource("2_3vfbd")])
+metadata/_custom_type_script = "uid://b7fou07k713y"

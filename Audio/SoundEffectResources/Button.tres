@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://dyqbrmdhdl5b4"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_8v5j3"]
+[ext_resource type="AudioStream" uid="uid://bp8lvo4ckcvh0" path="res://Audio/RawSounds/button press.wav" id="2_uqt7c"]
+
+[resource]
+script = ExtResource("1_8v5j3")
+ID = "Button"
+limit = 2
+sound_effect = Array[AudioStream]([ExtResource("2_uqt7c")])
+metadata/_custom_type_script = "uid://b7fou07k713y"

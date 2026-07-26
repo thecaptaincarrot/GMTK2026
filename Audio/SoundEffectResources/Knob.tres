@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://bh0ogrd2iurys"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_gl20i"]
+[ext_resource type="AudioStream" uid="uid://bpwgl241oaxrg" path="res://Audio/RawSounds/mechanical knob.wav" id="2_gyp1n"]
+
+[resource]
+script = ExtResource("1_gl20i")
+ID = "Knob"
+limit = 2
+sound_effect = Array[AudioStream]([ExtResource("2_gyp1n")])
+metadata/_custom_type_script = "uid://b7fou07k713y"

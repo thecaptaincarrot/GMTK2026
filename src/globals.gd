@@ -8,6 +8,9 @@ extends Node
 @onready var cursor_right_arrow = preload("res://assets/cursor_right.png")
 @onready var cursor_backwards_arrow = preload("res://assets/cursor_back.png")
 
+@onready var active_material = load("res://assets/Materials/RedEmission/RedEmissionMaterial.tres")
+@onready var inactive_material = load("res://assets/Materials/RedEmission/RedOffMaterial.tres")
+
 signal rotation_control_update
 signal zoom_change
 
@@ -15,6 +18,7 @@ var message_bus: MessageBus = MessageBus.create()
 
 var _player: PlayerController
 var hud_controller: HudController
+var time_controller: TimeController
 
 var should_tween:bool = true
 
@@ -25,10 +29,20 @@ var _active_note_pages: Array[Texture2D]
 
 var _zoomed_in:bool = false
 
+var reactor_started = false
+signal reactor_started_signal
+
 func _ready():
 	Input.set_custom_mouse_cursor(Globals.cursor_default_arrow)
+
+	# Hud Controller
 	hud_controller = HudController.new()
 	add_child(hud_controller)
+
+	# Time Controller
+	time_controller = TimeController.new()
+	add_child(time_controller)
+
 
 func set_player(p: PlayerController) -> void:
 	_player = p
@@ -67,3 +81,5 @@ func set_active_note(note_pages: Array[Texture2D]) -> void:
 
 func get_active_note() -> Array[Texture2D]:
 	return _active_note_pages
+
+# Time

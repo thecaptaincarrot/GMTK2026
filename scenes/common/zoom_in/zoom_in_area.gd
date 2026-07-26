@@ -38,7 +38,7 @@ func handle_interaction() -> void:
 	assert(Globals.get_last_position() != null, "zoom in menu needs a position to return to")
 	assert(Globals.get_last_position().valid_neighbors.has(self), "last position must be one that gives access to current zoom menu")
 
-	var player = Globals.get_player()
+	var player: PlayerController = Globals.get_player()
 	Globals.hud_controller.set_hud(HudController.HudState.ZOOMED_IN)
 	
 	_stored_last_yaw = player.global_rotation.y

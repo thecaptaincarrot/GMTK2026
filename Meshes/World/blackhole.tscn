@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bh67ed4x1sdlx"]
+
+[ext_resource type="Shader" uid="uid://0iri3rtgna06" path="res://Meshes/World/blackhole.gdshader" id="1_hvh6n"]
+[ext_resource type="Texture2D" uid="uid://bcsuseynh0l73" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K-JPG_Color.jpg" id="2_w10yu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_st70h"]
+radius = 5.0
+height = 4.0
+
+[sub_resource type="Texture2DArrayRD" id="Texture2DArrayRD_0aa14"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7522t"]
+render_priority = 0
+shader = ExtResource("1_hvh6n")
+shader_parameter/radius = 8.0
+shader_parameter/noise = ExtResource("2_w10yu")
+shader_parameter/skybox = SubResource("Texture2DArrayRD_0aa14")
+
+[node name="Blackhole" type="MeshInstance3D" unique_id=118774140]
+mesh = SubResource("SphereMesh_st70h")
+surface_material_override/0 = SubResource("ShaderMaterial_7522t")

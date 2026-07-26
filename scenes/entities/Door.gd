@@ -8,16 +8,27 @@ class_name Door
 
 var _is_open = false
 
+@export var start_open = false
+
 #TODO: Doors should close when you travel to a new location
+func _ready():
+	if start_open:
+		_is_open = true
+		right_door.position = Vector3(0.8,0.0,0.0)
+		left_door.position = Vector3(-0.8,0.0,0.0)
+		mouse_eater.disabled = true
+		
+		Globals.reactor_started_signal.connect(close_door)
+
 
 func open_door():
 	var new_tween = create_tween()
 	new_tween.set_parallel()
-	new_tween.tween_property(right_door,"position", Vector3(0.8,0.0,0.0), 0.2)
-	new_tween.tween_property(left_door,"position", Vector3(-0.8,0.0,0.0), 0.2)
+	new_tween.tween_property(right_door,"position", Vector3(0.8,0.0,0.0), 0.4)
+	new_tween.tween_property(left_door,"position", Vector3(-0.8,0.0,0.0), 0.4)
 	
 	#TODO: Play sound effect
-	
+	AudioPlayer.create_audio("DoorOpen")
 	#Disable mouse eater area
 	mouse_eater.disabled = true
 	
@@ -27,10 +38,10 @@ func open_door():
 func  close_door():
 	var new_tween = create_tween()
 	new_tween.set_parallel()
-	new_tween.tween_property(right_door,"position", Vector3(0.0,0.0,0.0), 0.2)
-	new_tween.tween_property(left_door,"position", Vector3(0.0,0.0,0.0), 0.2)
+	new_tween.tween_property(right_door,"position", Vector3(0.0,0.0,0.0), 0.6)
+	new_tween.tween_property(left_door,"position", Vector3(0.0,0.0,0.0), 0.6)
 	#TODO: Play sound effect
-	
+	AudioPlayer.create_audio("DoorClose")
 	#Enable mouse eater area
 	mouse_eater.disabled = false
 	

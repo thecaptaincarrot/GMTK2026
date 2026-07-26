@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://dvn4xn3vwdf5i"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_5qops"]
+[ext_resource type="AudioStream" uid="uid://ckdq840e8spu7" path="res://Audio/RawSounds/Door close v2.wav" id="2_oeb7x"]
+
+[resource]
+script = ExtResource("1_5qops")
+ID = "DoorClose"
+sound_effect = Array[AudioStream]([ExtResource("2_oeb7x")])
+volume = -10
+metadata/_custom_type_script = "uid://b7fou07k713y"

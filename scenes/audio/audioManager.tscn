@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://cw4q34dr3lqf6" path="res://scenes/audio/audio_manager.gd" id="1_f3fvy"]
 
-[node name="AudioManager" type="Node2D" unique_id=1576501842]
+[node name="AudioManager" type="Node" unique_id=1469734791]
 script = ExtResource("1_f3fvy")

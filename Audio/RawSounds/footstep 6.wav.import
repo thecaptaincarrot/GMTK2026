@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cn1wjhv6xeror"
+path="res://.godot/imported/footstep 6.wav-6024dc491c23ec3f04ec735f7236ccba.sample"
+
+[deps]
+
+source_file="res://Audio/RawSounds/footstep 6.wav"
+dest_files=["res://.godot/imported/footstep 6.wav-6024dc491c23ec3f04ec735f7236ccba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

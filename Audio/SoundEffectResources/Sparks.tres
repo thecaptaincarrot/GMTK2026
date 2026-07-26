@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://ckumtx18bowed"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_1wrnp"]
+[ext_resource type="AudioStream" uid="uid://b4yxcdqx30lwm" path="res://Audio/RawSounds/fail sparks.wav" id="2_7nmsc"]
+
+[resource]
+script = ExtResource("1_1wrnp")
+ID = "Sparks"
+sound_effect = Array[AudioStream]([ExtResource("2_7nmsc")])
+metadata/_custom_type_script = "uid://b7fou07k713y"
