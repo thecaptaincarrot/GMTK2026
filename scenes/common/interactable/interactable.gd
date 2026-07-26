@@ -32,6 +32,7 @@ func _on_mouse_exited() -> void:
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event.is_action_pressed("mouse_interact"):
 		interactee.handle_interaction()
+	
 
 
 func disable_collision():

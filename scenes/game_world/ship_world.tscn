@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://5aqsg2k302h" path="res://Meshes/ShipParts/cockpit.tscn" id="17_fhuqd"]
 [ext_resource type="PackedScene" uid="uid://bl2sv8nsprf06" path="res://Meshes/Props/Hydroponics/hydroponics_tray.glb" id="17_kqbjw"]
 [ext_resource type="PackedScene" uid="uid://bfkjok8884p2g" path="res://Meshes/Props/Hydroponics/hydroponics_tank.glb" id="18_6vmy0"]
-[ext_resource type="PackedScene" uid="uid://dfqj0k2v2d51f" path="res://Meshes/Interactives/CommandConsole/mainconsole.tscn" id="19_uobhj"]
+[ext_resource type="PackedScene" uid="uid://cs8idy4maehak" path="res://scenes/entities/Cockpit/main_console.tscn" id="20_b7tif"]
 [ext_resource type="PackedScene" uid="uid://rd05fycqtby3" path="res://Meshes/ShipParts/central_hub.tscn" id="20_bp48q"]
 [ext_resource type="PackedScene" uid="uid://cugp0ssk0r5pi" path="res://Meshes/ShipParts/engine_core.tscn" id="21_6oo1f"]
 [ext_resource type="PackedScene" uid="uid://w12lobe4xf4q" path="res://scenes/entities/ReactorCore/core_console.tscn" id="21_r7isu"]
@@ -381,8 +381,8 @@ valid_clickables = [NodePath("../CockpitZoomIn")]
 reverb_vector = Vector4(0.3, 0, 0, 0.1)
 
 [node name="CockpitZoomIn" parent="Rooms/Cockpit/PlayerPositions" unique_id=146520815 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("6_6vmy0")]
-transform = Transform3D(-1, -6.381359e-08, 1.3684866e-07, 0, 0.9063077, 0.4226183, -1.509958e-07, 0.4226183, -0.9063077, 0, 1.9066312, 3.9285212)
-fov = 105.0
+transform = Transform3D(-1, -6.3813594e-08, 1.3684867e-07, 3.495671e-08, 0.7838467, 0.6209544, -1.4689371e-07, 0.6209544, -0.7838467, 0, 1.9066312, 4.033926)
+fov = 100.0
 valid_neighbors = [NodePath("../KnobZoomIn")]
 
 [node name="KnobZoomIn" parent="Rooms/Cockpit/PlayerPositions" unique_id=356765283 instance=ExtResource("6_6vmy0")]
@@ -395,8 +395,8 @@ shape = SubResource("BoxShape3D_j3pel")
 
 [node name="Interactables" type="Node3D" parent="Rooms/Cockpit" unique_id=1033844891]
 
-[node name="Mainconsole" parent="Rooms/Cockpit/Interactables" unique_id=653524709 instance=ExtResource("19_uobhj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 6)
+[node name="console" parent="Rooms/Cockpit/Interactables" unique_id=1216315534 instance=ExtResource("20_b7tif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11201298, 5.5877457)
 
 [node name="Props" type="Node3D" parent="Rooms/Cockpit" unique_id=310254450]
 
@@ -1265,6 +1265,8 @@ light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
+
+[connection signal="disable_cockpit" from="." to="Rooms/Cockpit/Interactables/console" method="_on_ship_world_disable_cockpit"]
 
 [editable path="Rooms/AirLock/PlayerPositions/ExternalZoomIn"]
 [editable path="Rooms/AirLock/PlayerPositions/InternalZoomIn"]

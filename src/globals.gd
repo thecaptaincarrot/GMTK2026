@@ -11,6 +11,8 @@ extends Node
 @onready var active_material = load("res://assets/Materials/RedEmission/RedEmissionMaterial.tres")
 @onready var half_active_material = load("res://assets/Materials/RedEmission/HalfEmissionMaterial.tres")
 @onready var inactive_material = load("res://assets/Materials/RedEmission/RedOffMaterial.tres")
+@onready var console_off_material = load("res://scenes/entities/Cockpit/ConsoleOffMaterial.tres")
+@onready var console_on_material = load("res://scenes/entities/Cockpit/ConsoleOnMaterial.tres")
 
 signal rotation_control_update
 signal zoom_change
