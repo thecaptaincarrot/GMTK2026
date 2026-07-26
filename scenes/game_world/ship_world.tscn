@@ -1932,6 +1932,7 @@ omni_range = 2.0
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1519510321]
 
 [node name="BinderButton" type="TextureButton" parent="CanvasLayer" unique_id=778099098]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
