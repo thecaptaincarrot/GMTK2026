@@ -331,6 +331,7 @@ omni_attenuation = 2.045
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3883677, -0.25098002, 1.2133837)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 5.0
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -345,6 +346,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4133625, -0.29814684, -1.6822808)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
@@ -359,6 +361,7 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5686836, -0.29814684, -0.11174035)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
+shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
 
