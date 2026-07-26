@@ -298,6 +298,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.82
 electrical_fault = true
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/AirLock/Props" unique_id=62394747]
+visible = false
 script = ExtResource("15_r7isu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/AirLock/Props/Reactor_Lights" unique_id=903583249]
@@ -377,7 +378,7 @@ omni_range = 4096.0
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=1207750661]
 transform = Transform3D(0.9996379, 0.001849785, 0.026844842, -0.026908496, 0.068718635, 0.99727315, 0, -0.99763435, 0.068743534, 3.0200553, 2.3022661, 0.14914513)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
-light_energy = 0.1
+light_energy = 0.08
 spot_range = 3.0
 spot_attenuation = -5.05
 spot_angle = 69.87
