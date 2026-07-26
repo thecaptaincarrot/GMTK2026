@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://swrm1sfv2jq2" path="res://scenes/entities/Cockpit/throttle_interactee.gd" id="15_s66tk"]
 [ext_resource type="Script" uid="uid://cq7cfi7bb28ap" path="res://scenes/entities/Cockpit/console_switch_board.gd" id="16_5e3yl"]
 [ext_resource type="Script" uid="uid://cpa8ew042ddwl" path="res://scenes/entities/Cockpit/switches.gd" id="17_gwe3i"]
+[ext_resource type="AudioStream" uid="uid://ckqgthsr0cf3i" path="res://Audio/RawSounds/main engine firing v2.wav" id="22_piioq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kuu2o"]
 
@@ -1414,12 +1415,14 @@ mesh = SubResource("ArrayMesh_w34sa")
 surface_material_override/0 = ExtResource("1_85v5r")
 surface_material_override/1 = ExtResource("2_07xtq")
 
-[node name="throttle_interactee" type="Node3D" parent="." unique_id=358616874 node_paths=PackedStringArray("switches", "knobs", "indicator")]
+[node name="throttle_interactee" type="Node3D" parent="." unique_id=358616874 node_paths=PackedStringArray("switches", "knobs", "indicator", "ending_sound", "cover_rect")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8259141, 0.89219844, -0.45458287)
 script = ExtResource("15_s66tk")
 switches = NodePath("../switch_board")
 knobs = NodePath("../knob_board")
 indicator = NodePath("../PositionIndicator")
+ending_sound = NodePath("../EndingEngine")
+cover_rect = NodePath("../CanvasLayer/ColorRect")
 metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
 
 [node name="throttle" type="MeshInstance3D" parent="throttle_interactee" unique_id=1326178120]
@@ -1595,8 +1598,21 @@ shape = SubResource("BoxShape3D_8fnnm")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=143802548]
 
+[node name="EndingEngine" type="AudioStreamPlayer" parent="." unique_id=1793873288]
+stream = ExtResource("22_piioq")
+volume_db = -10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=88020883]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1404414378]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
 [connection signal="interacted_with" from="console_control/left_control" to="console_control" method="_on_left_control_interacted_with"]
 [connection signal="interacted_with" from="console_control/right_control" to="console_control" method="_on_right_control_interacted_with"]
+[connection signal="game_end_lockout" from="throttle_interactee" to="CrashTimer" method="_on_throttle_interactee_game_end_lockout"]
 [connection signal="interacted_with" from="switch_board/switches/LeftSwitchInteractee" to="switch_board/switches" method="_on_left_switch_interactee_interacted_with"]
 [connection signal="interacted_with" from="switch_board/switches/RightSwitchInteractee" to="switch_board/switches" method="_on_right_switch_interactee_interacted_with"]
 [connection signal="interacted_with" from="switch_board/switches2/LeftSwitchInteractee" to="switch_board/switches2" method="_on_left_switch_interactee_interacted_with"]

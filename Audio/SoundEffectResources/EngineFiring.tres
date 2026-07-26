@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://bk1c5ecmbirou"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_7is88"]
+
+[resource]
+script = ExtResource("1_7is88")
+metadata/_custom_type_script = "uid://b7fou07k713y"

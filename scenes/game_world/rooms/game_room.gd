@@ -111,3 +111,11 @@ func get_all_zoom_in() -> Array[ZoomIn]:
 			if zoom_in is ZoomIn:
 				zoom_ins.append(zoom_in)
 	return zoom_ins
+
+
+func _on_throttle_interactee_game_end_lockout():
+	pass # Replace with function body.
+
+
+func _on_throttle_interactee_game_won():
+	game_world.main_scene.show_ending()

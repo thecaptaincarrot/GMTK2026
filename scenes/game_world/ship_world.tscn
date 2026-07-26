@@ -29,7 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://rd05fycqtby3" path="res://Meshes/ShipParts/central_hub.tscn" id="20_bp48q"]
 [ext_resource type="PackedScene" uid="uid://cugp0ssk0r5pi" path="res://Meshes/ShipParts/engine_core.tscn" id="21_6oo1f"]
 [ext_resource type="Script" uid="uid://d73lxn1e6cxf" path="res://scenes/common/interactable/interactable.gd" id="21_55vra"]
-[ext_resource type="Material" uid="uid://dkfaj3e562vn6" path="res://assets/Materials/RedEmission/RedEmissionMaterial.tres" id="21_o75v3"]
 [ext_resource type="PackedScene" uid="uid://w12lobe4xf4q" path="res://scenes/entities/ReactorCore/core_console.tscn" id="21_r7isu"]
 [ext_resource type="FontFile" uid="uid://du4hox3ojhk4e" path="res://assets/Fonts/Kishi.ttf" id="22_55vra"]
 [ext_resource type="Script" uid="uid://c3670su8mhy77" path="res://scenes/entities/Cockpit/special_computer_light.gd" id="22_b4dks"]
@@ -661,7 +660,76 @@ shape = SubResource("BoxShape3D_gyp1n")
 
 [node name="console" parent="Rooms/Cockpit/Interactables" unique_id=1216315534 instance=ExtResource("20_b7tif")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11201298, 5.5877457)
-surface_material_override/1 = ExtResource("21_o75v3")
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="clockhand_hour" parent="Rooms/Cockpit/Interactables/console/console_clock" parent_id_path=PackedInt32Array(1216315534, 2080659860) index="0" unique_id=1601494169]
+surface_material_override/0 = null
+
+[node name="clockhand_minute" parent="Rooms/Cockpit/Interactables/console/console_clock" parent_id_path=PackedInt32Array(1216315534, 2080659860) index="1" unique_id=531871142]
+surface_material_override/0 = null
+
+[node name="analogue_indicators" parent="Rooms/Cockpit/Interactables/console/console_clock" parent_id_path=PackedInt32Array(1216315534, 2080659860) index="2" unique_id=616218130]
+surface_material_override/0 = null
+
+[node name="clockwidget" parent="Rooms/Cockpit/Interactables/console/console_clock" parent_id_path=PackedInt32Array(1216315534, 2080659860) index="3" unique_id=1691199239]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="control_mesh" parent="Rooms/Cockpit/Interactables/console/console_control" parent_id_path=PackedInt32Array(1216315534, 1700813627) index="0" unique_id=1897538274]
+surface_material_override/0 = null
+
+[node name="crashwidget" parent="Rooms/Cockpit/Interactables/console/CrashTimer" parent_id_path=PackedInt32Array(1216315534, 1702524440) index="0" unique_id=1137390398]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="crashwidget_001" parent="Rooms/Cockpit/Interactables/console/PositionIndicator" parent_id_path=PackedInt32Array(1216315534, 552807797) index="0" unique_id=1781112208]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="knobwidget" parent="Rooms/Cockpit/Interactables/console/knob_board" parent_id_path=PackedInt32Array(1216315534, 521512295) index="1" unique_id=38076932]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="knob" parent="Rooms/Cockpit/Interactables/console/knob_board/knobwidget/Knob1" parent_id_path=PackedInt32Array(1216315534, 1500618561) index="2" unique_id=1687870147]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="knob" parent="Rooms/Cockpit/Interactables/console/knob_board/knobwidget/Knob2" parent_id_path=PackedInt32Array(1216315534, 1731932532) index="2" unique_id=1289069785]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="knob" parent="Rooms/Cockpit/Interactables/console/knob_board/knobwidget/Knob3" parent_id_path=PackedInt32Array(1216315534, 1448560428) index="2" unique_id=1854268763]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="knob" parent="Rooms/Cockpit/Interactables/console/knob_board/knobwidget/Knob4" parent_id_path=PackedInt32Array(1216315534, 1579632209) index="2" unique_id=222321380]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="throttle" parent="Rooms/Cockpit/Interactables/console/throttle_interactee" parent_id_path=PackedInt32Array(1216315534, 358616874) index="0" unique_id=1326178120]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
+[node name="switchboard" parent="Rooms/Cockpit/Interactables/console/switch_board/switches" parent_id_path=PackedInt32Array(1216315534, 153401481) index="0" unique_id=39148821]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="switchboard" parent="Rooms/Cockpit/Interactables/console/switch_board/switches2" parent_id_path=PackedInt32Array(1216315534, 1034547602) index="0" unique_id=1509135742]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="switchboard" parent="Rooms/Cockpit/Interactables/console/switch_board/switches3" parent_id_path=PackedInt32Array(1216315534, 171717939) index="0" unique_id=1529326809]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+
+[node name="switchboard" parent="Rooms/Cockpit/Interactables/console/switch_board/switches4" parent_id_path=PackedInt32Array(1216315534, 1912267390) index="0" unique_id=59224430]
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
 
 [node name="BinderPage1" parent="Rooms/Cockpit/Interactables" unique_id=570141077 instance=ExtResource("12_r7isu")]
 transform = Transform3D(-0.89861405, 0.09097962, 0.42920336, 0.0032482015, 0.9796163, -0.20085174, -0.438728, -0.17909406, -0.88059247, -0.90466624, 0.98943496, 5.7464495)
@@ -955,7 +1023,7 @@ valid_neighbors = [NodePath("../LabPlayerPos4"), NodePath("../LabPlayerPos3")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -4.5)
 fov = 70.0
 valid_neighbors = [NodePath("../LabPlayerPos5"), NodePath("../LabPlayerPos2")]
-valid_clickables = [NodePath("")]
+valid_clickables = [null]
 
 [node name="LabPlayerPos5" parent="Rooms/StarboardLab/PlayerPositions" unique_id=1669920877 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -9.5)
@@ -1783,6 +1851,8 @@ script = ExtResource("58_pdwea")
 
 [connection signal="disable_cockpit" from="." to="Rooms/Cockpit/Interactables/console" method="_on_ship_world_disable_cockpit"]
 [connection signal="interacted_with" from="Rooms/ForeHallway/Interactables/research_binder" to="CanvasLayer/BinderButton" method="_on_research_binder_interacted_with"]
+[connection signal="game_end_lockout" from="Rooms/Cockpit/Interactables/console/throttle_interactee" to="." method="_on_throttle_interactee_game_end_lockout"]
+[connection signal="game_won" from="Rooms/Cockpit/Interactables/console/throttle_interactee" to="." method="_on_throttle_interactee_game_won"]
 [connection signal="pressed" from="CanvasLayer/BinderButton" to="CanvasLayer/BinderButton" method="_on_pressed"]
 
 [editable path="Rooms/AirLock/PlayerPositions/ExternalZoomIn"]
