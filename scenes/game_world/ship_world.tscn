@@ -963,7 +963,7 @@ spot_attenuation = -3.98
 spot_angle = 61.67
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1306471990]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 3.1003237, 2.373774, -19.076632)
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 3.8279123, 2.373774, -19.076632)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
 spot_range = 3.487
@@ -971,7 +971,15 @@ spot_attenuation = -3.98
 spot_angle = 61.67
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=2019167836]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -15.980834)
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -19.079357)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1352628255]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -15.522747)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
 spot_range = 3.487
@@ -979,7 +987,7 @@ spot_attenuation = -3.98
 spot_angle = 61.67
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1646768745]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -20.787998)
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -22.549242)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
 spot_range = 3.487
@@ -1027,7 +1035,7 @@ spot_attenuation = -3.98
 spot_angle = 61.67
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=1011832005]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.006256, 2.373774, -21.251364)
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.006256, 2.373774, -22.810179)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
 spot_range = 3.487
@@ -1043,7 +1051,15 @@ spot_attenuation = -3.98
 spot_angle = 61.67
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=511153399]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.14726, 2.373774, -15.8153305)
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.06532, 2.373774, -19.112226)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 3.487
+spot_attenuation = -3.98
+spot_angle = 61.67
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=1334837568]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.06532, 2.373774, -15.740834)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
 spot_range = 3.487
