@@ -1670,7 +1670,7 @@ reverb_vector = Vector4(0.3, 0, 0, 0.4)
 [node name="Aft0" parent="Rooms/AftHallway/PlayerPositions" unique_id=1296765404 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-1, 1.5180806e-08, -8.6094616e-08, 0, 0.98480767, 0.17364818, 8.742278e-08, 0.17364818, -0.98480767, 0, 1.6, 9)
 fov = 70.0
-valid_neighbors = [NodePath("../../../Hub/PlayerPositions/Hub2"), NodePath("../Aft1")]
+valid_neighbors = [NodePath("../Aft1"), NodePath("../Aft5")]
 valid_clickables = [NodePath("../../Interactables/NoteObject")]
 reverb_vector = Vector4(0.3, 0, 0, 0.4)
 
