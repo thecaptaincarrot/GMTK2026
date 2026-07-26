@@ -23,7 +23,7 @@ var _player: PlayerController
 var hud_controller: HudController
 var time_controller: TimeController
 
-var should_tween:bool = false
+var should_tween:bool = true
 
 var _can_rotate = true
 
