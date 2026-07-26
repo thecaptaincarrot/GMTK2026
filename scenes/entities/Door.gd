@@ -41,7 +41,7 @@ func  close_door():
 	new_tween.tween_property(right_door,"position", Vector3(0.0,0.0,0.0), 0.6)
 	new_tween.tween_property(left_door,"position", Vector3(0.0,0.0,0.0), 0.6)
 	#TODO: Play sound effect
-	AudioPlayer.create_audio("DoorClose")
+	AudioPlayer.create_3D_audio_at_location(global_position,"DoorClose")
 	#Enable mouse eater area
 	mouse_eater.disabled = false
 	

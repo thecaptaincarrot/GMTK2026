@@ -36,18 +36,18 @@ func _ready():
 					sound_effect_dict[resource.ID] = resource
 
 
-func create_3D_audio_at_location(sound_posiition : Vector3, effect_ids : Array):
-	var effect_id = effect_ids.pick_random()
+func create_3D_audio_at_location(sound_posiition : Vector3, effect_id):
 	if sound_effect_dict.has(effect_id):
 		var sound_effect_settings = sound_effect_dict[effect_id]
 		if sound_effect_settings.has_open_limit() and game_node:
 			sound_effect_settings.increment_audio_count(1)
 			var new_3d_player = AudioStreamPlayer3D.new()
+			new_3d_player.attenuation_model = AudioStreamPlayer3D.ATTENUATION_INVERSE_SQUARE_DISTANCE
 			game_node.add_child(new_3d_player)
 			
 			#TODO: Check if the sound is close enough to the player to matter
 			new_3d_player.position = sound_posiition
-			new_3d_player.stream = sound_effect_settings.sound_effect
+			new_3d_player.stream = sound_effect_settings.sound_effect.pick_random()
 			new_3d_player.bus = "gameSfx"
 			new_3d_player.volume_db = sound_effect_settings.volume
 			new_3d_player.pitch_scale = sound_effect_settings.pitch_scale

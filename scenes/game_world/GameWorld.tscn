@@ -40,7 +40,7 @@ zoom_controller = NodePath("")
 [node name="BlackHoleRotator" type="Node3D" parent="." unique_id=648423589]
 
 [node name="Blackhole" parent="BlackHoleRotator" unique_id=118774140 instance=ExtResource("4_f3jsn")]
-transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 882.0199, -124.41113, 52.198433)
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 898.717, 0, 228.713)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1870284894]
 environment = SubResource("Environment_st70h")

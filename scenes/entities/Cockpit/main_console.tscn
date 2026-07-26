@@ -13,7 +13,10 @@
 [ext_resource type="FontFile" uid="uid://ciyvlsca5ecik" path="res://assets/Fonts/digital display tfb.ttf" id="8_t3dph"]
 [ext_resource type="Material" uid="uid://b8llcq5liyyvq" path="res://scenes/entities/Cockpit/Clock/ClockOnMaterial.tres" id="9_fsrjn"]
 [ext_resource type="Script" uid="uid://d0fwn5w7gs6bn" path="res://scenes/entities/Cockpit/crash_timer.gd" id="9_iy3lj"]
+[ext_resource type="AudioStream" uid="uid://d1j2i6viwtkcg" path="res://Audio/RawSounds/RCS thruster v2.wav" id="10_de144"]
 [ext_resource type="Script" uid="uid://dsb65o8f6fvp0" path="res://scenes/entities/Cockpit/knob_board.gd" id="11_w6ft8"]
+[ext_resource type="Script" uid="uid://bk1sf5o1v3w6x" path="res://scenes/entities/Cockpit/position_indicator.gd" id="12_gp3iu"]
+[ext_resource type="Material" uid="uid://e5hqpb6a7cqf" path="res://scenes/entities/Cockpit/ShipIndicatorMaterial.tres" id="13_de144"]
 [ext_resource type="Script" uid="uid://cw6uwsk2rjafy" path="res://scenes/entities/Cockpit/console_knob_object.gd" id="13_s66tk"]
 [ext_resource type="Script" uid="uid://swrm1sfv2jq2" path="res://scenes/entities/Cockpit/throttle_interactee.gd" id="15_s66tk"]
 [ext_resource type="Script" uid="uid://cq7cfi7bb28ap" path="res://scenes/entities/Cockpit/console_switch_board.gd" id="16_5e3yl"]
@@ -467,44 +470,33 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4tr35")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jap13"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_gtf4w"]
-_surfaces = [{
-"aabb": AABB(-0.23406696, -1.6742158e-07, -0.23404537, 0.46814466, 1e-05, 0.46814466),
-"format": 34896613377,
-"index_count": 384,
-"index_data": PackedByteArray("QgBDAEQAQwBFAEQARgBCAEQAQgBHAEMABABCAEYABAAFAEIABQBHAEIABgAEAEYABQACAEcABgBGAEgARgBEAEkASABGAEkARABFAEkABwAGAEgAAgBKAEcAAgAAAEoARwBLAEMARwBKAEsASwBFAEMABwBIAEwASgBNAEsATQBFAEsACAAHAEwASgBOAE0AAABOAEoAAAABAE4ATgBPAE0ATwBFAE0AAQBQAE4ATgBQAE8AAQADAFAAUABRAE8AUQBFAE8AAwBSAFAAUABSAFEAAwAKAFIAUgBTAFEAUwBFAFEACgBUAFIAUgBUAFMACgALAFQAVABVAFMAVQBFAFMACwBWAFQAVABWAFUACwAMAFYAVgAJAFUACQBFAFUADAANAFYAVgANAAkADAAOAA0ADgAPAA0ADgAQAA8AEAARAA8AEAASABEAEgATABEAEgAUABMAFAAVABMAFAAWABUAFgAXABUAFgAYABcAGAAZABcAGAAaABkAGgAbABkAGgAcABsAHAAdABsAHAAeAB0AHgAfAB0AHgAgAB8AIAAhAB8AIAAiACEAIgAjACEAIgAkACMAJAAlACMAJAAmACUAJgAnACUAJgAoACcAKAApACcAKAAqACkAKgArACkAKgAsACsALAAtACsALAAuAC0ALgBXAC0ALgAvAFcALQBXAFgALQBYADAALwBZAFcALwAxAFkAVwBaAFgAVwBZAFoAWABFADAAWgBFAFgAMABFADQANABFADUANQBFADcANwBFADkAOQBFADwAPABFAD0APQBFAD4APgBFAD8APwBFAEAAQABFAEEAQQBFADMAMwBFADsAOwBFADoAOgBFADgAOABFADYANgBFAAkASQBFAFsASABJAFsATABIAFsAWwBFAFwATABbAFwAXQBMAFwACABMAF0AMgAIAF0AXQBcAF4AXABFAF4AMgBdAF8AXwBdAF4AMQAyAF8AMQBfAFkAXwBeAGAAXgBFAGAAWQBfAGAAYABFAFoAWQBgAFoA"),
-"lods": [4.394856e-05, PackedByteArray("AAABAAIAAQADAAIABAAFAAIABgAEAAIABwAGAAIACAAHAAIAAwAJAAIAAwAKAAkACgALAAkACwAMAAkADAANAAkADAAOAA0ADgAPAA0ADgAQAA8AEAARAA8AEAASABEAEgATABEAEgAUABMAFAAVABMAFAAWABUAFgAXABUAFgAYABcAGAAZABcAGAAaABkAGgAbABkAGgAcABsAHAAdABsAHAAeAB0AHgAfAB0AHgAgAB8AIAAhAB8AIAAiACEAIgAjACEAIgAkACMAJAAlACMAJAAmACUAJgAnACUAJgAoACcAKAApACcAKAAqACkAKgArACkAKgAsACsALAAtACsALAAuAC0ALgAvAC0ALQAvADAALwAxADAAMQAyADAAMgAIADAACAACADAAAgAzADAAMAAzADQACQAzAAIANAAzADUANgAzAAkANQAzADcAOAAzADYANwAzADkAOgAzADgAOwAzADoAOQAzADwAPAAzAD0APQAzAD4APgAzAD8APwAzAEAAQAAzAEEA")],
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 97,
-"vertex_data": PackedByteArray("+7AAAL4JAAAcxwAAkhUAAPiYAAB1AgAAgdoAAH0lAAAGZwAAdQIAAP9/AAAAAAAAA08AAL4JAADiOAAAkhUAAH0lAAB9JQAA87/bAvV/AABs6gAA4jgAAED2AAADTwAAif0AAAZnAABC9LYA/X8AAP//AAD/fwAABvK2AKyWAACJ/QAA+JgAAGnrtgB7rAAAQPYAAPuwAACq4LYAlcAAAGzqAAAcxwAANdK2ADPSAACB2gAAgdoAAJbAtgCp4AAAHMcAAGzqAAB9rLYAZ+sAAPuwAABA9gAArZa2AAXyAAD4mAAAif0AAP9/tgBB9AAA/38AAP//AABQabYABfIAAAZnAACJ/QAAgVO2AGfrAAADTwAAQPYAAGc/tgCp4AAA4jgAAGzqAADJLbYAM9IAAH0lAACB2gAAUx+2AJXAAACSFQAAHMcAAJUUtgB7rAAAvgkAAPuwAAD3DbYArJYAAHUCAAD4mAAAuwu2AP1/AAAAAAAA/38AAHUCAAAGZwAAB0DbAvV/AAC+CQAAA08AAJIVAADiOAAAhqPbAiS1AABCQdsCcIwAAOZE2wJvmAAAuL7bAnCMAADPStsCfqMAABW72wJvmAAAw1LbAi+tAAArtdsCfqMAADet2wIvrQAAdFzbAiS1AACDZ9sCDbsAAINz2wKxvgAA/X/bAuu/AAB3jNsCsb4AAHeY2wINuwAA/3+2ALoLAAB3jNsCOkEAAP1/2wL/PwAA/38AAP9/AABQabYA9g0AAK2WtgD2DQAAgVO2AJMUAACDc9sCOkEAAH2stgCTFAAAd5jbAt5EAABnP7YAUh8AAIaj2wLHSgAAlsC2AFIfAAA3rdsCu1IAADXStgDHLQAAK7XbAmxcAACq4LYAZj8AABW72wJ7ZwAAaeu2AH9TAAC4vtsCe3MAAAbytgBPaQAA9w22AE9pAABCQdsCe3MAAJUUtgB/UwAA5kTbAntnAACDZ9sC3kQAAHRc2wLHSgAAyS22AMctAADDUtsCu1IAAFMftgBmPwAAz0rbAmxcAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_wc5hw"]
-resource_name = "mainconsole_Cone"
-_surfaces = [{
-"aabb": AABB(-0.23406696, -1.6742158e-07, -0.23404537, 0.46814466, 1e-05, 0.46814466),
-"attribute_data": PackedByteArray("b1SU6NhF/NmXZQr0YTrUyOWM9v+oePD7h6H2/8S18PvUyAr04GT5h3wyxLV1LoehdS7ljLg7dnt8Mqh45EIlamE6l2VOTZBa2EVvVI5aT01vVNhFJGrlQpdlYTp1e7k7qHh8MteNETjljHUulaAROIehdS73srk7xLV8MkjE5ULUyGE63dNPTfzZ2EUe4ZBalOhvVIjrJWoK9JdltPJ2e/D7qHhc9tiN9v/ljFz2lqD2/4ehtPL4svD7xLUK9NTIismDppTo/Nn82ZTo8IfpZI3LZpyNyxaS0mhzforJ+YeMbuB1mMVzftd1lW5qftto3r/gdZO4lW4AsNtoeqbpZF2c5mINkuZidXu18mp+ocXwh5PJNpc2l9eNXfYkaonrlaBd9g2SlsuOWh/h13Xnv/eytfKMbpy4Tk3f09JoCbDkQknE4GSDprg7+LLdYmacEDiWoN1iFpIQONiNiOtJxJjFCbAe4d/T3r+cuF2clst6ppPJSMSJ6wCwocXd0x/hk7jnvw=="),
-"format": 34896613399,
-"index_count": 384,
-"index_data": PackedByteArray("QgBDAEQAQwBFAEQARgBCAEQAQgBHAEMABABCAEYABAAFAEIABQBHAEIABgAEAEYABQACAEcABgBGAEgARgBEAEkASABGAEkARABFAEkABwAGAEgAAgBKAEcAAgAAAEoARwBLAEMARwBKAEsASwBFAEMABwBIAEwASgBNAEsATQBFAEsACAAHAEwASgBOAE0AAABOAEoAAAABAE4ATgBPAE0ATwBFAE0AAQBQAE4ATgBQAE8AAQADAFAAUABRAE8AUQBFAE8AAwBSAFAAUABSAFEAAwAKAFIAUgBTAFEAUwBFAFEACgBUAFIAUgBUAFMACgALAFQAVABVAFMAVQBFAFMACwBWAFQAVABWAFUACwAMAFYAVgAJAFUACQBFAFUADAANAFYAVgANAAkADAAOAA0ADgAPAA0ADgAQAA8AEAARAA8AEAASABEAEgATABEAEgAUABMAFAAVABMAFAAWABUAFgAXABUAFgAYABcAGAAZABcAGAAaABkAGgAbABkAGgAcABsAHAAdABsAHAAeAB0AHgAfAB0AHgAgAB8AIAAhAB8AIAAiACEAIgAjACEAIgAkACMAJAAlACMAJAAmACUAJgAnACUAJgAoACcAKAApACcAKAAqACkAKgArACkAKgAsACsALAAtACsALAAuAC0ALgBXAC0ALgAvAFcALQBXAFgALQBYADAALwBZAFcALwAxAFkAVwBaAFgAVwBZAFoAWABFADAAWgBFAFgAMABFADQANABFADUANQBFADcANwBFADkAOQBFADwAPABFAD0APQBFAD4APgBFAD8APwBFAEAAQABFAEEAQQBFADMAMwBFADsAOwBFADoAOgBFADgAOABFADYANgBFAAkASQBFAFsASABJAFsATABIAFsAWwBFAFwATABbAFwAXQBMAFwACABMAF0AMgAIAF0AXQBcAF4AXABFAF4AMgBdAF8AXwBdAF4AMQAyAF8AMQBfAFkAXwBeAGAAXgBFAGAAWQBfAGAAYABFAFoAWQBgAFoA"),
-"lods": [4.394856e-05, PackedByteArray("AAABAAIAAQADAAIABAAFAAIABgAEAAIABwAGAAIACAAHAAIAAwAJAAIAAwAKAAkACgALAAkACwAMAAkADAANAAkADAAOAA0ADgAPAA0ADgAQAA8AEAARAA8AEAASABEAEgATABEAEgAUABMAFAAVABMAFAAWABUAFgAXABUAFgAYABcAGAAZABcAGAAaABkAGgAbABkAGgAcABsAHAAdABsAHAAeAB0AHgAfAB0AHgAgAB8AIAAhAB8AIAAiACEAIgAjACEAIgAkACMAJAAlACMAJAAmACUAJgAnACUAJgAoACcAKAApACcAKAAqACkAKgArACkAKgAsACsALAAtACsALAAuAC0ALgAvAC0ALQAvADAALwAxADAAMQAyADAAMgAIADAACAACADAAAgAzADAAMAAzADQACQAzAAIANAAzADUANgAzAAkANQAzADcAOAAzADYANwAzADkAOgAzADgAOwAzADoAOQAzADwAPAAzAD0APQAzAD4APgAzAD8APwAzAEAAQAAzAEEA")],
-"material": SubResource("StandardMaterial3D_jap13"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 97,
-"vertex_data": PackedByteArray("+7AAAL4JhvccxwAAkhWG9/iYAAB1Aob3gdoAAH0lhvcGZwAAdQKG9/9/AAAAAIb3A08AAL4JhvfiOAAAkhWG930lAAB9JYb387/bAvV/hvds6gAA4jiG90D2AAADT4b3if0AAAZnhvdC9LYA/X+G9///AAD/f4b3BvK2AKyWhveJ/QAA+JiG92nrtgB7rIb3QPYAAPuwhveq4LYAlcCG92zqAAAcx4b3NdK2ADPShveB2gAAgdqG95bAtgCp4Ib3HMcAAGzqhvd9rLYAZ+uG9/uwAABA9ob3rZa2AAXyhvf4mAAAif2G9/9/tgBB9Ib3/38AAP//hvdQabYABfKG9wZnAACJ/Yb3gVO2AGfrhvcDTwAAQPaG92c/tgCp4Ib34jgAAGzqhvfJLbYAM9KG930lAACB2ob3Ux+2AJXAhveSFQAAHMeG95UUtgB7rIb3vgkAAPuwhvf3DbYArJaG93UCAAD4mIb3uwu2AP1/hvcAAAAA/3+G93UCAAAGZ4b3B0DbAvV/hve+CQAAA0+G95IVAADiOIb3hqPbAiS1hvdCQdsCcIyG9+ZE2wJvmIb3uL7bAnCMhvfPStsCfqOG9xW72wJvmIb3w1LbAi+thvcrtdsCfqOG9zet2wIvrYb3dFzbAiS1hveDZ9sCDbuG94Nz2wKxvob3/X/bAuu/hvd3jNsCsb6G93eY2wINu4b3/3+2ALoLhvd3jNsCOkGG9/1/2wL/P4b3/38AAP9/hvdQabYA9g2G962WtgD2DYb3gVO2AJMUhveDc9sCOkGG932stgCTFIb3d5jbAt5EhvdnP7YAUh+G94aj2wLHSob3lsC2AFIfhvc3rdsCu1KG9zXStgDHLYb3K7XbAmxchveq4LYAZj+G9xW72wJ7Z4b3aeu2AH9Thve4vtsCe3OG9wbytgBPaYb39w22AE9phvdCQdsCe3OG95UUtgB/U4b35kTbAntnhveDZ9sC3kSG93Rc2wLHSob3yS22AMcthvfDUtsCu1KG91MftgBmP4b3z0rbAmxchvfViJS71oiUu9aIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71oiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvWiJS71oiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71oiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS71YiUu9WIlLvViJS7")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_gtf4w")
+[sub_resource type="CylinderMesh" id="CylinderMesh_oow3h"]
+top_radius = 0.25
+bottom_radius = 0.025
+height = 0.031
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3dph"]
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oow3h"]
+size = Vector3(0.2, 0.05, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wxrap"]
+size = Vector3(0.04, 0.05, 0.04)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2pac6"]
+top_radius = 0.055
+bottom_radius = 0.065
+height = 0.071
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gp3iu"]
+albedo_color = Color(0, 0, 0, 1)
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2pac6"]
+size = Vector3(0.055, 0.035, 0.025)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1kmj"]
 
@@ -1144,6 +1136,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20099993, -0.19750977, 0.0
 shape = SubResource("BoxShape3D_sv2bo")
 
 [node name="RCSjetsstream" type="AudioStreamPlayer3D" parent="console_control" unique_id=1360238467]
+stream = ExtResource("10_de144")
+volume_db = -10.0
 
 [node name="CrashTimer" type="Node3D" parent="." unique_id=1702524440]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4309117, 1.7031531, 0.008236527)
@@ -1166,6 +1160,7 @@ font_size = 48
 
 [node name="PositionIndicator" type="Node3D" parent="." unique_id=552807797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4495486, 1.337311, 0.079230726)
+script = ExtResource("12_gp3iu")
 
 [node name="crashwidget_001" type="MeshInstance3D" parent="PositionIndicator" unique_id=1781112208]
 transform = Transform3D(0.88053536, -0.47306186, 0.029498452, 0.009888422, 0.08055659, 0.99670094, -0.4738773, -0.8773386, 0.075610735, 0, 0.01914537, 0)
@@ -1173,10 +1168,91 @@ mesh = SubResource("ArrayMesh_nn23i")
 surface_material_override/0 = ExtResource("1_85v5r")
 surface_material_override/1 = ExtResource("1_85v5r")
 
-[node name="Cone" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001" unique_id=1661862650]
+[node name="Background" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001" unique_id=1661862650]
 transform = Transform3D(1, 0, 1.8626451e-09, -2.9802322e-08, 1, -1.1175871e-08, 7.450581e-09, -1.8626451e-09, 1, -5.841255e-06, 0.0006439686, 0.19997287)
-mesh = SubResource("ArrayMesh_wc5hw")
+mesh = SubResource("CylinderMesh_oow3h")
 surface_material_override/0 = SubResource("StandardMaterial3D_t3dph")
+
+[node name="ShipMesh1" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001" unique_id=1862342334]
+transform = Transform3D(0.9999999, 2.9802322e-08, 3.7252903e-09, -2.9802322e-08, 1, -2.2351742e-08, 1.1175871e-08, -1.4901161e-08, 1, -5.722046e-06, 0.0006439686, 0.19997287)
+mesh = SubResource("BoxMesh_oow3h")
+surface_material_override/0 = ExtResource("13_de144")
+
+[node name="ShipMesh2" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001" unique_id=570904143]
+transform = Transform3D(0.9999999, 2.9802322e-08, 3.7252903e-09, -2.9802322e-08, 1, -2.2351742e-08, 1.1175871e-08, -1.4901161e-08, 1, -5.722046e-06, 0.0006439686, 0.19997287)
+mesh = SubResource("BoxMesh_wxrap")
+surface_material_override/0 = ExtResource("13_de144")
+
+[node name="BlackHoleIndicator" type="Node3D" parent="PositionIndicator/crashwidget_001" unique_id=2014775044]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0.0027045012, 0.032967508, 0.19696629)
+
+[node name="Cone2" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/BlackHoleIndicator" unique_id=1455512005]
+transform = Transform3D(0.9999999, 2.9802322e-08, 5.9604645e-08, 0, 1, -2.2351742e-08, 7.450581e-09, 7.450581e-09, 1, 0.18884957, -0.035286844, 0.016730547)
+mesh = SubResource("CylinderMesh_2pac6")
+surface_material_override/0 = SubResource("StandardMaterial3D_gp3iu")
+
+[node name="IndicatorMarks" type="Node3D" parent="PositionIndicator/crashwidget_001" unique_id=1565422349]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1, 0.0027045012, 0.032967508, 0.19696629)
+
+[node name="Cone2" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=941404711]
+transform = Transform3D(0.9999997, 2.9802322e-08, -2.9802322e-08, -1.7881393e-07, 1, 5.9604645e-08, 6.183982e-07, -7.450581e-09, 0.99999905, 0.22323859, -0.022218347, 0.015333533)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone3" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=792941453]
+transform = Transform3D(0.86602545, 2.9802322e-08, 0.49999952, -1.1920929e-07, 1, 5.9604645e-08, -0.49999925, -2.2351742e-08, 0.8660245, 0.200997, -0.022218406, -0.09834015)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone4" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=1032615546]
+transform = Transform3D(0.50000024, 0, 0.8660247, -1.4901161e-07, 1, 5.9604645e-08, -0.86602473, -2.2351742e-08, 0.49999952, 0.12489843, -0.022218347, -0.18566346)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone5" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=2022168226]
+transform = Transform3D(5.6251884e-07, 0, 0.99999917, -1.1920929e-07, 1, 2.9802322e-08, -0.9999995, -2.2351742e-08, -1.4901161e-08, 0.015333533, -0.022218347, -0.22323847)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone6" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=1112898489]
+transform = Transform3D(-0.4999993, 0, 0.8660246, -1.1920929e-07, 1, 2.9802322e-08, -0.8660252, -7.450581e-09, -0.49999952, -0.09834015, -0.022218347, -0.20099688)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone7" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=1548892550]
+transform = Transform3D(-0.86602473, -2.9802322e-08, 0.49999967, -1.1920929e-07, 1.0000001, 2.9802322e-08, -0.50000036, 7.450581e-09, -0.8660245, -0.18566346, -0.022218347, -0.12489843)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone8" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=1706834694]
+transform = Transform3D(-0.99999964, -2.9802322e-08, -5.5879354e-08, -8.940697e-08, 1.0000001, 5.2154064e-08, -5.2526593e-07, 2.2351742e-08, -0.99999905, -0.22323847, -0.022218347, -0.015333176)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone9" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=1906120425]
+transform = Transform3D(-0.8660254, -2.9802322e-08, -0.49999952, -8.940697e-08, 1.0000001, 4.4703484e-08, 0.4999992, 3.7252903e-08, -0.86602455, -0.20099688, -0.022218347, 0.09834015)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone10" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=1469244905]
+transform = Transform3D(-0.50000024, 0, -0.8660247, -1.1920929e-07, 1, 5.9604645e-08, 0.86602473, 3.7252903e-08, -0.4999994, -0.124898314, -0.022218347, 0.18566358)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone11" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=1093840082]
+transform = Transform3D(-5.9977174e-07, 0, -0.9999991, -1.1175871e-07, 1, 5.9604645e-08, 0.9999996, 3.7252903e-08, -1.8626451e-08, -0.015333414, -0.022218347, 0.22323847)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone12" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=1856380756]
+transform = Transform3D(0.49999917, 0, -0.8660247, -1.1920929e-07, 1, 8.940697e-08, 0.8660253, 2.2351742e-08, 0.49999937, 0.09834015, -0.022218347, 0.200997)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
+
+[node name="Cone13" type="MeshInstance3D" parent="PositionIndicator/crashwidget_001/IndicatorMarks" unique_id=285934217]
+transform = Transform3D(0.8660247, 2.9802322e-08, -0.49999976, -1.4901161e-07, 1, 5.9604645e-08, 0.5000004, 7.450581e-09, 0.86602443, 0.18566358, -0.022218406, 0.12489855)
+mesh = SubResource("BoxMesh_2pac6")
+surface_material_override/0 = ExtResource("4_t3dph")
 
 [node name="knob_board" type="Node3D" parent="." unique_id=521512295]
 transform = Transform3D(0.89639074, -0.089444585, 0.43414667, -0.0006225668, 0.9791746, 0.20301881, -0.44326434, -0.18225446, 0.8776674, 0.9919125, 0.87414825, -0.9158709)
@@ -1184,7 +1260,7 @@ script = ExtResource("11_w6ft8")
 
 [node name="KnobValueLabel" type="Label3D" parent="knob_board" unique_id=449380782]
 transform = Transform3D(-0.9992714, -0.012866914, 0.035924785, 0.03434415, 0.10706781, 0.9936604, -0.016631871, 0.9941689, -0.10654831, 0.029756308, 0.12541777, 0.2645799)
-text = "9999"
+text = "0"
 
 [node name="knobwidget" type="MeshInstance3D" parent="knob_board" unique_id=38076932]
 mesh = SubResource("ArrayMesh_6e863")
@@ -1338,15 +1414,18 @@ mesh = SubResource("ArrayMesh_w34sa")
 surface_material_override/0 = ExtResource("1_85v5r")
 surface_material_override/1 = ExtResource("2_07xtq")
 
-[node name="throttle_interactee" type="Node3D" parent="." unique_id=358616874]
+[node name="throttle_interactee" type="Node3D" parent="." unique_id=358616874 node_paths=PackedStringArray("switches", "knobs", "indicator")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8259141, 0.89219844, -0.45458287)
 script = ExtResource("15_s66tk")
+switches = NodePath("../switch_board")
+knobs = NodePath("../knob_board")
+indicator = NodePath("../PositionIndicator")
 metadata/_custom_type_script = "uid://bx6v3lj8wesxe"
 
 [node name="throttle" type="MeshInstance3D" parent="throttle_interactee" unique_id=1326178120]
 transform = Transform3D(0.8832241, 0.08943947, -0.46034306, 0.014795981, 0.97584045, 0.2179827, 0.46871763, -0.19933881, 0.8605625, 0, 0, 0)
 mesh = SubResource("ArrayMesh_see8g")
-blend_shapes/speed = 0.0
+blend_shapes/speed = 0.1
 surface_material_override/0 = ExtResource("1_85v5r")
 surface_material_override/1 = ExtResource("2_07xtq")
 
@@ -1403,6 +1482,8 @@ shape = SubResource("BoxShape3D_8fnnm")
 [node name="switches2" type="Node3D" parent="switch_board" unique_id=1034547602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13164198, 0, -0.031027228)
 script = ExtResource("17_gwe3i")
+left_important = true
+right_important = true
 
 [node name="switchboard" type="MeshInstance3D" parent="switch_board/switches2" unique_id=1509135742]
 transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, 0.005144596, 0, -0.012891382)
@@ -1477,6 +1558,7 @@ shape = SubResource("BoxShape3D_8fnnm")
 [node name="switches4" type="Node3D" parent="switch_board" unique_id=1912267390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41201025, 0, 0.20059618)
 script = ExtResource("17_gwe3i")
+right_important = true
 
 [node name="switchboard" type="MeshInstance3D" parent="switch_board/switches4" unique_id=59224430]
 transform = Transform3D(0.89485294, -0.18890913, 0.40441507, 0.032912776, 0.9314856, 0.3622863, -0.44514602, -0.31088254, 0.8397601, 0.042103827, -0.018636227, 0.0075404346)
@@ -1510,6 +1592,8 @@ metadata/_custom_type_script = "uid://d73lxn1e6cxf"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="switch_board/switches4/RightSwitchInteractee/Interactable" unique_id=578116805]
 transform = Transform3D(0.9052385, 0, 0.42490378, 0, 1, 0, -0.42490378, 0, 0.9052385, -0.05238056, -0.0178833, -0.014679253)
 shape = SubResource("BoxShape3D_8fnnm")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=143802548]
 
 [connection signal="interacted_with" from="console_control/left_control" to="console_control" method="_on_left_control_interacted_with"]
 [connection signal="interacted_with" from="console_control/right_control" to="console_control" method="_on_right_control_interacted_with"]

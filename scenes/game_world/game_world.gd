@@ -21,6 +21,8 @@ var black_hole_target_rotation = 0.0
 signal rotation_complete
 var rotation_in_progress = false
 
+signal rotation_updated
+
 func _ready():
 	AudioPlayer.game_node  = self
 	
@@ -45,6 +47,7 @@ func _physics_process(delta):
 			black_hole_rotator.rotation.z -= delta * black_hole_rotation_speed
 		else:
 			black_hole_rotator.rotation.z += delta * black_hole_rotation_speed
+		rotation_updated.emit(black_hole_rotator.rotation.z)
 	else:
 		if rotation_in_progress:
 			rotation_complete.emit()

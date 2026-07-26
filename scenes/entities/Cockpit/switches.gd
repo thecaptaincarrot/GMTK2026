@@ -27,6 +27,7 @@ func enable_collision():
 func _on_left_switch_interactee_interacted_with():
 	AudioPlayer.create_audio("SwitchFlip")
 	left_toggled = !left_toggled
+	print(left_toggled)
 	update_switches()
 
 
@@ -40,17 +41,17 @@ func update_switches():
 	if Globals.reactor_started:
 		if left_toggled:
 			switch_mesh.set_surface_override_material(1,Globals.active_material)
-			switch_mesh.set_blend_shape_value(0,1.0)
+			switch_mesh.set_blend_shape_value(0,0.0)
 		else:
 			switch_mesh.set_surface_override_material(1,Globals.inactive_material)
-			switch_mesh.set_blend_shape_value(0,0.0)
+			switch_mesh.set_blend_shape_value(0,1.0)
 		
 		if right_toggled:
 			switch_mesh.set_surface_override_material(2,Globals.active_material)
-			switch_mesh.set_blend_shape_value(1,1.0)
+			switch_mesh.set_blend_shape_value(1,0.0)
 		else:
 			switch_mesh.set_surface_override_material(2,Globals.inactive_material)
-			switch_mesh.set_blend_shape_value(1,0.0)
+			switch_mesh.set_blend_shape_value(1,1.0)
 
 
 func is_solution():

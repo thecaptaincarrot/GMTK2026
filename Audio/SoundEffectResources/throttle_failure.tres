@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" format=3 uid="uid://cy32bf78y1bth"]
+
+[ext_resource type="Script" uid="uid://b7fou07k713y" path="res://Audio/Classes/SoundEffect.gd" id="1_vfrx6"]
+[ext_resource type="AudioStream" uid="uid://cxbd1w1uptn8j" path="res://Audio/RawSounds/Lever Fail.wav" id="2_jgq6q"]
+
+[resource]
+script = ExtResource("1_vfrx6")
+ID = "throttlefail"
+limit = 1
+sound_effect = Array[AudioStream]([ExtResource("2_jgq6q")])
+metadata/_custom_type_script = "uid://b7fou07k713y"

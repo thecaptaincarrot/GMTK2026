@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cugp0ssk0r5pi" path="res://Meshes/ShipParts/engine_core.tscn" id="21_6oo1f"]
 [ext_resource type="Material" uid="uid://dkfaj3e562vn6" path="res://assets/Materials/RedEmission/RedEmissionMaterial.tres" id="21_o75v3"]
 [ext_resource type="PackedScene" uid="uid://w12lobe4xf4q" path="res://scenes/entities/ReactorCore/core_console.tscn" id="21_r7isu"]
+[ext_resource type="Script" uid="uid://c3670su8mhy77" path="res://scenes/entities/Cockpit/special_computer_light.gd" id="22_b4dks"]
 [ext_resource type="PackedScene" uid="uid://b30vlcroetgce" path="res://Meshes/ShipParts/starboard_wing.tscn" id="22_b7tif"]
 [ext_resource type="PackedScene" uid="uid://cpadakbffbg81" path="res://Meshes/ShipParts/port_wing.tscn" id="23_o75v3"]
 [ext_resource type="Texture2D" uid="uid://buv21gweja60m" path="res://assets/notes/storynotereactor.png" id="24_o5cya"]
@@ -71,9 +72,10 @@ size = Vector2(0.3, 0.25)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m51dx"]
 albedo_texture = ExtResource("24_o5cya")
 
-[node name="ShipWorld" type="Node3D" unique_id=792692354 node_paths=PackedStringArray("control_wheel")]
+[node name="ShipWorld" type="Node3D" unique_id=792692354 node_paths=PackedStringArray("control_wheel", "indicator")]
 script = ExtResource("1_lny2s")
 control_wheel = NodePath("Rooms/Cockpit/Interactables/console/console_control")
+indicator = NodePath("Rooms/Cockpit/Interactables/console/PositionIndicator")
 
 [node name="Rooms" type="Node3D" parent="." unique_id=2070018744]
 
@@ -321,6 +323,7 @@ reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/ForeHallway/Props" unique_id=1806060177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+visible = false
 script = ExtResource("15_r7isu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Rooms/ForeHallway/Props/Reactor_Lights" unique_id=1675733232]
@@ -444,7 +447,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11201298, 5.5877457)
 surface_material_override/1 = ExtResource("21_o75v3")
 
 [node name="Props" type="Node3D" parent="Rooms/Cockpit" unique_id=310254450]
-visible = false
 
 [node name="Reactor_Lights" type="Node3D" parent="Rooms/Cockpit/Props" unique_id=1514497719]
 script = ExtResource("15_r7isu")
@@ -475,6 +477,17 @@ light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
+
+[node name="SpecialComputerLight" type="Node3D" parent="Rooms/Cockpit/Props" unique_id=122451899]
+script = ExtResource("22_b4dks")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/Cockpit/Props/SpecialComputerLight" unique_id=1847411531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1827955, 5.6387806)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.02
+spot_range = 14.834
+spot_attenuation = -1.0
+spot_angle = 60.0
 
 [node name="Hub" type="Node3D" parent="Rooms" unique_id=234284742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)

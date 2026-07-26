@@ -13,8 +13,8 @@ signal knob_updated
 func _ready():
 	update_knob_mesh()
 	
-	knob_up.interacted_with.connect(knob_turned_up)
-	knob_down.interacted_with.connect(knob_turned_down)
+	knob_up.interacted_with.connect(knob_turned_down)
+	knob_down.interacted_with.connect(knob_turned_up)
 
 
 func enable_collision():
