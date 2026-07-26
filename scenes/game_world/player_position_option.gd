@@ -25,9 +25,10 @@ func enable_collision():
 	collision_area.disabled = false
 
 func enable_neighbors():
+	print(name)
 	for n in valid_neighbors:
 		n.enable_collision()
-	for n  in valid_clickables:
+	for n in valid_clickables:
 		n.enable_collision()
 	Globals.enable_HUD_buttons.emit()
 
@@ -62,7 +63,6 @@ func move_player_to_position(tween_override = false):
 		
 		Globals.set_is_zoomed_in(false)
 		Globals.set_last_position(self)
-		print("Neighbours should enable now")
 		enable_neighbors()
 
 

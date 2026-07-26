@@ -169,12 +169,6 @@ albedo_texture = ExtResource("57_vlq3c")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pw7vy"]
 albedo_texture = ExtResource("58_tqfy2")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vlq3c"]
-size = Vector3(1.9487305, 0.6491699, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tqfy2"]
-size = Vector3(1.9677124, 0.43701172, 1)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_tqfy2"]
 size = Vector2(0.27, 0.255)
 
@@ -271,8 +265,9 @@ note_pages = Array[Texture2D]([ExtResource("14_o75v3")])
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 0, 3)
 indicator_panels = [NodePath("../../Props/airlock_indicator_panel"), NodePath("../../Props/airlock_indicator_panel2")]
 
-[node name="AirlockButton2" parent="Rooms/AirLock/Interactables" unique_id=747472208 instance=ExtResource("9_1gqlr")]
+[node name="AirlockButton2" parent="Rooms/AirLock/Interactables" unique_id=747472208 node_paths=PackedStringArray("door") instance=ExtResource("9_1gqlr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39852428, 1.0169623, 0.8609401)
+door = NodePath("../../Meshes/InteriorDoor")
 
 [node name="AirlockButton" parent="Rooms/AirLock/Interactables" unique_id=913744748 node_paths=PackedStringArray("air_vent", "indicator_panel", "door") instance=ExtResource("9_1gqlr")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.22842216, 1.045352, -1.3181387)
@@ -426,7 +421,6 @@ transform = Transform3D(1, 0, 0, 0, 0.98480767, 0.17364816, 0, -0.17364816, 0.98
 fov = 70.0
 valid_neighbors = [NodePath("../../../AirLock/PlayerPositions/Airlock1"), NodePath("../ForeHall2"), NodePath("../../../Cockpit/PlayerPositions/Cockpit0")]
 reverb_vector = Vector4(0.5, 0.1, 0.3, 0.3)
-time_dilation_multiplier = 10.0
 
 [node name="ForeHall2" parent="Rooms/ForeHallway/PlayerPositions" unique_id=1385073360 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, -3)
@@ -450,7 +444,7 @@ reverb_vector = Vector4(0.5, 0, 0, 0.3)
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 1.6, -12)
 fov = 70.0
 valid_neighbors = [NodePath("../ForeHall4"), NodePath("../../../Hub/PlayerPositions/Hub0")]
-valid_clickables = [NodePath("../KishiDeskzoom"), NodePath("../DenizDeskZoom")]
+valid_clickables = [NodePath("../KishiDeskzoom"), NodePath("../../Interactables/NoteObject2"), NodePath("../../Interactables/NoteObject")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="KishiDeskzoom" parent="Rooms/ForeHallway/PlayerPositions" unique_id=216966526 node_paths=PackedStringArray("valid_clickables") instance=ExtResource("6_6vmy0")]
@@ -459,15 +453,6 @@ fov = 115.0
 valid_clickables = [NodePath("../../Interactables/research_binder")]
 
 [node name="CollisionShape3D" parent="Rooms/ForeHallway/PlayerPositions/KishiDeskzoom/Interactable" parent_id_path=PackedInt32Array(216966526, 1013888320) index="0" unique_id=926940183]
-transform = Transform3D(1, 0, -1.154632e-13, 0, 1, -5.615316e-16, 0, -5.6153636e-16, 1, 0.067871094, 1.1920929e-07, -0.31152314)
-shape = SubResource("BoxShape3D_ifwx0")
-
-[node name="DenizDeskZoom" parent="Rooms/ForeHallway/PlayerPositions" unique_id=1481039111 node_paths=PackedStringArray("valid_clickables") instance=ExtResource("6_6vmy0")]
-transform = Transform3D(0.031220976, 0.95059294, -0.30886638, 8.8817837e-16, 0.309017, 0.95105654, 0.9995125, -0.029692914, 0.009647813, 1.4406818, 1.6385632, -11.931399)
-fov = 115.0
-valid_clickables = [NodePath("../../Interactables/NoteObject")]
-
-[node name="CollisionShape3D" parent="Rooms/ForeHallway/PlayerPositions/DenizDeskZoom/Interactable" parent_id_path=PackedInt32Array(1481039111, 1013888320) index="0" unique_id=926940183]
 transform = Transform3D(1, 0, -1.154632e-13, 0, 1, -5.615316e-16, 0, -5.6153636e-16, 1, 0.067871094, 1.1920929e-07, -0.31152314)
 shape = SubResource("BoxShape3D_ifwx0")
 
@@ -772,10 +757,6 @@ shape = SubResource("BoxShape3D_gyp1n")
 [node name="console" parent="Rooms/Cockpit/Interactables" unique_id=1216315534 instance=ExtResource("20_b7tif")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11201298, 5.5877457)
 
-[node name="throttle" parent="Rooms/Cockpit/Interactables/console/throttle_interactee" parent_id_path=PackedInt32Array(1216315534, 358616874) index="0" unique_id=1326178120]
-surface_material_override/0 = null
-surface_material_override/1 = null
-
 [node name="BinderPage1" parent="Rooms/Cockpit/Interactables" unique_id=570141077 instance=ExtResource("12_r7isu")]
 transform = Transform3D(-0.89861405, 0.09097962, 0.42920336, 0.0032482015, 0.9796163, -0.20085174, -0.438728, -0.17909406, -0.88059247, -0.94341177, 0.9976679, 5.7464495)
 mesh = SubResource("PlaneMesh_e5r3p")
@@ -861,6 +842,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6, 0
 
 [node name="CentralHub" parent="Rooms/Hub/Meshes" unique_id=1891809910 instance=ExtResource("20_bp48q")]
 
+[node name="HallwayModule2" parent="Rooms/Hub/Meshes" unique_id=1826947660 instance=ExtResource("15_o75v3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
 [node name="PlayerPositions" type="Node3D" parent="Rooms/Hub" unique_id=1658700080]
 
 [node name="Hub0" parent="Rooms/Hub/PlayerPositions" unique_id=115475546 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
@@ -890,9 +874,9 @@ valid_clickables = [NodePath("../../Interactables/HydroDoorButton")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
 [node name="Hub2" parent="Rooms/Hub/PlayerPositions" unique_id=253986496 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
-transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.1736482, 0, -0.1736482, 0.9848078, 0, 1.6, -2)
+transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.1736482, 0, -0.1736482, 0.9848078, 0, 1.6, -2.25)
 fov = 70.0
-valid_neighbors = [NodePath("../Hub1"), NodePath("../../../AftHallway/PlayerPositions/Aft0")]
+valid_neighbors = [NodePath("../Hub1"), NodePath("../../../AftHallway/PlayerPositions/Aft5")]
 valid_clickables = [NodePath("../../Interactables/ReactorDoorButton")]
 reverb_vector = Vector4(0.7, 0, 0, 0.4)
 
@@ -905,19 +889,18 @@ needs_power = true
 
 [node name="HydroDoorButton" parent="Rooms/Hub/Interactables" unique_id=1899330948 node_paths=PackedStringArray("door") instance=ExtResource("9_1gqlr")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.989438, 1.0886685, 1.3397827)
-door = NodePath("../../Meshes/LabDoor")
+door = NodePath("../../Meshes/HydroDoor")
 needs_power = true
 
 [node name="LabDoorButton" parent="Rooms/Hub/Interactables" unique_id=701222870 node_paths=PackedStringArray("door") instance=ExtResource("9_1gqlr")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.8053265, 1.0835881, -1.3266106)
-door = NodePath("../../Meshes/HydroDoor")
+door = NodePath("../../Meshes/LabDoor")
 needs_power = true
 
 [node name="NoteObject" parent="Rooms/Hub/Interactables" unique_id=1328094447 instance=ExtResource("12_r7isu")]
 transform = Transform3D(0.031508908, 0, 0.9995035, 0.9013234, 0.43221384, -0.028413823, -0.43199924, 0.9017711, 0.013618586, -4.0282173, 0.82479656, -0.83208466)
 mesh = SubResource("PlaneMesh_0qn8l")
 surface_material_override/0 = SubResource("StandardMaterial3D_xqi3q")
-requires_reactor = true
 note_pages = Array[Texture2D]([ExtResource("29_tqfy2")])
 
 [node name="Props" type="Node3D" parent="Rooms/Hub" unique_id=1695698112]
@@ -1089,7 +1072,7 @@ valid_neighbors = [NodePath("../LabPlayerPos4"), NodePath("../LabPlayerPos3")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -4.5)
 fov = 70.0
 valid_neighbors = [NodePath("../LabPlayerPos5"), NodePath("../LabPlayerPos2")]
-valid_clickables = [null]
+valid_clickables = [NodePath("../../Interactables/BinderPage3")]
 
 [node name="LabPlayerPos5" parent="Rooms/StarboardLab/PlayerPositions" unique_id=1669920877 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-4.3711385e-08, -0.1736482, 0.9848078, 0, 0.9848078, 0.1736482, -1, 7.590403e-09, -4.304731e-08, -6, 1.6, -9.5)
@@ -1650,7 +1633,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -9)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -8)
 
 [node name="AftHallway" type="Node3D" parent="Rooms" unique_id=1178171097]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -37)
 
 [node name="Meshes" type="Node3D" parent="Rooms/AftHallway" unique_id=574080761]
 
@@ -1677,11 +1660,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
 [node name="PlayerPositions" type="Node3D" parent="Rooms/AftHallway" unique_id=973628982]
 
+[node name="Aft5" parent="Rooms/AftHallway/PlayerPositions" unique_id=1609693990 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
+transform = Transform3D(-1, 1.5180808e-08, -8.609463e-08, 0, 0.9848078, 0.1736482, 8.742278e-08, 0.1736482, -0.9848078, 0, 1.6, 12.5)
+fov = 70.0
+valid_neighbors = [NodePath("../../../Hub/PlayerPositions/Hub2"), NodePath("../Aft0")]
+valid_clickables = [NodePath("../../Interactables/AftReactorDoorButton")]
+reverb_vector = Vector4(0.3, 0, 0, 0.4)
+
 [node name="Aft0" parent="Rooms/AftHallway/PlayerPositions" unique_id=1296765404 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
 transform = Transform3D(-1, 1.5180806e-08, -8.6094616e-08, 0, 0.98480767, 0.17364818, 8.742278e-08, 0.17364818, -0.98480767, 0, 1.6, 9)
 fov = 70.0
 valid_neighbors = [NodePath("../../../Hub/PlayerPositions/Hub2"), NodePath("../Aft1")]
-valid_clickables = [NodePath("../../Interactables/AftReactorDoorButton"), NodePath("../WillemZoomIn"), NodePath("../OtherDeskZoomin")]
+valid_clickables = [NodePath("../../Interactables/NoteObject")]
 reverb_vector = Vector4(0.3, 0, 0, 0.4)
 
 [node name="Aft1" parent="Rooms/AftHallway/PlayerPositions" unique_id=1607138788 node_paths=PackedStringArray("valid_neighbors") instance=ExtResource("7_ppnae")]
@@ -1712,27 +1702,10 @@ valid_neighbors = [NodePath("../Aft3"), NodePath("../../../engine_core/PlayerPos
 reverb_vector = Vector4(0.3, 0, 0, 0.4)
 time_dilation_multiplier = 10.0
 
-[node name="WillemZoomIn" parent="Rooms/AftHallway/PlayerPositions" unique_id=759054570 node_paths=PackedStringArray("valid_clickables") instance=ExtResource("6_6vmy0")]
-transform = Transform3D(-0.012956709, -0.38522416, 0.9227321, -0.024681363, 0.9226516, 0.384844, -0.9996114, -0.017787974, -0.021462385, -0.5981599, 1.7816656, 8.992168)
-fov = 85.0
-valid_clickables = [NodePath("../../Interactables/NoteObject")]
-
-[node name="CollisionShape3D" parent="Rooms/AftHallway/PlayerPositions/WillemZoomIn/Interactable" parent_id_path=PackedInt32Array(759054570, 1013888320) index="0" unique_id=926940183]
-transform = Transform3D(0.9999565, -0.0063633807, 0.0075414022, 0.008591398, 0.93736935, -0.34823656, -0.0048533734, 0.34828556, 0.93737715, -0.0054416656, -0.2962489, -0.9195924)
-shape = SubResource("BoxShape3D_vlq3c")
-
-[node name="OtherDeskZoomin" parent="Rooms/AftHallway/PlayerPositions" unique_id=364779535 instance=ExtResource("6_6vmy0")]
-transform = Transform3D(-0.010059723, 0.38416365, -0.9232102, -0.024166828, 0.9228939, 0.3842953, 0.99965733, 0.026176967, -4.0033147e-08, 0.53866196, 1.7816656, 8.992168)
-fov = 85.0
-
-[node name="CollisionShape3D" parent="Rooms/AftHallway/PlayerPositions/OtherDeskZoomin/Interactable" parent_id_path=PackedInt32Array(364779535, 1013888320) index="0" unique_id=926940183]
-transform = Transform3D(0.9999415, 0.00223157, 0.010578744, 0.0022320077, 0.9147624, -0.4039858, -0.010578751, 0.40398586, 0.9147041, 0.02586174, -0.24726033, -1.1291826)
-shape = SubResource("BoxShape3D_tqfy2")
-
 [node name="Interactables" type="Node3D" parent="Rooms/AftHallway" unique_id=804026529]
 
 [node name="AftReactorDoorButton" parent="Rooms/AftHallway/Interactables" unique_id=1664514850 node_paths=PackedStringArray("door") instance=ExtResource("9_1gqlr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2751324, 1.0298835, 12.013891)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2751324, 1.0298835, 14.013891)
 door = NodePath("../../../Hub/Meshes/ReactorDoor")
 needs_power = true
 
@@ -2019,7 +1992,6 @@ script = ExtResource("58_pdwea")
 [editable path="Rooms/AirLock/PlayerPositions/InternalZoomIn"]
 [editable path="Rooms/AirLock/Interactables/BinderPage4"]
 [editable path="Rooms/ForeHallway/PlayerPositions/KishiDeskzoom"]
-[editable path="Rooms/ForeHallway/PlayerPositions/DenizDeskZoom"]
 [editable path="Rooms/Cockpit/PlayerPositions/KnobZoomIn"]
 [editable path="Rooms/Cockpit/PlayerPositions/SwitchZoomIn"]
 [editable path="Rooms/Cockpit/PlayerPositions/ClockZoomIn"]
@@ -2027,5 +1999,3 @@ script = ExtResource("58_pdwea")
 [editable path="Rooms/Cockpit/Interactables/BinderPage1"]
 [editable path="Rooms/StarboardLab/Interactables/BinderPage3"]
 [editable path="Rooms/PortHydroponics/Interactables/BinderPage2"]
-[editable path="Rooms/AftHallway/PlayerPositions/WillemZoomIn"]
-[editable path="Rooms/AftHallway/PlayerPositions/OtherDeskZoomin"]

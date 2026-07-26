@@ -41,7 +41,6 @@ func _ready():
 func create_3D_audio_at_location(sound_posiition : Vector3, effect_id, track_key = null):
 	if sound_effect_dict.has(effect_id):
 		var sound_effect_settings = sound_effect_dict[effect_id]
-		print("has open limit", sound_effect_settings.has_open_limit())
 		if sound_effect_settings.has_open_limit() and game_node:
 			sound_effect_settings.increment_audio_count(1)
 			var new_3d_player = AudioStreamPlayer3D.new()
@@ -59,7 +58,6 @@ func create_3D_audio_at_location(sound_posiition : Vector3, effect_id, track_key
 
 			# use track for audios that loop infinitely
 			if track_key != null:
-				print("playing %s" % track_key)
 				stop_3d_audio(track_key)
 				active_tracked_audio[track_key] = new_3d_player
 
@@ -71,7 +69,6 @@ func create_3D_audio_at_location(sound_posiition : Vector3, effect_id, track_key
 func stop_3d_audio(track_key):
 	var sound_effect_settings = sound_effect_dict[track_key]
 	sound_effect_settings.on_audio_finished()
-	print("stopping sound %s" % track_key)
 	if active_tracked_audio.has(track_key):
 		var audio_player = active_tracked_audio[track_key]
 		if is_instance_valid(audio_player):

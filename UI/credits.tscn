@@ -1,29 +1,63 @@
 [gd_scene format=3 uid="uid://pc57gtu0imub"]
 
 [ext_resource type="Script" uid="uid://dp2pvmf3uhn63" path="res://UI/credits.gd" id="1_ng644"]
+[ext_resource type="FontFile" uid="uid://o315yvr8tq7t" path="res://assets/Fonts/Venus Rising Rg.otf" id="2_0ccpq"]
+[ext_resource type="CompressedTexture3D" uid="uid://c22udi712rbfc" path="res://assets/lut2.png" id="2_ftffn"]
+[ext_resource type="Shader" uid="uid://c37h6xp4wuuqf" path="res://scenes/game_world/skybox.gdshader" id="3_0ccpq"]
+[ext_resource type="PackedScene" uid="uid://bh67ed4x1sdlx" path="res://Meshes/World/blackhole.tscn" id="4_ehabf"]
+[ext_resource type="Script" uid="uid://bdyrm5dg6vsu2" path="res://UI/menu_camera_orbit.gd" id="5_8sla6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oow3h"]
+font = ExtResource("2_0ccpq")
+font_size = 64
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ccpq"]
+font = ExtResource("2_0ccpq")
+font_size = 32
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ehabf"]
+font = ExtResource("2_0ccpq")
+font_size = 48
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8sla6"]
+font = ExtResource("2_0ccpq")
+font_size = 24
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yh2v0"]
+shader = ExtResource("3_0ccpq")
+shader_parameter/sun_color = Color(1.253487, 0.98923135, 0.4558793, 1)
+shader_parameter/sun_size = 0.00999999977648
+shader_parameter/sun_blur = 9.64400045739148
+shader_parameter/star_density = 0.5
+shader_parameter/star_brightness = 0.72800003132012
+
+[sub_resource type="Sky" id="Sky_ev3b6"]
+sky_material = SubResource("ShaderMaterial_yh2v0")
+
+[sub_resource type="Environment" id="Environment_tkahm"]
+background_mode = 2
+sky = SubResource("Sky_ev3b6")
+ambient_light_source = 2
+ambient_light_color = Color(0.6955032, 0.6955031, 0.6955031, 1)
+adjustment_enabled = true
+adjustment_color_correction = ExtResource("2_ftffn")
 
 [node name="Credits" type="Control" unique_id=1871724967]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 1352.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ng644")
-scroll_speed = 15.0
-
-[node name="Label" type="Label" parent="." unique_id=727768861]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -72.0
-offset_top = 40.0
-offset_right = 72.0
-offset_bottom = 63.0
-grow_horizontal = 2
-text = "This is a Test - Test"
 
 [node name="BackButton" type="Button" parent="." unique_id=1975244997]
 layout_mode = 1
@@ -32,11 +66,234 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = 371.0
+offset_top = -949.0
+offset_right = 625.0
+offset_bottom = -918.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_0ccpq")
 text = "Back to Main Menu"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1120314547]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -591.0
+offset_top = 40.0
+offset_right = 591.0
+offset_bottom = 2706.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=581500409]
+layout_mode = 2
+text = "Advent Rising"
+label_settings = SubResource("LabelSettings_oow3h")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1555093030]
+layout_mode = 2
+text = "A Salty Squad Game"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=162246577]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=1924483736]
+layout_mode = 2
+text = "Direction and Game Design"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=2009777662]
+layout_mode = 2
+text = "Captain Carrot"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer" unique_id=2069769242]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=97978374]
+layout_mode = 2
+text = "Coding"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer" unique_id=423682471]
+layout_mode = 2
+text = "badum_dev"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer" unique_id=433670401]
+layout_mode = 2
+text = "Captain CArrot"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="VBoxContainer" unique_id=1416064413]
+layout_mode = 2
+text = "Ellie \"Hellbie\" Near"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="VBoxContainer" unique_id=1888207929]
+layout_mode = 2
+text = "SonicPixelation"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Spacer3" type="Control" parent="VBoxContainer" unique_id=1208765516]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label9" type="Label" parent="VBoxContainer" unique_id=672647798]
+layout_mode = 2
+text = "3D Art"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="VBoxContainer" unique_id=711304454]
+layout_mode = 2
+text = "MiraculousMasterofMayhem"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Spacer4" type="Control" parent="VBoxContainer" unique_id=2069913166]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label12" type="Label" parent="VBoxContainer" unique_id=932777905]
+layout_mode = 2
+text = "Sound Engineer"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="VBoxContainer" unique_id=88549020]
+layout_mode = 2
+text = "6ar60yle"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Spacer5" type="Control" parent="VBoxContainer" unique_id=2034872145]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label14" type="Label" parent="VBoxContainer" unique_id=1777722719]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="VBoxContainer" unique_id=856247462]
+layout_mode = 2
+text = "Ellie \"hellbie\" near"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Spacer6" type="Control" parent="VBoxContainer" unique_id=1050557322]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label16" type="Label" parent="VBoxContainer" unique_id=520371622]
+layout_mode = 2
+text = "Narrative Writer"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Label17" type="Label" parent="VBoxContainer" unique_id=486213448]
+layout_mode = 2
+text = "Pufuzuku"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Spacer7" type="Control" parent="VBoxContainer" unique_id=808136155]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label18" type="Label" parent="VBoxContainer" unique_id=1415459663]
+layout_mode = 2
+text = "Note Fonts"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Label19" type="Label" parent="VBoxContainer" unique_id=1539869388]
+layout_mode = 2
+text = "Charlotte T"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Spacer8" type="Control" parent="VBoxContainer" unique_id=1715046691]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label24" type="Label" parent="VBoxContainer" unique_id=1326430407]
+layout_mode = 2
+text = "Interior Cluttering"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Label25" type="Label" parent="VBoxContainer" unique_id=2038415928]
+layout_mode = 2
+text = "Charlotte T"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Label26" type="Label" parent="VBoxContainer" unique_id=161058321]
+layout_mode = 2
+text = "With special thanks to Pluto"
+label_settings = SubResource("LabelSettings_8sla6")
+horizontal_alignment = 1
+
+[node name="Spacer10" type="Control" parent="VBoxContainer" unique_id=1604760857]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label21" type="Label" parent="VBoxContainer" unique_id=35881860]
+layout_mode = 2
+text = "Constellation Card Art"
+label_settings = SubResource("LabelSettings_0ccpq")
+horizontal_alignment = 1
+
+[node name="Label22" type="Label" parent="VBoxContainer" unique_id=723996388]
+layout_mode = 2
+text = "Martin (chod)"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Spacer9" type="Control" parent="VBoxContainer" unique_id=726504302]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="Label27" type="Label" parent="VBoxContainer" unique_id=1769148539]
+layout_mode = 2
+text = "Thank you for playing!"
+label_settings = SubResource("LabelSettings_ehabf")
+horizontal_alignment = 1
+
+[node name="Node3D" type="Node3D" parent="." unique_id=181532960]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=293422867]
+environment = SubResource("Environment_tkahm")
+
+[node name="Blackhole" parent="Node3D/WorldEnvironment" unique_id=118774140 instance=ExtResource("4_ehabf")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.07039261, 0, 0)
+
+[node name="CameraOrbit" type="Node3D" parent="Node3D" unique_id=457836937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6156006, 18.82248, 1.131073)
+script = ExtResource("5_8sla6")
+rotation_speed = -0.025
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/CameraOrbit" unique_id=316206351]
+transform = Transform3D(1, -6.608408e-07, -3.2820233e-14, 5.085048e-07, 0.76948154, 0.6386691, -4.2205855e-07, -0.6386691, 0.76948154, 0, 23.926155, 58.204155)
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

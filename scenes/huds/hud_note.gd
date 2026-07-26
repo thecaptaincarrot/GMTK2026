@@ -46,7 +46,6 @@ func render_current_page():
 		text_display_back.texture = _text_pages_back[_current_page - 2]
 	else:
 		text_display_back.texture = null
-	print(text_display_back.texture)
 	AudioPlayer.create_audio("Paper")
 	if _current_page == 0:
 		previous_button.disabled = true

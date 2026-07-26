@@ -48,10 +48,8 @@ func move_player_to_position(from_sub_zoom = false):
 		player.camera.fov  = self.fov
 	
 	if Globals.is_zoomed_in() and !Globals._sub_zoom_in and !from_sub_zoom:
-		print("second zoom")
 		Globals._sub_zoom_in = true
 	else:
-		print("first zoom")
 		Globals._sub_zoom_in = false
 		Globals._last_zoom_in_node = self
 	

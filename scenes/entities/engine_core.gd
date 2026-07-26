@@ -93,7 +93,6 @@ func _physics_process(delta):
 			if next_startup_end < current_time:
 				begin_cooling_sequence()
 		activated:
-			print("hi")
 			if reactor_material.emission_energy_multiplier < 1.0:
 				reactor_material.emission_energy_multiplier += delta * 0.1
 			if  reactor_material.emission.v > 1.0:
@@ -140,15 +139,15 @@ func activate():
 	
 	var new_tween = create_tween()
 	new_tween.tween_callback(set_shape_key.bind(1))
-	new_tween.tween_interval(2)
+	new_tween.tween_interval(1.4)
 	new_tween.tween_callback(set_shape_key.bind(2))
-	new_tween.tween_interval(2)
+	new_tween.tween_interval(1.4)
 	new_tween.tween_callback(set_shape_key.bind(3))
-	new_tween.tween_interval(2)
+	new_tween.tween_interval(1.4)
 	new_tween.tween_callback(set_shape_key.bind(4))
-	new_tween.tween_interval(2)
+	new_tween.tween_interval(1.4)
 	new_tween.tween_callback(set_shape_key.bind(5))
-	new_tween.tween_interval(2)
+	new_tween.tween_interval(1.4)
 	new_tween.tween_callback(set_shape_key.bind(6))
 
 

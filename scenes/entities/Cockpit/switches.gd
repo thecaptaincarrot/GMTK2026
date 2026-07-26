@@ -27,7 +27,6 @@ func enable_collision():
 func _on_left_switch_interactee_interacted_with():
 	AudioPlayer.create_audio("SwitchFlip")
 	left_toggled = !left_toggled
-	print(left_toggled)
 	update_switches()
 
 

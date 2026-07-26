@@ -42,7 +42,6 @@ func _ready():
 
 func _physics_process(delta):
 	if abs(black_hole_target_rotation - black_hole_rotator.rotation.z) > PI/256:
-		print("target: ", black_hole_target_rotation, " Current: ", black_hole_rotator.rotation.z)
 		if black_hole_rotator.rotation.z > black_hole_target_rotation:
 			black_hole_rotator.rotation.z -= delta * black_hole_rotation_speed
 		else:
@@ -80,6 +79,5 @@ func _on_back_mouse_exited() -> void:
 
 
 func rotate_black_hole(new_target):
-	print("new black hole rotation target")
 	black_hole_target_rotation = new_target
 	rotation_in_progress = true

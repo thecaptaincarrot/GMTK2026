@@ -13,4 +13,13 @@ func handle_interaction():
 		interacted_with.emit()
 		Globals.binder_collected = true
 		Globals.open_binder()
-		queue_free()
+		hide()
+
+func  enable_collision():
+	if get_interactable() and !Globals.binder_collected:
+		get_interactable().enable_collision()
+
+
+func  disable_collision():
+	if get_interactable():
+		get_interactable().disable_collision()
