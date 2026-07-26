@@ -1640,7 +1640,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 [node name="PlayerPositions" type="Node3D" parent="Rooms/AftHallway" unique_id=973628982]
 
 [node name="Aft5" parent="Rooms/AftHallway/PlayerPositions" unique_id=1609693990 node_paths=PackedStringArray("valid_neighbors", "valid_clickables") instance=ExtResource("7_ppnae")]
-transform = Transform3D(-1, 1.5180808e-08, -8.609463e-08, 0, 0.9848078, 0.1736482, 8.742278e-08, 0.1736482, -0.9848078, 0, 1.6, 12.16)
+transform = Transform3D(-1, 1.5180808e-08, -8.609463e-08, 0, 0.9848078, 0.1736482, 8.742278e-08, 0.1736482, -0.9848078, 0, 1.6, 12)
 fov = 70.0
 valid_neighbors = [NodePath("../../../Hub/PlayerPositions/Hub2"), NodePath("../Aft0")]
 valid_clickables = [NodePath("../../Interactables/AftReactorDoorButton")]
