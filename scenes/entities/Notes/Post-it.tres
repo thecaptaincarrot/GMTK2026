@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://hpnwotl5gosv"]
+
+[ext_resource type="Texture2D" uid="uid://dpasao0xl4dc4" path="res://assets/notes/AirlockNote.png" id="1_m51dx"]
+
+[resource]
+albedo_color = Color(1, 0.924, 0.43, 1)
+albedo_texture = ExtResource("1_m51dx")

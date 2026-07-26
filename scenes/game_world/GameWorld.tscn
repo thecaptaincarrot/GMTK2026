@@ -5,6 +5,8 @@
 [ext_resource type="Shader" uid="uid://c37h6xp4wuuqf" path="res://scenes/game_world/skybox.gdshader" id="2_qfria"]
 [ext_resource type="PackedScene" uid="uid://bh67ed4x1sdlx" path="res://Meshes/World/blackhole.tscn" id="4_f3jsn"]
 [ext_resource type="Script" uid="uid://lyhhpvmokkgv" path="res://scenes/huds/debug_info.gd" id="4_jamdq"]
+[ext_resource type="Script" uid="uid://0lsipaeaqxji" path="res://scenes/huds/clock_interface.gd" id="6_27b26"]
+[ext_resource type="FontFile" uid="uid://ciyvlsca5ecik" path="res://assets/Fonts/digital display tfb.ttf" id="7_lp5si"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7ym8"]
 shader = ExtResource("2_qfria")
@@ -14,16 +16,21 @@ shader_parameter/sun_blur = 9.64400045739148
 shader_parameter/star_density = 0.5
 shader_parameter/star_brightness = 0.72800003132012
 
-[sub_resource type="Sky" id="Sky_7522t"]
+[sub_resource type="Sky" id="Sky_atykj"]
 sky_material = SubResource("ShaderMaterial_b7ym8")
 
 [sub_resource type="Environment" id="Environment_st70h"]
 background_mode = 2
-sky = SubResource("Sky_7522t")
+sky = SubResource("Sky_atykj")
 ambient_light_source = 2
 ambient_light_color = Color(0.6955032, 0.6955031, 0.6955031, 1)
 adjustment_enabled = true
 adjustment_color_correction = ExtResource("2_57veo")
+
+[sub_resource type="LabelSettings" id="LabelSettings_oow3h"]
+font = ExtResource("7_lp5si")
+font_size = 64
+font_color = Color(1, 0, 0, 1)
 
 [node name="GameWorld" type="Node3D" unique_id=773402118]
 script = ExtResource("1_p46a1")
@@ -54,3 +61,21 @@ layout_mode = 2
 
 [node name="Ticks" type="Label" parent="DebugInfo/VBoxContainer" unique_id=253582767]
 layout_mode = 2
+
+[node name="ClockInterface" type="CanvasLayer" parent="." unique_id=1434793740]
+script = ExtResource("6_27b26")
+
+[node name="ClockLabel" type="Label" parent="ClockInterface" unique_id=1454383630]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -92.0
+offset_right = -25.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "12:00:00"
+label_settings = SubResource("LabelSettings_oow3h")
