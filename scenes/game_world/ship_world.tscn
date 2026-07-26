@@ -53,6 +53,8 @@
 [ext_resource type="PackedScene" uid="uid://co52jofjxxq5g" path="res://scenes/entities/Clutter/ashtray.tscn" id="40_pdwea"]
 [ext_resource type="PackedScene" uid="uid://c15wjcwstsfd7" path="res://scenes/entities/Clutter/cigar_1.tscn" id="41_joow5"]
 [ext_resource type="PackedScene" uid="uid://dhetqem4mcofx" path="res://scenes/entities/Clutter/cigar_2.tscn" id="42_va6hq"]
+[ext_resource type="PackedScene" uid="uid://bkqmiy1gnpt1s" path="res://scenes/entities/Clutter/foodtube_a.tscn" id="51_tp8qv"]
+[ext_resource type="PackedScene" uid="uid://cwd3asxq482t7" path="res://scenes/entities/Clutter/foodtube_empty.tscn" id="52_l53td"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_df53p"]
 size = Vector3(0.33795166, 0.51013184, 0.16552734)
@@ -1461,6 +1463,76 @@ light_energy = 3.5
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
+
+[node name="Workstations" type="Node3D" parent="Rooms/AftHallway" unique_id=541075057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="WorkstationPort" type="Node3D" parent="Rooms/AftHallway/Workstations" unique_id=1332092005]
+
+[node name="workstation" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=1407779904 instance=ExtResource("27_d5xf3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5, -0.4, 0)
+
+[node name="foodtube_a" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=1426803796 instance=ExtResource("51_tp8qv")]
+transform = Transform3D(0.56480867, 0, 0.8252219, 0, 1, 0, -0.8252219, 0, 0.56480867, 1.530989, 1.1636355, 0.6824589)
+
+[node name="foodtube_a2" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=1145607784 instance=ExtResource("51_tp8qv")]
+transform = Transform3D(-0.48219705, 0, -0.87606287, 0, 1, 0, 0.87606287, 0, -0.48219705, 1.254753, 0.7983562, 0.3581791)
+
+[node name="foodtube_empty" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=794808749 instance=ExtResource("52_l53td")]
+transform = Transform3D(-0.8943093, 0.09933829, 0.43628308, -0.08928075, -0.99505377, 0.043555047, 0.43845174, 1.2113785e-08, 0.8987547, 1.3469088, 1.1781844, 0.5301323)
+
+[node name="foodtube_empty2" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=148549923 instance=ExtResource("52_l53td")]
+transform = Transform3D(0.33462504, 0, 0.94235134, 0, 1, 0, -0.94235134, 0, 0.33462504, 1.6285565, 1.161122, 0.35999298)
+
+[node name="foodtube_empty5" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=1009260165 instance=ExtResource("52_l53td")]
+transform = Transform3D(-0.78397155, 0, 0.6207968, 0, 1, 0, -0.6207968, 0, -0.78397155, 1.7158167, 1.1611218, 0.11365318)
+
+[node name="foodtube_empty3" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=453006221 instance=ExtResource("52_l53td")]
+transform = Transform3D(0.8226439, 0, -0.568557, 0, 1, 0, 0.568557, 0, 0.8226439, 1.5610174, 1.1611221, 0.5475178)
+
+[node name="foodtube_empty4" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=661542702 instance=ExtResource("52_l53td")]
+transform = Transform3D(0.8854747, 0.16949697, 0.4326726, 0.15228878, -0.98553073, 0.0744134, 0.43902496, 0, -0.89847493, 1.4291141, 1.1971568, 0.340868)
+
+[node name="papercrumbled" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=639424271 instance=ExtResource("35_6r80u")]
+transform = Transform3D(0.34880272, 0, 0.9371962, 0, 1, 0, -0.9371962, 0, 0.34880272, 1.4725629, 0.85327256, -0.2889309)
+
+[node name="papercrumbled2" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=1879000774 instance=ExtResource("35_6r80u")]
+transform = Transform3D(0.64442533, 0, -0.7646673, 0, 1, 0, 0.7646673, 0, 0.64442533, 1.1564238, 0.85327256, -0.035074234)
+
+[node name="Tablet" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=2105110865 instance=ExtResource("20_2sfaj")]
+transform = Transform3D(-0.7615552, 0, -0.64810026, 0, 1, 0, 0.64810026, 0, -0.7615552, 1.4131796, 1.1653214, -0.3715477)
+
+[node name="notebook" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=219412478 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(-0.21286279, 0, 0.977082, 0, 1, 0, -0.977082, 0, -0.21286279, 1.3720248, 1.1706233, -0.17473602)
+
+[node name="Label3D" type="Label3D" parent="Rooms/AftHallway/Workstations/WorkstationPort/notebook" unique_id=727068602]
+transform = Transform3D(-1.0000004, 8.940697e-08, 0, 0, -4.371139e-08, 1.0000002, 8.940697e-08, 1.0000001, 4.3711402e-08, 0, 0.025226831, 0)
+pixel_size = 0.002
+shaded = true
+text = "FINANCES"
+font_size = 16
+outline_size = 1
+
+[node name="Pencil" parent="Rooms/AftHallway/Workstations/WorkstationPort" unique_id=675040689 instance=ExtResource("36_cjrt4")]
+transform = Transform3D(0.24659345, 0, -0.96911895, 0, 1, 0, 0.96911895, 0, 0.24659345, 1.4273797, 1.1724124, -0.0062999725)
+
+[node name="WorkstationStarboard" type="Node3D" parent="Rooms/AftHallway/Workstations" unique_id=512880203]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="workstation" parent="Rooms/AftHallway/Workstations/WorkstationStarboard" unique_id=1388882710 instance=ExtResource("27_d5xf3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5, -0.4, 0)
+
+[node name="Radio" parent="Rooms/AftHallway/Workstations/WorkstationStarboard" unique_id=912155082 instance=ExtResource("37_tp8qv")]
+transform = Transform3D(0.21368682, 0, -0.97690225, 0, 1, 0, 0.97690225, 0, 0.21368682, 1.3632284, 1.1675205, -0.16049194)
+
+[node name="drinking_glass" parent="Rooms/AftHallway/Workstations/WorkstationStarboard" unique_id=522186219 instance=ExtResource("38_l53td")]
+transform = Transform3D(-0.7464029, 0, -0.6654943, 0, 1, 0, 0.6654943, 0, -0.7464029, 1.2893155, 1.1650293, 0.29673195)
+
+[node name="coffee_mug" parent="Rooms/AftHallway/Workstations/WorkstationStarboard" unique_id=1001770735 instance=ExtResource("39_d26aw")]
+transform = Transform3D(-0.8809734, 0, -0.47316575, 0, 1, 0, 0.47316575, 0, -0.8809734, 1.315456, 1.1636465, -0.53899765)
+
+[node name="Book" parent="Rooms/AftHallway/Workstations/WorkstationStarboard" unique_id=862319147 instance=ExtResource("33_d26aw")]
+transform = Transform3D(0.3662391, 0, 0.93052083, 0, 1, 0, -0.93052083, 0, 0.3662391, 1.2809632, 0.79634464, 0.2259674)
 
 [node name="engine_core" type="Node3D" parent="Rooms" unique_id=979140351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41)
