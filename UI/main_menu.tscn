@@ -16,12 +16,12 @@ shader_parameter/sun_blur = 9.64400045739148
 shader_parameter/star_density = 0.5
 shader_parameter/star_brightness = 0.72800003132012
 
-[sub_resource type="Sky" id="Sky_7522t"]
+[sub_resource type="Sky" id="Sky_ev3b6"]
 sky_material = SubResource("ShaderMaterial_ev3b6")
 
 [sub_resource type="Environment" id="Environment_k0a0m"]
 background_mode = 2
-sky = SubResource("Sky_7522t")
+sky = SubResource("Sky_ev3b6")
 ambient_light_source = 2
 ambient_light_color = Color(0.6955032, 0.6955031, 0.6955031, 1)
 adjustment_enabled = true
@@ -29,7 +29,7 @@ adjustment_color_correction = ExtResource("2_4cwpn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6w7q"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ob0wn"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_k0a0m"]
 _surfaces = [{
 "aabb": AABB(-0.34298828, -0.13671742, -0.6470258, 0.68597656, 0.27343485, 1.4059888),
 "format": 34896613377,
@@ -59,7 +59,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("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")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ob0wn")
+shadow_mesh = SubResource("ArrayMesh_k0a0m")
 
 [sub_resource type="LabelSettings" id="LabelSettings_oow3h"]
 font = ExtResource("6_8ctay")

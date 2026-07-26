@@ -6,6 +6,7 @@ class_name GameRoom
 signal disable_cockpit
 
 signal rotate_black_hole
+signal game_ended
 
 var game_world : GameWorld
 
