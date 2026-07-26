@@ -27,6 +27,23 @@
 [ext_resource type="PackedScene" uid="uid://cugp0ssk0r5pi" path="res://Meshes/ShipParts/engine_core.tscn" id="21_6oo1f"]
 [ext_resource type="PackedScene" uid="uid://w12lobe4xf4q" path="res://scenes/entities/ReactorCore/core_console.tscn" id="21_r7isu"]
 [ext_resource type="Texture2D" uid="uid://buv21gweja60m" path="res://assets/notes/storynotereactor.png" id="24_o5cya"]
+[ext_resource type="PackedScene" uid="uid://dmtmoqimb00jw" path="res://scenes/entities/Furniture/wall_shelf.tscn" id="26_kja7b"]
+[ext_resource type="PackedScene" uid="uid://d75m20hpxcpm" path="res://scenes/entities/Furniture/workstation.tscn" id="27_d5xf3"]
+[ext_resource type="PackedScene" uid="uid://bfrq0gdkf3eqo" path="res://scenes/entities/Furniture/prop_chair.tscn" id="28_253k1"]
+[ext_resource type="PackedScene" uid="uid://bhwqb602vj3et" path="res://scenes/entities/Furniture/prop_tablesmall.tscn" id="29_b4dks"]
+[ext_resource type="PackedScene" uid="uid://bkdefx80r5oca" path="res://scenes/entities/Lab/beaker_full.tscn" id="30_hwmm2"]
+[ext_resource type="PackedScene" uid="uid://cjiafkciub2jx" path="res://scenes/entities/Lab/empty_beaker.tscn" id="31_e6hj8"]
+[ext_resource type="PackedScene" uid="uid://ctxrxokl88yxs" path="res://scenes/entities/Lab/test_tube_empty.tscn" id="32_ahd3r"]
+[ext_resource type="PackedScene" uid="uid://cq3dxtqrkl6ha" path="res://scenes/entities/Lab/test_tubes.tscn" id="33_1vxfc"]
+[ext_resource type="PackedScene" uid="uid://be16gt551kc57" path="res://scenes/entities/Clutter/notebook.tscn" id="34_2sfaj"]
+[ext_resource type="PackedScene" uid="uid://cbimq4byutr5f" path="res://scenes/entities/Clutter/papercrumbled.tscn" id="35_6r80u"]
+[ext_resource type="PackedScene" uid="uid://cn34mny4mpguh" path="res://scenes/entities/Clutter/pencil.tscn" id="36_cjrt4"]
+[ext_resource type="PackedScene" uid="uid://b6g64dhhyts7f" path="res://scenes/entities/Clutter/radio.tscn" id="37_tp8qv"]
+[ext_resource type="PackedScene" uid="uid://chmeq0d8l8uxf" path="res://scenes/entities/Clutter/drinking_glass.tscn" id="38_l53td"]
+[ext_resource type="PackedScene" uid="uid://20uwtroqnet6" path="res://scenes/entities/Clutter/coffee_mug.tscn" id="39_d26aw"]
+[ext_resource type="PackedScene" uid="uid://co52jofjxxq5g" path="res://scenes/entities/Clutter/ashtray.tscn" id="40_pdwea"]
+[ext_resource type="PackedScene" uid="uid://c15wjcwstsfd7" path="res://scenes/entities/Clutter/cigar_1.tscn" id="41_joow5"]
+[ext_resource type="PackedScene" uid="uid://dhetqem4mcofx" path="res://scenes/entities/Clutter/cigar_2.tscn" id="42_va6hq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_df53p"]
 size = Vector3(0.33795166, 0.51013184, 0.16552734)
@@ -946,6 +963,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -19)
 [node name="wingmoduleA" type="Node3D" parent="Rooms/StarboardLab/Meshes" unique_id=392917820]
 
 [node name="wingmodule" type="MeshInstance3D" parent="Rooms/StarboardLab/Meshes/wingmoduleA" unique_id=1824449115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007940769, -0.0027678013, -0.0056324005)
 mesh = SubResource("ArrayMesh_qnbg6")
 surface_material_override/0 = ExtResource("2_uobhj")
 
@@ -980,57 +998,177 @@ valid_neighbors = [NodePath("../LabPlayerPos2")]
 
 [node name="Props" type="Node3D" parent="Rooms/StarboardLab" unique_id=1963313716]
 
-[node name="Reactor_Lights" type="Node3D" parent="Rooms/StarboardLab/Props" unique_id=962278810]
+[node name="Reactor_Lights" type="Node3D" parent="Rooms/StarboardLab/Props" unique_id=1455590230]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 19)
 script = ExtResource("15_r7isu")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1512239739]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 8.015912, 2.373774, -29.830828)
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1042367334]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.014503, 2.373774, -29.830828)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
 spot_range = 3.487
 spot_attenuation = -3.98
-spot_angle = 61.67
+spot_angle = 85.42
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1947924268]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.942526, 2.2478442, -25.870441)
+[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=406736533]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -15.987767, 2.373774, -26.339571)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
-spot_range = 3.487
+spot_range = 4.422
 spot_attenuation = -3.98
-spot_angle = 61.67
+spot_angle = 85.07
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1306471990]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 3.8279123, 2.373774, -19.076632)
+[node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1011832005]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.006256, 2.373774, -22.810179)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
-spot_range = 3.487
+spot_range = 4.587
 spot_attenuation = -3.98
-spot_angle = 61.67
+spot_angle = 85.35
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=2019167836]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -19.079357)
+[node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1813011361]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -11.701576, 2.373774, -19.15516)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
 spot_range = 3.487
 spot_attenuation = -3.98
-spot_angle = 61.67
+spot_angle = 85.12
 
-[node name="SpotLight3D6" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1352628255]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -15.522747)
+[node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=511153399]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.06532, 2.373774, -19.112226)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
-spot_range = 3.487
+spot_range = 4.509
 spot_attenuation = -3.98
-spot_angle = 61.67
+spot_angle = 85.02
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1646768745]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -22.549242)
+[node name="SpotLight3D6" type="SpotLight3D" parent="Rooms/StarboardLab/Props/Reactor_Lights" unique_id=1334837568]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.06532, 2.373774, -15.740834)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
-spot_range = 3.487
+spot_range = 4.508
 spot_attenuation = -3.98
-spot_angle = 61.67
+spot_angle = 85.37
+
+[node name="wall_shelf2" parent="Rooms/StarboardLab/Props" unique_id=451224496 instance=ExtResource("26_kja7b")]
+transform = Transform3D(-0.9952746, -0.05006608, -0.012288617, -0.049904417, 0.99857336, 4.3148662e-09, 0.008610424, 0.00043314465, -1.4204364, -8.861382, 1.7540933, -1.3692493)
+
+[node name="wall_shelf3" parent="Rooms/StarboardLab/Props" unique_id=1057294106 instance=ExtResource("26_kja7b")]
+transform = Transform3D(-0.9952124, -0.050065923, -0.012439061, -0.0499013, 0.9985702, 4.3676907e-09, 0.008609886, 0.0004331433, -1.437826, -8.861382, 1.7464921, 0.24184227)
+
+[node name="wall_shelf4" parent="Rooms/StarboardLab/Props" unique_id=335753847 instance=ExtResource("26_kja7b")]
+transform = Transform3D(-0.99589586, -0.05006764, -0.01167304, -0.049935568, 0.9986045, 4.0987205e-09, 0.008615799, 0.00043315816, -1.349282, -8.860558, 1.7541319, 1.841219)
+
+[node name="workstation" parent="Rooms/StarboardLab/Props" unique_id=322691207 instance=ExtResource("27_d5xf3")]
+transform = Transform3D(0.016370095, 0, 0.7498213, 0, 0.75000024, 0, -0.7498213, 0, 0.016370095, -3.4081392, 0, -3.2678814)
+
+[node name="workstation3" parent="Rooms/StarboardLab/Props" unique_id=2123760910 instance=ExtResource("27_d5xf3")]
+transform = Transform3D(0.016370095, 0, 0.7498213, 0, 0.75000024, 0, -0.7498213, 0, 0.016370095, -3.4081392, 0, 4.077009)
+
+[node name="workstation2" parent="Rooms/StarboardLab/Props" unique_id=196383629 instance=ExtResource("27_d5xf3")]
+transform = Transform3D(-0.00128497, 0, 0.7499989, 0, 0.7500003, 0, -0.7499989, 0, -0.00128497, -3.3997478, 0, -5.624256)
+
+[node name="prop_chair" parent="Rooms/StarboardLab/Props" unique_id=738033018 instance=ExtResource("28_253k1")]
+transform = Transform3D(0.5532586, 0.027740102, -0.83254755, -0.05007658, 0.99874544, 0, 0.8315031, 0.041691136, 0.5539536, -4.101408, 0, -3.1774864)
+
+[node name="prop_chair2" parent="Rooms/StarboardLab/Props" unique_id=84888094 instance=ExtResource("28_253k1")]
+transform = Transform3D(-0.8252039, -0.041375294, -0.56331766, -0.050076578, 0.99874544, 2.063638e-09, 0.562611, 0.02820903, -0.8262404, -4.101408, 0, -5.8275414)
+
+[node name="prop_chair3" parent="Rooms/StarboardLab/Props" unique_id=1723270795 instance=ExtResource("28_253k1")]
+transform = Transform3D(0.22491819, 0.011277288, -0.97431237, -0.050076578, 0.99874544, 2.588283e-09, 0.9730901, 0.04879023, 0.22520074, -4.101408, 0, 4.1095047)
+
+[node name="prop_tablesmall" parent="Rooms/StarboardLab/Props" unique_id=112177350 instance=ExtResource("29_b4dks")]
+transform = Transform3D(0.012684416, 0, -0.41865027, 0, 1, 0, 1.0038607, 0, 0.0052899127, -8.668986, 0, -1.4697075)
+
+[node name="prop_tablesmall2" parent="Rooms/StarboardLab/Props" unique_id=1441595818 instance=ExtResource("29_b4dks")]
+transform = Transform3D(0.012662303, 0, -0.42689297, 0, 1, 0, 1.0021106, 0, 0.0053940644, -8.657692, 0, 0.16709518)
+
+[node name="prop_tablesmall3" parent="Rooms/StarboardLab/Props" unique_id=2081377441 instance=ExtResource("29_b4dks")]
+transform = Transform3D(0.012244489, 0, -0.43122596, 0, 1, 0, 0.9690444, 0, 0.0054488145, -8.649836, 0, 1.7683678)
+
+[node name="beaker_full" parent="Rooms/StarboardLab/Props" unique_id=559342926 instance=ExtResource("30_hwmm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.728299, 0.7917434, -0.30361938)
+
+[node name="beaker_full2" parent="Rooms/StarboardLab/Props" unique_id=664245116 instance=ExtResource("30_hwmm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.605927, 0.7946532, -0.062913895)
+
+[node name="beaker_full3" parent="Rooms/StarboardLab/Props" unique_id=593089636 instance=ExtResource("30_hwmm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.734538, 0.7946532, -1.6597023)
+
+[node name="Empty_Beaker" parent="Rooms/StarboardLab/Props" unique_id=1911402616 instance=ExtResource("31_e6hj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.903964, 1.7488618, 0)
+
+[node name="Empty_Beaker4" parent="Rooms/StarboardLab/Props" unique_id=669607760 instance=ExtResource("31_e6hj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.903964, 1.7488618, -0.8292675)
+
+[node name="Empty_Beaker5" parent="Rooms/StarboardLab/Props" unique_id=754398921 instance=ExtResource("31_e6hj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.903964, 1.7488618, 1.7917404)
+
+[node name="Empty_Beaker2" parent="Rooms/StarboardLab/Props" unique_id=1527488410 instance=ExtResource("31_e6hj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.860203, 1.7542614, 0.60899353)
+
+[node name="Empty_Beaker3" parent="Rooms/StarboardLab/Props" unique_id=446243325 instance=ExtResource("31_e6hj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.708719, 0.8063221, 0.23687363)
+
+[node name="test_tube_empty" parent="Rooms/StarboardLab/Props" unique_id=35923550 instance=ExtResource("32_ahd3r")]
+transform = Transform3D(0.9288405, -0.37010655, -0.016625509, 0, -0.044875618, 0.9989927, -0.37047982, -0.9279049, -0.041682296, -8.523518, 0.98766446, 1.3745937)
+
+[node name="test_tubes" parent="Rooms/StarboardLab/Props" unique_id=1996520290 instance=ExtResource("33_1vxfc")]
+transform = Transform3D(0.8624582, 0, 0.50612825, 0, 1, 0, -0.50612825, 0, 0.8624582, -8.789408, 0.8000274, 1.580328)
+
+[node name="test_tubes2" parent="Rooms/StarboardLab/Props" unique_id=1466086283 instance=ExtResource("33_1vxfc")]
+transform = Transform3D(0.97808176, 0, 0.20822114, 0, 1, 0, -0.20822114, 0, 0.97808176, -8.818151, 0.8000274, -1.5693588)
+
+[node name="test_tube_empty2" parent="Rooms/StarboardLab/Props" unique_id=2002667190 instance=ExtResource("32_ahd3r")]
+transform = Transform3D(0.013240523, 0.63118196, 0.77552176, -0.9998026, 0.019849587, 0.00091448426, -0.0148165785, -0.77538073, 0.63132024, -8.39342, 0.8418525, 1.7673435)
+
+[node name="notebook" parent="Rooms/StarboardLab/Props" unique_id=313965852 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.42658132, 0, -0.9044492, 0, 1, 0, 0.9044492, 0, 0.42658132, -8.534092, 0.804181, 0.5978451)
+
+[node name="papercrumbled" parent="Rooms/StarboardLab/Props" unique_id=511872503 instance=ExtResource("35_6r80u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.647461, 0.85249543, 1.4852543)
+
+[node name="papercrumbled3" parent="Rooms/StarboardLab/Props" unique_id=1437460314 instance=ExtResource("35_6r80u")]
+transform = Transform3D(0.86635274, 0, 0.49943262, 0, 1, 0, -0.49943262, 0, 0.86635274, -8.510135, 0.85249543, 1.5416031)
+
+[node name="notebook2" parent="Rooms/StarboardLab/Props" unique_id=803369230 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(0.7593892, 0, 0.6506366, 0, 1, 0, -0.6506366, 0, 0.7593892, -3.3022604, 1.1767186, -3.2591133)
+
+[node name="notebook3" parent="Rooms/StarboardLab/Props" unique_id=73682475 instance=ExtResource("34_2sfaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2733965, 1.203508, -3.2907887)
+
+[node name="papercrumbled2" parent="Rooms/StarboardLab/Props" unique_id=1840334444 instance=ExtResource("35_6r80u")]
+transform = Transform3D(1, 0, 0, 0, -0.76951164, 0.63863283, 0, -0.63863283, -0.76951164, -3.4647226, 1.2379322, -5.2691174)
+
+[node name="papercrumbled4" parent="Rooms/StarboardLab/Props" unique_id=2056615253 instance=ExtResource("35_6r80u")]
+transform = Transform3D(1, 0, 0, 0, -0.7169333, 0.69714177, 0, -0.69714177, -0.7169333, -8.544452, 0.86194134, -1.3362656)
+
+[node name="Pencil" parent="Rooms/StarboardLab/Props" unique_id=1012271906 instance=ExtResource("36_cjrt4")]
+transform = Transform3D(0.17397621, 0, 0.98474985, 0, 1, 0, -0.98474985, 0, 0.17397621, -8.624695, 0.8050822, 0.32011223)
+
+[node name="Pencil2" parent="Rooms/StarboardLab/Props" unique_id=1341922159 instance=ExtResource("36_cjrt4")]
+transform = Transform3D(-0.3825784, 0, -0.923923, 0, 1, 0, 0.923923, 0, -0.3825784, -3.4383755, 1.1837243, -3.0311413)
+
+[node name="Pencil3" parent="Rooms/StarboardLab/Props" unique_id=846581052 instance=ExtResource("36_cjrt4")]
+transform = Transform3D(0.42687085, 0, -0.90431273, 0, 1, 0, 0.90431273, 0, 0.42687085, -3.3876095, 1.1836576, -5.9842396)
+
+[node name="Radio" parent="Rooms/StarboardLab/Props" unique_id=120593892 instance=ExtResource("37_tp8qv")]
+transform = Transform3D(0.47222912, 0, -0.88147587, 0, 1, 0, 0.88147587, 0, 0.47222912, -3.155612, 1.1761823, -6.1165485)
+
+[node name="drinking_glass" parent="Rooms/StarboardLab/Props" unique_id=770053207 instance=ExtResource("38_l53td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2198915, 1.1756616, -2.7658367)
+
+[node name="coffee_mug" parent="Rooms/StarboardLab/Props" unique_id=1040897181 instance=ExtResource("39_d26aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2547884, 1.175634, -5.5678005)
+
+[node name="Ashtray" parent="Rooms/StarboardLab/Props" unique_id=892344806 instance=ExtResource("40_pdwea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.599141, 0.7826352, -1.9935379)
+
+[node name="Cigar1" parent="Rooms/StarboardLab/Props" unique_id=1206607937 instance=ExtResource("41_joow5")]
+transform = Transform3D(0.93991303, -0.34141394, 0, 0.3409961, 0.9387627, 0.049459856, -0.016886285, -0.046487965, 0.99877614, -8.554832, 0.8354525, -2.0253716)
+
+[node name="cigar_2" parent="Rooms/StarboardLab/Props" unique_id=692067866 instance=ExtResource("42_va6hq")]
+transform = Transform3D(0.8840911, -0.3704872, -0.2848197, -0.2472126, -0.8880017, 0.38773614, -0.39657152, -0.27238297, -0.87666345, -8.503251, 0.8068305, -1.889288)
 
 [node name="door_A" parent="Rooms/StarboardLab/Props" unique_id=1933391462 instance=ExtResource("3_uulq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -8)
@@ -1077,57 +1215,57 @@ valid_neighbors = [NodePath("../HydroPlayerPos1")]
 
 [node name="Props" type="Node3D" parent="Rooms/PortHydroponics" unique_id=1779277288]
 
-[node name="Reactor_Lights" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1455590230]
+[node name="Reactor_Lights2" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=962278810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 19)
 script = ExtResource("15_r7isu")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=1042367334]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.014503, 2.373774, -29.830828)
+[node name="SpotLight3D" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights2" unique_id=1512239739]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 8.015912, 2.373774, -29.830828)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 4.507
+spot_attenuation = -4.05
+spot_angle = 61.67
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights2" unique_id=1947924268]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.942526, 2.2478442, -25.870441)
+light_color = Color(1, 0.6313726, 0.3019608, 1)
+light_energy = 0.75
+spot_range = 4.508
+spot_attenuation = -3.55
+spot_angle = 85.82
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights2" unique_id=1306471990]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 3.8279123, 2.373774, -19.076632)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
 spot_range = 3.487
 spot_attenuation = -3.98
 spot_angle = 61.67
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=406736533]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -15.987767, 2.373774, -26.339571)
+[node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights2" unique_id=2019167836]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -19.079357)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
-spot_range = 3.487
-spot_attenuation = -3.98
-spot_angle = 61.67
+spot_range = 4.508
+spot_attenuation = -3.56
+spot_angle = 85.0
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=1011832005]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.006256, 2.373774, -22.810179)
+[node name="SpotLight3D6" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights2" unique_id=1352628255]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -15.522747)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
-spot_range = 3.487
-spot_attenuation = -3.98
-spot_angle = 61.67
+spot_range = 4.508
+spot_attenuation = -3.58
+spot_angle = 85.35
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=1813011361]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -11.701576, 2.373774, -19.15516)
+[node name="SpotLight3D5" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights2" unique_id=1646768745]
+transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, 7.946601, 2.4075074, -22.549242)
 light_color = Color(1, 0.6313726, 0.3019608, 1)
 light_energy = 0.75
-spot_range = 3.487
-spot_attenuation = -3.98
-spot_angle = 61.67
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=511153399]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.06532, 2.373774, -19.112226)
-light_color = Color(1, 0.6313726, 0.3019608, 1)
-light_energy = 0.75
-spot_range = 3.487
-spot_attenuation = -3.98
-spot_angle = 61.67
-
-[node name="SpotLight3D6" type="SpotLight3D" parent="Rooms/PortHydroponics/Props/Reactor_Lights" unique_id=1334837568]
-transform = Transform3D(1, 0, 0, 0, -0.03639602, 0.9993375, 0, -0.9993375, -0.03639602, -16.06532, 2.373774, -15.740834)
-light_color = Color(1, 0.6313726, 0.3019608, 1)
-light_energy = 0.75
-spot_range = 3.487
-spot_attenuation = -3.98
-spot_angle = 61.67
+spot_range = 4.508
+spot_attenuation = -3.56
+spot_angle = 85.0
 
 [node name="HydroponicsShelf" type="Node3D" parent="Rooms/PortHydroponics/Props" unique_id=1042635478]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 2)
