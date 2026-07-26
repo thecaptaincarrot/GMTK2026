@@ -7,7 +7,7 @@ class_name PlayerPositionOption
 @export var valid_clickables: Array[Node3D]
 @export var reverb_vector := Vector4(0, 0, 0, 0)
 
-@export var game_room:GameRoom
+var game_room:GameRoom
 
 @export_tool_button("Rotate 90 degrees") var rotate_action = rotate_90
 @export var time_dilation_multiplier: float = 1

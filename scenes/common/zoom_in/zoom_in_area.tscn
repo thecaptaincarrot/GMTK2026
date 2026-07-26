@@ -6,9 +6,8 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_st70h"]
 radius = 1.0
 
-[node name="ZoomIn" type="Camera3D" unique_id=464256384 node_paths=PackedStringArray("collision_area")]
+[node name="ZoomIn" type="Camera3D" unique_id=464256384]
 script = ExtResource("1_pvktk")
-collision_area = NodePath("Interactable/CollisionShape3D")
 
 [node name="Interactable" type="Area3D" parent="." unique_id=1013888320 node_paths=PackedStringArray("interactee")]
 script = ExtResource("2_eb4pp")

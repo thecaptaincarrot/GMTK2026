@@ -7,6 +7,9 @@ class_name GameRoom
 func _ready():
 	for player_position: PlayerPositionOption in get_all_player_positions():
 		player_position.game_room  = self
+	
+	for zoom_in : ZoomIn in get_all_zoom_in():
+		zoom_in.game_room = self
 
 
 func set_active_position_node(pos_name:StringName):
