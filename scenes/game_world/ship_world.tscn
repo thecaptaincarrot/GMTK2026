@@ -183,8 +183,9 @@ size = Vector2(0.235, 0.21)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m51dx"]
 albedo_texture = ExtResource("24_o5cya")
+emission_enabled = true
 emission = Color(0.97677475, 1, 0.4943815, 1)
-emission_energy_multiplier = 0.19
+emission_energy_multiplier = 0.05
 
 [node name="ShipWorld" type="Node3D" unique_id=792692354 node_paths=PackedStringArray("control_wheel", "indicator")]
 script = ExtResource("1_lny2s")
@@ -358,13 +359,6 @@ omni_range = 4096.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7240372, 2.270162, -3.3830047)
 light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 light_energy = 3.5
-shadow_enabled = true
-shadow_blur = 0.853
-omni_range = 4096.0
-
-[node name="FloorLight5" type="OmniLight3D" parent="Rooms/AirLock/Props/Emergency_Lights" unique_id=1843279875]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5686836, -0.29814684, -0.11174035)
-light_color = Color(0.023529412, 0.2509804, 0.16862746, 1)
 shadow_enabled = true
 shadow_blur = 0.853
 omni_range = 4096.0
@@ -821,10 +815,9 @@ script = ExtResource("22_b4dks")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3532002, 5.2768126)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.167
-shadow_enabled = true
 spot_range = 14.834
 spot_attenuation = -1.0
-spot_angle = 46.79
+spot_angle = 15.04
 
 [node name="Hub" type="Node3D" parent="Rooms" unique_id=234284742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)
@@ -1959,7 +1952,7 @@ shadow_blur = 0.853
 omni_range = 4096.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Rooms/engine_core/Props/Emergency_Lights" unique_id=1425713751]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2956226, 0.9507842, -41.781425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029987097, 0.9507842, -41.781425)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.2
 omni_range = 2.0
