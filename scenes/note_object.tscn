@@ -5,9 +5,6 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ndr5x"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vrmjk"]
-size = Vector3(2.403, 0.05, 2.256)
-
 [node name="NoteObject" type="MeshInstance3D" unique_id=527123681 node_paths=PackedStringArray("collision_area")]
 mesh = SubResource("PlaneMesh_ndr5x")
 script = ExtResource("1_wxw2t")
@@ -17,5 +14,4 @@ collision_area = NodePath("Interactable/CollisionShape3D")
 interactee = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1395558326]
-shape = SubResource("BoxShape3D_vrmjk")
 disabled = true
