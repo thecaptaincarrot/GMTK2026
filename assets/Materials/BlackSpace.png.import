@@ -1,0 +1,27 @@
+[remap]
+
+importer="cubemap_texture"
+type="CompressedCubemap"
+uid="uid://dcbmddjd7wghb"
+path="res://.godot/imported/BlackSpace.png-f9c35804834ece9cb8524d6004691873.ccube"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/Materials/BlackSpace.png"
+dest_files=["res://.godot/imported/BlackSpace.png-f9c35804834ece9cb8524d6004691873.ccube"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/arrangement=1

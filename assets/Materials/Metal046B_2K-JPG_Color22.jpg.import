@@ -1,0 +1,28 @@
+[remap]
+
+importer="cubemap_texture"
+type="CompressedCubemap"
+uid="uid://duam1cph6m4hs"
+path.s3tc="res://.godot/imported/Metal046B_2K-JPG_Color22.jpg-e12806e77a4e48babfd8bc95d65b3290.s3tc.ccube"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/Materials/Metal046B_2K-JPG_Color22.jpg"
+dest_files=["res://.godot/imported/Metal046B_2K-JPG_Color22.jpg-e12806e77a4e48babfd8bc95d65b3290.s3tc.ccube"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+slices/arrangement=1

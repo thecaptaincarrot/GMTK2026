@@ -8,4 +8,5 @@ script = ExtResource("1_0qy3r")
 ID = "LightBeep"
 limit = 3
 sound_effect = Array[AudioStream]([ExtResource("2_5rvla")])
+volume = 0
 metadata/_custom_type_script = "uid://b7fou07k713y"

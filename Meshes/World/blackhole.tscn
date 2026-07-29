@@ -1,20 +1,23 @@
 [gd_scene format=3 uid="uid://bh67ed4x1sdlx"]
 
 [ext_resource type="Shader" uid="uid://0iri3rtgna06" path="res://Meshes/World/blackhole.gdshader" id="1_hvh6n"]
-[ext_resource type="Texture2D" uid="uid://bcsuseynh0l73" path="res://assets/Materials/Metal046B_2K-JPG/Metal046B_2K-JPG_Color.jpg" id="2_w10yu"]
+[ext_resource type="CompressedCubemap" uid="uid://duam1cph6m4hs" path="res://assets/Materials/Metal046B_2K-JPG_Color22.jpg" id="2_w10yu"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_st70h"]
 radius = 5.0
 height = 4.0
 
-[sub_resource type="Texture2DArrayRD" id="Texture2DArrayRD_0aa14"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g28q7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j3pel"]
+noise = SubResource("FastNoiseLite_g28q7")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7522t"]
 render_priority = 0
 shader = ExtResource("1_hvh6n")
 shader_parameter/radius = 8.0
-shader_parameter/noise = ExtResource("2_w10yu")
-shader_parameter/skybox = SubResource("Texture2DArrayRD_0aa14")
+shader_parameter/noise = SubResource("NoiseTexture2D_j3pel")
+shader_parameter/skybox = ExtResource("2_w10yu")
 
 [node name="Blackhole" type="MeshInstance3D" unique_id=118774140]
 mesh = SubResource("SphereMesh_st70h")
