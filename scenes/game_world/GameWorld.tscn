@@ -65,6 +65,14 @@ layout_mode = 2
 [node name="Ticks" type="Label" parent="DebugInfo/VBoxContainer" unique_id=253582767]
 layout_mode = 2
 
+[node name="ToggleCameraTransitions" type="Button" parent="DebugInfo/VBoxContainer" unique_id=1893563270]
+layout_mode = 2
+text = "Toggle Camera Transitions"
+
+[node name="ActivateReactor" type="Button" parent="DebugInfo/VBoxContainer" unique_id=552090771]
+layout_mode = 2
+text = "Activate Reactor"
+
 [node name="ClockInterface" type="CanvasLayer" parent="." unique_id=1434793740]
 script = ExtResource("6_27b26")
 
@@ -82,3 +90,6 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "12:00:00"
 label_settings = SubResource("LabelSettings_oow3h")
+
+[connection signal="pressed" from="DebugInfo/VBoxContainer/ToggleCameraTransitions" to="DebugInfo" method="_on_toggle_camera_transitions_pressed"]
+[connection signal="pressed" from="DebugInfo/VBoxContainer/ActivateReactor" to="DebugInfo" method="_on_activate_reactor_pressed"]
