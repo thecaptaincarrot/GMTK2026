@@ -23,6 +23,8 @@ var rotation_in_progress = false
 
 signal rotation_updated
 
+@onready var debug_menu: CanvasLayer = $DebugInfo
+
 func _ready():
 	AudioPlayer.game_node  = self
 	
@@ -39,6 +41,12 @@ func _ready():
 	_player.rotation.y = PI/2.0 #I don't think hard setting this is a good idea, but here we are
 	
 	Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
+
+	if OS.is_debug_build():
+		print("Running Debug Build")
+		debug_menu.visible = true
+	else:
+		print("Running Release Build")
 
 func _physics_process(delta):
 	if abs(black_hole_target_rotation - black_hole_rotator.rotation.z) > PI/256:
