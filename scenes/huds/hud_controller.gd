@@ -19,6 +19,13 @@ var previous_hud_state : HudState = HudState.HUDLESS
 func _init(_huds_state: Dictionary[HudState, PackedScene] = DEFAULT_HUDS) -> void:
 	self.huds_state = _huds_state
 
+func _ready() -> void:
+	# Connect signals
+	SignalBus.note_inspect.connect(_on_note_inspect)
+	SignalBus.zoom_in.connect(_on_zoom_in)
+	SignalBus.entedered_position_node.connect(_on_entedered_position_node)
+	SignalBus.open_binder.connect(_on_open_binder)
+
 func set_hud(state: HudState):
 	if state == self.current_hud_state:
 		return
@@ -34,3 +41,21 @@ func set_hud(state: HudState):
 
 func revert_hud_state():
 	set_hud(previous_hud_state)
+
+
+func _on_note_inspect(note_data) -> void:
+	Globals.set_active_note(note_data)
+	self.set_hud(HudController.HudState.READING_NOTE)
+
+
+func _on_zoom_in() -> void:
+	self.set_hud(HudController.HudState.ZOOMED_IN)
+
+
+func _on_entedered_position_node() -> void:
+	self.set_hud(HudController.HudState.EXPLORE)
+
+
+func _on_open_binder() -> void:
+	Globals.open_binder()
+	self.set_hud(HudController.HudState.READING_NOTE)

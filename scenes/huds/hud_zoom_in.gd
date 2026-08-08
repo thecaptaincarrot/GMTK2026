@@ -12,7 +12,6 @@ func _on_zoom_back_pressed() -> void:
 	if Globals.is_sub_zoomed_in():
 		Globals._last_zoom_in_node.move_player_to_position(true)
 	else:
-		Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
 		var last_pos = Globals.get_last_position()
 		last_pos.handle_interaction()
 		Globals._last_zoom_in_node = null

@@ -123,9 +123,9 @@ var  binder_collected = false
 @onready var four_front = load("res://assets/notes/BinderPages/04first.png")
 @onready var four_back = load("res://assets/notes/BinderPages/04second.png")
 
+
 func open_binder():
 	set_active_note(get_binder_pages(), get_binder_text_front(), get_binder_text_back())
-	hud_controller.set_hud(HudController.HudState.READING_NOTE)
 
 
 func get_binder_text_front():

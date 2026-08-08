@@ -26,6 +26,7 @@ StateVariables="*uid://k8uhvnqfabs7"
 AudioPlayer="*uid://cpx3g7t6l2jyp"
 AudioManager="*uid://crb6w1dwad0n2"
 MusicManager="*uid://xl3bdrljdrso"
+SignalBus="*uid://1d6k4fuhvp6p"
 
 [display]
 

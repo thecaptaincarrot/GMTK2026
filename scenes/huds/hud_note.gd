@@ -27,8 +27,8 @@ func _ready() -> void:
 		
 		previous_button.size = Vector2(444.5, 700)
 		previous_button.position = Vector2(-65.0,0)
-		
-		
+	# Connect signals
+	SignalBus.note_put_away.connect(_on_note_exit_pressed)
 
 
 func _on_note_next_pressed() -> void:

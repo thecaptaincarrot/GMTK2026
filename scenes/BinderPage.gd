@@ -7,15 +7,13 @@ func handle_interaction() -> void:
 		if Globals.reactor_started:
 			if Globals.binder_collected:
 				Globals.notes_collected.append(binder_page)
-				Globals.open_binder()
+				SignalBus.open_binder.emit()
 				hide()
 			else:
-				Globals.set_active_note(note_pages)
-				Globals.hud_controller.set_hud(HudController.HudState.READING_NOTE)
+				SignalBus.note_inspect.emit(note_pages)
 
 	else:
-		Globals.set_active_note(note_pages)
-		Globals.hud_controller.set_hud(HudController.HudState.READING_NOTE)
+		SignalBus.note_inspect.emit(note_pages)
 		hide()
 
 

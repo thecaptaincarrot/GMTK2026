@@ -32,8 +32,6 @@ func enable_collision():
 func handle_interaction() -> void:
 	if requires_reactor:
 		if Globals.reactor_started:
-			Globals.set_active_note(note_pages)
-			Globals.hud_controller.set_hud(HudController.HudState.READING_NOTE)
+			SignalBus.note_inspect.emit(note_pages)
 	else:
-		Globals.set_active_note(note_pages)
-		Globals.hud_controller.set_hud(HudController.HudState.READING_NOTE)
+		SignalBus.note_inspect.emit(note_pages)

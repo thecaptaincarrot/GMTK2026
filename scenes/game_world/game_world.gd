@@ -39,9 +39,6 @@ func _ready():
 	var starting_player_position_option = _active_room.get_position_node(&"Airlock0")
 	starting_player_position_option.move_player_to_position(true)
 	_player.rotation.y = PI/2.0 #I don't think hard setting this is a good idea, but here we are
-	
-	Globals.hud_controller.set_hud(HudController.HudState.EXPLORE)
-
 	if OS.is_debug_build():
 		print("Running Debug Build")
 		debug_menu.visible = true

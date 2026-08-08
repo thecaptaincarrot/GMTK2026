@@ -45,6 +45,7 @@ func handle_interaction() -> void:
 		AudioPlayer.stop_3d_audio("TimeDilation")
 
 func move_player_to_position(tween_override = false):
+	SignalBus.entedered_position_node.emit()
 	var player = Globals.get_player()
 	if player:
 		game_room.disable_all_clickables()

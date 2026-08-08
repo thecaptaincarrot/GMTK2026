@@ -33,7 +33,7 @@ func enable_neighbors():
 
 func move_player_to_position(from_sub_zoom = false):
 	var player: PlayerController = Globals.get_player()
-	Globals.hud_controller.set_hud(HudController.HudState.ZOOMED_IN)
+	SignalBus.zoom_in.emit()
 	
 	disable_collision()
 	game_room.disable_all_clickables()

@@ -12,7 +12,7 @@ func handle_interaction():
 	if Globals.reactor_started:
 		interacted_with.emit()
 		Globals.binder_collected = true
-		Globals.open_binder()
+		SignalBus.open_binder.emit()
 		hide()
 
 func  enable_collision():
